@@ -107,22 +107,23 @@ const BeatPulse = ({ t }: { t: number }) => {
   return <AbsoluteFill style={{ backgroundColor: "#ffffff", opacity: o, pointerEvents: "none" }} />;
 };
 
+// zh 为空时只显示英文（英文版用）；英文版字稍大，位置下移一点填掉中文那一行
 const Lyric = ({ en, zh }: { en: string; zh: string }) => {
   const f = useCurrentFrame();
   const o = interpolate(f, [0, 4], [0, 1], { extrapolateRight: "clamp" });
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, bottom: 118, textAlign: "center", opacity: o,
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: zh ? 118 : 128, textAlign: "center", opacity: o,
       fontFamily: "Menlo, 'SF Mono', monospace", color: "#111" }}>
-      <span style={{ backgroundColor: "#f6f6f3", padding: "6px 14px", fontSize: 26, letterSpacing: 1 }}>{en}</span>
-      <div style={{ marginTop: 10 }}>
+      <span style={{ backgroundColor: "#f6f6f3", padding: zh ? "6px 14px" : "8px 18px", fontSize: zh ? 26 : 30, letterSpacing: 1 }}>{en}</span>
+      {zh ? <div style={{ marginTop: 10 }}>
         <span style={{ backgroundColor: "#f6f6f3", padding: "4px 12px", fontSize: 20, letterSpacing: 4,
           fontFamily: "'PingFang SC', 'Hiragino Sans GB', sans-serif" }}>{zh}</span>
-      </div>
+      </div> : null}
     </div>
   );
 };
 
-export const Full = ({ audio }: { audio: string }) => {
+export const Full = ({ audio, zhSubs = true }: { audio: string; zhSubs?: boolean }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const beat = beatIndex(t);
@@ -170,7 +171,7 @@ export const Full = ({ audio }: { audio: string }) => {
         <Sequence key={w + t0} from={S(t0)} durationInFrames={S(t1) - S(t0)}><BigWord text={w} side={side} /></Sequence>
       ))}
       {LYRICS.map(([t0, t1, en, zh]) => (
-        <Sequence key={t0} from={S(t0)} durationInFrames={S(t1) - S(t0)}><Lyric en={en} zh={zh} /></Sequence>
+        <Sequence key={t0} from={S(t0)} durationInFrames={S(t1) - S(t0)}><Lyric en={en} zh={zhSubs ? zh : ""} /></Sequence>
       ))}
 
       {/* 收尾：卡片放大到画面中央，只剩一个孔，片名 */}
