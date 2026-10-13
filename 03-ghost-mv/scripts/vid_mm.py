@@ -1,5 +1,6 @@
 """全片换 minimax-h3-image-to-video。
-2026-10-13 实测：本地文件当首帧会被拒（HTTP 400 invalid_parameter），跟 CR 文档说的不一样，所以照旧走 S3 URL（work/img-urls-mm.txt）。
+首帧走 S3 URL（work/img-urls-mm.txt）。2026-10-13 用本地图 g01-v3-169.png 当首帧、传 6 或 8 秒，提交时都报 400 invalid_parameter；
+换 URL 后能提交。但别的会话用本地图、4/5/6 秒都成功过，原因没查清，见 构思.md「模型实测」。
 
 动作照 XD 的反馈改写："太傻、像不会跳舞的人" → 不演舞蹈，写真人听歌时的小动作，卡 110 BPM。
 用法：python scripts/vid_mm.py [镜头 ...]      输出 vid/mm/<镜头>.mp4
