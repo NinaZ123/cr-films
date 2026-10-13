@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Locked-off static wide camera. The six people without headphones stand perfectly still; the one in the centre with headphones grooves naturally to the music — small knee bounce, head nod, shoulders moving, cool and relaxed like someone enjoying a song, not a performance. Black-and-white overexposed film look, only the green mask is coloured, film grain. Natural, relaxed, believable human body language like a real person filmed on camera, subtle and cool, not exaggerated, no dancing poses. The mask is a rigid paper object fixed on the head and never changes shape; the mask face always points the same way as the body. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-n07.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791896036,
+    "id": "01a13553-a4ea-7063-8a69-8a1d4b7c45f3",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a13553-a4ea-7063-8a69-8a1d4b7c45f3",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791896393,
+    "created_at": 1791896036,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13553-a4ea-7063-8a69-8a1d4b7c45f3/lpn4hnG_j7-wqJ43EnYjnE5ctK3EntKRdLbbpVhapG5F3Uk8kmX5DrX8ccBBM1ZIrcoFzIY5HT1_Ohw4f1YVV3REMl7Lwhj1Cp8UFkDLbzvPNmWhM0_wXjL2ERTDy0_GRgJw1XAaWixZHxsNeraNlbR7YgU850CKUqebFUxn2slnePskLgi41CwZovE1rHUBq-A3hrZzRILqeYn4grROiSqhPyfzxbIVt3BNt7nXbETjyHq0Qy8tJn1l7N__n1n_DolTLpfFiixo1mBPOufEusDXIRsQ5xCgTdfjcrqeHR7k77rV0TZNAW3mlkD7_e3BwwdRvMw_062FP5vnkKUoxrR4L9jNm3gCmbEkdC5X0ZCZI44rOf2ZPjPg0qIzS7-oQUk5WkjxFZZHUB5XeKKLa7ASMsQ2i8PmqgZ_ggGsDVSJQuiYJjooLKCnM-c0c9Q90rdeYeAWoiZnst3DoVcRY1NzLUxcEdftBunJXVHUyBKwJsoQEc74k42oPZFeBNky2rZj8oUL50r8SQpP50wVgSidDAW-DBiuWc1EGVMLKxBVK8QDHDaIbx8gZt6qzNN6BzInsiys6xXXnsxfGGsrF0srKvvjefvSC7tGwXDOBqDIzpaXrkC6"
+      }
+    ],
+    "id": "01a13553-a4ea-7063-8a69-8a1d4b7c45f3",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

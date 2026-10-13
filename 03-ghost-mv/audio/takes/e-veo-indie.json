@@ -1,0 +1,64 @@
+{
+  "request": {
+    "model": "veo3.1-fast",
+    "content": [
+      {
+        "type": "text",
+        "text": "Song: lo-fi indie pop, 120 BPM, drum machine, muted guitar, young female vocalist with an airy cool voice, English lyrics sung clearly. Verse (cool, half-spoken, deadpan, right on the beat): \"Seven-oh-one, take a seat. Seven-oh-two, keep the beat. Seven-oh-three, sign the sheet. Everybody right on time.\" Hook (sung, catchy, lifts up): \"But I got a blank card, blank card. Nothing on it — mine.\" Visual: a minimal black-and-white music video, a person wearing a boxy green paper ghost mask and off-white headphones sings into a small headset microphone in an empty white studio, static camera."
+      }
+    ]
+  },
+  "submit": {
+    "created_at": 1791877264,
+    "id": "01a13435-34ed-7ef2-afc6-189aad82fb96",
+    "model": "veo3.1-fast",
+    "poll_url": "/unified/v1/tasks/01a13435-34ed-7ef2-afc6-189aad82fb96",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791877356,
+    "created_at": 1791877264,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 8,
+        "fps": 24,
+        "has_audio": true,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13435-34ed-7ef2-afc6-189aad82fb96/aSa-ObhZCg8Q1pHDqNSC8NTm84mBfU_I9pEZDwotW1e_7QRNjIi8S8s1BjHI2ze5a8uNYMQfXVOE6Tjc1WS6vmkIZN6k2OwhKfyAuX2mV3NwJjAlA3SVSVTqf9AvexXyobgJhux2rER0HTEwOPs3n_Xw3Ki7cZVikeiDVOS0Vs-rFu_LJfSRMCic1rUs2BeLW9LuaNBMjWZA5VwzqoYrWGWL8VAqv0RXipPj1T3KrcsTgr0vniCgiq2Q06wRl7PQW8f9nlPofGlSOCDBPVBdNlzMOw",
+        "width": 1280
+      }
+    ],
+    "id": "01a13435-34ed-7ef2-afc6-189aad82fb96",
+    "model": "veo3.1-fast",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 8000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "8.000000"
+    }
+  }
+}

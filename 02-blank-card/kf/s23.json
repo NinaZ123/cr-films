@@ -1,0 +1,44 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is the reference for seven-b1-half. Image 2 is the reference for prop-card-hole. Image 3 is the reference for roof-1-sunrise. Cinematic 16:9 anime film still, flat 2D cel-shaded 1980s OVA anime, clean ink linework, hard cel shadows, subtle halftone and film grain, same art style as the reference images. Compose for a 16:9 frame: keep heads and key action away from the top and bottom edges. No text, no letters, no logos anywhere except the '07' patch on the girl's sleeve. Extreme close-up: the girl's hands (olive jacket sleeves with orange cuffs) hold the cream punch card and push the small silver safety pin from her jacket through it, making exactly ONE small hole near the top-left corner; warm golden sunrise light, blurred sky and clouds behind.",
+    "image": [
+      "<2904238 chars, omitted>",
+      "<1150126 chars, omitted>",
+      "<3774166 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791868540,
+    "id": "01a133b0-16c0-7e83-a696-81165b814044",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133b0-16c0-7e83-a696-81165b814044",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791868597,
+    "created_at": 1791868540,
+    "data": [
+      {
+        "b64_json": "<3673720 chars, omitted>"
+      }
+    ],
+    "id": "01a133b0-16c0-7e83-a696-81165b814044",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 26690
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/02-blank-card/kf/s23-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

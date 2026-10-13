@@ -1,0 +1,46 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Images 1-4 are reference photos of the masked person; match the mask shape, colour and headphones exactly. Image 5 is the reference for every crowd member: each one must have exactly that crisp, detailed mask, drawn at the same quality as the main character. Black-and-white high-key 35mm film photograph, overexposed and airy, blown-out whites, heavy film grain, faint photocopy halftone texture, slight softness, editorial fashion photography. Everything is monochrome grey EXCEPT the mask, which keeps exactly its soft light mint-green paper colour from the reference images (do not saturate or brighten it) — the only colour in the picture. Lots of empty white negative space. Compose for a 16:9 crop. No text, no letters, no logos, no watermark. Frontal shot down a long white corridor: a column of people wearing the same mint-green paper ghost masks, each mask exactly the same shape as the reference, with NO headphones, NO ear cups, NO ear muffs, nothing on the sides of the mask, in plain grey hoodies and black trousers, all facing the camera marches toward the camera in perfect lockstep, same leg forward, three abreast, the front row large in frame, receding to a vanishing point. Symmetrical, overexposed.",
+    "image": [
+      "<550990 chars, omitted>",
+      "<153883 chars, omitted>",
+      "<202167 chars, omitted>",
+      "<381019 chars, omitted>",
+      "<2353358 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791895945,
+    "id": "01a13552-4291-7ef2-99d1-43edbfc69860",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13552-4291-7ef2-99d1-43edbfc69860",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791895989,
+    "created_at": 1791895945,
+    "data": [
+      {
+        "b64_json": "<3013084 chars, omitted>"
+      }
+    ],
+    "id": "01a13552-4291-7ef2-99d1-43edbfc69860",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 28394
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/03-ghost-mv/img/n06-c2-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

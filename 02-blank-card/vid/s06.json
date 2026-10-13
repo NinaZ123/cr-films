@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The girl twists the capsule open with one hand, casual and practiced, glancing down at it. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s06-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869613,
+    "id": "01a133c0-74a4-7860-83f2-9ff28068ceeb",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c0-74a4-7860-83f2-9ff28068ceeb",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869784,
+    "created_at": 1791869613,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c0-74a4-7860-83f2-9ff28068ceeb/e1pabRqsfDgLIptx27rgD2zoRNPxGLbsji1JsMs0BM9vfXCQbseEoFh44iW-dluZjl1eSO8RpeJgOyjsmR1mE6W-XzHZ9-WW0cxhyMjqzoPBxwwgG2WXS8MkCe807EpbPUvOqgKM__Owz2DT81kY1cKZkyMBO8ZJOzFu96qWetycSxJg_j7RYW14JMYbEi4TYWkO_Xa0X5QJUrKIlEHv7AA0qBDMgZU6amPEbp5zAbxvEhkLOZcKQCVYfU24kVEo_l-21dsctL0pJRPwjn8gBeRVDCv4A4TqtPlcMfwskecrbkxH7afkr_t89_rtTn-cO4hVFe_BnA1P-LcSZINC1oS9GfvTW_9LvploRxVlImbejZT99uHott6xDyLxNkhoN96vMA8ZTlR6XmiDdeFOINzyfOZ_BqpccV1iibazNfZ-bBgrF7noHZpDeYJV5H35-X1iFIghm9KyRK162xI2uiijMthsStgkRxAXZGvo-c-etF525RgI7LvjIk3Q2_ZCJ26ip1BDL9_tY5wdS03H2bMZhiNaYeBi8s7B5TSSpQhNBrM3H6PibAP_vm0W_sP39vFiBDTkySua9h0lKnHMzuDhws9UAE0lug53veo3jzfH1MIwYvxA"
+      }
+    ],
+    "id": "01a133c0-74a4-7860-83f2-9ff28068ceeb",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

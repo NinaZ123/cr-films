@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "All the clerk robots slowly turn their heads toward the girl at the same moment; she stands still. Very slight camera push-in. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s09-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791870214,
+    "id": "01a133c9-a015-7851-abd9-5cfbaa5ccf55",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c9-a015-7851-abd9-5cfbaa5ccf55",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791870334,
+    "created_at": 1791870214,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c9-a015-7851-abd9-5cfbaa5ccf55/2taG1s43yeDreYJkZZBDKykqLCpv1UBLoZFepGiCzdL2ntDmictgT55aFW4FvWNKewG6EhlIV32pxgswfwndLtKvmkws36mnynUUyoccsj76hp3rkmFIBE2tR8v45tx-Uk3q39Z6cxlKHv5Jr7UMxHWE1xroZpMzBreSDIl1IOUVT_q4e1RiolwShxk6bB-pvtks7UzrG-ovQKaNzM6lr6rkvBY10UPf3gmfRcDXjS0dIunU25rYAQ2HKcbL1BFyw2QuRN2mNd7PpYpb1UT5LuhOBwH6jWyIlqhN2wr0wxSlg6EDbv8g8RaKfg5z_k2rq6k5AapkhfropGJ6uvTXS1PHl_78_JDW-BITvVDssZYT0yIdkpGrs-XCsq8fRDfevSreYHN0iz-H3I_uVxHU0oKvgLAzc_mVigEA3V2S5TVSFAWc_bifQ5g-gSgjpBQJUtjiD7g1aIyg9LeSW6nrCZDbPjvQw6ad_pPCLgpDoGZ6xiQDVLW3JxC1dmqcknEd1BY_SCj23Wyzl8qhleExZRqHAKExA1f9hJDasUWMHEn_yBfQnd6iMPD5U80x4Se9vj8rmG4On6ZCudKFZGKovWOsXQpvEMJQlR8PKcVU9ngx7qGMLXEv"
+      }
+    ],
+    "id": "01a133c9-a015-7851-abd9-5cfbaa5ccf55",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

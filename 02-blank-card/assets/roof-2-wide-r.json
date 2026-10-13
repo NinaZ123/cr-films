@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Use the reference only for the art style; flat 2D cel-shaded 1980s OVA anime background art, clean ink linework, subtle halftone, film grain. No people, no readable text, no logos. Same location as the reference: the same flat rooftop of the enormous monolithic building above the sea of clouds, same rising sun and sky colors. Now a very wide side view: the long flat rooftop runs horizontally across the frame toward the horizon and the sun, tiny scale, lots of open sky.",
+    "image": "<3877746 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791866147,
+    "id": "01a1338b-91be-7c31-a89a-2761467ef651",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a1338b-91be-7c31-a89a-2761467ef651",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791866183,
+    "created_at": 1791866147,
+    "data": [
+      {
+        "b64_json": "<3884192 chars, omitted>"
+      }
+    ],
+    "id": "01a1338b-91be-7c31-a89a-2761467ef651",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11034
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/roof-2-wide-r-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

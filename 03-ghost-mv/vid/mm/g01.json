@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "minimax-h3-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Locked-off static close-up. The masked head is still, then begins to nod slowly on the beat, the paper texture catching the light. Black-and-white overexposed film look, only the green masks are coloured, film grain. Natural, relaxed, believable human body language, like a real person filmed on camera; subtle and cool, never exaggerated, no dance poses. Every mask is a rigid paper object fixed on the head and never changes shape; the mask face always points the same way as the body. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g01-v3.png"
+        }
+      }
+    ],
+    "duration": 8
+  },
+  "submit": {
+    "created_at": 1791896670,
+    "id": "01a1355d-52ee-7622-8149-b57acfff7211",
+    "model": "minimax-h3-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a1355d-52ee-7622-8149-b57acfff7211",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791896920,
+    "created_at": 1791896670,
+    "data": [
+      {
+        "duration": 8,
+        "resolution": "768P",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a1355d-52ee-7622-8149-b57acfff7211/NHhpGbr2RSsNDe7U5eoDECEiL-dgO84v8ZKmyQBf4aKl7f9K5PLM1SDKIc61jpD1E8UUnLuW4wvo4L9qN7HoaurLhNTBf-oFrbggyLJfZwaVEK5619lomBdt6dhE-mLF2J7iuceOPYYO0G1Mah5YzJLS9P85Y5vTWwCNNAlXqB_oTpkmX1RC5Ael69kYn3WvRSfjIyCIju2mH0rFCw70CshS02uYP8sMmuEeq5NWMWyGPnl48pYMqKiOIZNpETWZ8xbRAdg0-hN2GnkCSk91SLZpxv7lXlOaLd_FDejWcVlYIdLUpxxZzDOQzYK2YplBPAQFYx7UK5tk401_4a08rNAiAfy68lww32TxB09wPGMcG8wGR6m7yX7SUwfdKkhvlHWCbjLKrOxVJS1O7yU2ZQ-FXQew1RWK5wli6nhNQwkNFAHpiebIfSRJdWzEwOWXxW9tkPw9ICWdyid13iXtpXIcRhjrO_lnfvjYw8xJoWiuQZaXRCe1TIpYBJsXs2VmdBybqoQMRJFCOdQU_sjGnZhMpT5J500C0H-y4pfZMaqYlPbOQtjt9RFnxgpM1PsMKladK00Z3txTsvuHNAkc5XbF3PtagjBp16tm4djOkmyTnxccPUFO"
+      }
+    ],
+    "id": "01a1355d-52ee-7622-8149-b57acfff7211",
+    "model": "minimax-h3-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 400000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1344,
+        "height": 768,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "8.000000"
+    }
+  }
+}

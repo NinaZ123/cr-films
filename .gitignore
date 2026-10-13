@@ -1,0 +1,36 @@
+# 生成出来的媒体都不进 git：体积大（合计约 9G），而且能用 scripts/ 里的脚本加 *.json 生成记录复现。
+# 只在本机硬盘上，要备份另说。
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.png
+*.jpg
+*.jpeg
+*.JPG
+*.webp
+*.wav
+*.mp3
+*.f32
+*.m4a
+
+# 中间文件和临时输出
+work/
+tmp/
+**/test/
+**/vtest/
+**/cr-output/
+**/comp/out/
+
+# 环境和依赖
+.venv
+.venv/
+node_modules/
+**/tools/asr/
+__pycache__/
+.DS_Store
+
+# 密钥：全部放仓库根目录 .env，不进 git；.env.example 是模板，要进
+.env
+.env.*
+!.env.example

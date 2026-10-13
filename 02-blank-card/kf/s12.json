@@ -1,0 +1,44 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is the reference for seven-a2-back. Image 2 is the reference for hall-2-aisle. Image 3 is the reference for enf-a1-front. Cinematic 16:9 anime film still, flat 2D cel-shaded 1980s OVA anime, clean ink linework, hard cel shadows, subtle halftone and film grain, same art style as the reference images. Compose for a 16:9 frame: keep heads and key action away from the top and bottom edges. No text, no letters, no logos anywhere except the '07' patch on the girl's sleeve. Dynamic chase shot from behind: the girl 'Seven' exactly as in her reference: black asymmetric bob with straight bangs, ONE orange streak on the right side of her face, silver-grey eyes, cream headphones with orange stripes and a short black coiled cord, oversized olive-green MA-1 jacket with orange lining, ONE '07' patch on her LEFT upper sleeve only, small safety pin on her LEFT chest, black turtleneck, dark grey shorts, black tights, chunky white sneakers skates away from camera down a long corridor of tall olive archive shelves in the amber-lit retro-futurist bureau hall exactly as in its reference (beige desks, beige CRTs glowing amber, olive filing cabinets, brass tubes, orange floor lines); behind her the shelves topple and shatter into thousands of white glowing particles like petals; far in the background the tall white 'Enforcer' android exactly as in its reference: slender glossy porcelain-white body, thin black joint seams, long white armor coat-tails, heeled white boots, smooth white helmet with one glossy black visor runs after her. Red and amber light.",
+    "image": [
+      "<2773042 chars, omitted>",
+      "<3923258 chars, omitted>",
+      "<2980110 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791868363,
+    "id": "01a133ad-6468-7403-bdb1-42fdd5a81bb5",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133ad-6468-7403-bdb1-42fdd5a81bb5",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791868412,
+    "created_at": 1791868363,
+    "data": [
+      {
+        "b64_json": "<4265376 chars, omitted>"
+      }
+    ],
+    "id": "01a133ad-6468-7403-bdb1-42fdd5a81bb5",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 27225
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/02-blank-card/kf/s12-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

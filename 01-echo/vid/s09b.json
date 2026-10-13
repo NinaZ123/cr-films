@@ -1,0 +1,40 @@
+{
+  "request": {
+    "model": "seedance-2.0-fast-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Slow drift over the silhouetted audience toward the hazy glowing stage, smoke swirling in warm backlight, heads sway gently to the music. Dreamlike soft focus. Photorealistic 35mm film, no cuts."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-2c077d3131cf4aec88b6ec5caadf83d8_0.jpg"
+        }
+      }
+    ],
+    "duration": 5
+  },
+  "submit": {
+    "created_at": 1791818466,
+    "id": "01a130b4-0695-7e22-afd1-228fbaa630c6",
+    "model": "seedance-2.0-fast-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130b4-0695-7e22-afd1-228fbaa630c6",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818740,
+    "created_at": 1791818466,
+    "error": {
+      "code": "content_policy_violation",
+      "message": "The request was rejected by a content safety filter",
+      "type": "invalid_request_error"
+    },
+    "id": "01a130b4-0695-7e22-afd1-228fbaa630c6",
+    "model": "seedance-2.0-fast-image-to-video",
+    "request_id": "01a130b4-0695-7e22-afd1-228fbaa630c6",
+    "status": "failed"
+  },
+  "ffprobe": null
+}

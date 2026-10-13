@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Slow drift over the silhouetted audience toward the hazy glowing stage, smoke swirling in the warm backlight, heads sway gently. Dreamlike, soft focus. Muffled crowd and distant band. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-2c077d3131cf4aec88b6ec5caadf83d8_0.jpg"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-aafb-7653-8773-d0460582ca0f",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-aafb-7653-8773-d0460582ca0f",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818187,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-aafb-7653-8773-d0460582ca0f/HpRNh3oSNLoIBi37WmNL8kGRaf87gwlLzNRUDUmNWA-RyGHMr7V21Rrgm821hEFRAQHFHVcw1yorp9ggkhdiW4FKgC6ReGMVFBt7UcPxoKsklqCYIoWSEynnrnXTLnf7cnLfi2z_i7HKsu4UKkNNRp0BjuVwxQGdWlv94z-m9yLc3vqz-70pab6ul0y6kAqxLC66lfW_G3yqRTXQRvOh1DHRRLft3J6eCPCMTuxKlqrrTEwFyA2fbztdcV9bvMpx0oma_N6HXSZshfJuT-MUfcjlS7BnbK_8U1PL5z5Lr6pxLrxD8ESLnHwmTXllPYu_VNqgYtpQJR6ESsORT44riwRomKgLYxuIfXvlIUiq6lC7TfzV3ywLGBqFKjENcDUYK6XQN93HegZfR_qg78IJ3sCaKP3g5klj1Mx9O5B4_ihni7jKkAHValJJm5GVbq9H_RsRiWN06W0Q2gyWzSMihHH_s2Q0mIrxEWm_XkvGdz39vkwK78wFk0fVF3SINcgrViYf9l8aeHvjdD4q5QaesuESEG9sB9eSwBsGiYXRdz-keXguQDfpI_PyNyj9HmPhurVo_Por3EigOGY_IuFKrATOjTf5YIFhqXZK3biCxgdPhWUAZJfY"
+      }
+    ],
+    "id": "01a130ad-aafb-7653-8773-d0460582ca0f",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

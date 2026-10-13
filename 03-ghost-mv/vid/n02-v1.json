@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Locked-off static wide camera. The masked person runs two steps, jumps high with arms flung up, lands softly and keeps bouncing to the music. Black-and-white overexposed film look, only the green mask is coloured, film grain. Restrained subtle motion. The mask is a rigid paper object fixed on the head: its shape, size and headphones never change, and the mask face always points the same way as the body — the person never turns around. The mask always covers the chin: below its zigzag edge only dark shadow and the hoodie collar, no skin. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-n02.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791890314,
+    "id": "01a134fc-563f-7170-b811-0d35e8791134",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a134fc-563f-7170-b811-0d35e8791134",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791890463,
+    "created_at": 1791890314,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a134fc-563f-7170-b811-0d35e8791134/INHZuRQQWkFuCpYj_iqbYgVEBAalgGI32YfOpClALOENml2tK9b5q7zP4FQTk3ItfN0voNkD75MgW_n6EnCOTi-7-twFAJYe6TgNZhNjgtevHavZpK4eDLVS2pnWo7ACSejjTSmasHVA5fnp8N2ND-XUJxlZe2WMFWhp_tNOE2WeOM3pdKOzJHN3kFv10SPl8pqkozfsAxVB_XOkZy3BpQTCykCDLFU8BCEO2INpJ7F3WHa0sV448IibvZkD_JYHvBJlbVXjV0C9Uho-M-wy_ZKtR89exezPVZ9ZhcDkUxJZfOFuo5wMVxNsW-K-buW8kb2mb-jgr0UeFfnFPT-78eHfan0h57uBeqHp7RtVnmbMxfjEBwkVS-P29bwNLxUN-Ngn_JcvVI4xdED0AkHrb6t58r_-H0FirSwccwl3fIeXzGqOf72VIQmzk23JdckT5IPGPntJFdb_CCubVEICRM1JouuwNm9WmL4Kxe9uI20wCPBsFsO1ZsuXwz4jcDHrubVnHfxCBCqCySWjEXbrB9u-lBBtZ7jmDtSImMiFkUFs_cxOOrs_5sHvuFTNpax4bBPXLsYKIAzS2h5KD00ui3j4Y3lz85rNIgnmRcPuzS_wMIt1I7ZR"
+      }
+    ],
+    "id": "01a134fc-563f-7170-b811-0d35e8791134",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

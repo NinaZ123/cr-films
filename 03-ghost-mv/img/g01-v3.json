@@ -1,0 +1,43 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is the shot to edit, image 2 is the reference for the mask. Keep image 1 exactly the same — same composition, pose, hands, headphones, microphone, colours, black-and-white film look and grain — with ONE change: the green paper ghost mask is slightly longer and reaches down past the chin to the hoodie collar, so NO chin, NO jaw, NO skin and NO face is visible anywhere. Below the pixel zigzag bottom edge there is only deep black shadow and the hoodie collar. Mask shape, colour and plus-sign eyes unchanged. No text, no watermark.",
+    "image": [
+      "<2966806 chars, omitted>",
+      "<550990 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791882616,
+    "id": "01a13486-dcd1-7bb0-b02e-fec7a5fa2114",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13486-dcd1-7bb0-b02e-fec7a5fa2114",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791882668,
+    "created_at": 1791882616,
+    "data": [
+      {
+        "b64_json": "<3046672 chars, omitted>"
+      }
+    ],
+    "id": "01a13486-dcd1-7bb0-b02e-fec7a5fa2114",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 15582
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/03-ghost-mv/img/g01-v3-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

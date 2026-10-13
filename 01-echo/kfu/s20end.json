@@ -1,0 +1,41 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gemini-3-pro-image-preview",
+    "prompt": "Same exact image, identical composition, lighting, colors and seats, except the bright red seat number 10 is now folded UP like all the other seats (seat bottom flipped vertical against the backrest). Change nothing else.",
+    "image": "<868871 chars, omitted>",
+    "aspect_ratio": "21:9"
+  },
+  "submit": {
+    "created_at": 1791818403,
+    "id": "01a130b3-0f55-7e81-8af0-1060a223964d",
+    "model": "gemini-3-pro-image-preview",
+    "poll_url": "/unified/v1/tasks/01a130b3-0f55-7e81-8af0-1060a223964d",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818435,
+    "created_at": 1791818403,
+    "data": [
+      {
+        "mime_type": "image/jpeg",
+        "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-5ae3a17cea53451fa241516896b23415_0.jpg"
+      }
+    ],
+    "id": "01a130b3-0f55-7e81-8af0-1060a223964d",
+    "model": "gemini-3-pro-image-preview",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 84380
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "kfu/s20end-0.jpg",
+      "mime": "image/jpeg",
+      "size": "1584x672"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Same art style as the reference: flat 2D cel-shaded 1980s OVA anime, clean ink linework, subtle halftone and film grain. Image 1 is the Enforcer, image 2 is the headphones. Draw the same 'Enforcer' android from the reference sheet: tall slender elegant porcelain-white ceramic body, thin black seam lines at the joints, long white armor coat-tail panels from waist to knees, white heeled armored boots, smooth white helmet with round ear discs and one glossy black visor covering the face, no features. She now wears the girl's headphones from the other reference image (cream white, orange stripe on each cup, short black coiled cord) over her helmet, on top of the ear discs. Full body seen from directly BEHIND, whole figure inside the frame, standing straight; the headphone band visible over the back of the white helmet. Only one figure. plain warm off-white background with subtle halftone. No panels, no text.",
+    "image": [
+      "<2811318 chars, omitted>",
+      "<1162254 chars, omitted>"
+    ],
+    "size": "1024x1536"
+  },
+  "submit": {
+    "created_at": 1791864007,
+    "id": "01a1336a-e9ee-7430-83f0-f5df28a08815",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a1336a-e9ee-7430-83f0-f5df28a08815",
+    "status": "pending"
+  }
+}

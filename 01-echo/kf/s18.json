@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gemini-3-pro-image",
+    "prompt": "Use the man in the reference image as the character: same face, same identity, same age, same scar through the left eyebrow, same charcoal overcoat and dark green sweater. New scene: A dusty theater dressing room, a cracked mirror framed with old makeup bulbs, he stands facing the mirror, seen over his shoulder; dim, one bulb flickering. Cinematic film still from a 1990s Chinese arthouse mystery film, shot on 35mm Kodak Vision3 500T, anamorphic lens, muted desaturated teal and amber palette, deep shadows, halation around lights, fine film grain, hyper-realistic, dreamlike, wide 2.39:1 framing with all important content in the central horizontal band.",
+    "image": "<893459 chars, omitted>"
+  },
+  "submit": {
+    "created_at": 1791816744,
+    "id": "01a13099-bfd7-7be1-814c-a09e8b1e5d22",
+    "model": "gemini-3-pro-image",
+    "poll_url": "/unified/v1/tasks/01a13099-bfd7-7be1-814c-a09e8b1e5d22",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791816862,
+    "created_at": 1791816744,
+    "data": [
+      {
+        "b64_json": "<795392 chars, omitted>",
+        "mime_type": "image/jpeg"
+      }
+    ],
+    "id": "01a13099-bfd7-7be1-814c-a09e8b1e5d22",
+    "model": "gemini-3-pro-image",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 84515
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "kf/s18-0.jpg",
+      "mime": "image/jpeg",
+      "size": "1600x672"
+    }
+  ]
+}

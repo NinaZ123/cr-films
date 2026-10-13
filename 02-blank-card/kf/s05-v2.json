@@ -1,0 +1,44 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is the reference for seven-a6-music. Image 2 is the reference for hall-2-aisle. Image 3 is the reference for clerk-2-desk. Cinematic 16:9 anime film still, flat 2D cel-shaded 1980s OVA anime, clean ink linework, hard cel shadows, subtle halftone and film grain, same art style as the reference images. Compose for a 16:9 frame: keep heads and key action away from the top and bottom edges. No text, no letters, no logos anywhere except the '07' patch on the girl's sleeve. Close-up of the girl 'Seven' exactly as in her reference: black asymmetric bob with straight bangs, ONE orange streak on the right side of her face, silver-grey eyes, cream headphones with orange stripes and a short black coiled cord, oversized olive-green MA-1 jacket with orange lining, ONE '07' patch on her LEFT upper sleeve only, small safety pin on her LEFT chest, black turtleneck, dark grey shorts, black tights, chunky white sneakers, three-quarter view, eyes half closed, head tilted, quietly nodding to music in her headphones. Behind her, softly out of focus, a row of identical short round beige 'Clerk' androids with blank face plates, olive vests and olive sleeve covers at their desks all stamping in perfect unison.",
+    "image": [
+      "<3128910 chars, omitted>",
+      "<3923258 chars, omitted>",
+      "<3291074 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791869218,
+    "id": "01a133ba-703a-7623-9312-8b65761c694e",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133ba-703a-7623-9312-8b65761c694e",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869310,
+    "created_at": 1791869218,
+    "data": [
+      {
+        "b64_json": "<3660412 chars, omitted>"
+      }
+    ],
+    "id": "01a133ba-703a-7623-9312-8b65761c694e",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 27025
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/02-blank-card/kf/s05-v2-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Use the reference only for the art style; flat 2D cel-shaded 1980s OVA anime background art, clean ink linework, subtle halftone, film grain. No people, no readable text, no logos. Same location as the reference (same beige desks, beige CRT monitors glowing amber, olive filing cabinets, brass pneumatic tubes, orange floor lines, amber light), but seen from a very high overhead angle: an enormous endless hall, thousands of identical desks in a grid receding to a vanishing point, archive shelves like canyon walls, tiny tiny scale.",
+    "image": "<3923258 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863696,
+    "id": "01a13366-2c03-7041-9394-4102b1cb1fbd",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13366-2c03-7041-9394-4102b1cb1fbd",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863894,
+    "created_at": 1791863696,
+    "data": [
+      {
+        "b64_json": "<4130456 chars, omitted>"
+      }
+    ],
+    "id": "01a13366-2c03-7041-9394-4102b1cb1fbd",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11065
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/hall-1-wide-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

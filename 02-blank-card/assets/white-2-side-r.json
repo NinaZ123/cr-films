@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Use the reference only for the art style; flat 2D cel-shaded 1980s OVA anime background art, clean ink linework, subtle halftone, film grain. No people, no readable text, no logos. Same location as the reference: the vast empty pure white space with faint cool grey horizon and soft floor reflection, and the same tall door made of glowing white and pale cyan particles. Now seen from the side: the camera is rotated 90 degrees, the particle door stands on the right third of the frame seen at an angle, a long empty stretch of white floor on the left where two figures could face each other.",
+    "image": "<2981070 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791866146,
+    "id": "01a1338b-8ee5-7060-821c-70f3e7f0f013",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a1338b-8ee5-7060-821c-70f3e7f0f013",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791866179,
+    "created_at": 1791866146,
+    "data": [
+      {
+        "b64_json": "<3181320 chars, omitted>"
+      }
+    ],
+    "id": "01a1338b-8ee5-7060-821c-70f3e7f0f013",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11109
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/white-2-side-r-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is the reference for seven-a4-half. Image 2 is the reference for enf-a2-visor. Image 3 is the reference for white-2-side. Cinematic 16:9 anime film still, flat 2D cel-shaded 1980s OVA anime, clean ink linework, hard cel shadows, subtle halftone and film grain, same art style as the reference images. Compose for a 16:9 frame: keep heads and key action away from the top and bottom edges. No text, no letters, no logos anywhere except the '07' patch on the girl's sleeve. Medium two-shot in the white space: the girl 'Seven' exactly as in her reference: black asymmetric bob with straight bangs, ONE orange streak on the right side of her face, silver-grey eyes, cream headphones with orange stripes and a short black coiled cord, oversized olive-green MA-1 jacket with orange lining, ONE '07' patch on her LEFT upper sleeve only, small safety pin on her LEFT chest, black turtleneck, dark grey shorts, black tights, chunky white sneakers on the LEFT has taken off her headphones and holds them out with one hand toward the tall white 'Enforcer' android exactly as in its reference: slender glossy porcelain-white body, thin black joint seams, long white armor coat-tails, heeled white boots, smooth white helmet with one glossy black visor on the RIGHT, calmly, an offer not a threat. The Enforcer's black visor looks down at the headphones.",
+    "image": [
+      "<3266798 chars, omitted>",
+      "<3032778 chars, omitted>",
+      "<3368922 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791868464,
+    "id": "01a133ae-edf0-7152-8b9b-c0c7c36a2220",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133ae-edf0-7152-8b9b-c0c7c36a2220",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791868514,
+    "created_at": 1791868464,
+    "data": [
+      {
+        "b64_json": "<3410536 chars, omitted>"
+      }
+    ],
+    "id": "01a133ae-edf0-7152-8b9b-c0c7c36a2220",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 27097
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/02-blank-card/kf/s18-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

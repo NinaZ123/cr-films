@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is the character reference sheet for the masked person. Black-and-white high-key 35mm film photograph, overexposed and airy, blown-out whites, heavy film grain, faint photocopy halftone texture, slight softness, editorial fashion photography. Everything is monochrome grey EXCEPT the green paper ghost mask, which stays saturated green — the only colour in the picture. Lots of empty white negative space. Compose for a 16:9 crop. No text, no letters, no logos, no watermark. Wide frontal shot: a perfect grid of about 30 people wearing the same green paper ghost masks but WITHOUT headphones, in plain grey hoodies and black trousers stand still in rows on a white floor, all facing the camera, arms at their sides. In the exact centre, the masked person exactly as in the reference image: a boxy green crumpled-paper pixel ghost mask covering the whole head, two black plus-sign eyes, pixel zigzag bottom edge; chunky off-white pixel-block headphones with a small black boom microphone; oversized beige hoodie, wide black jeans, white sneakers — the only one with headphones — tilts his head to one side, listening to music. Flat overexposed light.",
+    "image": "<2886122 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791877171,
+    "id": "01a13433-c82f-70e3-a4ea-74367a4d10fc",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13433-c82f-70e3-a4ea-74367a4d10fc",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791877237,
+    "created_at": 1791877171,
+    "data": [
+      {
+        "b64_json": "<3329272 chars, omitted>"
+      }
+    ],
+    "id": "01a13433-c82f-70e3-a4ea-74367a4d10fc",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11465
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/03-ghost-mv/img/g03-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

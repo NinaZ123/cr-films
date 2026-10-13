@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/tasks",
+  "request": {
+    "model": "gemini-3-pro-image",
+    "prompt": "Very wide shot of a vast abandoned old theater auditorium, rows of faded red velvet seats covered in dust, shafts of grey light falling through holes in the roof, rainwater dripping onto the wooden stage, torn red curtain, empty, silent, symmetrical composition from the back of the hall. Cinematic film still from a 1990s Chinese arthouse mystery film, shot on 35mm Kodak Vision3 500T, anamorphic lens, muted desaturated teal and amber palette, deep shadows, halation around lights, fine film grain, hyper-realistic, dreamlike, wide 2.39:1 framing with all important content in the central horizontal band.",
+    "aspect_ratio": "16:9"
+  },
+  "submit": {
+    "created_at": 1791816743,
+    "id": "01a13099-bbb2-71a1-9c99-04415d01830d",
+    "model": "gemini-3-pro-image",
+    "poll_url": "/unified/v1/tasks/01a13099-bbb2-71a1-9c99-04415d01830d",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791816762,
+    "created_at": 1791816743,
+    "data": [
+      {
+        "b64_json": "<1072460 chars, omitted>",
+        "mime_type": "image/jpeg"
+      }
+    ],
+    "id": "01a13099-bbb2-71a1-9c99-04415d01830d",
+    "model": "gemini-3-pro-image",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 84174
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "kf/s05-0.jpg",
+      "mime": "image/jpeg",
+      "size": "1376x768"
+    }
+  ]
+}

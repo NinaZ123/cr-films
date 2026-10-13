@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gemini-3-pro-image",
+    "prompt": "Remove all brand names and logos from the cassette recorder, make it an unbranded generic silver cassette recorder. Keep everything else exactly the same.",
+    "image": "<809147 chars, omitted>"
+  },
+  "submit": {
+    "created_at": 1791816930,
+    "id": "01a1309c-955c-71a3-9f3b-87d3105c11a6",
+    "model": "gemini-3-pro-image",
+    "poll_url": "/unified/v1/tasks/01a1309c-955c-71a3-9f3b-87d3105c11a6",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791816962,
+    "created_at": 1791816930,
+    "data": [
+      {
+        "b64_json": "<753552 chars, omitted>",
+        "mime_type": "image/jpeg"
+      }
+    ],
+    "id": "01a1309c-955c-71a3-9f3b-87d3105c11a6",
+    "model": "gemini-3-pro-image",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 84359
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "kf/s07b-0.jpg",
+      "mime": "image/jpeg",
+      "size": "1376x768"
+    }
+  ]
+}

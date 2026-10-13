@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# 三个角色的设定表候选。Seven 以旧 flare 定妆图为底修改；执法者、职员用 Seven 设定表当画风参考
+cd "$(dirname "$0")/.."
+O=assets/sheets; L=work/logs/sheets.log
+STYLE="flat 2D cel-shaded illustration, clean confident ink linework, limited palette, retro-futurist 1980s OVA anime aesthetic blended with modern elegant anime key art, warm off-white background with subtle halftone"
+SEVEN="Edit this character design sheet. Keep the same three-panel layout (front full body, three-quarter full body, close-up head portrait), the same girl, same face, same art style and colors. Make these fixes so all three panels match exactly: (1) the headphone cord is a SHORT black coiled cord that runs from her left ear cup down into her jacket collar; remove any long cord or braid hanging down to her waist; (2) add a small silver metal safety pin clipped on the LEFT chest of the olive jacket, visible in all three panels; (3) the single orange hair streak is on the right side of her face (viewer's left) in every panel; (4) the round 07 patch is only on her LEFT upper sleeve, nowhere else. No text other than the 07 patch."
+ENF="Use the reference only for art style and color palette; do not draw the girl. Character design sheet, $STYLE. Three panels side by side: front full body, side full body, close-up of the head. Character: 'the Enforcer', a tall, slender, elegant female-proportioned android, smooth glossy porcelain-white ceramic shell with thin black seam lines at the joints, long legs, narrow waist, long white coat-tail armor panels falling from the waist to the knees, white high-heeled armored boots. The head is a smooth white helmet with a single glossy pure-black visor covering the whole face, no eyes, no mouth, no features, no lights on the visor. Calm, graceful, quiet posture. No text, no logos, no weapons."
+CLK="Use the reference only for art style and color palette; do not draw the girl. Character design sheet, $STYLE. Three panels: front full body standing, three-quarter view sitting at a beige office desk holding a rubber stamp, close-up of the head. Character: 'Clerk', a short, round, friendly-shaped office android, matte beige-cream plastic shell, round head with a flat pale-cream face plate and no features at all, olive-green cloth sleeve covers on both forearms, small olive-green vest. All clerks are identical mass-produced units. No text, no logos."
+run(){ bin/cr-image "$@" --size 1536x1024 --out $O >> $L 2>&1; }
+run --model gpt-image-2.5-flare --image img/ref-f-0.png --prompt "$SEVEN" --name seven-sheet-v1 &
+run --model gpt-image-2.5-flare --image img/ref-f-0.png --prompt "$SEVEN" --name seven-sheet-v2 &
+for i in 1 2 3; do run --model gpt-image-2.5-flare --image img/ref-f-0.png --prompt "$ENF" --name enf-sheet-v$i & done
+for i in 1 2; do run --model gpt-image-2.5-flare --image img/ref-f-0.png --prompt "$CLK" --name clerk-sheet-v$i & done
+wait

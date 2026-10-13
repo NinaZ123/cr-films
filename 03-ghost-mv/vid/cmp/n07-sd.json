@@ -1,0 +1,71 @@
+{
+  "request": {
+    "model": "seedance-2.0-fast-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Locked-off static wide camera. The six people without headphones stand perfectly still; the one in the centre with headphones grooves naturally to the music — small knee bounce, head nod, shoulders moving, cool and relaxed like someone enjoying a song, not a performance. Black-and-white overexposed film look, only the green mask is coloured, film grain. Natural, relaxed, believable human body language like a real person filmed on camera, subtle and cool, not exaggerated, no dancing poses. The mask is a rigid paper object fixed on the head and never changes shape; the mask face always points the same way as the body. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-n07.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "720p",
+    "provider_options": {
+      "generate_audio": false
+    }
+  },
+  "submit": {
+    "created_at": 1791896204,
+    "id": "01a13556-3493-7893-8882-c3849c05db22",
+    "model": "seedance-2.0-fast-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a13556-3493-7893-8882-c3849c05db22",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791896429,
+    "created_at": 1791896204,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 5.042,
+        "fps": 24,
+        "has_audio": false,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13556-3493-7893-8882-c3849c05db22/7SXqFW55Pko9EXwAg-bnuLFGgD1-7H0ghNGSbPnYg20JEWYt-O09OYrhYEvtin_qVHFBirW6UEmczOOUrYa8JFFJeOudffHf19oHOy6ql1CNoNq7xk3ToD5w-DmxO_kOMDNBigJlUZNQV8RzKsgyoZECMx-xZxj1Y5DagMdozfps0zwsoyO1cYvzlnqNwy6-2xWD5DgwzD5qzm1mj54k2oCbFiGmCBE6fVh5l-wfGmYnV3haRXtOJhaBY0S1PPaxN3ZKn3cjSHKfwJGYZIU9jFFjSg",
+        "width": 1280
+      }
+    ],
+    "id": "01a13556-3493-7893-8882-c3849c05db22",
+    "model": "seedance-2.0-fast-image-to-video",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 5000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

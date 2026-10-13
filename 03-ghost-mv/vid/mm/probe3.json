@@ -1,0 +1,26 @@
+{
+  "request": {
+    "model": "minimax-h3-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The masked head nods slowly on the beat."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g01-v3.png"
+        }
+      }
+    ],
+    "duration": 8
+  },
+  "submit": {
+    "created_at": 1791896391,
+    "id": "01a13559-0e1d-7562-bbdf-7a51c18f8199",
+    "model": "minimax-h3-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a13559-0e1d-7562-bbdf-7a51c18f8199",
+    "status": "pending"
+  }
+}

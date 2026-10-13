@@ -1,0 +1,43 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Redraw image 1 in exactly the art style of image 2: flat 2D cel-shaded 1980s OVA anime background art, flat color areas, hard-edged cel shadows, clean ink outlines, visible halftone dots and film grain, limited palette. Not painterly, not photorealistic, no soft airbrush gradients. Keep the composition, location and lighting of image 1 exactly. No people, no text. A vast empty white space, the particle door on the right seen from the side, drawn as flat dots.",
+    "image": [
+      "<3181342 chars, omitted>",
+      "<3923258 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791867738,
+    "id": "01a133a3-d887-7bd3-8bb8-09245d1aa6fe",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133a3-d887-7bd3-8bb8-09245d1aa6fe",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791867788,
+    "created_at": 1791867738,
+    "data": [
+      {
+        "b64_json": "<3808884 chars, omitted>"
+      }
+    ],
+    "id": "01a133a3-d887-7bd3-8bb8-09245d1aa6fe",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 18764
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/fix/white-2-side-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

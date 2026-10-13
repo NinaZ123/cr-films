@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "minimax-h3-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Locked-off static camera. The four people without headphones stand perfectly still like statues; the one in the centre with headphones nods his head on the beat and sways his shoulders a little, relaxed. Black-and-white overexposed film look, only the green masks are coloured, film grain. Natural, relaxed, believable human body language, like a real person filmed on camera; subtle and cool, never exaggerated, no dance poses. Every mask is a rigid paper object fixed on the head and never changes shape; the mask face always points the same way as the body. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g03-c2.png"
+        }
+      }
+    ],
+    "duration": 8
+  },
+  "submit": {
+    "created_at": 1791896433,
+    "id": "01a13559-b3b0-7e92-9c46-ed0d17b9ac58",
+    "model": "minimax-h3-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a13559-b3b0-7e92-9c46-ed0d17b9ac58",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791896671,
+    "created_at": 1791896433,
+    "data": [
+      {
+        "duration": 8,
+        "resolution": "768P",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13559-b3b0-7e92-9c46-ed0d17b9ac58/43Ahq9B8APgC2WuQ4bmHKGu__YU8RxYuKZN8wLRU0quXaPdY01COYt2j9T0uwHxITE2sLEXSXXt_oUasua4rTKu6DULYVuFUUbqvKABOnvNyPcd637-z1SL1Iev5-J3WiAwXPQ9NVIxkhsoKclFQIzWLYWWMTBfnpI-zy_KtpQSo1yGwC8efwiNWouIDsUDjQH3ZvqxPluDJIMdpl_FwdQR9EVzRuz1BJeVsy-bpmUh4D3pm9ohnAUrunjax2Xe0qJV4tGSLkQ7HDN3BvyzPERjQJI50_-7CUUVqqPdfmui9dJGxD9VfhSkx1hd8IO9CNIMVpgnQ6e5S_rMte-54zIbtJ2a02Gc7NfTOzn0gwKzpFPg2MEExsxnGChdNdO8wEgNnnodXkuAbPRmBF2fYLwb_lLLYXmV8NCz6iEAGXSrvOqyYFaE2FQoyiW5VRuLMhgwtMgEY3l3ZxjDGCa3piUghSvL4FBjCPCylGUZ3UNjkK6N7gm18pDh2gnXsdIM2xduQquec6O6QXIMU2F03qEJ7hJ9QNe-6FkBBndACIys3kLhRfULKJOpMgYHLZLf0E-FCfkImife2Fsa5lJiUUzLOHbYeTzxmIusIom7UBtbSJN4qPzeD"
+      }
+    ],
+    "id": "01a13559-b3b0-7e92-9c46-ed0d17b9ac58",
+    "model": "minimax-h3-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 400000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1344,
+        "height": 768,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "8.000000"
+    }
+  }
+}

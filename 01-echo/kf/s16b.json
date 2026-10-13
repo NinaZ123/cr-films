@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gemini-3-pro-image",
+    "prompt": "Use the young man in the reference image as the character: same face, same identity, he is exactly 22 years old with smooth youthful skin and no wrinkles, same thick messy black hair, same black denim jacket over white t-shirt. New scene: 1994, night, he runs hard through a rain-soaked narrow street, camera tracking beside him, black denim jacket soaked, wet hair, mouth open breathing hard, eyes wide looking ahead, serious and frightened, not smiling, motion blur on blurred red neon signs behind. Cinematic film still from a 1990s Chinese arthouse mystery film, shot on 35mm Kodak Vision3 500T, anamorphic lens, muted desaturated teal and amber palette, deep shadows, halation, fine film grain, hyper-realistic, dreamlike, wide 2.39:1 framing.",
+    "image": "<840783 chars, omitted>"
+  },
+  "submit": {
+    "created_at": 1791816930,
+    "id": "01a1309c-9566-7af1-898f-9663af924835",
+    "model": "gemini-3-pro-image",
+    "poll_url": "/unified/v1/tasks/01a1309c-9566-7af1-898f-9663af924835",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791816952,
+    "created_at": 1791816930,
+    "data": [
+      {
+        "b64_json": "<921048 chars, omitted>",
+        "mime_type": "image/jpeg"
+      }
+    ],
+    "id": "01a1309c-9566-7af1-898f-9663af924835",
+    "model": "gemini-3-pro-image",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 84552
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "kf/s16b-0.jpg",
+      "mime": "image/jpeg",
+      "size": "1376x768"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "request": {
+    "model": "veo3.1-fast",
+    "content": [
+      {
+        "type": "text",
+        "text": "Audio focus: a lone male singer performs a slow, melancholic 1990s Chinese rock ballad in Mandarin with a clean electric guitar, warm reverb of an old empty theater, simple memorable melody, emotional, intimate. Visual: dim empty theater stage, an old microphone on a stand under a single spotlight, dust in the air, no people visible, static camera."
+      }
+    ]
+  },
+  "submit": {
+    "created_at": 1791818837,
+    "id": "01a130b9-ae86-7c10-aa30-ee1545509734",
+    "model": "veo3.1-fast",
+    "poll_url": "/unified/v1/tasks/01a130b9-ae86-7c10-aa30-ee1545509734",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791819020,
+    "created_at": 1791818837,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 8,
+        "fps": 24,
+        "has_audio": true,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130b9-ae86-7c10-aa30-ee1545509734/EVvRTgE37F20TwOcswn2_7two-i_lknRKNbUl6_CAShpBlUQOlfxT-3-YlR8GaURPxjoOaWS_j0TzloUmJsnBl1AGYCkxp0Agt8-KlcK8yV7Rxx74QjDRosLJfZqpHlNlUoHvc8uZkHd-tvNW0xkb0zuvE_IuWTipxVv_pIxilqfDd-GRmAkE6Wjxwhj96HVxVOwAMghcgFSU2rrUehhoX3RoA8FF-FoKxeBAvufeCUzF6Eks9R_g_d7F8-h46gceDRtfnecMBWVLbcxWHs29RgaNw",
+        "width": 1280
+      }
+    ],
+    "id": "01a130b9-ae86-7c10-aa30-ee1545509734",
+    "model": "veo3.1-fast",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 8000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "8.000000"
+    }
+  }
+}

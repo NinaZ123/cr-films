@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The follow-spotlight snaps on by itself with a loud clunk, a hard white circle of light appears on the empty stage, dust floating in the beam. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-1ada4adb1df4419bada2d516bac7d6d2_0.jpg"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-aae4-7a22-a768-7a78262bf299",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-aae4-7a22-a768-7a78262bf299",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818198,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-aae4-7a22-a768-7a78262bf299/QTapkGhu5HUxY66KHBcpppVyDn894P5KV9kDwDMlosKRZQcuNvOYX61JjDjIk_rSmMe_oVlOjt-s8hqBefe0DgqJqtaF0TJKvzgL6zfb0b6r2yE2QtW0oan2c0vjLZAO4c_9vbBWuUMoUbHktaDnKDWibB61sP9iosYUQcHQVxNevikc2OgwXT4aiEBDRpEDkxhK5nCI5PVUwngbRN_2r69_UgS61oHgtPnNf1zA5vgT8ybhGx3SbsEPrYDVZCncvH5fCBHBL0AX4K7Hp4u3jQRSN1rZ_JqdMvF3tdydWDEXelivRtT4DH_eq5lP3cOM4O0k9lbED6RE8pQIO2Won9PK1U5ZZ7iC0du3ElVn3Wk6hy3qwRVF4D6FOIQgXxEWfEnV6GKl5tjRrHykH-oiAfRbdqjWl9s1QLbXHDdzaXPMp-jrhHnP8iGMLz9N8uvvGGcnpYsb7bRaSuE71Ke4B9wnUdfPXFT0mI-TEYWT4HOZCeVLkpyLDvAu_6pNg5tR-Pt_CHXSSYW99Ps1sx7NIlv1DPBp2AiT5XpkwXYMAusvN_96ffGt5pgqb7tsOu1L7so0cyw4RA7kMdppJb7GfgHLKM6sxqbFygswLY5WWI1i-W6HdiX9"
+      }
+    ],
+    "id": "01a130ad-aae4-7a22-a768-7a78262bf299",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

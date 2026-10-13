@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Locked-off static camera. The masked head nods slowly to a beat, very slight, the paper texture catches the light. Black-and-white overexposed film look, only the green mask is coloured, film grain. Restrained subtle motion, the mask shape and headphones stay exactly the same. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g01.png"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791877489,
+    "id": "01a13438-a393-73d2-88b5-dc474bd8335e",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a13438-a393-73d2-88b5-dc474bd8335e",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791877628,
+    "created_at": 1791877489,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13438-a393-73d2-88b5-dc474bd8335e/EaQGQyBKRtXd1KM-BlyGIXMDVAZF2s-AJkkvpLF1pVYunCAm1xag9Ia91YYWHP9L7hNm3DdW9aQhAmFI7cvrTWQoj-XwVfrA4flBmAyCqdzEfjmRHJdwcwl2emO05Y9CE7-QLbflRSqHvt_IjUoOSTbPEX344WfTBBIryd9epvOXiUr_jHSKxmrydMyBkO4m5GW5X6CsdqQmqv36tyLdXlWxt8Q9BSnnlx7T8rvLcomlRwv5uFF7TRQSeiRjxvY8RQP7dcnKB5kxlAX3kaDcSwHzasRSXaprHamnnRnIuIYQmEH-wFYmQ9RIk-YXSVBzsspmDczQPJtmUY9xjBvFe6dp9FALK5z5bqWiiZG-NEfF_F4xWznOO2HTdWkuJDkIjpy7wj74gqIUhQGbL88eIzCCU35dIkGQz-0VoHtZYcPf7k2YZgtyKlMax9KZ_eDEXBf2kktJD3ovsecnTRSg1zEvUXqejYR2Qj-3hdpi7KgCY2SxI3NZithPg4pWpK0Ep7u7enYCF3kqV9Euh0-aLlNcrNl0tjysSzy_EhiHQUItuwA3-j99QgIx_q33H4FF5PEIhy-NYbvlBpaLt18le0aoLhPE4cPmUhgtjOmLEx6UepmdALlQ"
+      }
+    ],
+    "id": "01a13438-a393-73d2-88b5-dc474bd8335e",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

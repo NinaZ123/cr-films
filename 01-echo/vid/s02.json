@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "He walks slowly away from camera down the wet street carrying the suitcase, rain falling, the street lamp flickers. Static wide camera. Sound of rain and distant footsteps. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-147d9306de864a8087badb85d9094496_0.jpg"
+        }
+      }
+    ],
+    "duration": 6,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-aae9-7953-950d-53d580614e9f",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-aae9-7953-950d-53d580614e9f",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818209,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 6.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-aae9-7953-950d-53d580614e9f/MOXaNBS8cAbtvoWpiQZ8NK8FXq-kxIOCHf1k3UQh3RcocFqNH02g1YjLxLuecA5uqRd8BAuJuMqpRq3-H6fZDzzKfnR0y9x7I-Id9YRzetE-q4FhQcQrWOuxNZvOjuAsG1ATaZU49P-VP2djGSc3jQ-fHKUGYZOQC9lL2o_wQU9BVQjs2_PuwjHhye2Z9HtUvmRolclZeI3vTghxb3KG1Egu56d7_XlBkxkQ5LqKGyAexEiFkJ8yPC-ZpGu5F10bcwucAzmH4uHOh2751shJlFY5SBRw5illXptdnQdjmkBAGUgKJ2D4c3UhkVUs5eF-w5RmE4TO80vZWcImJ8iOKGuTExrg1fqGOLCJ21SPgZjZt2RnaKtFyCwjSf7MMHRGOzsvnpkxO6LC5edaufH2L-EnnNScoye_EBugWqTlBzQo2Ad_3EiK94geJ8hfOPBNS7KqdLHXzGcxuX5pAAJtkAinlY7rp_NpZwEUdVNZt7OjdV4QqRG_Ykq_-4szuJtv7upoiNH398SpNqCQ6EMNkdVhhElnCWWVpuLZa7is41WT5f8P-52av-JkLENdM0c_OmhdV4_Rel6VQBFGI6kDr2fovvfkBgI-ywKdDZoj8Bnp_XV3zRiI"
+      }
+    ],
+    "id": "01a130ad-aae9-7953-950d-53d580614e9f",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 525000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "6.041667"
+    }
+  }
+}

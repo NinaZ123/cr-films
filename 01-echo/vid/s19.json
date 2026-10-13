@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static medium shot. He sits still facing the stage, unaware. Very slow rack focus from his face to the shadowy figure in the pale trench coat sitting directly behind him, face unseen. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-33bdc69791d747e2af10f86ec26b595b_0.jpg"
+        }
+      }
+    ],
+    "duration": 6,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-ab05-7c62-b213-bcb37ca51bf3",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-ab05-7c62-b213-bcb37ca51bf3",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818198,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 6.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-ab05-7c62-b213-bcb37ca51bf3/MamkEIoQi2cRKEACVoFbZllFP0XOUIGmIE2IJnC-qy1vHJUfl_5fydGWNzSEZFC1xK4X4RZ1D9PiR9MPMs2AAs7PkcliAhj8cGTXajXnZrDm9MaWzhpxxlbFKJzDcyJGS8Ic0Wjuhi1HDfFyKvSt6rcO_nuNwB1o0oRwStBtQeKPuu4uApfBWH6qzpm6vw4VwBmfkTzmVqYo1q8AtjLTpFf6bUqsfGVY2ntV3LOybmsX1zBHnveaZKvZhtV7-6GONrdXqUKteojXjP1mN7TLSye7AbUkY52JjoOuMmCaJIGqjjGSqbvclzIl-Ud76J4O1zHQIMn6j_gLvRBvBKLrxFPhI_kDv5QFHCDLuJP8i0pLcXP3ZDwaCXF-v4fhB4sWGwNU4BjQ2iW9hvY6c3bA9RJFE2DPp175pxN1s4XXr9liR8SmzwyniboIUpIq66VLJ9yECKPPFVgMRQbt1-gmAdwP-C7tRMhla7hb8gTBuR_hbvZiATX1p0znh-sN9AZP0GdThcdU-LGIjvpCxIkxC1oiAutVNItHIL2EWlHqXlJIRiFNyvCDJooxlKEjarUfSeM1BxcCl23OFHdrLdc_-aX2Ca7AYDVenR6104lL0EYT1indUCf8"
+      }
+    ],
+    "id": "01a130ad-ab05-7c62-b213-bcb37ca51bf3",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 525000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "6.041667"
+    }
+  }
+}

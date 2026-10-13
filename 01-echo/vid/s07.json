@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Slow push in on the cassette recorder on the stage floor. The tape reels inside begin to turn by themselves, the red light glows. Faint old song with a male voice and electric guitar plays from its small speaker, tinny and distant. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-d652c737fc974adb90a52dd127019066_0.jpg"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-aaeb-7f33-993c-56623f4a9c78",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-aaeb-7f33-993c-56623f4a9c78",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818198,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-aaeb-7f33-993c-56623f4a9c78/8tAfhgh74-RzYHMYRbR25t6VupNcxmsOr4-IaAHFFe2QMwPXmpj1KLy_8TcZpjag_RMc7Y1mqipvEWL1Ofn3g_jqwpzvSLDNxLzDETQhZg8eXJYqJve5CXTfvUnHzCEsJM0Etgz90O96tirCwGX9PYObFWM6d9dvK6kRItAJ6uZJ6VaGC3zUN1Ej5QopYC6HCbTdoExqW0LmWwoP6RMkEm-3-01qGSkD1zC_bCklQfr9SOIvyvzdhg3rQ4aTdhPR3kC21aWShItG9HgvLdEAyHYXUWTxPqe2uVtO0cu-8-rMSrejBwew1EGjVN3fRtg3eQSOU3L7vgmk41AEDjKuXeFf_HDQE3J-6HvffwbB9saDE9I9Cb5bC5Xezp7w0XF-OuR1uzWPHqTuHOKNZj3eh94uoolHu3SblrIdX0GKEdW3m8gU7ImIH9JTjqMjiS4__U_9DOJoeOamEK9Ucr6HkhawlEPa9D5zDnXNXHhAbTe43P8Vi51-fmoqiSvabD5bWgrDxaOYmvWZfWZxhClpB8JKvqEdAZQdjShN5Z1Y0Bw4_PyDwtpTOtCZiUpX3YhEZaj604SwHhFvbyVSWEMZR9c5IxiAzYrglouwMkkRIfSwUW0W9Xvd"
+      }
+    ],
+    "id": "01a130ad-aaeb-7f33-993c-56623f4a9c78",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "request": {
+    "model": "seedance-2.0-fast-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The girl flies through the green wireframe tunnel; the pixels around her legs fly back together and her body reassembles. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s14-v1-20261013.png"
+        }
+      },
+      {
+        "type": "image_url",
+        "role": "last_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s14e-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "720p",
+    "provider_options": {
+      "generate_audio": false
+    }
+  },
+  "submit": {
+    "created_at": 1791869785,
+    "id": "01a133c3-1621-72b1-ba9a-6a2dcce0cafa",
+    "model": "seedance-2.0-fast-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c3-1621-72b1-ba9a-6a2dcce0cafa",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869956,
+    "created_at": 1791869785,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 5.042,
+        "fps": 24,
+        "has_audio": false,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c3-1621-72b1-ba9a-6a2dcce0cafa/vs9lNZpPknnsLDT6zJUozfw67l_WF3w_ORfSJWJ9hqYulTWfoQj2Uhwq9_3HUnxNVTzR6-fPipsUV9h-2k2OGB890JT3lLfwfKfTJwSpxBSmMig-qppKAL2mb-NnTXgYVUc1tZ0uoocnauafahJfephf2epflw_GFYa3ThhSMw86gGFA3XNvaO0OvRpiyyktY53ljdrAgdwLX_6xeFdeBVI0LIP5sHR1_UWYPsN3T4R4Z_SjZrblRbe9IdKoP1Qf7O0T6U30Su9C8OlYGQFfHMu66A",
+        "width": 1280
+      }
+    ],
+    "id": "01a133c3-1621-72b1-ba9a-6a2dcce0cafa",
+    "model": "seedance-2.0-fast-image-to-video",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 5000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Same art style as the reference: flat 2D cel-shaded 1980s OVA anime, clean ink linework. Prop design, single object centered on a plain warm off-white background, no text, no logos. A single cream-white rectangular IBM-style punch card with one cut corner, completely blank: NO holes at all, no printing, faintly glowing pale. Slight three-quarter angle.",
+    "image": "<3078038 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863694,
+    "id": "01a13366-2561-7173-bcbc-ed4729c02d10",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13366-2561-7173-bcbc-ed4729c02d10",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863815,
+    "created_at": 1791863694,
+    "data": [
+      {
+        "b64_json": "<876232 chars, omitted>"
+      }
+    ],
+    "id": "01a13366-2561-7173-bcbc-ed4729c02d10",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 10949
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/prop-card-blank-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Edit this image. Keep everything exactly the same, only make the android's black visor completely plain glossy black, with no waveform, no line, no light at all.",
+    "image": "<2111386 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791867644,
+    "id": "01a133a2-6a35-7413-a424-53992d85a807",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133a2-6a35-7413-a424-53992d85a807",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791867676,
+    "created_at": 1791867644,
+    "data": [
+      {
+        "b64_json": "<1917688 chars, omitted>"
+      }
+    ],
+    "id": "01a133a2-6a35-7413-a424-53992d85a807",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 10799
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/fix/pair-height-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

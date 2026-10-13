@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Locked-off static camera. The masked person keeps walking down the stairs toward the camera in a relaxed rhythmic step. Black-and-white overexposed film look, only the green mask is coloured, film grain. Restrained subtle motion. The mask is a rigid paper object fixed on the head: its shape, size and headphones never change, and the mask face always points the same way as the body — the person never turns around. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g05-v2.png"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791880883,
+    "id": "01a1346c-6eab-7db1-87ce-9a19fbea05c5",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a1346c-6eab-7db1-87ce-9a19fbea05c5",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791881082,
+    "created_at": 1791880883,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a1346c-6eab-7db1-87ce-9a19fbea05c5/xX4IJZSqy-zJV9jWNxmCkQJKilGA4fmeqBz82LWDigLh7IkDw58nzB9I3pAAs0GPMhIjJrchXzgOa7ZwT2Wuw7UCmeIOfqUJRgZeqqmLZ4Bo0lGKOQ-yc68qSzQq1s7ZmelyZWg_pfc77lS17rNrvcjZHO6C_cEwGopIa8fUhYfet9nLk8mE_mtssLF4Ev_ITTkQHX9PveK0MQ91TUnBETrK0PH10I4hSh54MbzpqViiHAu7pElp5ddAvXGquI_jVYyNHzrQvMlQIiwAariiEv8zj-o2e9MTt3zDW-oTSZS6K8ERxOWctSqG2bKKAQOpGigqsxnhyrzbuN88xIwEwBE-EETU8TBprQxz1lujZSk6vFu0wO8RFkqR2y67015as5pSVt7UhG1g00rhwu0AxriY67fnoNER5oCe5evByRN3NzOsZb5dKG0hRuQio2fjJqO6W_8xpjKB_XYO5gv5LPijZp30SyLt6YPJyNjB1lBi6o9seIUM7DGw3UcL47yTEEaRbWE769QQK5FhxquTyzhA0eFl7DPr4RuNgyxyMI2Vp8sSS7ou_FWejczwO4QlGl7sCpYquRD-oL4FOx-_2YKOwRtAVqbJ2_EAbQOEtgmOa1EY_dl6"
+      }
+    ],
+    "id": "01a1346c-6eab-7db1-87ce-9a19fbea05c5",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static camera, very slow push in. He sits still in the dark theater; faint music reaches him, his eyes slowly shift toward the stage and his breath catches. Subtle micro-expressions. Dust drifts through the light. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-9c71e01a6b52458296347c5cfb36d72d_0.jpg"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-ab05-7c62-b213-bca2fec2890c",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-ab05-7c62-b213-bca2fec2890c",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818176,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-ab05-7c62-b213-bca2fec2890c/aaLMFVH1zHgQByEtwbXTSTzmqWq9621mZawFUM4zSphX5PMYnYKraRRNMnP2lKHv7vD8kIDTF8Y-Net0EpxcoAlvHZL1B1naSZpXl5MAM6qgpJYG4LGw4Bjv1MVGEVzC43EvLwkhAoN1-zy46KVFl12qo9A5jsohAqFqFzHPB1tPZf03CxyvLBsHblZH-hxBADsIkrHYfYtRw_2rSX6qZtLtH6TvjM4Q8p6gLdgqoqzOSc3ecPH8FY4GoIP3RL6dkk901YPLrZPJvPslFJz4JDzeQG9n_ePN3lK4nQtGaVuPHR4m-CniR1Hn3MsTgTpWgge9U6HXn_ojBlA6lAo3EAdLSZTkhoqZ7OsPUD0V7eLIZdXuyCkSnNMMHZGVyyZ7eOtvuQWflQc6rCSFA5Sp5vv4PXuZzHcWPt8FwYcxEhyYjoH07FQjExF0DPGyV4TnZVS7OG6kLff6LhI--CVQnbCdgWXobKTE5Xm_TJ9ot4JUNywJlsPoWtFIRRQuguPuS5_qU6KpshqFe5rcGjJUR8rXwscZzC6ax40gV0zJabseSSArBusJcf_thaf-9gRpQu-MuRtwK6v2N2Xo2Kd_UaJtdYf-tjYHuhXsbmdak08RBvgHnnxE"
+      }
+    ],
+    "id": "01a130ad-ab05-7c62-b213-bca2fec2890c",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

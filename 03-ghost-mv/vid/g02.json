@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Locked-off static wide camera. The figure stands still, then gently starts bobbing the head to music; nothing else moves. Black-and-white overexposed film look, only the green mask is coloured, film grain. Restrained subtle motion, the mask shape and headphones stay exactly the same. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g02.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791877489,
+    "id": "01a13438-a38e-71b3-af51-0e7f0003dc4f",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a13438-a38e-71b3-af51-0e7f0003dc4f",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791877663,
+    "created_at": 1791877489,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13438-a38e-71b3-af51-0e7f0003dc4f/rrYJQ1dJiO2FAbxM0C35MtkCjLfBbYGRj92jzydEwbLoDOHYAAhhR6SjW82AcVXfAZI-FhS6U01b31SlB--FG3VjUPzNqOPqFdAXi50w1Z736CrRJhxNxfuXD9Mc0qrlYD1b08EzWtWfAV9cqxEoPV4R3A9HkAVYKrQzXgO7CvOYOnDAaXt5OEhP1QyGk-_KLKaVBsbuvcE_S9ItTSmLqNAU4L3kdT9AbU2rOvw_soP2JzdmBf3H57Q04bUpFt52eYO27ahNsIXuF3iWp3LK8t2YgUkVNmCq6Bbemtrb_fl0cA6nbPIYNkrDP1M4X46fnFlQIinFO8tGsbkigGYpza6JeK9E5ZpK7Y8Y2opDOeatCvdGHs88PPJoAHVgrzmVGE_-GbTuFahSuj6K01cbqNxxPwy3yNeK7QW2eq1ZTYeTK8MD1rNpQy9DVzYlZVW97FRK3xWRvuywrrurvUha2yN3ha1uC9IZ-YtPWbKhM2_g40CulCt5V_aMVvxezaCkkK0LK2ALfhxpznfp-RPanqyaKbISh65LDAGRqYoE4TmcatDOaiqRi6ys-FmXtwgSaVv4y1hj0OOv18xSfKbVUrs2YFNVvIgZy9SklejWGcTTvLmAnUF8"
+      }
+    ],
+    "id": "01a13438-a38e-71b3-af51-0e7f0003dc4f",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

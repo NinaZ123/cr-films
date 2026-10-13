@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static camera. The figure in the pale trench coat sits completely motionless in the last row, face in deep shadow. Dust slowly drifts through the light beam in the foreground. Silence, low rumble. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-233026ebdb5144229209153a10a0a417_0.jpg"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-ab01-7380-b920-59d6b75b50d6",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-ab01-7380-b920-59d6b75b50d6",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818209,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-ab01-7380-b920-59d6b75b50d6/2U7fKDspgnQAzw8TSyBA1JgVZE6nSYIQAvMRSXKxnQhsPjAVlLLDcnMVGfD6scWIpPg_3oW4D9_BX3xbezZtEjTxMYsnwHUkzv7uLZoajVtWBfjG7sXY6WzNipJqQJ5SrlpJdm09hcIHAkfWjqxWbCvpYtWYqheKrBVTTjWzRF6IlEEfQwSq5fOta4_OLJr0WJW77JIVCL8jmYZyECqDiA5RMZww-Yxrth8TgEUkasamnh1DtHtukTYDa2FhYqpAPAE6En5d_UKMe2wOJeQgSr2SRi0DB7em-rNig9SyhLyG8w8Z9rp8g3L9T6fvKG1zsKcLgDvNQVs61nOg63tQWSwbRmkLUdGtSXUzmM0prlMCeqxReuDRokotjx4sVY7qPwsaGOpCD-jrKuvXUri3GAumfmynLTg_PnQhINSntOv3v5FU62FbrC3HJForHVQn1EzCwUY5YGuwLUhtFanm7uQyCcXO9CIrkQzCHKwQVb4LKXBlVa2YQ4ojJN93lJp_ci9Ed69RXn8dnXy3D3ndnjU4ok_RtFekQrNrfrqWHXW0aFtXinGi-Q7RHTFMufISimESumMGgSXonNQNppy02coke5O7msiAmRIwBl8EGwcAEdNl99B0"
+      }
+    ],
+    "id": "01a130ad-ab01-7380-b920-59d6b75b50d6",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

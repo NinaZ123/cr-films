@@ -1,0 +1,45 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Images 1-4 are reference photos of the masked person; match the mask shape, colour and headphones exactly. Black-and-white high-key 35mm film photograph, overexposed and airy, blown-out whites, heavy film grain, faint photocopy halftone texture, slight softness, editorial fashion photography. Everything is monochrome grey EXCEPT the mask, which keeps exactly its soft light mint-green paper colour from the reference images (do not saturate or brighten it) — the only colour in the picture. Lots of empty white negative space. Compose for a 16:9 crop. No text, no letters, no logos, no watermark. Medium close-up, frontal: the masked person EXACTLY as in the reference images — copy the mask shape faithfully: a soft light mint-green crumpled-paper Pac-Man ghost mask, its silhouette is a pixel ghost with a stepped rounded dome top, straight sides and a pixel zigzag bottom edge, with some thickness but NOT a cube or box or cylinder; two black plus-sign eyes on the front; chunky faceted off-white pixel-block headphones with a stepped pixel headband over the dome and a thin black boom microphone from the right ear cup; oversized beige hoodie, black trousers. The mask face and the body ALWAYS face the same direction, toward the camera. The mask is long enough to reach down to the hoodie collar: no chin, no jaw, no skin of the face visible anywhere holds a completely blank cream punch card up toward the camera with both hands at chest height, the card has no holes and no writing. The mask fills the top of frame, the card is the centre of attention.",
+    "image": [
+      "<550990 chars, omitted>",
+      "<153883 chars, omitted>",
+      "<202167 chars, omitted>",
+      "<381019 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791889861,
+    "id": "01a134f5-6bbf-7bf1-99f0-86774b02474a",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a134f5-6bbf-7bf1-99f0-86774b02474a",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791889907,
+    "created_at": 1791889861,
+    "data": [
+      {
+        "b64_json": "<2906968 chars, omitted>"
+      }
+    ],
+    "id": "01a134f5-6bbf-7bf1-99f0-86774b02474a",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 20885
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/03-ghost-mv/img/n03-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

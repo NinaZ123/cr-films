@@ -1,0 +1,66 @@
+{
+  "request": {
+    "model": "seedance-2.0-fast-text-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Song: minimal electro-pop, 120 BPM, dry mechanical drum machine, ticking hi-hat like a clock, deep sub bass, one young male vocalist with a soft clear voice, English lyrics sung clearly. Verse (cool, half-spoken, deadpan, right on the beat): \"Seven-oh-one, take a seat. Seven-oh-two, keep the beat. Seven-oh-three, sign the sheet. Everybody right on time.\" Hook (sung, catchy, lifts up): \"But I got a blank card, blank card. Nothing on it — mine.\" Visual: a minimal black-and-white music video, a person wearing a boxy green paper ghost mask and off-white headphones sings into a small headset microphone in an empty white studio, static camera."
+      }
+    ],
+    "duration": 15,
+    "aspect_ratio": "16:9"
+  },
+  "submit": {
+    "created_at": 1791877264,
+    "id": "01a13435-34e6-7822-a887-e4338f850a80",
+    "model": "seedance-2.0-fast-text-to-video",
+    "poll_url": "/unified/v1/tasks/01a13435-34e6-7822-a887-e4338f850a80",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791877901,
+    "created_at": 1791877264,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 15.104,
+        "fps": 24,
+        "has_audio": true,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13435-34e6-7822-a887-e4338f850a80/EUNBzCfB3KD00CTqIL3ah0QibFBL-qn4J94u9TnxP8DOaAaifQPKum4Z0YCkHNtSdzlfRLydJGrGAR5DtEvGg8CcCzOFkRSM3KIPjLA2sDhtMfea4Z_5r98dkHPczjUPUygEVCCArmhdUs9ZmQdPw_MnFJr8vFRxYxJ-Rk_K9mOZy9oRdCexTnHlu-Qh5m8FH2fQfVufvn_jao7PGloVP7Bg5vLfUvmL0DTgtMJ84X-XU6yAF7mIbPQOKfyyTkSc2W9hqz_i4gSuHXu4mhm_VLmI_A",
+        "width": 1280
+      }
+    ],
+    "id": "01a13435-34e6-7822-a887-e4338f850a80",
+    "model": "seedance-2.0-fast-text-to-video",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 15000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "15.104000"
+    }
+  }
+}

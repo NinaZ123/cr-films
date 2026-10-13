@@ -1,0 +1,43 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gemini-3-pro-image",
+    "prompt": "Scene: a dusty abandoned theater dressing room with a cracked mirror framed by old makeup bulbs, one bulb flickering. Over-the-shoulder shot from behind the older man from the first reference image (charcoal overcoat, grey hair) standing facing the mirror. But the reflection in the mirror shows the young man from the second reference image (age 22, black messy hair, black denim jacket over white t-shirt) staring back at him. Uncanny, dreamlike. Cinematic film still from a 1990s Chinese arthouse mystery film, shot on 35mm Kodak Vision3 500T, anamorphic lens, muted desaturated teal and amber palette, deep shadows, halation, fine film grain, hyper-realistic, dreamlike, wide 2.39:1 framing.",
+    "image": [
+      "<893459 chars, omitted>",
+      "<840783 chars, omitted>"
+    ]
+  },
+  "submit": {
+    "created_at": 1791816931,
+    "id": "01a1309c-96f9-7e12-bae9-0cf9d09080f1",
+    "model": "gemini-3-pro-image",
+    "poll_url": "/unified/v1/tasks/01a1309c-96f9-7e12-bae9-0cf9d09080f1",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791816959,
+    "created_at": 1791816931,
+    "data": [
+      {
+        "b64_json": "<829276 chars, omitted>",
+        "mime_type": "image/jpeg"
+      }
+    ],
+    "id": "01a1309c-96f9-7e12-bae9-0cf9d09080f1",
+    "model": "gemini-3-pro-image",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 84857
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "kf/s18b-0.jpg",
+      "mime": "image/jpeg",
+      "size": "1600x672"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Same art style as the reference: flat 2D cel-shaded 1980s OVA anime, clean ink linework, subtle halftone and film grain. This is the same 'Enforcer' android from the reference sheet: tall slender elegant porcelain-white ceramic body, thin black seam lines at the joints, long white armor coat-tail panels from waist to knees, white heeled armored boots, smooth white helmet with round ear discs and one glossy pure-black visor covering the face, no features. Close-up of the head and shoulders, three-quarter view, the visor completely black and glossy with a soft highlight, no light, no display. plain warm off-white background with subtle halftone. Only ONE figure, no panels, no text.",
+    "image": "<2811318 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863691,
+    "id": "01a13366-1a28-7880-9dc8-8f95304bd435",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13366-1a28-7880-9dc8-8f95304bd435",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863731,
+    "created_at": 1791863691,
+    "data": [
+      {
+        "b64_json": "<3032756 chars, omitted>"
+      }
+    ],
+    "id": "01a13366-1a28-7880-9dc8-8f95304bd435",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11168
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/enf-a2-visor-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

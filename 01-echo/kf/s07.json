@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/tasks",
+  "request": {
+    "model": "gemini-3-pro-image",
+    "prompt": "Close-up of an old 1990s silver portable cassette tape recorder sitting alone on the dusty wooden stage floor, its small red record light glowing, cassette reels visible through the window, puddle beside it, spotlight haze behind. Cinematic film still from a 1990s Chinese arthouse mystery film, shot on 35mm Kodak Vision3 500T, anamorphic lens, muted desaturated teal and amber palette, deep shadows, halation around lights, fine film grain, hyper-realistic, dreamlike, wide 2.39:1 framing with all important content in the central horizontal band.",
+    "aspect_ratio": "16:9"
+  },
+  "submit": {
+    "created_at": 1791816743,
+    "id": "01a13099-bbbc-7cd0-aa70-fd89584c1a0b",
+    "model": "gemini-3-pro-image",
+    "poll_url": "/unified/v1/tasks/01a13099-bbbc-7cd0-aa70-fd89584c1a0b",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791816780,
+    "created_at": 1791816743,
+    "data": [
+      {
+        "b64_json": "<809124 chars, omitted>",
+        "mime_type": "image/jpeg"
+      }
+    ],
+    "id": "01a13099-bbbc-7cd0-aa70-fd89584c1a0b",
+    "model": "gemini-3-pro-image",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 84164
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "kf/s07-0.jpg",
+      "mime": "image/jpeg",
+      "size": "1376x768"
+    }
+  ]
+}

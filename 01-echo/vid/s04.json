@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "He pushes the heavy padded doors open slowly and stands in the doorway, pale light and floating dust pour in around his silhouette. Sound of creaking hinges. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-18160446d7d049aca960f32615a3aabf_0.jpg"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-ab07-7c51-b7cf-b0545442746c",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-ab07-7c51-b7cf-b0545442746c",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818187,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-ab07-7c51-b7cf-b0545442746c/mzVp06RKQ_ssqzKLREdSDGnaoj6a9Tyk5NZw-KrNXEo6YGhnrgm8sZ4cGDS8SiTLy7nGNadFw00bMPSFmsZHApwJpJaONliiPOlBPaB06bszCe_zZksEigJP065JHeEU3C5QKB-TMepDhLho2FFwoS6gYbpX8xxpRToCQjjG2g9CcApjxyqMc2bfKnrXgaWazDonmRLU_m3XbVS65FjXA9bhDEKY5aYzecZS-S0Y8-JOtYpHAKtyZGxGX7lEiOOjVQnNLIOGXYecmRQ3iUX68lnVTlv9bdGriqPGUEqafQrJ6K-dTKydQd9ocGyD8ZU9G7yC1onmKev8A1WklUQfCtx6FxmO_VTdBtBOszmOqvv-I6DJXcXvSFlEwV2PR1k-TQnCQdjkv5mgNF1lqd526y2CBncJdijgqsM7neE6XIm8tauf3xSP20sfQJE41L_RuXhzD0XPNRyQiK6hH0_DyWJPgx_EXIfR8XYLXjDFZHv9igRt8h3mCC3AHoOi4ugbPzWjp5tHOTTSxMLfUmZaPEV04BGUi4ys86Ys9qKWBTUsv4n85nCiOK48VcliNXulBOtHx4mv9eXhEdn-d0uiM2SX1Y3habB2aKVws58oMpq6amTRDs0e"
+      }
+    ],
+    "id": "01a130ad-ab07-7c51-b7cf-b0545442746c",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

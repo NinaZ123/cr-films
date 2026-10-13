@@ -1,0 +1,71 @@
+{
+  "request": {
+    "model": "seedance-2.0-fast-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The girl skates fast away from camera; the archive shelves behind her topple and burst into swirling white particles like petals; the android runs after her far behind. Camera follows. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s12-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 6,
+    "resolution": "720p",
+    "provider_options": {
+      "generate_audio": false
+    }
+  },
+  "submit": {
+    "created_at": 1791869773,
+    "id": "01a133c2-e6b4-7c52-ab10-065618e85abc",
+    "model": "seedance-2.0-fast-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c2-e6b4-7c52-ab10-065618e85abc",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869945,
+    "created_at": 1791869773,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 6.042,
+        "fps": 24,
+        "has_audio": false,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c2-e6b4-7c52-ab10-065618e85abc/z7og-sStRj7VL1n09_LA7Zt8Iv9tiBAez_Vwt8tfIWmbEfczBYyzygBNlpqxVa9QPRCs2GhQ-cFDIt69zFRHdvYxA-QyKRUjqcuXLOqzRCfzE4hO1cacfs-jl2DiGyhNU_gXw_pf08PTu0PVQC193REygVpamD7eR059uuqvymfKKP8tdMd6C9aUXFptdgUeNxzpRMiVYcLPpOJ4YMeyEqaDVsh-fum4EY9UZphi1W8W91rquYhlrOLQOcE1XmrfkiuHsDbR9d80qsRkiNQNQqI9Kg",
+        "width": 1280
+      }
+    ],
+    "id": "01a133c2-e6b4-7c52-ab10-065618e85abc",
+    "model": "seedance-2.0-fast-image-to-video",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 6000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "6.041667"
+    }
+  }
+}

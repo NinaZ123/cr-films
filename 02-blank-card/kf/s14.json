@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is the reference for seven-a3-skate. Cinematic 16:9 anime film still, flat 2D cel-shaded 1980s OVA anime, clean ink linework, hard cel shadows, subtle halftone and film grain, same art style as the reference images. Compose for a 16:9 frame: keep heads and key action away from the top and bottom edges. No text, no letters, no logos anywhere except the '07' patch on the girl's sleeve. the girl 'Seven' exactly as in her reference: black asymmetric bob with straight bangs, ONE orange streak on the right side of her face, silver-grey eyes, cream headphones with orange stripes and a short black coiled cord, oversized olive-green MA-1 jacket with orange lining, ONE '07' patch on her LEFT upper sleeve only, small safety pin on her LEFT chest, black turtleneck, dark grey shorts, black tights, chunky white sneakers flies feet-first through a tunnel made of glowing green wireframe vector grid lines on pure black, 1980s computer graphics style; her body is breaking apart into square green and orange pixels from the feet up, half of her still drawn normally.",
+    "image": "<3144550 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791868371,
+    "id": "01a133ad-83a2-7ef0-884a-df57e615e1d6",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133ad-83a2-7ef0-884a-df57e615e1d6",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791868448,
+    "created_at": 1791868371,
+    "data": [
+      {
+        "b64_json": "<2875460 chars, omitted>"
+      }
+    ],
+    "id": "01a133ad-83a2-7ef0-884a-df57e615e1d6",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11465
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/02-blank-card/kf/s14-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

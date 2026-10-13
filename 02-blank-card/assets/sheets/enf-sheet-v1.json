@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Use the reference only for art style and color palette; do not draw the girl. Character design sheet, flat 2D cel-shaded illustration, clean confident ink linework, limited palette, retro-futurist 1980s OVA anime aesthetic blended with modern elegant anime key art, warm off-white background with subtle halftone. Three panels side by side: front full body, side full body, close-up of the head. Character: 'the Enforcer', a tall, slender, elegant female-proportioned android, smooth glossy porcelain-white ceramic shell with thin black seam lines at the joints, long legs, narrow waist, long white coat-tail armor panels falling from the waist to the knees, white high-heeled armored boots. The head is a smooth white helmet with a single glossy pure-black visor covering the whole face, no eyes, no mouth, no features, no lights on the visor. Calm, graceful, quiet posture. No text, no logos, no weapons.",
+    "image": "<3419106 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863473,
+    "id": "01a13362-c38c-7b20-a01b-8b938ff34484",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13362-c38c-7b20-a01b-8b938ff34484",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863499,
+    "created_at": 1791863473,
+    "data": [
+      {
+        "b64_json": "<2811296 chars, omitted>"
+      }
+    ],
+    "id": "01a13362-c38c-7b20-a01b-8b938ff34484",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11321
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/sheets/enf-sheet-v1-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

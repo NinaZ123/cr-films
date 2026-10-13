@@ -1,0 +1,74 @@
+{
+  "request": {
+    "model": "minimax-h3-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static close-up. The single red theater seat number 10 slowly springs back up by itself with a soft thud, as if someone invisible just stood up, a puff of dust lifts from it. All other seats stay still. Photorealistic 35mm film, single continuous shot, no cuts."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-cc9a1b229b8b451db8d21deee3d33539_0.jpg"
+        }
+      },
+      {
+        "type": "image_url",
+        "role": "last_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-5ae3a17cea53451fa241516896b23415_0.jpg"
+        }
+      }
+    ],
+    "duration": 6
+  },
+  "submit": {
+    "created_at": 1791818466,
+    "id": "01a130b4-069b-7770-a2c7-0c6b0a36a943",
+    "model": "minimax-h3-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130b4-069b-7770-a2c7-0c6b0a36a943",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818723,
+    "created_at": 1791818466,
+    "data": [
+      {
+        "duration": 6,
+        "resolution": "768P",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130b4-069b-7770-a2c7-0c6b0a36a943/R_P1yjOP47uSmCLrkrh3By-039TzO23gRwEekALy5YWVhziXMkN4xfaqOeHz-00mhHnFvsPqJXqhO9KTNKLDhV1VbEks9rVt9qIV_VYMc-tnBcR3g0eW_oABH_2R9QINQpWedW58lfT5b0C1IE3wH4f3R-_qJ4fKfqnENsGWnT9EPHxiUOOBER7QVuLfJpf8J_oxCQOn1Dwneep0FtOhy6aWkOAVYlPwZSmmSeeVdvQO89m1IgAj17vIrLrXI5tXSG6x4tCl15SoEgPv0BXbOytNXNs5EJYxrqLhMVCv6h9H-wkPbrjIkYfpCEIVBn7sXxC_WCGvgmZaw7cl3Ni22_5FuoG4fEgpxzjDI4NH5aLjFeVB-uJIv5H3CnbX9x28TcfZFW1F8SUTnxRhhEQa0zweIt8u2ws54M1bzsaME-0mFnsH8kqJdV7Ax5_eklaIeY8G7jZ_DxDRzB8oxWFw5NqFv-hkUcnADZwIL5ZCRk6EjHpGXmTjPeUu65iKgkAmggoU8X2tIw0TOEIzdMkS_493zARpnXxBT7QsswMLXSChyiE04kWhgIrMBLBXb5EJIrEsaAjsmMw4g8jNqbaFw0U8RV-iuRwyXMV9BJcu-kXgflMNu_Sk"
+      }
+    ],
+    "id": "01a130b4-069b-7770-a2c7-0c6b0a36a943",
+    "model": "minimax-h3-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 300000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1568,
+        "height": 672,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "6.583333"
+    }
+  }
+}

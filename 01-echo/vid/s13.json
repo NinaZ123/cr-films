@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The film projector lamp flickers on by itself, the reels begin to spin, the beam shoots out through the small window, dust swirling in the beam. Mechanical clatter of the projector. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-4fc01c7709c44c8d906080d262e27057_0.jpg"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-aaed-7fb0-8b60-c60c26ce4e68",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-aaed-7fb0-8b60-c60c26ce4e68",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818187,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-aaed-7fb0-8b60-c60c26ce4e68/1e5InGFrZERI8qxzUd4y57_nhBU6oBc8Z9tX4OEzkNxiqwRMnNvRD0fcyo7mCYw0f8lGSpSerY23wCtmZoC6CH1Yg1E_hXUi293vtVDNA1aXDWg5W52pULENdmedG-jBDzWoagEHfabi5Pqwiw0tZ8wU-v2hP4PUALbtzYHOH3PbyVVceVA9lgG1b2GajtuzVWlF3mbeM0OJtBJAh90Iu2K7RsDT11NbdO1SIKw2EnLxG6Vr1EN6nTS4KZ7UVUvD3a0wfyTkKpTtIA9nehDaHw14n6GtB5jCX2YharRR6ut72zNjP_DXlmH4EVyQKZE3a9MS9-TqN-jXDnzPCnk8UtzQiHV9AMP-_4UVEQzBgvxvEf4t1QTNlOsVvKgz03Gn83haI5F7Rajaxw2THsuijnsnNBF8qUVim025v0aRCZtPYEdx9chlibRlJbJ2rQmY09yCXaPSNnxuAdDFif3hcXp6RXKiqZfHT3jhmIYEO8xqlPMBYfbgitZ3aqEusd_hwDwz6gZSeq9qHiJCI2cV6ZIJuuWnxOdOa0z4hXRtVbxsB92935BKHJp5EQJ5j25o6J6VOkZjppyvcDXUGbRmvmsbhtsr3B_T5huJsyyLnq21eH5v28BW"
+      }
+    ],
+    "id": "01a130ad-aaed-7fb0-8b60-c60c26ce4e68",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

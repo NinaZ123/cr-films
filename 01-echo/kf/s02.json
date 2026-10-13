@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gemini-3-pro-image",
+    "prompt": "Use the man in the reference image as the character: same face, same identity, same age, same scar through the left eyebrow, same charcoal overcoat and dark green sweater. New scene: Wide shot from behind: he walks alone carrying a worn brown leather suitcase down a rain-soaked narrow street of an old northern Chinese industrial town, 1970s brick apartment blocks, bare trees, one flickering street lamp, wet asphalt reflections, dusk blue hour, he is small in frame. Cinematic film still from a 1990s Chinese arthouse mystery film, shot on 35mm Kodak Vision3 500T, anamorphic lens, muted desaturated teal and amber palette, deep shadows, halation around lights, fine film grain, hyper-realistic, dreamlike, wide 2.39:1 framing with all important content in the central horizontal band.",
+    "image": "<893459 chars, omitted>"
+  },
+  "submit": {
+    "created_at": 1791816744,
+    "id": "01a13099-bfca-7350-8e89-3481e6963c28",
+    "model": "gemini-3-pro-image",
+    "poll_url": "/unified/v1/tasks/01a13099-bfca-7350-8e89-3481e6963c28",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791816849,
+    "created_at": 1791816744,
+    "data": [
+      {
+        "b64_json": "<1052732 chars, omitted>",
+        "mime_type": "image/jpeg"
+      }
+    ],
+    "id": "01a13099-bfca-7350-8e89-3481e6963c28",
+    "model": "gemini-3-pro-image",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 84552
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "kf/s02-0.jpg",
+      "mime": "image/jpeg",
+      "size": "1600x672"
+    }
+  ]
+}

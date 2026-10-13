@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Use the reference only for the art style; flat 2D cel-shaded 1980s OVA anime background art, clean ink linework, subtle halftone, film grain. No people, no readable text, no logos. Use the reference only for the art style, do not draw the girl. The edge of the flat rooftop of an enormous monolithic retro-futurist building above a sea of clouds, seen from behind toward the horizon, the sun rising, real open sky in warm gold and peach with blue above, wind. Wide shot, leave room for a figure standing at the edge.",
+    "image": "<3078038 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863694,
+    "id": "01a13366-22e9-7283-9393-de33effc98f9",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13366-22e9-7283-9393-de33effc98f9",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863788,
+    "created_at": 1791863694,
+    "data": [
+      {
+        "b64_json": "<3877724 chars, omitted>"
+      }
+    ],
+    "id": "01a13366-22e9-7283-9393-de33effc98f9",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11080
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/roof-1-sunrise-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

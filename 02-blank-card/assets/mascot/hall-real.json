@@ -1,0 +1,43 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is the character, image 2 is the location. The character from the reference photos, exactly: a person whose whole head is covered by a boxy mask shaped like a pixel-art arcade ghost, made of crumpled bright green paper, with two black plus-sign eyes, a jagged pixel-step bottom edge, wearing chunky cream-white pixel-block headphones with a small black boom microphone on the right side; an oversized beige hoodie with drawstrings, black loose trousers, plain sneakers. No face visible, no skin of the face. Ignore any watermark or text in the references. Cinematic 16:9 film still: the character rides a skateboard down the long aisle of the amber-lit retro office hall from image 2, side view, moving left to right, full body, hoodie flapping. The hall is rendered photorealistically as a real film set, same layout, desks, beige CRTs and amber light. No text.",
+    "image": [
+      "<1462871 chars, omitted>",
+      "<3923258 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791873131,
+    "id": "01a133f6-2228-75b3-b82c-fa8159e78134",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133f6-2228-75b3-b82c-fa8159e78134",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791873178,
+    "created_at": 1791873131,
+    "data": [
+      {
+        "b64_json": "<3087008 chars, omitted>"
+      }
+    ],
+    "id": "01a133f6-2228-75b3-b82c-fa8159e78134",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 18867
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/mascot/hall-real-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

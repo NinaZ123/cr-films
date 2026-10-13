@@ -1,0 +1,65 @@
+{
+  "request": {
+    "model": "seedance-2.0-fast-text-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Audio focus: a lone male singer performs a slow, melancholic 1990s Chinese rock ballad in Mandarin, accompanied only by a clean reverb electric guitar arpeggio in E minor, slow tempo, simple memorable nostalgic melody, warm natural reverb of an old empty theater, emotional and intimate. No other sounds. Visual: dim empty theater stage, an old microphone on a stand under a single spotlight, dust in the air, no people visible, static camera."
+      }
+    ],
+    "duration": 15
+  },
+  "submit": {
+    "created_at": 1791819145,
+    "id": "01a130be-5f3e-7d72-bbb7-3ac73a43d20e",
+    "model": "seedance-2.0-fast-text-to-video",
+    "poll_url": "/unified/v1/tasks/01a130be-5f3e-7d72-bbb7-3ac73a43d20e",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791819307,
+    "created_at": 1791819145,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 15.104,
+        "fps": 24,
+        "has_audio": true,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130be-5f3e-7d72-bbb7-3ac73a43d20e/74VZxNInCnaOD-Oaab3quIHfVw8S6PnPLUDsdq9gLiwdoZt9AEKYdIOOesSdJl29YWbeS1kAMiu1ydiiQq9RBMMF1GblI87QXWHJkwej0Az3Khf4-avSDRc23cemoRih4YGTAVsbisnzvfwTCaW0R92kk1cTYZf-FvfaWP3Amm3Z9GupE540368H3AlHzawEmAq3Oh4oa0VKO9axrXtx32Wvvx-l-SRhW-cXfvR4PSITLHKb_Z43UoCKPsPyHtnZqJysNmrwTRGTyLHMOHbAxpOwoA",
+        "width": 1280
+      }
+    ],
+    "id": "01a130be-5f3e-7d72-bbb7-3ac73a43d20e",
+    "model": "seedance-2.0-fast-text-to-video",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 15000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "15.104000"
+    }
+  }
+}

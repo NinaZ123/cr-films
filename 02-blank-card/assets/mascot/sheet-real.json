@@ -1,0 +1,43 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Photorealistic. The character from the reference photos, exactly: a person whose whole head is covered by a boxy mask shaped like a pixel-art arcade ghost, made of crumpled bright green paper, with two black plus-sign eyes, a jagged pixel-step bottom edge, wearing chunky cream-white pixel-block headphones with a small black boom microphone on the right side; an oversized beige hoodie with drawstrings, black loose trousers, plain sneakers. No face visible, no skin of the face. Ignore any watermark or text in the references. Character design sheet, three panels side by side on a plain light grey studio backdrop: left full body front view standing, center full body back view (back of the green ghost mask and headphones band, back of the hood), right close-up of the mask and headphones in three-quarter view. Same character in all panels. No text.",
+    "image": [
+      "<1462871 chars, omitted>",
+      "<550990 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791873115,
+    "id": "01a133f5-e6c9-7573-845e-f0212eb52fc2",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133f5-e6c9-7573-845e-f0212eb52fc2",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791873158,
+    "created_at": 1791873115,
+    "data": [
+      {
+        "b64_json": "<2886100 chars, omitted>"
+      }
+    ],
+    "id": "01a133f5-e6c9-7573-845e-f0212eb52fc2",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 15617
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/mascot/sheet-real-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

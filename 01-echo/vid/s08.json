@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "He sings into the microphone with eyes closed, playing the electric guitar, swaying with the song, smoke drifts through the hard spotlight. Slow handheld push in. He is singing a melancholic Chinese rock ballad, male voice, electric guitar. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-b8053a2b5a944832b40998da71305009_0.jpg"
+        }
+      }
+    ],
+    "duration": 6,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-aaed-7fb0-8b60-c61e2c0f99bb",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-aaed-7fb0-8b60-c61e2c0f99bb",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818230,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 6.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-aaed-7fb0-8b60-c61e2c0f99bb/fos_o812Xx1dUeKyk29q216AzfsqOF-xydh8ZAG3Ouaqoe4YahYCIolD1RvF7rtOYz4-QsYxmLFt_rvooRIYlIn86EoS7EH1Vi-LdAQi_x_YyjF2sSylayPBE-v5uCG4TjQnryqFSPMHMq3f8D0BQjzar7PwXz1_OoKBpHBaZTborGO1PFxXTIPDS3uzwdkCjKzwZnMCMWR7zss_zWIr4VQKMd0MR8Q0KrBJW0t7EJa6KEPOkMiFafU4bDGXppZKxUghkynGegyhXFdiA3FXyZqtqmQqbm6L1L1eADLeV34g4hP6C4CJGHM1fuuCUyw4qthusbLFAxcnmFDslKnb1gwZUC7rEZB_BBOTtNTqaCz3eAPojB2lJGgWCp5xXWjNNSib1yfI4jWeGwrAuJiqBbSDxD7fpms1zulZ3_RRUBMRZCuTETaFuQJ-9XeUyzeg_JVNfffL8OQCpLAQCne2xy6fljuR7alvQmqa7z6tENYUk4E3jZfeEPfOybvoYvDgmIeuwUeTGn-maFIdmsDgo-C_FQEoa4zCnnMkK4B2I1KjgJzOsbPGdz7rMr9isJm91wrnlelJ7RLE-TXybG6h_w3iDjiQIAgTysKnhvIf_KqC70nuidft"
+      }
+    ],
+    "id": "01a130ad-aaed-7fb0-8b60-c61e2c0f99bb",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 525000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "6.041667"
+    }
+  }
+}

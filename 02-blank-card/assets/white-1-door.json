@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Use the reference only for the art style; flat 2D cel-shaded 1980s OVA anime background art, clean ink linework, subtle halftone, film grain. No people, no readable text, no logos. Use the reference only for the art style, do not draw the girl. A vast empty pure white space with a faint cool grey horizon and soft floor reflection, in the center a tall rectangular door made entirely of glowing white and pale cyan floating particles and dots, quiet and sacred, wide frontal shot.",
+    "image": "<3078038 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863695,
+    "id": "01a13366-2903-7a41-b485-0f64f1b27dac",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13366-2903-7a41-b485-0f64f1b27dac",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863857,
+    "created_at": 1791863695,
+    "data": [
+      {
+        "b64_json": "<2981048 chars, omitted>"
+      }
+    ],
+    "id": "01a13366-2903-7a41-b485-0f64f1b27dac",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11034
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/white-1-door-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

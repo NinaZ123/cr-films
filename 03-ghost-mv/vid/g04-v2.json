@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Locked-off static camera. The masked person at the desk taps one finger on the punch card in rhythm and nods; the other desks stay empty. Black-and-white overexposed film look, only the green mask is coloured, film grain. Restrained subtle motion. The mask is a rigid paper object fixed on the head: its shape, size and headphones never change, and the mask face always points the same way as the body — the person never turns around. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g04-v2.png"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791880593,
+    "id": "01a13467-ffd3-7f23-bb43-1718be64f44f",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a13467-ffd3-7f23-bb43-1718be64f44f",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791880873,
+    "created_at": 1791880593,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13467-ffd3-7f23-bb43-1718be64f44f/EDjuoKcoMRYf5SNYT2jWhCQzV_HRmD9wQaYaYUBgTUQT-v-QbwWNOxfmBN4uQZRayYMkFYAwAXPMWT7uZ9SjFfpevxrvBfpCLzLIKOJwGmCZGAykUutQEDx_-z2P_Kmi6uy0Ktw4jP-Pzh18FFYca_ttNrQZRco6sviZdv8VP8wRtgcI6o-ZQpamQJTIFRdcUC4V3-aUC0k67SOPAuH0_oPWKKE4w8qGrm-EuNPZ9Th_XWXdEvFzwh9XDes3IgFuEnGyhj5R7VT-PoDF_TPMhlUiBflU8ILhd9yRfpk319L_Box9k9_dlISkCdWVv_eTXu4xhHP6C00m5tLa2zN0e3Rv6r_wBMxGptg8s1ijGaPP0H7zckMYVo2N5ShVwKwSGr54x6gf3bz2f5EqywcNax8AbNgXyHSikFWubXQu_teyWLgohto859KeAc3AgBqW12yWuf4Oh8Y9zfSEqdtxZLv1bI6EdcsOOLjauNnh2MEh_2Q_W6tIRMFD-pShDrDB5OSihZ13Cr3Zse7lHOmi-uE-iMn89WH2mscn7ccJ_w-LGNK5abMG4qLkt3kDO3h7LUubAG6-7LFvrgjRDVC63ukAdDS6k9mPDCObCbLpKLTVGdjzwbAS"
+      }
+    ],
+    "id": "01a13467-ffd3-7f23-bb43-1718be64f44f",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

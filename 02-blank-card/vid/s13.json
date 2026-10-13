@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The girl is pulled into the huge tube opening, her body sucked in with motion lines, hair and jacket streaming. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s13-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869781,
+    "id": "01a133c3-04ce-7392-ad97-6cf68504a34b",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c3-04ce-7392-ad97-6cf68504a34b",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869902,
+    "created_at": 1791869781,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c3-04ce-7392-ad97-6cf68504a34b/4TPp1aHow6Ki2j16p4Fk4xd4ltyZBBTCfiC6fCgACz2SZUjCfpqbCzkfjbVt5k94xShifMUkUuzFRheLxBGHMy4wnljVQmg_KKLX55MuVR_Uk1JzpBVw-4UKPu0zKRWT7jFMJRQxPTh49A1cA8nf9544eA_j17dnzzs9GprCSLsPlBs4C0Z-9k_BkQeEWkpcAxVCdpzag47Rr_8RU6VFwn1H0eivCzFG9qhiKQwt1Zs17meiBOZ_dPCGRw9VRUO5UI0O_xDlBi_HrbmajYMgwajoAeybYU-Ip5Wt02ht6-o7wVxlOP5Pswx_dcz63Iy1KbsLvimNP-sQPO3E3GrZnV815UfvYc8ec2q4JJOOMq-G-j3UPL7WtjRnA_2hURfG8L-xVQGs3Yu6vcdVDd2-7SbYb3-ZTh89yHbE8kgcyMzwgrYi-Syfig8y7y70XUHhwRGEnmCMoykp4N2aZKvwfQi9KUtfExWzwgdpQdenvSsMxBh9kh-41qKfVaXM68A2dQ7-Z6dFYmUmsG0qjDwNtLNmbaIl0qg1YbAt1iLz3KqxTczIt7TcXH_x3ICHGwM6xwXOPoiTtYhaYKXDlESg7v5mCieUuw4BR6TkZuedE35PozA-YRn2"
+      }
+    ],
+    "id": "01a133c3-04ce-7392-ad97-6cf68504a34b",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

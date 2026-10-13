@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/tasks",
+  "request": {
+    "model": "nano-banana-beta",
+    "prompt": "Cinematic film still, 35mm Kodak Vision3 500T film, 1990s Chinese arthouse cinema look. Character reference portrait: a Chinese man, about 52 years old, lean face, deep-set tired eyes, short salt-and-pepper hair receding slightly at the temples, a thin pale scar through his left eyebrow, two-day grey stubble, slightly hollow cheeks. Wearing a worn dark charcoal wool overcoat over a dark green knit sweater. Three-quarter view, neutral expression, soft overcast window light, muted desaturated teal and amber tones, fine film grain, shallow depth of field, hyper-realistic skin texture, no makeup, plain dim grey wall background.",
+    "aspect_ratio": "16:9"
+  },
+  "submit": {
+    "created_at": 1791816525,
+    "id": "01a13096-65b3-7480-9cbb-e45e965adc9c",
+    "model": "nano-banana-beta",
+    "poll_url": "/unified/v1/tasks/01a13096-65b3-7480-9cbb-e45e965adc9c",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791816542,
+    "created_at": 1791816525,
+    "data": [
+      {
+        "b64_json": "<1876348 chars, omitted>",
+        "mime_type": "image/png"
+      }
+    ],
+    "id": "01a13096-65b3-7480-9cbb-e45e965adc9c",
+    "model": "nano-banana-beta",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 24216
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "img/man-ref-b-0.png",
+      "mime": "image/png",
+      "size": "1344x768"
+    }
+  ]
+}

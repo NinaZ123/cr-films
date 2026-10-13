@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static camera, slight low angle. The masked person sings into the boom microphone, head and shoulders moving with the rhythm, one hand on the mic stem. Black-and-white overexposed film look, only the green mask is coloured, film grain. Restrained subtle motion, the mask shape and headphones stay exactly the same. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g07.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791877678,
+    "id": "01a1343b-86d2-7273-b6b8-b4fb284e35cb",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a1343b-86d2-7273-b6b8-b4fb284e35cb",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791877855,
+    "created_at": 1791877678,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a1343b-86d2-7273-b6b8-b4fb284e35cb/O2hbuY6x1x1M_3FHv2iRnVMM0C7ox6IN77fioQu0r7ZMJxTtcQ6dLbUbyJt8eucW5A0NEfio11cXu2t6BdhM-os0ywkI-_cVnGUBFKebo66OiQD9x7ob-_Kl8qvKy_sYjSkqYYxB7jytI1mG9ZFPfp4oaGduTqUmg5huhxDuKqDdOliJogLKooSKdC2ZmhBmWFMtV1od6DhLUm9kwVENMDNwz6bLVhpgwhN_yXmYFIP_cfGl7ZFZO48dCr8pA4LB55n50rXfHs8lA62189b2EeAdvBep45pLJP2G_O-vWgiy4iXS2MdZT36Dmyf3Uo1MqCQE1auvib4Wse5mjr7uXRCyGGsZiMtm3lL7DVx8ThoRsAn69RsrXYPlfv9GrBr8gLWN8y6lLXd1D6Lf7Bd95ncIMwlSHeWdBQSEadDd254pSD7pEL3SRKhhtwl7JInCLmMW29nib3si9kCFoJDC-W_Rmo4BPnzRQeHksSu5d0cQXBjSXsvaGi6245PjszSqeYn_FV2y_s_5s6g5XnodVdURu_8w0DBdb4xwtNcpDF_v6QezXKFxxVJB35l-Mu5n6uBKJhWJhGxVFTb1hUeBUiwTVD8Dm_VlAVy_vrOW5xPQ_tTMG2xE"
+      }
+    ],
+    "id": "01a1343b-86d2-7273-b6b8-b4fb284e35cb",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static camera. The masked person sings into the boom microphone, naturally nodding his head on every beat at 110 BPM, shoulders loose and slightly rolling with the groove, one hand on the mic stem. Black-and-white overexposed film look, only the green mask is coloured, film grain. Natural, relaxed, believable human body language like a real person filmed on camera, subtle and cool, not exaggerated, no dancing poses. The mask is a rigid paper object fixed on the head and never changes shape; the mask face always points the same way as the body. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g07-v3.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791895808,
+    "id": "01a13550-2a17-7ef0-bcf7-bb0ecd2046eb",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a13550-2a17-7ef0-bcf7-bb0ecd2046eb",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791896274,
+    "created_at": 1791895808,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13550-2a17-7ef0-bcf7-bb0ecd2046eb/6v2UxqHQxIeh_VaeT54JG9DYZmsWGsYPVViSRPFyJCM6_V_ypEg0HTVT7jewuFBEsT4YpNBSMrdjpbzaJ5OAeGnlgRugOljq1OGk7t2mO7EVMZZ3CH6zFf1g2I7r8k_pz3RVhO-kEikzZ7yudxNNrkQebPrnhdgo3ZqHd1_5qK15XKfybin3A4z4D00q-HFkSk3U3vRRlZ3tS3PSCXcbnCn0ZnFw8RajoE1KbhjDauINA2E0NCsWwHqSdJ7j82FgvBwBnPA0CwQK2rNZJozWiz6QYcmMXfm6HDn0VOrw8CtMV6lHpyfhW0UksxmIZVrD_U7o4Umwh5DIWQ8Gjzh5_FFzZujE9SjT_FDgcFHu2a2ap4ox1te2nEAtnRbvcVemUQeD_rfwfPyfv0vUhXLakcaefGCVEqiv5CF8urPJXGznF_bZqvr4A_DAs99jmLH2fFGYi4unty119VzLijg6OQAcGq2iJJjRTCpeslGuwrKMsa0dYYdj4QPtxpCwUGpmUhdsyxJPkideNbVVbn_-lEeub25fIhdQgIJs0J2fo0W_yLL5sY0e7PVB39QwvgtyzNA85pdb9GB1sDdl08Cxou_28OajDfwfKzjYKHKxcdXc5H34Hn-c"
+      }
+    ],
+    "id": "01a13550-2a17-7ef0-bcf7-bb0ecd2046eb",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

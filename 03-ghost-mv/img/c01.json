@@ -1,0 +1,45 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Images 1-4 are reference photos of the masked person; match the mask shape, colour and headphones exactly. Black-and-white high-key 35mm film photograph, overexposed and airy, blown-out whites, heavy film grain, faint photocopy halftone texture, slight softness, editorial fashion photography. Everything is monochrome grey EXCEPT the mask, which keeps exactly its soft light mint-green paper colour from the reference images (do not saturate or brighten it) — the only colour in the picture. Lots of empty white negative space. Compose for a 16:9 crop. No text, no letters, no logos, no watermark. Full-body frontal portrait, centred, standing straight with arms relaxed at the sides, on a pure seamless white studio background: ONE person wearing the same soft light mint-green crumpled-paper Pac-Man ghost mask as the reference — same stepped dome top, same pixel zigzag bottom edge reaching the hoodie collar, same black plus-sign eyes, same paper texture and quality, crisp and detailed — but WITHOUT headphones and without microphone, nothing on the sides of the mask; plain mid-grey hoodie, black trousers, white sneakers. Neutral, motionless, like a uniform. Head to toe in frame with white margin all round.",
+    "image": [
+      "<550990 chars, omitted>",
+      "<153883 chars, omitted>",
+      "<202167 chars, omitted>",
+      "<381019 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791895832,
+    "id": "01a13550-879d-7c62-821e-5ec6dea03953",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13550-879d-7c62-821e-5ec6dea03953",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791895873,
+    "created_at": 1791895832,
+    "data": [
+      {
+        "b64_json": "<2353336 chars, omitted>"
+      }
+    ],
+    "id": "01a13550-879d-7c62-821e-5ec6dea03953",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 20639
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/03-ghost-mv/img/c01-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

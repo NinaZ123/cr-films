@@ -1,0 +1,71 @@
+{
+  "request": {
+    "model": "seedance-2.0-fast-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static camera. The masked person sings into the boom microphone, naturally nodding his head on every beat at 110 BPM, shoulders loose and slightly rolling with the groove, one hand on the mic stem. Black-and-white overexposed film look, only the green mask is coloured, film grain. Natural, relaxed, believable human body language like a real person filmed on camera, subtle and cool, not exaggerated, no dancing poses. The mask is a rigid paper object fixed on the head and never changes shape; the mask face always points the same way as the body. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g07-v3.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "720p",
+    "provider_options": {
+      "generate_audio": false
+    }
+  },
+  "submit": {
+    "created_at": 1791895808,
+    "id": "01a13550-2a0a-7e71-b1b1-f961a4d128d3",
+    "model": "seedance-2.0-fast-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a13550-2a0a-7e71-b1b1-f961a4d128d3",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791896002,
+    "created_at": 1791895808,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 5.042,
+        "fps": 24,
+        "has_audio": false,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13550-2a0a-7e71-b1b1-f961a4d128d3/3fikUHRZqwbLpfvCmQFNo9zfjCqPjOHyz3oBHSVdKSaTAtZM3e1rH2GjXOVOF9ag_-Y3TfoHzmC88vMi5gsOYSrz50jLn2g8uNlJ-OYkJX7CzmrGTdKeA-B0kbMPGEg2kNCxNfarHLVOVBIJM-ErcW3_7nYIFFwBuez29wW2FA6RaAuM-HwpyO4nGlIdkSiJgM7PCVt8Uo05dxSGbcKR7d9MvgiLOBoiQ9uh6CqDSlEA-m3l3O_YCefPLdJvQINO8S12YPQFtz_ksrrRPsJ_82xN8Q",
+        "width": 1280
+      }
+    ],
+    "id": "01a13550-2a0a-7e71-b1b1-f961a4d128d3",
+    "model": "seedance-2.0-fast-image-to-video",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 5000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Extreme close-up: his hand strums the electric guitar strings hard and fast, sweat flying, stage light flaring. Loud distorted electric guitar. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-a4fa9a58de9d4f25a44f1243b01fee4b_0.jpg"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-ab0c-7552-b43e-d685e09b8c73",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-ab0c-7552-b43e-d685e09b8c73",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818209,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-ab0c-7552-b43e-d685e09b8c73/bA9_M4Kqma2dKyy1MGoOEbaiXrD5yIHsEj4p_Q2VScDZ2--kCvlQG0x76tWNj9HGD7pG1D5WgoBi7boArBIxhU8gClgtldF1yOLtdtRYGOL8sJhjvo2UKNmFJCpiq0pffE9z0zSVcHgfaKzaFlgh6ny2M0sFO-NKyI6mMiUJlk2ZTdB2xFIuIjKKVRgQVRQh_hhA67caUjjE5QN01bJPfz14AJ2QnvaoXPrVcEpOBdYfIdNFI1K8pQo-vsTGhA8VeErZZNrRcTKUq_QsstIvdDO01wN7int3FKcJ6sHmgAtnvgCE2FiYYlXuOmbeIdCvXCkPF1Sa6iyLaZ5RiUK_ARGq0AKmpMB3b8ahstkAYaGyxZQY-7x-16h10iaqLhgUWUL72-OEhYY8mAff6dw2XKoD4IQRRrJ3cQrGTJ_40exEhpFjeEidgF0zAM_dNYYP6LgGelf8XoXYQd9oO-BrUIcXoidTdoUKHI_LbONTC65ZbN6intzUnm7iqh-sA9Wamqt8GGLtp2L8onjFoH0muTq5xOYA-FYqrZj7vcWj8Ybgyld5RX9RJJl_h6jDNzUOSipeHg81Xwf7tiqy85v4s0GD74ztYQmogHFdIIqMHF6CrPML1Ov-"
+      }
+    ],
+    "id": "01a130ad-ab0c-7552-b43e-d685e09b8c73",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

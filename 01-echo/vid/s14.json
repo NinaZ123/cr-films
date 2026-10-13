@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Rain drops fall from above into the shallow puddle on the stage floor, ripples spread across the reflected spotlight. Slow motion. Sound of water drops. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-b9f785d4c61744259c7284440cb555c2_0.jpg"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-ab00-7391-809f-f7d715bcfab1",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-ab00-7391-809f-f7d715bcfab1",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818230,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-ab00-7391-809f-f7d715bcfab1/G4-TIJkvcdEi4hK9vl-j5ed5YRMB7xRhtNxNji7U_6EQle6otq_K5tEY8pqTjYQkorGTmDsAygHMWHGz0Yo21a3e1CdrRAMabEz5KNN334G6CZWXcPGPsOCsaUUC4f-w3FfNk5cSLJD9wnsXfbsy4v_92WGwCtx3CjPQSrFx3H7eQk_-9Er4RIifus2kh5DcnuK-OtKWFhxMGBUFeE3T8LVMgLyLbFUpbgaxzs_s9IsMhvfunuAgcTh4F_vC40eJzQPu20q0kqEGuD7hx4t-Xcg5UFPSETiJPEuFRV-nBUi--Ogq2hH-T8KcbZ667ZINKQJNyCjYXfeJEjDDdYzP61Ad67242yoNyM-YeOLzaUFHwoJGaD7R7KxrtEtSlVFnXkb8euUrMceUn1VsiInpYsudly4JD-kA15JmFYEiDENoqiKPlnFtn27Pkib9l9s2GsG_biq5MdP4FuDY4lxslSUXiDWZJwuDsobrvPkUs5UJAwoE0F_STt4DBg7duYuzZbHokHH8iRO6rgIhuakSUzHzWn4Y1vjyhlQwE5l6_cKtVnv1pceACIxElRV367L4XuvTsEKZcquD95bRaS1GRMhwZDvLe1vQ4H2MlgaWu1yOjGpJLkFY"
+      }
+    ],
+    "id": "01a130ad-ab00-7391-809f-f7d715bcfab1",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

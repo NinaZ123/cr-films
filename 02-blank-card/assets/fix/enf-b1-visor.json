@@ -1,0 +1,43 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Edit image 1. Keep the android, pose, visor and orange waveform exactly the same. Only change the headphones to match image 2 exactly: The headphone band is cream white all over, the same cream as the ear cups, with no black padding on top.",
+    "image": [
+      "<3369750 chars, omitted>",
+      "<1221558 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791867646,
+    "id": "01a133a2-701b-7451-b1d4-38f5435fd719",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133a2-701b-7451-b1d4-38f5435fd719",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791867679,
+    "created_at": 1791867646,
+    "data": [
+      {
+        "b64_json": "<3118132 chars, omitted>"
+      }
+    ],
+    "id": "01a133a2-701b-7451-b1d4-38f5435fd719",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 18573
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/fix/enf-b1-visor-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

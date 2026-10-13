@@ -1,0 +1,41 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gemini-3-pro-image-preview",
+    "prompt": "Reproduce this exact image faithfully at high resolution: identical composition, identical people and faces, identical lighting and colors. Change nothing.",
+    "image": "<903015 chars, omitted>",
+    "aspect_ratio": "21:9"
+  },
+  "submit": {
+    "created_at": 1791817597,
+    "id": "01a130a6-c0b0-73b0-9112-633c3d23fd9c",
+    "model": "gemini-3-pro-image-preview",
+    "poll_url": "/unified/v1/tasks/01a130a6-c0b0-73b0-9112-633c3d23fd9c",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791817621,
+    "created_at": 1791817597,
+    "data": [
+      {
+        "mime_type": "image/jpeg",
+        "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-233026ebdb5144229209153a10a0a417_0.jpg"
+      }
+    ],
+    "id": "01a130a6-c0b0-73b0-9112-633c3d23fd9c",
+    "model": "gemini-3-pro-image-preview",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 84357
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "kfu/s10-0.jpg",
+      "mime": "image/jpeg",
+      "size": "1584x672"
+    }
+  ]
+}

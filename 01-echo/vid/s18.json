@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static. The older man stands still facing the cracked mirror. In the reflection, the young man slowly raises his eyes and stares straight back at him. The makeup bulb flickers. Uncanny stillness. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-b04ffde5466846f5b11d3b14abfc1fd2_0.jpg"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-ab0d-7033-9f5c-4770a6c4c9fe",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-ab0d-7033-9f5c-4770a6c4c9fe",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818209,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-ab0d-7033-9f5c-4770a6c4c9fe/pvOtKlGv2eTR4dfcxYvJrTry0ZFsuHS77r32zI4T7c582ZNtK1WAHW2EaViw1nJQIdzU9pUY8zLm88wCLuAS-MjpER0k8N-an3k_Tks6zS-dmCsEs5vJ0sas42ehiLIej2ZehnwUXFqU2fVENGIKH15UefdJ4jTU8t0JQZIchcKf8bXybiUFdiCLm9Z9pjDzfaVAah4xPN9NJGWIT8CpV-Mst0VIhQ0k-rHD5wy3H6LBERZQDQ8IV7-BhDi5b9cy0NhwNX1grQdnCxM4kXPKIktCNZ4QtGAbTZB_rD1J7fQ-2BMj4-NIPOIrfvOGLR-ZfNW2uF3MQf3hVrxIvvSYBz_b9Aro9AZHWjghJ0QjwcCWtXeOzPvEqHutqmKQ8Np_lczSoEPXpTmdqiye2e7H6V0SNhSSyWOajYp0cYbPhqg6A3zz4NkXYGXASYS0rAgjJFQUhCDylM71a2l3PKsmRu--JO5Wrh_0EvEzjcQjs5dqZqZFxPw-Sw4KREvqBdeQ2cScwNLSD4prQLFi3YqBPlvdNyIAfJOPDmlE6DDRKoEfNf0N5lS-sGj89NDOpvYFpZYA84AnACpDJSIJlCGOHZp2OJ6NYEzCSTCD475mxSQs4ovu7Ogl"
+      }
+    ],
+    "id": "01a130ad-ab0d-7033-9f5c-4770a6c4c9fe",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

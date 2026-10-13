@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The girl falls and slowly tumbles through cascading green glyph waterfalls, jacket fluttering, camera follows the fall. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s15-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869791,
+    "id": "01a133c3-2da0-75d2-b30f-641e3ad7046e",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c3-2da0-75d2-b30f-641e3ad7046e",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869925,
+    "created_at": 1791869791,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c3-2da0-75d2-b30f-641e3ad7046e/eECdPnIraDTbxxAFDcuSksZaFr5hPrktqJjjWn85KlgcdS7gjwHNgS23DHJuLeXCjX3waa97lgBMExi7oKmFtKrok7gou7L38E0jKdpxZtytbh_D5VeXhlmKTsCa5oIaHSkihyq-zU7ZCPY4T6HPDIOsKXYbR2m0X6J7pDnfhNKqIqzqxdVLzCrAtO-1yRcjsfV4t4zfagfFudH1pInxCgR_e9uD8e2XYeHHryGiolEwGRHHrTv3A56ObVMjbqlSH2pNNDILGYjNRRY6yiTbQtE41alQoTcB9gEkFhAlMsDT6O4BEOfB6J_TdKBlX8OazWzZ2lOHs6E7wtk16xdOczLFuU2K9cfBQMPufPOwpcZOt_cUjBVGnW17rO2SE-NXW-xTDWKaKxgEfw6ZBRkHUvpZBeZ0icu3OdzhYuWRZHqT18-VbYa3pJlRU_ovZrpC1fkrABnnvueXrXTRV2koyM7FgSe0O-nbQ-uopsJoe80HK4cvOcGCB_QEpdE6VeG8GCYBTlTRmwHQEVd49wGu_myxs8l4cHjJ6EK97GZ2Ck6414oBO_sfddEoD3P9IsfWVV4XOK3QWdsMSy1cx_b4xHQsdKrO7Fh6pg87RDa1hgYJaRyBTF9v"
+      }
+    ],
+    "id": "01a133c3-2da0-75d2-b30f-641e3ad7046e",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

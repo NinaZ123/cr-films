@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Same art style as the reference: flat 2D cel-shaded 1980s OVA anime, clean ink linework. Prop design, single object centered on a plain warm off-white background, no text, no logos. Exactly the skateboard from the reference image, alone: black deck, orange wheels. Three-quarter view from above.",
+    "image": "<3675986 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863695,
+    "id": "01a13366-275e-79a2-8be0-8a3b0c9c46cc",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13366-275e-79a2-8be0-8a3b0c9c46cc",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863850,
+    "created_at": 1791863695,
+    "data": [
+      {
+        "b64_json": "<1140156 chars, omitted>"
+      }
+    ],
+    "id": "01a13366-275e-79a2-8be0-8a3b0c9c46cc",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 10909
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/prop-skateboard-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

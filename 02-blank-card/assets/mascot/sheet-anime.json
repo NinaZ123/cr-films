@@ -1,0 +1,44 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Redraw the character from images 1 and 2 in the art style of image 3 (flat 2D cel-shaded 1980s OVA anime, clean ink linework, halftone). Do not draw the girl from image 3. The character from the reference photos, exactly: a person whose whole head is covered by a boxy mask shaped like a pixel-art arcade ghost, made of crumpled bright green paper, with two black plus-sign eyes, a jagged pixel-step bottom edge, wearing chunky cream-white pixel-block headphones with a small black boom microphone on the right side; an oversized beige hoodie with drawstrings, black loose trousers, plain sneakers. No face visible, no skin of the face. Ignore any watermark or text in the references. The green paper mask keeps its crumpled texture drawn in flat cel style. Character design sheet, three panels side by side on a plain light grey studio backdrop: left full body front view standing, center full body back view (back of the green ghost mask and headphones band, back of the hood), right close-up of the mask and headphones in three-quarter view. Same character in all panels. No text.",
+    "image": [
+      "<1462871 chars, omitted>",
+      "<550990 chars, omitted>",
+      "<2855942 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791873133,
+    "id": "01a133f6-29df-7820-af1b-331d778de3fb",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133f6-29df-7820-af1b-331d778de3fb",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791873176,
+    "created_at": 1791873133,
+    "data": [
+      {
+        "b64_json": "<2456252 chars, omitted>"
+      }
+    ],
+    "id": "01a133f6-29df-7820-af1b-331d778de3fb",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 23532
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/mascot/sheet-anime-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

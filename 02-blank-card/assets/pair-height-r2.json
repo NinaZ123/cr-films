@@ -1,0 +1,43 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Same flat 2D cel-shaded 1980s OVA anime style as the references. Height comparison model sheet: the girl from image 1 (standing, not on a skateboard, same outfit and headphones) and the white android from image 2 (without headphones, black visor) standing side by side, full body, both in side view facing right, girl on the left. The android is noticeably taller: the girl's head reaches the android's chest. Exactly two figures, plain warm off-white background, no text.",
+    "image": [
+      "<3144550 chars, omitted>",
+      "<3082774 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791866842,
+    "id": "01a13396-2d1f-73f1-987d-6f8bddfe0566",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13396-2d1f-73f1-987d-6f8bddfe0566",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791866880,
+    "created_at": 1791866842,
+    "data": [
+      {
+        "b64_json": "<2111364 chars, omitted>"
+      }
+    ],
+    "id": "01a13396-2d1f-73f1-987d-6f8bddfe0566",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 18739
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/pair-height-r2-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

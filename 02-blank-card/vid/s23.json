@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The fingers push the safety pin through the card, making one small hole, then pull it out. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s23-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869952,
+    "id": "01a133c5-a118-7392-97c5-b13584122a98",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c5-a118-7392-97c5-b13584122a98",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791870064,
+    "created_at": 1791869952,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c5-a118-7392-97c5-b13584122a98/1K7Uq6DdzfcQNHwZoV6mvh-0K93wpvh9psHGEgU-pXoidu4HKbwfdj4E8rBO7fWEfsTZwszBJx14IwnWBB9IbfavdIu8uQkqQKbN70pe8XJ0YY1gQ8vFOB-P5E1Vdy61ZKv8KrMrBbNWGHFl0DnG_ecBl6Tww68szbbO03bc7v_LhP8F8Xs5pAX2b-kVKr4ggKhYsaum5ytpU8FselARzdKVhCus3lW5q-QCFMGnDONjj674Wv2XUPDvhbmFPh2c-F0cukhSKwzX4GSiKXUrn5sWyIKmAr6LZ3sUAD65e-eKWrFK09j0YPQNOra2OC88k45RdGp-EJR6-hcMJ7mUwdR8tw5Y3Ni93t_sa4c18SOS71_Ye3eIqfQTcydRTAURZ8dYMzH1TNHZv_K8_ugrAiPKM6BPnPY-lEC70dLygZQMd7C_pKzdWUbdHHS8btghe_y1E1kU3K9YmPodXnL_AQOQtDDucdnnsUYLguPSu8C1o-7Cx6lgjNLRK9iT6uLFI1JOTNR8bCTJoa1mUXvooAAIW-dGrmeOyOex3855qtqYieJPPOqU7iNlKE7A6uKAdeJnvwRn6ly2n_pfPeo3igqRWuUHDoAIH_UgWdp2meTf3ceBTEP9"
+      }
+    ],
+    "id": "01a133c5-a118-7392-97c5-b13584122a98",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

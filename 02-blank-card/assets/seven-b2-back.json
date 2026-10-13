@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Same art style as the reference: flat 2D cel-shaded 1980s OVA anime, clean ink linework, subtle halftone and film grain. This is the same girl 'Seven' from the reference sheet: same face, silver-grey eyes, black asymmetric bob with straight bangs, ONE orange hair streak on the right side of her face; NO headphones at all (nothing on her head or around her neck), her bob hair falls naturally; oversized olive-green MA-1 jacket with orange lining at collar and cuffs, exactly ONE round orange-ringed '07' patch on her LEFT upper sleeve only (the right sleeve has NO patch), a small silver safety pin on her LEFT chest; black turtleneck, dark grey shorts with black belt, black tights, chunky white sneakers. Full body, head to toe, seen from directly BEHIND, standing straight, the 07 patch on her left sleeve (viewer's LEFT when seen from behind). plain warm off-white background with subtle halftone. Only ONE figure, no panels, no text.",
+    "image": "<3078038 chars, omitted>",
+    "size": "1024x1536"
+  },
+  "submit": {
+    "created_at": 1791863694,
+    "id": "01a13366-25af-7623-b9ac-a94e2aa6dff8",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13366-25af-7623-b9ac-a94e2aa6dff8",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863826,
+    "created_at": 1791863694,
+    "data": [
+      {
+        "b64_json": "<2596396 chars, omitted>"
+      }
+    ],
+    "id": "01a13366-25af-7623-b9ac-a94e2aa6dff8",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11371
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/seven-b2-back-0.png",
+      "mime": "image/png",
+      "size": "1024x1536"
+    }
+  ]
+}

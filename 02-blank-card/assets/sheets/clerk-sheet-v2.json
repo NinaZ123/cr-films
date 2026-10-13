@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Use the reference only for art style and color palette; do not draw the girl. Character design sheet, flat 2D cel-shaded illustration, clean confident ink linework, limited palette, retro-futurist 1980s OVA anime aesthetic blended with modern elegant anime key art, warm off-white background with subtle halftone. Three panels: front full body standing, three-quarter view sitting at a beige office desk holding a rubber stamp, close-up of the head. Character: 'Clerk', a short, round, friendly-shaped office android, matte beige-cream plastic shell, round head with a flat pale-cream face plate and no features at all, olive-green cloth sleeve covers on both forearms, small olive-green vest. All clerks are identical mass-produced units. No text, no logos.",
+    "image": "<3419106 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863474,
+    "id": "01a13362-c860-7591-a05d-07eb9894ee85",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13362-c860-7591-a05d-07eb9894ee85",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863538,
+    "created_at": 1791863474,
+    "data": [
+      {
+        "b64_json": "<3345688 chars, omitted>"
+      }
+    ],
+    "id": "01a13362-c860-7591-a05d-07eb9894ee85",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11212
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/sheets/clerk-sheet-v2-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

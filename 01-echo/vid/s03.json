@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Very slow push in toward the abandoned theater facade. Rain falls through the weak sodium lamp light, a loose poster flaps in the wind. Sound of heavy rain. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-1cb5b31052d24ce88b2ea1b7e5dacede_0.jpg"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-aaf2-7b53-9036-9a398359e772",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-aaf2-7b53-9036-9a398359e772",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818198,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-aaf2-7b53-9036-9a398359e772/GN_tpBQHWgU2ZUXi0xAU-EQb6sC92Dd1JBYC7DpaDybe8s-SihVOSKFWskr1ozjb6BoikRMefXzI-weAsKltPkPxGBF9a7bkrTViryGpOhO8ozNG8VlGnyPCoUJW44_2HosMd3PVsctsDFgyt2LPGwd9v3qqNLQv__X2kt2zaONRLjN9zm6ug7iDsMKgN4Buq1Qs6fzrkRAYOloPMtNUfcdMG4FhBjpbtW4b1X6uqeM1alVdoOBjDujEURXNJT0sXBKK7O0zZYa70LR_oBX527SGpT40felA8txCCwRatfx1gWga0digapz-cFkDQ9JhJeQZwg9IhZvW7aNt2mXFUG2a_FIqkxLbBlEilPFeqTudFr9bW4hP17tUMb3MMSsptgXEhCiuCp_AlOKXjv1z9bnHaQi1FgvJWeL0Ncj1jYej3g_CHK42hB-46L5jYK9ok53PmdS7O4HTe3UCU6oiNiE_5566HTme6MclNSfP9TTKgBJ7h9BKiQRI8Bp6x-7o6x0kLQjhywThVXhOATXwVWhwS-n0SCFUo_b3Ioi_at8svOmhF4jX9N7IaDuGme0rd1o0jO5P-RCAZKd-9eEXpZ_3wTfEopQ1Ud5enurKAkH-4GhOYzuS"
+      }
+    ],
+    "id": "01a130ad-aaf2-7b53-9036-9a398359e772",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

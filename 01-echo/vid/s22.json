@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static close-up. He stands in the spotlight breathing hard after the song, sweat on his brow, staring out into the dark audience, searching, a faint tremble in his lips. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-ff2f45bdcad240ec97b679886adb14c8_0.jpg"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-ab06-7571-ae60-a26033f7aa5b",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-ab06-7571-ae60-a26033f7aa5b",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818165,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-ab06-7571-ae60-a26033f7aa5b/o5CVuBC0OxHhola6uDNQBSGincOr_sZ8LJo_4Sn2G-aGe3NzTq07fAx93h7JQ6g1_UGVR9EK9fRmeoW6JUM_ZxS9pf3swZHv9l1pG_3j8N5oEKQXKmJ8QgF--whvG01pt7Zs7Krtzdoy2VT8N8XVXeZelUjLp0BIKLVcCkpq49z14xlxjVaCQNP6ANOSwVPXGOXLO1cpXzRZbvJjxrwxdchOtLEEz775oRzfVYo9WDHzNw3U4GmrLAzmMmPZ1MSEaktaGnBS3xjN78i6CVGQHQT1DHgJH12JEE82USqP8d47qYevSrHnbh9-3JJXUitFsz0MK0tgms6F9ikG_4HlyALCfK1-J86CCHjPqO8WfQomMHmcrUs3dhzZuQ98Q6Kyv5j-Eh5gLgyGD635yuIWmBooJFga0U5eSHefBTEf-hdthsbAtoDw7IbLemeHtGJUkIKlryC-pHgUZbCgChQGPIQClxV0FDhkAUBZ2ojMpGsPb4at1aUF9vLjiyTpiVqAbh1B_GDGky1Ll9m6P8M36Fk3W5EIXgcWCzHkKKngp32-xAr4Q-OfEKCRC1CswEOwoDykmKDcxjJF183OeGj0zj1L-xgx_6VTiUMI6o2E_YSHwhzj7zG2"
+      }
+    ],
+    "id": "01a130ad-ab06-7571-ae60-a26033f7aa5b",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Edit this character design sheet. Keep the same three-panel layout (front full body, three-quarter full body, close-up head portrait), the same girl, same face, same art style and colors. Make these fixes so all three panels match exactly: (1) the headphone cord is a SHORT black coiled cord that runs from her left ear cup down into her jacket collar; remove any long cord or braid hanging down to her waist; (2) add a small silver metal safety pin clipped on the LEFT chest of the olive jacket, visible in all three panels; (3) the single orange hair streak is on the right side of her face (viewer's left) in every panel; (4) the round 07 patch is only on her LEFT upper sleeve, nowhere else. No text other than the 07 patch.",
+    "image": "<3419106 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863474,
+    "id": "01a13362-c7d6-7f90-967a-5d2add3bd78d",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13362-c7d6-7f90-967a-5d2add3bd78d",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863536,
+    "created_at": 1791863474,
+    "data": [
+      {
+        "b64_json": "<3078016 chars, omitted>"
+      }
+    ],
+    "id": "01a13362-c7d6-7f90-967a-5d2add3bd78d",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11215
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/sheets/seven-sheet-v2-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

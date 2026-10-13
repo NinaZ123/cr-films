@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Locked-off static camera from above. The masked person walks down the spiral stairs in a relaxed rhythmic step. Black-and-white overexposed film look, only the green mask is coloured, film grain. Restrained subtle motion, the mask shape and headphones stay exactly the same. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g05.png"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791877639,
+    "id": "01a1343a-eba6-7742-a32b-1ceace877b5e",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a1343a-eba6-7742-a32b-1ceace877b5e",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791877843,
+    "created_at": 1791877639,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a1343a-eba6-7742-a32b-1ceace877b5e/5MkJrwkMOLL7nYgxXR0hfxmd7ppErwosAa1NZsSVgmSTbrd4krI_5EjRs-0OJ1ZMHCkQ0RpzytQ0c0H08doT0j2T7NAfFQegT_RK1JjNP7uqIbJx1A3-9BL7SINus2CCBB2jk3qnTC6uQJ2tIIxufvm84IioswJ98RjkZ03kbHl4UsdVdT5pI0z5Lx9IBawqCCwKEBQLnvn1m-9dEgP-ofh5QEAZKUHiKDCWwSywI2lWnoGiZkS25bYeNrQKyamIgwFHWDFBH7J15u3IFR4QkMnQxXxJjmG6qnolsSj7_XnhNmDGZB2DZl7XmSm4dnbhHuXtaGHbLBa8VfDlD9qt0DNHDxbAtE8lJk1VZxwufQryzdTxYSVKO0yRv-vdjoqMNZuNm_yMQWVRCnOEugSQpZD6yAaqV6GzEgM_A7NWOCz9Kmttwnzus8xwr1SBDTWZkfNc-zaVw8w5pXUWeFusukj2qaPIcpgQp6gnyEvf3IJPLBYCRTybENJ8vD8P8ImJpgUiiPHU6x5ktOFJIM_zmfk7zZWIVNXivsbeCnzlRKLaAUoCsW_SdJ3SrsWJ_4dkLfs1dno48Ls_7aC2wx_ZHlVhy0Oyo1i6PizDlRaRtotxDikjEC6c"
+      }
+    ],
+    "id": "01a1343a-eba6-7742-a32b-1ceace877b5e",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

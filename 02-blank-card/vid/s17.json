@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The two figures stand still facing each other; only the particles of the door drift and the girl's hair moves slightly. Tension. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s17-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869803,
+    "id": "01a133c3-5ce3-7d63-81f6-dc47be066892",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c3-5ce3-7d63-81f6-dc47be066892",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869938,
+    "created_at": 1791869803,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c3-5ce3-7d63-81f6-dc47be066892/xmHfFp51FqkOrGwRvzJGqleSp570u127H1LXuehYBDyIKpI9RIdapRIdstVFt8OA9w6iv9La59VD0AIjuX_eMyjprVpr2b0eUwvfHk8wR1T_YzAUDVYKcDn3MR3XMfDTbuaVSa2GfRKMNTONq4TCZs12iFz5R0HZU5te2HAjGN0YffWLExQ_j5yao_Iv5Be5Qx7sy1jbBMS31ZDnb6I8nUo8x07l-s7dRFn13p-EMFgaxb7M7tsbl1cn8A0RguV2CuLHCytaAG8Ua20NsvFS47FGhpncpd4rbdyZ_jAouYGJt2jy0e1rDBNfB6OzEj3O4AmI56-psUBL_Fq-8c0Vv9_ckjBtuUu-1eLcShEqpfOzjElWNM2fatgbZqAWvJQRqRGYBuYkf91_RFX8L4CBIPcvXVKkkiMbVsCBxf2bbGzIOZmcuov8TdtwlGLanFwXBjNMtQ_xHj3Uogr8W4Zl8aSn4WNAZD-Ys082nrESSc5k3EZROQHuCTzaxirFG2JBWp_hjk02hLb6elxNL3XSxWgonyiZUKRDHR5iFl67yMvhgGg3SJIl8uwCO7w-57GeTemCZyehrClyLd2zLjtdy4XSYoN1KwXxKPpqBFwNfTvJV_2svuFw"
+      }
+    ],
+    "id": "01a133c3-5ce3-7d63-81f6-dc47be066892",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

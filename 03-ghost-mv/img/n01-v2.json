@@ -1,0 +1,45 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Images 1-4 are reference photos of the masked person; match the mask shape, colour and headphones exactly. Black-and-white high-key 35mm film photograph, overexposed and airy, blown-out whites, heavy film grain, faint photocopy halftone texture, slight softness, editorial fashion photography. Everything is monochrome grey EXCEPT the mask, which keeps exactly its soft light mint-green paper colour from the reference images (do not saturate or brighten it) — the only colour in the picture. Lots of empty white negative space. Compose for a 16:9 crop. No text, no letters, no logos, no watermark. Extreme close-up: a hand in a beige hoodie sleeve pushes a plain cream-white paper punch card (NOT green — off-white paper) into the slot of an old grey wall-mounted punch clock, the clock face reads seven o'clock. Only the hand, the card and the clock in frame, rest is blown-out white. No mask in frame.",
+    "image": [
+      "<550990 chars, omitted>",
+      "<153883 chars, omitted>",
+      "<202167 chars, omitted>",
+      "<381019 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791889973,
+    "id": "01a134f7-20c8-7f11-8812-79f956c6db35",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a134f7-20c8-7f11-8812-79f956c6db35",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791890058,
+    "created_at": 1791889973,
+    "data": [
+      {
+        "b64_json": "<2827944 chars, omitted>"
+      }
+    ],
+    "id": "01a134f7-20c8-7f11-8812-79f956c6db35",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 20473
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/03-ghost-mv/img/n01-v2-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

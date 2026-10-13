@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is the reference for white-1-door. Cinematic 16:9 anime film still, flat 2D cel-shaded 1980s OVA anime, clean ink linework, hard cel shadows, subtle halftone and film grain, same art style as the reference images. Compose for a 16:9 frame: keep heads and key action away from the top and bottom edges. No text, no letters, no logos anywhere except the '07' patch on the girl's sleeve. The glowing particle door bursts open into pure white light filling almost the entire frame, a few particles flying outward, flat anime light rays.",
+    "image": "<3486082 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791868523,
+    "id": "01a133af-d278-7352-b814-a28f7b430292",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133af-d278-7352-b814-a28f7b430292",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791868561,
+    "created_at": 1791868523,
+    "data": [
+      {
+        "b64_json": "<3045280 chars, omitted>"
+      }
+    ],
+    "id": "01a133af-d278-7352-b814-a28f7b430292",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11102
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/02-blank-card/kf/s21e-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

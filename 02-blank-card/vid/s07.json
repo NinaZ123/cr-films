@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The blank card slowly slides out of the capsule into her palm, catching the light. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s07-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869613,
+    "id": "01a133c0-74a6-7850-95fd-d2ae0f582e7f",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c0-74a6-7850-95fd-d2ae0f582e7f",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869752,
+    "created_at": 1791869613,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c0-74a6-7850-95fd-d2ae0f582e7f/ZHA8m4wVHMgSoYfp7x2cDYHQrqNGU5qsEmRN2ru6fjSnXN6zdNwFGDqzyUMu9BnKbNEv6jeRXFJyUpybYo7d9iuYkitnptoBt1f-wS1ZkYIrKszyeK3l8fVHXEdNG_GzjkRgnCeqfenJ3en79pN3R5Maqgv2FJPBKmz_D_yIzdjrMkJqlLk1ypNMFykEJQdhks0J6QZxgHzWNAZORJNtNZlb36xTq_XD2ByitxY37nBRb4jllhMKnfc4jhsN7mr_oKnmK7d69E29kOpnjqR8n_bvTpCti8X_a6q6QL-YF87mXv14aksf1hR-ao2PTU38TDG4jN0n-YsmK4xErJb9YVPpRpkrE5RCeQDuuWE__yJX19LT9t3-x_y51kxdTWoDv58BHicgQQUaaW777EJpyNEezSPfwE_fe2W1rnbc28-yTj-_ShuDKu-wxII2pdSRb7RnNnHm4Gbpgdf8rzeAPAyOe1dwRwshVRIxT-iiOwhn6rJQde_CorlljxdvkA6fNzhLiGDHPJMUHkkJq8Ejy45-VuXMGbqsKcN6X-5vgHlxr-LR0oeLnHp1M72zq-R_spNpxY8gwPpB57QYD2YIarl5wNlA-_phZszQ6Ufm2DlQ5zvMyhIS"
+      }
+    ],
+    "id": "01a133c0-74a6-7850-95fd-d2ae0f582e7f",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

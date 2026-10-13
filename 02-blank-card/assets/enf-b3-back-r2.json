@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Same flat 2D cel-shaded 1980s OVA anime style. Draw the exact same white android wearing the same cream-and-orange headphones as the reference, but seen from directly BEHIND: we see her BACK — the smooth back of the white helmet with the headphone band over it, the back of the shoulders, shoulder blades and spine seam, the back of the waist, the long white coat-tail armor panels hanging down behind her legs, the backs of the heeled boots. No chest, no visor visible. Whole figure inside the frame. Only one figure, plain warm off-white background, no text.",
+    "image": "<3082774 chars, omitted>",
+    "size": "1024x1536"
+  },
+  "submit": {
+    "created_at": 1791866859,
+    "id": "01a13396-709a-7280-bf46-4c93369c8bf5",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13396-709a-7280-bf46-4c93369c8bf5",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791866886,
+    "created_at": 1791866859,
+    "data": [
+      {
+        "b64_json": "<1998384 chars, omitted>"
+      }
+    ],
+    "id": "01a13396-709a-7280-bf46-4c93369c8bf5",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11087
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/enf-b3-back-r2-0.png",
+      "mime": "image/png",
+      "size": "1024x1536"
+    }
+  ]
+}

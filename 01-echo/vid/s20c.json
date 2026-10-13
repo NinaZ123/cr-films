@@ -1,0 +1,79 @@
+{
+  "request": {
+    "model": "seedance-2.0-fast-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static close-up. The single red theater seat number 10 slowly springs back up by itself with a soft thud, as if someone invisible just stood up, a puff of dust lifts from it. All other seats stay still. Photorealistic 35mm film, single continuous shot, no cuts."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-cc9a1b229b8b451db8d21deee3d33539_0.jpg"
+        }
+      },
+      {
+        "type": "image_url",
+        "role": "last_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-5ae3a17cea53451fa241516896b23415_0.jpg"
+        }
+      }
+    ],
+    "duration": 5
+  },
+  "submit": {
+    "created_at": 1791818466,
+    "id": "01a130b4-0693-7431-a135-2a7f150606e8",
+    "model": "seedance-2.0-fast-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130b4-0693-7431-a135-2a7f150606e8",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818735,
+    "created_at": 1791818466,
+    "data": [
+      {
+        "aspect_ratio": "7:3",
+        "duration": 5.088,
+        "fps": 24,
+        "has_audio": true,
+        "height": 630,
+        "size": "1470x630",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130b4-0693-7431-a135-2a7f150606e8/2B-Otzr2WAyqGDQ4nQ-mmFOHJ4adzU2bq8ArxdxlbGjlE2B1yXCuuBkvm59r5Wi1HMVlVoSlAW7toXQ3wWXKr7nX-g08B6FKRK8-jrWNxTL0ENjg1U4XsStvwgb4kLbNMPwS_6uNCYVgCpS86wA9Ami28axWfI62tFJ4BsSvdX9S8IlTVu3x6robRkW5yswzwwZgNj1Qm2a6Lm8TnFTAXdcpf-9fh4001jg2jPiYbSHR2YoijbszPqWiMUttgECIPiPx6WocFjf2u9ea0_dma4AIAQ",
+        "width": 1470
+      }
+    ],
+    "id": "01a130b4-0693-7431-a135-2a7f150606e8",
+    "model": "seedance-2.0-fast-image-to-video",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 5000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1470,
+        "height": 630,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "5.088000"
+    }
+  }
+}

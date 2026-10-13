@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Night train moving. Orange city lights slide past outside the rain-streaked window, reflections drift across the glass over his face. He stays almost still, tired eyes looking out, a slow blink. Gentle train sway. Sound of train wheels on rails and rain. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-8e99d8d5dd9a4086a0c478f0ceedfae2_0.jpg"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-aaf2-7b53-9036-9a4822b5bb33",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-aaf2-7b53-9036-9a4822b5bb33",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818187,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-aaf2-7b53-9036-9a4822b5bb33/xQ5TXK1wZtXPZqiJ4wmR0VzcPhBRMLMez8_kWY4hMSoOkVFCPdvaBhH9kw1PYWefhMSwF6GysIgepyDJJPr98SWIjBuU5l6YzP0VmxLYSHTSs73TCsxSwditu_6_kZUxTdN5u5tq2lger1VbzoM8pIZRDXxiHDyAzb6nWVJTnKYghY4qZvZkjECT6JlpIDB-obsBHUbumCNHnSncTAvpPQIMAd6pKuX4Z3Fv66KvifiKfgN7HhJJw--GfOLRTFk0gb4FYPin9fD1SvNGqv2nSxe7hWVakc-8ypuW9FUYJlAhWJZ2ZFeVIfPl47G62UWm2-IwOE3RIENR9T8h703bnbhHWZk7xeRsyHVJLhGCtPLT136IuYWYMScfVXSY78fVC_YviwDC4KNpuA5XP65IfK-YPDgzIuZympnjyIrF3bdULXHWj3rPEsA8nfG6HSVFTgF8sDR2YT_ey2NJGWjhsYDnzTmzz6rBISALdJR0y4NxBXfqGJMzdfs2bXj1OUCT5nyUPfyt7bdrxe4rN5hk4kTUAG3NmrBA2i1uDEsnQuV8Rr8io70LwGxc__WregzBSG1llHEJwsoVWFlSoiZXmtJzoCuLUY6XqrQvV9Mdl0JEYrxMuXho"
+      }
+    ],
+    "id": "01a130ad-aaf2-7b53-9036-9a4822b5bb33",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

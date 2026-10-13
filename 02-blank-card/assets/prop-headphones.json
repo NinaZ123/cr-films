@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Same art style as the reference: flat 2D cel-shaded 1980s OVA anime, clean ink linework. Prop design, single object centered on a plain warm off-white background, no text, no logos. Exactly the girl's headphones from the reference sheet, alone: chunky retro over-ear headphones, cream white with a vertical orange stripe on each ear cup, a short black coiled cord. Three-quarter view.",
+    "image": "<3078038 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863695,
+    "id": "01a13366-2944-74c0-a5c3-1969bb970ceb",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13366-2944-74c0-a5c3-1969bb970ceb",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863865,
+    "created_at": 1791863695,
+    "data": [
+      {
+        "b64_json": "<1162232 chars, omitted>"
+      }
+    ],
+    "id": "01a13366-2944-74c0-a5c3-1969bb970ceb",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 10965
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/prop-headphones-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

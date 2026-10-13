@@ -1,0 +1,15 @@
+{
+  "endpoint": "/unified/v1/images/tasks",
+  "request": {
+    "model": "gpt-image-2",
+    "prompt": "Anime character design sheet, flat 2D cel-shaded illustration, clean confident ink linework, limited palette, retro-futurist 1980s OVA anime aesthetic blended with modern elegant anime key art. Character: \"Seven\", a cool, beautiful young woman courier, about 20. Sharp calm eyes with pale silver-grey irises, short asymmetric black bob haircut with one long side lock on the left and a single streak of signal orange, straight bangs. Wears large chunky retro over-ear headphones in cream white with an orange stripe, coiled cord. Oversized dark olive-green MA-1 flight bomber jacket with orange lining visible at the collar and cuffs, a small round patch on the left shoulder reading \"07\", black turtleneck underneath, dark shorts over black tights, chunky white sneakers. Three views on one sheet: front full body, three-quarter full body, and a close-up head portrait, standing on a plain warm off-white background with subtle halftone. Consistent design across all views. No text other than the \"07\" patch.",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791821351,
+    "id": "01a130e0-0859-7131-a1a4-322eb16f8438",
+    "model": "gpt-image-2",
+    "poll_url": "/unified/v1/tasks/01a130e0-0859-7131-a1a4-322eb16f8438",
+    "status": "pending"
+  }
+}

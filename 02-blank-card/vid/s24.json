@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The girl walks toward the horizon along the rooftop, the android follows half a step behind; slow camera drift, sun rising. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s24-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 8,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869953,
+    "id": "01a133c5-a4c2-7753-9332-cf55d12e24c1",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c5-a4c2-7753-9332-cf55d12e24c1",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791870151,
+    "created_at": 1791869953,
+    "data": [
+      {
+        "duration": 8.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c5-a4c2-7753-9332-cf55d12e24c1/ddimkXNPUa-XFwNd8F15rgM_tY_llI-lHYlmMgYGf1RE-fA3LDTH02pJcyPhgNx68oJjuoEt2sJNta0k3yVXTp1jfeiB9pRy-FTR43LmlbaDPqXB5vQAdUCjHZdWOBVskzGiBTEdPoJ4HyWN28zlUvJhZJa7eA7gLzbNpBqrmK7oZypVOh5PyoJ79zHGST7W3e630HFqtzjd47syIMmPH0FIs8ZQcOLPtONG7WhFkW1gKjxETyssXek6tGjGW7lgpDg81tJ_dKkjLTtd-80BQxK514xuc1VH1M2cH7m8StFG9jYPEbQ_x3fPSgDb3gzC7OUqc5uxXPkc7AsOuA80RJymWqxnhTAX0IPJ0sWTmmpYVjNpOyMc3ROLgyHd3UXG8W5Chu_O-eTZCeHdetxkCVaUTc0TMjm_vTP_FywW8zHU8c1yWh9zEW1uffE9BmF5ti2R_5_ghe5mmcR27R8rmmSf0PDOaMDdP5yIZt8XT6IKzp__17CXQxvrz1oawsgh0p7WXMYdSX3Z4QmiB33UMK9AhHkErE9bTt5dRXI-m3ZIfRNzkQy-dBiwyly9hoznNHX7ovTcXwCS5HgkkkaRlWhcUqvmPLDkpsRbcezpI0iXNcAuMi_-"
+      }
+    ],
+    "id": "01a133c5-a4c2-7753-9332-cf55d12e24c1",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 700000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "8.041667"
+    }
+  }
+}

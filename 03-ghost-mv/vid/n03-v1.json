@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Very slow push-in toward the blank card held up in both hands; the masked head tilts slightly with the music. The card stays blank. Black-and-white overexposed film look, only the green mask is coloured, film grain. Restrained subtle motion. The mask is a rigid paper object fixed on the head: its shape, size and headphones never change, and the mask face always points the same way as the body — the person never turns around. The mask always covers the chin: below its zigzag edge only dark shadow and the hoodie collar, no skin. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-n03.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791890314,
+    "id": "01a134fc-5643-7c41-88a0-e7a467d76eca",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a134fc-5643-7c41-88a0-e7a467d76eca",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791890463,
+    "created_at": 1791890314,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a134fc-5643-7c41-88a0-e7a467d76eca/3RXGy5YCwsi1ptWpHGkvKkEQ-FG6mP1IIA0B1GZZ4YNj4NrMYXoqxTW5yWf7KOfQ2_A-VmvOSvGwu1ULzKn-zVEeMcQmqS7ppMLMZMVt2JIKkP00IgcVYXW3Z2V6r4Bo0l-SoUdL8oOIPzvcDrj2tpRzQ5R5tIHJl2k_1I4khDPNOgM41w6JYfgZ_BK_DCEYJFIO7PPTfu8TJilZERwQACRzT1tzek268WcxRKZuoPdX3Pl53nyUcqqxKJoC_KY3sV8uCeSU1_wvFSG7URVzMWltBD_IRqhrHFjWQEqUNZo9mLP0WKp1crD0Mk9NRVjoqUVmX3hvM5mK1a6OQDt1bMcOVHy0URnuMsnQVNrhzASkcmYIa6wceK14fA7bSFcgJzyBv29MKArAwXIBm14_wGvdCtmPJfnV6YzK2afJTVagTm86wv4TeAI_Fpj9Z-6O9yw2x1fJn2Us5sPikB7o9c-rwdo_VYXSlh57l5jCnbPEJ22iZdx2ACGWXHKP6X7FbxlWNOM1Y_YVeGwg6hX6C9RZnLZ65z5uDkscmmR5idRQSC2apBqT-Dc8Kia1kJXZZQEALWRVdAzgcLobl7E23nCyJjtDBVLSQKwQQfTs8CDpVWX3C4Qu"
+      }
+    ],
+    "id": "01a134fc-5643-7c41-88a0-e7a467d76eca",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

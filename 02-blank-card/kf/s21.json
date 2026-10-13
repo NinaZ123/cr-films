@@ -1,0 +1,44 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is the reference for seven-a8-smile. Image 2 is the reference for white-1-door. Image 3 is the reference for prop-card-blank. Cinematic 16:9 anime film still, flat 2D cel-shaded 1980s OVA anime, clean ink linework, hard cel shadows, subtle halftone and film grain, same art style as the reference images. Compose for a 16:9 frame: keep heads and key action away from the top and bottom edges. No text, no letters, no logos anywhere except the '07' patch on the girl's sleeve. Close-up of the girl 'Seven' exactly as in her reference: black asymmetric bob with straight bangs, ONE orange streak on the right side of her face, silver-grey eyes, NO headphones, oversized olive-green MA-1 jacket with orange lining, ONE '07' patch on her LEFT upper sleeve only, small safety pin on her LEFT chest, black turtleneck, dark grey shorts, black tights, chunky white sneakers, three-quarter profile, sliding the blank punch card into a slit of the glowing particle door; white light from the door bathes her face, and the corner of her mouth lifts in a faint small smile.",
+    "image": [
+      "<3288810 chars, omitted>",
+      "<3486082 chars, omitted>",
+      "<876254 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791868513,
+    "id": "01a133af-ac35-7771-88b4-3cac32d762ab",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133af-ac35-7771-88b4-3cac32d762ab",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791868556,
+    "created_at": 1791868513,
+    "data": [
+      {
+        "b64_json": "<3654732 chars, omitted>"
+      }
+    ],
+    "id": "01a133af-ac35-7771-88b4-3cac32d762ab",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 26915
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/02-blank-card/kf/s21-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

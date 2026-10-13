@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gemini-3-pro-image",
+    "prompt": "Same person, same identity, but 30 years younger: he is now 22 years old, in 1994. Keep exactly the same bone structure, same eyes, same nose and mouth shape, same ears, same thin scar through the left eyebrow. Thick messy black hair falling over the forehead, smooth youthful skin, no stubble, slight defiant spark in the eyes. Wearing a faded black denim jacket over a white t-shirt. Same three-quarter pose, same soft window light, same 35mm Kodak 500T film look with fine grain, hyper-realistic.",
+    "image": "<893459 chars, omitted>"
+  },
+  "submit": {
+    "created_at": 1791816622,
+    "id": "01a13097-e1f9-7ed0-97d8-bbe1929ccd31",
+    "model": "gemini-3-pro-image",
+    "poll_url": "/unified/v1/tasks/01a13097-e1f9-7ed0-97d8-bbe1929ccd31",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791816647,
+    "created_at": 1791816622,
+    "data": [
+      {
+        "b64_json": "<840760 chars, omitted>",
+        "mime_type": "image/jpeg"
+      }
+    ],
+    "id": "01a13097-e1f9-7ed0-97d8-bbe1929ccd31",
+    "model": "gemini-3-pro-image",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 84480
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "img/young-ref-a-0.jpg",
+      "mime": "image/jpeg",
+      "size": "1376x768"
+    }
+  ]
+}

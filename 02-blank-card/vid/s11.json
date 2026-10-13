@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The white android, kneeling after landing, slowly and gracefully rises to full height, coat-tails settling, red light. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s11-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869770,
+    "id": "01a133c2-d94d-7261-b118-31698221e6f1",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c2-d94d-7261-b118-31698221e6f1",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869902,
+    "created_at": 1791869770,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c2-d94d-7261-b118-31698221e6f1/0mue83jKbo72gP5FJITKZgzyLJ5OZGy6BWW1XBsrXuB4KqHxWVWSdQ6Ax1-EFmYYBVq0T-S27wrMYQ_JMCL4Urj4PPJtrr3-FYlYcStWvWxCJeq5wvWfTBWJDFbjZOmnPSncKmVKy3ePy1nd5NPDUocFqYj68Ip6k750qGVnJqO4ajSlOjXw41-FKWA7y3Rj-SbbLPY6ly_nde24YFatYvJlw6MEehC2o0XPhose_gdwH8RNDe3f43d65uFLoJ8o6_5AJVBCjaHEv9LjnGC7dPQ1q7RxrFwt0SWH5N4ztTeRQxRgmyyPkAAuvW_2D_OVAJTtJfDRGtsfGERFLEz07F6hlQRfKYdZjO5qwZDcZ_JZvwI0hQPty2EDw4rV2vczezF_mEMxsE6xTo5O0dYuBW4JW3-jK8CAmrp_pYNmf5YJ3gM19ChGHalTFMsuUSSAjzHwRvg5sncFIKuUV_AKlHqpjp4x_B7zGQsAdWqfL3SfdBr-a1EcWRi9EaIL1JzJj19_tPCM5Ww3nFc5sB04GANTRZO4-eUiivXQ6YqUHmr9r6iopk9NnL4OnWKtmvxCMoDJGSnaWWDA1srqVAW5-UAecc20jhMK9g-H9P2C5bYmEmkM4qoy"
+      }
+    ],
+    "id": "01a133c2-d94d-7261-b118-31698221e6f1",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

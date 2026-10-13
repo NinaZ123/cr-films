@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Locked-off static wide camera, no zoom, no camera movement. The girl walks away toward the horizon along the rooftop, the android walks half a step behind her; both stay small in frame and get smaller as they walk away. Sun rising. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s24-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 8,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791870402,
+    "id": "01a133cc-7e70-79d3-b02e-640bdc56032e",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133cc-7e70-79d3-b02e-640bdc56032e",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791870578,
+    "created_at": 1791870402,
+    "data": [
+      {
+        "duration": 8.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133cc-7e70-79d3-b02e-640bdc56032e/qMXMT9xptysSQlTzrIXwhB5UecIm-RjFD7efWwaIK9mc8zeXzP3PmlTQddm8TAsFajRZS1e0VU3_L1NO8t0N4UjfxYab0MdEtNX9_PlziGe41fy2KxUy1twGo8a08eY6ZSls9Gq1Z21JqiE2jYvxEwWglBcPbw6zuqW1lQgSXaVfBfhU1x1d8Kfk9RvR9og9vZN6gdcaJmo48OHflXaNGvxSpCY_rlv_mKbFNwzE5NwuAuPoRg6_Zzs52Pzy-Nah3FAOFpK2ApScfvf9NCVf_TohDpvO61cLUzDTbR8jKrbAh6J9F6uwhwa5qhWE6od1e5ruzQF1CL3TeHvmIgeDWtciHu1wKKaAgF_6WLthYl7MZFIgYmMsO3ahiF1VlADs7x398ml4kGf_NVfX4C_DDvOtWtlLW8-Xjtjr_e3f-Zcc0px-X---WUiUffmO_xpwMU2hm6iv0sBJ7MZWA-h0KBmyWZsRRFdGq07frRWDATNG5KwnLRzLo1OYPU8bfybq4sMGXObi0sBwD8xDrK15L5py0J80NaSRAsC60UTstjJ1Cqi7246jpBi7YT8E1mobOK3Ts7kRej5vasBajWSSBSUSxFL0XoOv0j6y4-93F_XKbtrE1z3D"
+      }
+    ],
+    "id": "01a133cc-7e70-79d3-b02e-640bdc56032e",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 700000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "8.041667"
+    }
+  }
+}

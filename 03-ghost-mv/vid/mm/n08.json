@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "minimax-h3-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Slow camera pull-back. The masked person with headphones walks toward the camera with an easy, confident stride on the beat, a small head bob with each step, hands in his hoodie pocket; the masked people behind him stay still. Black-and-white overexposed film look, only the green masks are coloured, film grain. Natural, relaxed, believable human body language, like a real person filmed on camera; subtle and cool, never exaggerated, no dance poses. Every mask is a rigid paper object fixed on the head and never changes shape; the mask face always points the same way as the body. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-n08-c2.png"
+        }
+      }
+    ],
+    "duration": 8
+  },
+  "submit": {
+    "created_at": 1791896690,
+    "id": "01a1355d-9e19-7951-a65a-5d2a768c9d77",
+    "model": "minimax-h3-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a1355d-9e19-7951-a65a-5d2a768c9d77",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791896909,
+    "created_at": 1791896690,
+    "data": [
+      {
+        "duration": 8,
+        "resolution": "768P",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a1355d-9e19-7951-a65a-5d2a768c9d77/AznWRJ-3ofiukjaDacRQZ5x0LdRZkUTm_q8pfa5psYjfl0tUFRWevcQBnym5A3pv6anHQQDhmHazuKFQmHmB6OPjggEJUUbNM8FE607eUADb-2ENMlno6v7lcGnKLZwao7VlaTsw_lepdFEushDBkgMzmWVDrO4Zr4IRgwvXZyQ5vw3WRo4rFfBhFHCrSEmFaWYhS_bh5x1I_-uQywLgILqTGvuffXnBiti0QJqOn42yqN5FemYzdTv9-nKmiUdHAatmnmWMZajx3j8AcFRE7VGfaAJ7dQw-GcG189oCzaYe6GL0aX9oAZYj6cOpPFgVl7c0axU3qtGCWquYqSavkVAYaOKAsKHgql45UCZTaIzPNuYld_phrp16zdYfVulONKfvV2t6uZO94H4V2DXCKmoVJRmhG67E3fkES-_hzkzvKVTdC5Gs2Oxo9oDEJBGxkZJq3T0N1sCVyuhzs5jlWNDro_MaGmB_lH4VoKcUZslAHOJaF9hUhlLb9UEM1N9e-biIJnwSoNFv5aki_tDWTOkXhTg5wTohfRsYu6y6-fgqutYi5BPaCtXchfytKA58ZyVTaOcotgqcJeUAWkXKsCfSShhBBv2aPx07MFwvbFbpWhe0WY4m"
+      }
+    ],
+    "id": "01a1355d-9e19-7951-a65a-5d2a768c9d77",
+    "model": "minimax-h3-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 400000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1344,
+        "height": 768,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "8.000000"
+    }
+  }
+}

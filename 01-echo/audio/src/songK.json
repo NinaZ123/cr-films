@@ -1,0 +1,59 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-text-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Audio focus: a lone male singer performs a slow, melancholic 1990s Chinese rock ballad in Mandarin, accompanied only by a clean reverb electric guitar arpeggio in E minor, slow tempo, simple memorable nostalgic melody, warm natural reverb of an old empty theater, emotional and intimate. No other sounds. Visual: dim empty theater stage, an old microphone on a stand under a single spotlight, dust in the air, no people visible, static camera."
+      }
+    ],
+    "duration": 15
+  },
+  "submit": {
+    "created_at": 1791819145,
+    "id": "01a130be-5f45-7952-bb95-b2489d93b60f",
+    "model": "kling-v3-turbo-text-to-video",
+    "poll_url": "/unified/v1/tasks/01a130be-5f45-7952-bb95-b2489d93b60f",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791819335,
+    "created_at": 1791819145,
+    "data": [
+      {
+        "duration": 15.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130be-5f45-7952-bb95-b2489d93b60f/dd1rngNoi61n6yvI4C8gxHh0FPzjvLnKgOOkE_IsLsC7kZWw1UCXOcjd9vv_4KqPPOOLYWSdOZCWVxgTZV00S3aBHRBsInq17CQytUmc8ZR2Is7DbN4wPVo5sPKVr2t6w6Pol8Ag5ijmp0kyL4I42zqt20WXyNJW9nLfK7H8JY1R7OoToWkjsl0xt3WirmVoIQTLdJZg4KilFu7zQ077n6TCOvMGTHVZCu7uKnl-nsnvqsmG1L-iyIyEHFsidS6IB06qA1ldWET0vY0TwxDoYHuZpvYNNeEDzgVzNFG0FIfpWRQ0wu1QrltzVu3l2bSzoLWAaE-v5uAvnfVPtp_kgPIuCHrI9F1Ps12C0JHmzq1k7lnPRRJc3gFYBz6sequHekVx2BTE9qjZhxi60OB6WraBLZG0xHXB7BsvRVOnd6HmAn9nSqKbBPibjnK0XxKLiGA2UIaQS8gh5jM4KBopGIqHfF3UHMUYr_SOsUkKZN0nLgMqfNi3Kq5liDREfUnUy-3MB82l5SHD3FwM0MfXjQh2aSZdg2qNUEOoxJ81e_cRzE6leixohV5y62HKY5xzrTsQ_n0ZjpIPb_e4h6OoYvNXVWOH_xb0a8RWGWqGb2Q7nTxxJ5GL"
+      }
+    ],
+    "id": "01a130be-5f45-7952-bb95-b2489d93b60f",
+    "model": "kling-v3-turbo-text-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 1050000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "15.041995"
+    }
+  }
+}

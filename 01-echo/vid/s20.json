@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static close-up. The single folded-down theater seat slowly springs back up by itself with a soft thud, as if someone just stood up. Dust lifts from the seat. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-cc9a1b229b8b451db8d21deee3d33539_0.jpg"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-aaea-75c1-a1bb-84c41aca69c6",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-aaea-75c1-a1bb-84c41aca69c6",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818209,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-aaea-75c1-a1bb-84c41aca69c6/I0vIZdeN7MMN5NeNzdZurdRg4KH5gCgMKGdn-S4CzAbD9ZCOqNU5lXzGkKY9YS1Ts3HN-s-8DLqymANFBHeIbDBpBJcZDp8L3IyahvxgMwKXCevt5w1dws4hk820WXuYo8jZ5aooRoAeUQ4pmRA3sG2VodTUHit0gMmk0ex_4LaYWx0xZxCwsvggjlpKBY4BvBk41g8wX_1xNFBVsgxidt2Y3C0lJRRM-u3GoPgNyD9fFn94PdFtBQ8hj-2bpF9Pbr4SZRiIq9cRyBMlTP2PKvGqaSGQZQ9vSg_l5X6IMpSUyNH7KQJjGRyhBxIk4TN7K_wcOn9j4NI7ICal3cr0Ql0rBFnXOiTQMCK9ES6sU1bakbNM7f4ReOZj8oy6_hU8sZ6cEL3vB2OqAEfOda-IAktkrFjEu0LZjYcS3lQ6_zvOvytfNQ7TPqslnBz8-UUnVnzlYXG3-7S9S_PEsZL8gTCv7i_201nlTaew0Wi41JahmtkPghWZ55dpbLIWty9nHRBK1e6EXPw0H-OA-Sb9N0uyiKFSrSnV9JEIs9NPuK-ANR3kD2YXhEylcU1pRP2aKDF-LbiGOlgzoykM0uhhokoy7Ft_IOrwHxU_WleKZTFMND7s8dIB"
+      }
+    ],
+    "id": "01a130ad-aaea-75c1-a1bb-84c41aca69c6",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

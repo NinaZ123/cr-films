@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The CRT screens turn from amber to red one after another in a wave across the wall, the red warning lamp rotates. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s08-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869613,
+    "id": "01a133c0-74a5-7790-b767-526d4950f5e4",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c0-74a5-7790-b767-526d4950f5e4",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869795,
+    "created_at": 1791869613,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c0-74a5-7790-b767-526d4950f5e4/FvVvxa277uCG8oksesGqGuSRZMO58At7YUqiPn7nEo9udS256B3gXwiChZIkKxq-HA_eeAhDx9qCE7bY4WUsz4a4ZUPW5RqA8MBSYtTL5YqcUG08i4ZX9-1fsoz_v17gNf5YBqhirA7hS7hS1MAeT4tW3-8EA5Vubu8giPY2DxjkopF4xwmyecgFSWX-2QnehxsFfxdrcLiF5yjr8GJhgr2et-a5BhfO9HVJ5w8c7hIMQTLu5dR26sowS53i5CDxGdXtLRsfQI_xQZbJWkqutN20uXBm1KVGwRIsF4-b40pLhEvXXipxlAMiqH4oIs7IuD0FMD_9JhyEFHNMj6ClEqFYbQbUR58dvzC69tgUYjUiLILpuDvynod9jCGLSqdpVynv9CDWArUdcw-BKPU1jHw3SDAgXTHKJn7bYUcktjYHJa8sNb6se4c4J-TJo-RLadBJuRXgtY69VYihk45EqqXoE6pQ0IbeSv25m2k2a3dnIinjnNmb-ybeLjOv_qZfgZwMhIbmfIfSB40bmwTYg0xBEkzZRTtATTZYcUJVWZcMEOOjye7t36eJar4A1G0gtQNlasTAm0I7hhSk-jFW7668qMCFPvZf6yaqazdObsuKPssg0L2j"
+      }
+    ],
+    "id": "01a133c0-74a5-7790-b767-526d4950f5e4",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

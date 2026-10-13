@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The glass capsule shoots fast through the transparent pneumatic tube from left to right with a whoosh, motion blur. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s03-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 3,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869613,
+    "id": "01a133c0-74a7-7102-ac74-677db391eb6b",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c0-74a7-7102-ac74-677db391eb6b",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869752,
+    "created_at": 1791869613,
+    "data": [
+      {
+        "duration": 3.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c0-74a7-7102-ac74-677db391eb6b/16zwRVCqhu-bgJLwV8DF7RAe7J5LmJ5mPx6pGdmZ-D8N--6LTM_-H51Byg8bcJiTUlAxZLW-gvdOGchab6O4VHtLyt4XtMt40nkwjwP-ATYlihlyfg5NHwLRBcpSx04RH-vrzdViVl1TDjOQmMwawawYxGA2lFBsUspRlsqQ-tWBK2_GrukGedp7YUfJc5swL-JZG-M7MW8eeNRICPb7_BmkOP7-0mcAab2Tfe7iq5qdE37udtgfbHFXC5bdz9W25uwVkywk8mwCgSiNsS244NBog-qPB_MmBVBk0eOLJZm41N-XMhlSc0_GwhSZOrWSYV0jk6iUNAVnp_nVF4rS8S0wasdeHWj-Y43qT0tMDxkqxNKbsBXwicl3lqdZoJiFXcr99OwvxPecrakwWW0stOmxsxaRKCyHJE5odYVx_PjEYHBGlHzsy90K1G_dgdeF_7R_szKgNDTbvFCgkJ7OIegY8vCgUTfxHDSudNm06WMzgW8m1_e5C37v1gz-3HEkOVx8mQ997ai7saA7SoNtOf0d0PsjL3XifkZMy0OsLG__vWRmU4S-m6pNmbk5yr8XQGJBRKGUb2MTFbUDkb45jYPS7ceDRW1hwYjIDQvcDPlnsR1BkhWh"
+      }
+    ],
+    "id": "01a133c0-74a7-7102-ac74-677db391eb6b",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 262500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "3.041995"
+    }
+  }
+}

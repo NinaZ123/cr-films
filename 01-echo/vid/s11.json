@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Side tracking shot moving with him as he walks slowly down the aisle, his fingertips trailing across the dusty seat backs, dust lifting into the light shafts. Sound of slow footsteps. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-4af8eb3deb3a425f89e685ddfd9fc347_0.jpg"
+        }
+      }
+    ],
+    "duration": 6,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-aaf6-7280-a2ef-196b0d27a63b",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-aaf6-7280-a2ef-196b0d27a63b",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818209,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 6.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-aaf6-7280-a2ef-196b0d27a63b/QZVvRGaFemieaPKmN4GzRJ4OvXKnZGay1wwaAPnpgs6Xtdy2v2MO_bitCSBo0j400WNjlKTFe350-Wao7HITmKmekOn3KNTvsJraE69nc6D2q85FNwLk-yA2NLp7OU1SaEDpb2aj8dxe2-D7dAL67IrG5Pbkzirxlkrv1Bt-nNWbqBcZv7Bfc9lupZuGQ0hZYBQQNacwLTqaAIrLNfG0MSj4YyZ_H7-lc_JdcJhIRTn2nRTylcYGe3g1ihDKj7bn4oOAF-zox9SXzlQfKkmWXqRLNQOGSqjRSO4FfyCx0x2TS_W942SDWNN7fuzIXmnzQGZvhnB4uYTmfDVb0ZODpvl8FX-Y6n1I-GlvjANn3pyNDHTC7jHTZXeQ06nmY24RfCr9KLKQC-QW1IgbiqEtZ__FWFtG0VrmqRDwRvlLnok6C9KzRyhkXyDZ1d-EYf4vahXUPbReXuA3f3-dy2Aq8fo6Tcc3S8fLswNatjdXBizgQNet9VMxYiGWFRB3SuC4g-rxejMmbUe6qZYjt4N3MrIRJxqtYCOUTxypCzIwdW3b87IfM5mS5cK2LGjR9a4jyq6xtSGd-eM_Jsul8Rd7eAL5umEkwnTkU9XavJ3pBy2p-kwQQ2Ve"
+      }
+    ],
+    "id": "01a130ad-aaf6-7280-a2ef-196b0d27a63b",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 525000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "6.041667"
+    }
+  }
+}

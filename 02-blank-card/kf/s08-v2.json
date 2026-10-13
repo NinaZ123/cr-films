@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is the reference for hall-4-crt. Cinematic 16:9 anime film still, flat 2D cel-shaded 1980s OVA anime, clean ink linework, hard cel shadows, subtle halftone and film grain, same art style as the reference images. Compose for a 16:9 frame: keep heads and key action away from the top and bottom edges. No text, no letters, no logos anywhere except the '07' patch on the girl's sleeve. The giant wall of beige CRT monitors in the amber-lit retro-futurist bureau hall exactly as in its reference (beige desks, beige CRTs glowing amber, olive filing cabinets, brass tubes, orange floor lines): the screens are turning from amber to alarming RED one after another in a wave from left to right, about half already red, a red rotating warning lamp on top. In front, rows of beige desks with the identical round beige Clerk androids (blank face plates), NO humans at all. No readable text on any screen, only abstract red glow and scan lines.",
+    "image": "<3835578 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791869054,
+    "id": "01a133b7-ef6e-7da2-ae1f-915474ef7507",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133b7-ef6e-7da2-ae1f-915474ef7507",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869090,
+    "created_at": 1791869054,
+    "data": [
+      {
+        "b64_json": "<3834296 chars, omitted>"
+      }
+    ],
+    "id": "01a133b7-ef6e-7da2-ae1f-915474ef7507",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11387
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/02-blank-card/kf/s08-v2-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

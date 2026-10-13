@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The girl calmly holds the headphones out toward the android; the android slowly lowers its head to look at them. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s18-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869804,
+    "id": "01a133c3-60af-7db3-831a-c168ad16fdfb",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c3-60af-7db3-831a-c168ad16fdfb",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869938,
+    "created_at": 1791869804,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c3-60af-7db3-831a-c168ad16fdfb/7X22RPBJ_LxFX0e1h9NEG4pa8o_ZeiluoPV5YHQFvIYvmLcveqGuEGayp584_6VeXdl-jps327BrO6iQGpuDTEczHHo8ZJ6f7nAsKYNkgVekui0NmXTX2vXhNTxxLVEKKOCGaE9Uh5Gw1MVwcp2qaQ8_kuSrB30hKs62hluwO5ZylhalQNo0jqPKzw3_65nyZpvALO5Kwc2xnrcLqxw-shS1s5yTqpYJU3dCac3UpD2z-D2XuFOAle-5X52ZYQE60_0DXrsAXLDeP4SLbnZxcldhb8C8WgjtGjbrwMha350DBkyMiOTMP_leklkiHxlwVH7dxboGa_W_T07qqJCjr700fLDeATqfWgPFEzFOX0qYD-rY9QccCHkvc00oysOVwMbfErSQcXA--nr6MKYOWwXFM2q-jpJXJE3hkcksvAXR6EjKfu4iGAZ383WtaSSlAvNQibZvhvukWDRkgatkdRiAl1wjyIcDgvtm7FGz-GECD2U_K0fWpLGBZGMSjaA6aSwxOrYAHoBB2aswtFRCUBDTo4ERwmNYkk0EngHQm4HjZr8knfbKuOwiRRCCJzX34HNnXNuyjVsCZKL6rQpRigHQimHS7-_vq9-Ct5-_d9gI1ZLvH1nX"
+      }
+    ],
+    "id": "01a133c3-60af-7db3-831a-c168ad16fdfb",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

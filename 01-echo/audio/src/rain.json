@@ -1,0 +1,64 @@
+{
+  "request": {
+    "model": "veo3.1-fast",
+    "content": [
+      {
+        "type": "text",
+        "text": "Audio focus: heavy rain falling on an old city street at night, distant thunder, water dripping from roofs, no music. Visual: rainy empty old street at night, static camera."
+      }
+    ]
+  },
+  "submit": {
+    "created_at": 1791818837,
+    "id": "01a130b9-ae80-7310-9a55-674c5e9f831d",
+    "model": "veo3.1-fast",
+    "poll_url": "/unified/v1/tasks/01a130b9-ae80-7310-9a55-674c5e9f831d",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818976,
+    "created_at": 1791818837,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 8,
+        "fps": 24,
+        "has_audio": true,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130b9-ae80-7310-9a55-674c5e9f831d/3P3BRxE_tiZVKLEYchSN1duk1YMwq0Iqk8oB6k2V5i8OjvutBlG4dq_FvNQuKqOabhf0m2JXSpshzyr_98AV8NkXeeAhkHp27MFAeaoV3O9EjNtSvjmTeMq1WzV7M7C0B3hwoMulwGW2JXFvSiQhrrqbReePCCpsvp74qnKDw21vCAPkzLvX1kkJhVptsTAczzWlTaIAZdN9U7ULp4Sa12CrtXZAGv_prXWYVRAMvECmb55I8mSCtMalnyVLmDusjNWLsfvDN7h2Ll_55fEIs9rWWA",
+        "width": 1280
+      }
+    ],
+    "id": "01a130b9-ae80-7310-9a55-674c5e9f831d",
+    "model": "veo3.1-fast",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 8000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "8.000000"
+    }
+  }
+}

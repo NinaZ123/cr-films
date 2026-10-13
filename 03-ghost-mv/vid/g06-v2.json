@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static close-up. The hand presses the headphone tighter against the mask, the head tilts further into the music. Black-and-white overexposed film look, only the green mask is coloured, film grain. Restrained subtle motion. The mask is a rigid paper object fixed on the head: its shape, size and headphones never change, and the mask face always points the same way as the body — the person never turns around. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g06-v2.png"
+        }
+      }
+    ],
+    "duration": 3,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791880884,
+    "id": "01a1346c-7190-7962-aa65-5b2fad77fda1",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a1346c-7190-7962-aa65-5b2fad77fda1",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791881057,
+    "created_at": 1791880884,
+    "data": [
+      {
+        "duration": 3.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a1346c-7190-7962-aa65-5b2fad77fda1/aYsFziP1P7viyg3HFYGMEAQo1hDYgzMXWf4CmvMjC2xiyOIpn6aRwWzin0UL4rGzDB-Jj8zYMWrXm0bTcj3AEEKMWM4RaeV8UA4C9KflnfSjOwaGajb0flUuOPVwxFUtobosA4cFGCw-ej7rOiSFFr2AFISCVryvl6RlfMCEDyNYv70I6A1dZhpUAi8ATrRMg2tvGEdSfLokYiF8zqtg2lBtv5ywCHp44B6iNJUUsO8FWyZMul5W6nrAUrAt6zhMaeLwFTr0YBaFSL1rDsDe0MXNSdSpDaqZwOGFKLNVxHs5OwQoXbaDyxEMyJOGcf-hhj7F6DpDaCBMbaxEIm-UmdRKbStR--RrbMyFw3WD_XWSBN8XJoYQBha44WRDBtLZfcDeiHHp9yLmBz97uY9_4b59b7wqPL4TMaK2oi6wFpElbAfkHgbPG7RtDAori_sI8Eytd4yFL4UGv-hXq84-9TSPFc3FWpMqX5jnJE1UnHNx6UVjuXt8vZMYIn8S9XGf1Ia-i4e-ZDFP3tuqACqH30PGycZiwoeZDoDRhu6V3br_IHM6goaMJzdWFrrXX0N5rNX0VubnQ7JV0I0f9-3p_15Rv5WG_yj1OO_rupL6hoqrcdgc51vy"
+      }
+    ],
+    "id": "01a1346c-7190-7962-aa65-5b2fad77fda1",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 262500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "3.041995"
+    }
+  }
+}

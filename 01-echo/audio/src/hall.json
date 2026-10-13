@@ -1,0 +1,64 @@
+{
+  "request": {
+    "model": "veo3.1-fast",
+    "content": [
+      {
+        "type": "text",
+        "text": "Audio focus: the eerie silence of a huge empty abandoned theater hall, water drops echoing, wind through broken roof, old wood creaking, no music. Visual: dark empty abandoned theater auditorium, static camera."
+      }
+    ]
+  },
+  "submit": {
+    "created_at": 1791818837,
+    "id": "01a130b9-ae8f-7211-8236-921baaebbbd4",
+    "model": "veo3.1-fast",
+    "poll_url": "/unified/v1/tasks/01a130b9-ae8f-7211-8236-921baaebbbd4",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818932,
+    "created_at": 1791818837,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 8,
+        "fps": 24,
+        "has_audio": true,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130b9-ae8f-7211-8236-921baaebbbd4/HzjAGDPg2q7kaO3iqOeYMkAjPbAOwSPqiafacgE3995fZPFgi_dWmTLqiHbqBh_1Cixo64wLzNUY0WnXYPEIajFjM4Ui_2XrxVMqFUek_hhTQYW1aX0903iKXZTYNNfEncQ-hIuvpY-L1sx9iXfNdRXkqJ55JbySlvBRgdL-ru5uJIGpXNpU_nzH5kcbID_LBXTIk_uqP99y95cwtuclVzAQd0o1Ghrwd9mcnzjaxhw3PbNTViZTRzPb8sWLZv-Qn8ktLaVRjGZsds9-24qAH2XhLw",
+        "width": 1280
+      }
+    ],
+    "id": "01a130b9-ae8f-7211-8236-921baaebbbd4",
+    "model": "veo3.1-fast",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 8000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "8.000000"
+    }
+  }
+}

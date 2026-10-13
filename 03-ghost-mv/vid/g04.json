@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Slow top-down camera drift. The masked person at the desk taps one finger on the punch card in rhythm, the other desks stay empty. Black-and-white overexposed film look, only the green mask is coloured, film grain. Restrained subtle motion, the mask shape and headphones stay exactly the same. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g04.png"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791877489,
+    "id": "01a13438-a397-71b2-ae22-244793fccfc4",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a13438-a397-71b2-ae22-244793fccfc4",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791877663,
+    "created_at": 1791877489,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13438-a397-71b2-ae22-244793fccfc4/ZuEWv-i5a_aGD3locKUfx9B4o_D-IcR_30Sc_ZAHu1qvL7ZuXajqLLPIBvqi9Z1Msn7hlRXCJYJm4tLs3F-pEFWVFyPZzekCM2RyAC-HspQNZ57KeRxjBOVRy4W0i5yLTYIN4BPvt2G_9OI1nx0awKpc9QGH3l8OmZvToFFEZgwwHcQr4_At_w0ipYIZn2YovJZTh2Gtk2dmkwoZBOw9nA3upR9mRCEdMj7H8QyC-E8U8mxZZX4wXmBqKLyRcnB4wWG0YiiekvIjsQFT26XM8d9sn2FrHDKgzrzC5OvylF7kvQ4Eb1U2vGyiXMYNI0-BY1xPs9A2eTyOcbhRIHb_ZVbLLXDoOp0mYhrI_9GGOa06kEEH0Xb4PafpxuTvqn3QYVSVZiy-DHUYjXi7lefARiTrRcIfg5BdkV17ByrpI_Uspw1Tio8dgMG1dqkrlEhpx0sIpbjjHgo2ywFLq6OQ764gkzUVPIItMNvi_MjIyPKU6GpA4SUHeMDECeFMqpDo-2O9il8vtzL0OXtHa_-sTsjH7UJ7CdanRfQ1OKVsPhDwdYfMF8256x86X8tmDLTcSkwkfw0n6X6f6KYYRQAhyVuRXSYjbiNpTBPG8OvhJ4I53-_1uC6H"
+      }
+    ],
+    "id": "01a13438-a397-71b2-ae22-244793fccfc4",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

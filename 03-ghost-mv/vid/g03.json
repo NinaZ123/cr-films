@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Locked-off static camera. All the masked people stand perfectly still like statues; only the one in the centre with headphones sways his head side to side to music. Black-and-white overexposed film look, only the green mask is coloured, film grain. Restrained subtle motion, the mask shape and headphones stay exactly the same. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g03.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791877489,
+    "id": "01a13438-a399-7291-bb77-693d2badc925",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a13438-a399-7291-bb77-693d2badc925",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791877685,
+    "created_at": 1791877489,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13438-a399-7291-bb77-693d2badc925/l7Zt-5tb1_2ucb-VhoqlHbsnybVVZOv-5Tv5Gg_vV7Aabo1hR2nvN9r1CtBbf6bBf4cDu4AIpZTvNzDRLis-U3u-lfV-gVEHjfaTklRIkSeVf1c-7rr4wMZqOrXNOiQtho1c8kFGIoOoLamZoReUG-YssWWnIIrFesf-WP5pJsXq2JvU6tWubDYZ_P0UFC0FYOQICraTJFi6gTP2lC1ecGtbAX0oCuI5NqLIUetbgiF79yE2vCi_9cHnw8Ptn2J0NVVwhjK3-_0Y_wY5a4RqrHGthldkNHqF7sJL-2lchXGFwp6hnJi9zwVXHCnMF-M1hH-v1-Qb2N7wO6r4hqGnGFPqJKr2oPjC-XSiXl9N-htljAtY98r5HepwZjSiNdJFAVitUQ9-ohD_M8dxFEFQfOcje_fS6GefXOpZ1kygcDFPyXqOunahR68DS_Nb997rC8Bej7niT6ZeVUvsoosyeIHV2AdKJsOJnBCjKA_dTSDlPqlqDQ_siBETqWmlDCUYHndobG13vQqgloT1p2kBpPUB7e9FFNI6-75lvQnBV77rtIAhVE33QyAwG6YkV3O11RyVRbHc1togPUNaGem-B6tkPkgud3GfW53fYhrci_Mg7Mx_FCq7"
+      }
+    ],
+    "id": "01a13438-a399-7291-bb77-693d2badc925",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

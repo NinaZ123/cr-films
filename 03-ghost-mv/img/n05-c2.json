@@ -1,0 +1,46 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "<2036 chars, omitted>",
+    "image": [
+      "<550990 chars, omitted>",
+      "<153883 chars, omitted>",
+      "<202167 chars, omitted>",
+      "<381019 chars, omitted>",
+      "<2353358 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791895945,
+    "id": "01a13552-425f-7832-97f4-4f66dfdc6c72",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13552-425f-7832-97f4-4f66dfdc6c72",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791895999,
+    "created_at": 1791895945,
+    "data": [
+      {
+        "b64_json": "<3147608 chars, omitted>"
+      }
+    ],
+    "id": "01a13552-425f-7832-97f4-4f66dfdc6c72",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 28912
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/03-ghost-mv/img/n05-c2-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

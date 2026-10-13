@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Same art style as the reference: flat 2D cel-shaded 1980s OVA anime, clean ink linework, subtle halftone and film grain. This is the same 'Clerk' office android from the reference sheet: short round matte beige-cream body, round head with a flat blank pale face plate with no features, round ear discs, olive-green vest and olive puffy sleeve covers. Full body, head to toe, front view, standing. plain warm off-white background with subtle halftone. Only ONE figure, no panels, no text.",
+    "image": "<3345710 chars, omitted>",
+    "size": "1024x1536"
+  },
+  "submit": {
+    "created_at": 1791863697,
+    "id": "01a13366-3036-7a43-9876-36feeaf12801",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13366-3036-7a43-9876-36feeaf12801",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863897,
+    "created_at": 1791863697,
+    "data": [
+      {
+        "b64_json": "<3212032 chars, omitted>"
+      }
+    ],
+    "id": "01a13366-3036-7a43-9876-36feeaf12801",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11062
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/clerk-1-front-0.png",
+      "mime": "image/png",
+      "size": "1024x1536"
+    }
+  ]
+}

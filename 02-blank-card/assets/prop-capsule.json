@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Same art style as the reference: flat 2D cel-shaded 1980s OVA anime, clean ink linework. Prop design, single object centered on a plain warm off-white background, no text, no logos. A pneumatic tube capsule: a transparent glass cylinder with brass metal end caps and a twist-lock band, as used in the brass tubes of the reference image. Side view.",
+    "image": "<3923258 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863694,
+    "id": "01a13366-266e-7d33-ad2a-6ec90020b72b",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13366-266e-7d33-ad2a-6ec90020b72b",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863829,
+    "created_at": 1791863694,
+    "data": [
+      {
+        "b64_json": "<1484452 chars, omitted>"
+      }
+    ],
+    "id": "01a13366-266e-7d33-ad2a-6ec90020b72b",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 10946
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/prop-capsule-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

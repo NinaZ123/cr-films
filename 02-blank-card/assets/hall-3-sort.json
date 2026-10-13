@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Use the reference only for the art style; flat 2D cel-shaded 1980s OVA anime background art, clean ink linework, subtle halftone, film grain. No people, no readable text, no logos. Same location as the reference (same beige desks, CRTs, olive cabinets, brass tubes, amber light), closer view of one sorting station: a beige desk with sorting trays of cream punch cards, and a brass pneumatic tube coming down from the ceiling ending in a round receiving hatch with a small tray, transparent glass tube sections. Medium close shot, background softly out of focus.",
+    "image": "<3923258 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863694,
+    "id": "01a13366-25b4-7c61-836b-e1d5273828d4",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13366-25b4-7c61-836b-e1d5273828d4",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863832,
+    "created_at": 1791863694,
+    "data": [
+      {
+        "b64_json": "<3369940 chars, omitted>"
+      }
+    ],
+    "id": "01a13366-25b4-7c61-836b-e1d5273828d4",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11084
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/hall-3-sort-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

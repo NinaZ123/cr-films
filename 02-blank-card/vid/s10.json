@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The girl looks down at the blank card, then raises her eyes calmly, and slides the card inside her jacket and zips it up. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s10-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 6,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791870214,
+    "id": "01a133c9-a015-7851-abd9-5cef6c7f9f9e",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c9-a015-7851-abd9-5cef6c7f9f9e",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791870344,
+    "created_at": 1791870214,
+    "data": [
+      {
+        "duration": 6.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c9-a015-7851-abd9-5cef6c7f9f9e/OozXjrgLlZE7kX1VC_rhmaf5EzmGTDHkveDY6-VJaGAlPRdi8DsrnHDhNMq8zNvqA4Pef2zSwHi8X59qZBrRgO8sBdlDf6-3BkgeCMky9dRaiFGOttWYejXPCXe5mwQvTP6a-_RKZxbU8sAtt_qBWRB_7OI-ll1tnldb5XjZfC-Aiae9kWPxbrKnEmTjZMxtn0yGVPXHRGQO_XryEXTsUvYmbtMJQhs_a9G-77awMkw9WTQ8jxQg_MVmjwOb5QLGa-feEy_tahL6K5GBTHPbwk2We8qWwOZvcWOkymXgXBchja45htjsbW_UjVShl7e-fPcEwwSNePMX958GL7Huzx61rXffq-JYusSAC3uhlnTEr0m1lty4X8k14wO52qFsOpsjXdu6pTkIT8sRUNHzelnUq7MWvr481mvF97aQ436KCMhBQwdDl3eWPdc3qxGqTsjhhX_MIdIMZQbIsU13sGxCbnDQ2NKhkHN-6OkZ6PSBtQXLOqhLhuzVADyUGefPT_ofVl1XsqxkEEQXtQIYyICJ_GYrWZbELAyr-bJujUoJCI2qKKTsblWFNpfR6uQu68OBAgQrux_PaYaoFTXZzfXgsO2IchoI9sYKI-jwiNlHollIQgbN"
+      }
+    ],
+    "id": "01a133c9-a015-7851-abd9-5cef6c7f9f9e",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 525000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "6.041667"
+    }
+  }
+}

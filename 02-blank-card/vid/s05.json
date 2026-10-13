@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The girl gently nods her head to the music with eyes half closed; behind her the clerk robots stamp in perfect unison. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s05-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869613,
+    "id": "01a133c0-749b-72c2-bbf5-932d3f8b27e2",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c0-749b-72c2-bbf5-932d3f8b27e2",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869773,
+    "created_at": 1791869613,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c0-749b-72c2-bbf5-932d3f8b27e2/oUV-6i-30l3nwOSI34Obf1Utx8cgdUsiHj4MRs-740EVBx344bQnKIYLHt3CGzsBLE7UB0hc-QRDL6hfE4UQb7qLiTMq5Rmq-j8rWhbkuApzCP3PlJeWjx0tFXc3oUA9c2ZsoN64p6FKUBZ0AsFpFL3bxB5X8T0muy2vfnlD32VUtX9gOMgc-VLJmleI-h8dDAkJEKMD2H6vbSrb4J_WO9xlWCFug-OBofieiqAO4Aq7wpIEiSIKsWx6pE79ScTk-3qR5CCf7ieOqKjk0HvJKFTFZGeuQhfQ7t7eGGHc1PCX2csMKg6K2yz5TgBQnG7EY1UhAjfXhjfxTmpUZ_nv5hUbWT7Akm7MHYNzkFv-DlkKsS-6bnA4Yx0uJaC4OXmfPtE78kfgc6A6ZPjU9A2n0oIWLiye_t7HJqz4KwDt1qzHDj3OzGGdtSIqDc7sBjFDlG3Fb_EwkbrWk_P3X16FA6vNG4BA6pmaz7Op4Wbf39X_drcoJrp4RhIfRbhEeXZ8-x1p51ini0duutO3zYPECpn1XS-k9CqIHLAKvpmB5TWa_-jji6oEGC6fN7PAwV3DVbofEx4E9z7VsqpGYG8F9EX-6IpgWgtdz81EzRB5D2pBcC9HHqr8"
+      }
+    ],
+    "id": "01a133c0-749b-72c2-bbf5-932d3f8b27e2",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

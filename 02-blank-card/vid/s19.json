@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The android settles the headphones on its head with both hands; the orange waveform on its visor begins to pulse gently with the music. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s19-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869912,
+    "id": "01a133c5-04ca-7242-ae78-14c73c03a36d",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c5-04ca-7242-ae78-14c73c03a36d",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791870049,
+    "created_at": 1791869912,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c5-04ca-7242-ae78-14c73c03a36d/-CQBACO6Lwtybkmve5EW9IheAu0MnFRKT52TfuCp8_CCrlhtKv-l9AThQrczx2O170otPZBr3GDIWSkGv-zaAmcaX2h_huSrE14CWMEWNzG52x58zOr-_kbAhXe4DyPiA56EOUYPn7bvhREQlinictvvVKJ0_HyeLQ1URE_21s5FhpmAK4-xA8qkLdPZ3iYoMsPUmLSOnt0XMcFmk_rjBCZNOhuk7o0w9li5-P2QEG4F_LFjMJBkn7gzY8r8DrbpWAWhiwEJ8XwFtxeNnflEZ0eCGSJS3YUGlcvx7fse-oatM25jm8a_-NpQq6vl1bSEf4-7x2eQM6DCH78xZmW86QofhWh9Zl0KgQQL9YYT70KgonzgWMX2muAaPeQmGE9vQ19E97vBa-RyekAQWn9DostsAN51LQeCOP-WPOTrVpx3_mC4TKCZ8FdIyttFfxlRIcb9Bx6AjVBY-5F93h09ZbpG7N4eJq70kTg_a329GCVpKE-GiPMJpP0Hf18b-cgJHen45TVseCGHaLi717BkHeaU5udq65OJMzZcd_RSchIiUgFOyGmzRDnizQOnM0w5pI1l7DIFanh7Q066OnNmsGA8bSo1JHoT9DKfvf4la3ssLnPPN8e3"
+      }
+    ],
+    "id": "01a133c5-04ca-7242-ae78-14c73c03a36d",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

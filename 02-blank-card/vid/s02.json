@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The robot hand presses the rubber stamp down firmly onto the punch card and lifts it, one decisive stamp. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s02-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 3,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869613,
+    "id": "01a133c0-74a6-7850-95fd-d29235697f11",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c0-74a6-7850-95fd-d29235697f11",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869795,
+    "created_at": 1791869613,
+    "data": [
+      {
+        "duration": 3.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c0-74a6-7850-95fd-d29235697f11/Jw8qaa8wLnlhS2l6yWurBcQz3-hlV3Pe0hftJCe76xvx56ODGqw7S1K9M4vR_poM1z4FowLC6ncarLoZLsp4Fp1APAHdYO-y-DPdfzzoxT2JgvJhUDdyPLyp6BHm6M6MSJf7QA9Kzib1D4vAyHmnyzPuF6qxxXfz5jkGx5eX2slJuadV6pmFNc4-luZrusOOl4LeqZqQGF51Np77y1RacImcXhtpiqg5yjq9STiQUNpm03e_PLvf4PXewFjmujDWWEikC6m-g1pHbqJzPDxiPtB0LYrhfcXVAvIE_OFqJbSoYs6_k8qlomczQ33DkrSLGR_qk9wPugetIxoQ-I4LCUQKAlKtltTOksS9EQB3xxovUw7fljTipFsmN3vTUSrv3Ntn9gkL5WW1U1WorpsGO9ft1My84t9kUEky0l5ckMTdvZ3nJRTWlCCpxpaC-NEziMrDEyM0MvGh6jyMu3hnGvnmWulz9YHqnqknZTW5jnpMBKoowGvnRfu5PNdLY4KTPQKwmqgk5Qvl7WI97J3ZnE7LYRCh_tZ4W_T4NWG6yfAja_sf9o7kuun38MRqhq8NA9x2tCftRd1m16ZrNLFsyxuAq_iioVMhkmR1_qKQycCpogHqRXOO"
+      }
+    ],
+    "id": "01a133c0-74a6-7850-95fd-d29235697f11",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 262500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "3.041995"
+    }
+  }
+}

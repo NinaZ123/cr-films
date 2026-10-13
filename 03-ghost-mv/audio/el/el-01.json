@@ -1,0 +1,104 @@
+{
+ "composition_plan": {
+  "positive_global_styles": [
+   "minimal electro-pop",
+   "120 BPM",
+   "dry tight drum machine",
+   "ticking clock hi-hat",
+   "deep warm sub bass",
+   "young male vocalist, soft clear voice",
+   "clear English diction",
+   "catchy",
+   "clean modern mix"
+  ],
+  "negative_global_styles": [
+   "heavy reverb",
+   "echo",
+   "orchestral",
+   "rock guitar",
+   "rap",
+   "female vocals"
+  ],
+  "sections": [
+   {
+    "section_name": "Intro",
+    "duration_ms": 8000,
+    "lines": [],
+    "positive_local_styles": [
+     "instrumental",
+     "only ticking clock and a soft synth pulse",
+     "builds into the beat"
+    ],
+    "negative_local_styles": [
+     "vocals"
+    ]
+   },
+   {
+    "section_name": "Verse",
+    "duration_ms": 16000,
+    "lines": [
+     "Seven o'clock, everybody in line,",
+     "punch the card, right on time.",
+     "Same green face on every head,",
+     "doing what the schedule said."
+    ],
+    "positive_local_styles": [
+     "deadpan half-spoken vocal",
+     "mechanical, on the grid",
+     "sparse"
+    ],
+    "negative_local_styles": []
+   },
+   {
+    "section_name": "Pre-Chorus",
+    "duration_ms": 8000,
+    "lines": [
+     "But I got my headphones on,",
+     "playing my own song."
+    ],
+    "positive_local_styles": [
+     "melody opens up",
+     "rising",
+     "drums drop out on the last bar"
+    ],
+    "negative_local_styles": []
+   },
+   {
+    "section_name": "Chorus",
+    "duration_ms": 16000,
+    "lines": [
+     "Blank card, blank card,",
+     "nothing written on it.",
+     "Blank card, blank card,",
+     "this time is mine."
+    ],
+    "positive_local_styles": [
+     "full beat",
+     "big catchy sung hook",
+     "bright synth lead",
+     "joyful"
+    ],
+    "negative_local_styles": []
+   },
+   {
+    "section_name": "Outro",
+    "duration_ms": 12000,
+    "lines": [
+     "No schedule.",
+     "Blank card."
+    ],
+    "positive_local_styles": [
+     "beat strips back",
+     "last line sung softly",
+     "song ends cleanly on a final chord that fades naturally"
+    ],
+    "negative_local_styles": [
+     "abrupt cut",
+     "echo"
+    ]
+   }
+  ]
+ },
+ "model_id": "music_v1",
+ "output_format": "mp3_44100_192"
+}

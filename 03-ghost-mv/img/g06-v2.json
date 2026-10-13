@@ -1,0 +1,45 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Images 1-4 are reference photos of the masked person; match the mask shape, colour and headphones exactly. Black-and-white high-key 35mm film photograph, overexposed and airy, blown-out whites, heavy film grain, faint photocopy halftone texture, slight softness, editorial fashion photography. Everything is monochrome grey EXCEPT the mask, which keeps exactly its soft light mint-green paper colour from the reference images (do not saturate or brighten it) — the only colour in the picture. Lots of empty white negative space. Compose for a 16:9 crop. No text, no letters, no logos, no watermark. Close-up, three-quarter front view: the masked person EXACTLY as in the reference images — copy the mask shape faithfully: a soft light mint-green crumpled-paper Pac-Man ghost mask, its silhouette is a pixel ghost with a stepped rounded dome top, straight sides and a pixel zigzag bottom edge, with some thickness but NOT a cube or box or cylinder; two black plus-sign eyes on the front; chunky faceted off-white pixel-block headphones with a stepped pixel headband over the dome and a thin black boom microphone from the right ear cup; oversized beige hoodie, black trousers. The mask face and the body ALWAYS face the same direction, toward the camera, one hand raised pressing the off-white headphone ear cup, as if turning the music up, head tilted into the music. Framed off-centre to the left, rest is white.",
+    "image": [
+      "<550990 chars, omitted>",
+      "<153883 chars, omitted>",
+      "<202167 chars, omitted>",
+      "<381019 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791880108,
+    "id": "01a13460-9ab6-7ce3-a6eb-aaea0e6c3b48",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13460-9ab6-7ce3-a6eb-aaea0e6c3b48",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791880157,
+    "created_at": 1791880108,
+    "data": [
+      {
+        "b64_json": "<3194600 chars, omitted>"
+      }
+    ],
+    "id": "01a13460-9ab6-7ce3-a6eb-aaea0e6c3b48",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 20792
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/03-ghost-mv/img/g06-v2-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

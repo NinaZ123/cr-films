@@ -1,0 +1,43 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Flat 2D cel-shaded 1980s OVA anime background art in the style of image 2: flat color areas, hard-edged cel shadows, clean ink outlines, visible halftone dots and film grain. Keep the composition of image 1. The space is pure WHITE and very pale cool grey: a white matte floor (NOT water, NOT sea, no blue), a barely visible pale grey horizon line, a faint soft reflection under the door. No people, no text. In the center a tall rectangular door frame made of floating glowing white and pale cyan particles drawn as flat dots, clearly door-shaped with straight sides and a flat top.",
+    "image": [
+      "<2981070 chars, omitted>",
+      "<3923258 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791867829,
+    "id": "01a133a5-3c46-7c23-8a41-8f6ddd077f5b",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133a5-3c46-7c23-8a41-8f6ddd077f5b",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791867868,
+    "created_at": 1791867829,
+    "data": [
+      {
+        "b64_json": "<3486060 chars, omitted>"
+      }
+    ],
+    "id": "01a133a5-3c46-7c23-8a41-8f6ddd077f5b",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 18826
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/fix/white-1-door-b-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

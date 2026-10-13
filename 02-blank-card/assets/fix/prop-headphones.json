@@ -1,0 +1,43 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Edit image 1 so the headphones match exactly the ones the girl wears in image 2. The headphone band is cream white all over, the same cream as the ear cups, with no black padding on top. Keep the same angle, cream ear cups with orange stripe, short black coiled cord, plain warm off-white background, same flat anime style, no text.",
+    "image": [
+      "<1162254 chars, omitted>",
+      "<3517806 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791867598,
+    "id": "01a133a1-b574-76f2-abeb-82d8fff7510e",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133a1-b574-76f2-abeb-82d8fff7510e",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791867632,
+    "created_at": 1791867598,
+    "data": [
+      {
+        "b64_json": "<1221536 chars, omitted>"
+      }
+    ],
+    "id": "01a133a1-b574-76f2-abeb-82d8fff7510e",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 18639
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/fix/prop-headphones-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

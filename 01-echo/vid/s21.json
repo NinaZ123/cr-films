@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "He turns his head sharply to look behind him over his shoulder, then freezes, staring, fear and longing in his eyes. Shallow depth of field. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-b7d6ab74c4a045489e8546e0c81525af_0.jpg"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-aafa-7082-a760-0ba1aa231383",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-aafa-7082-a760-0ba1aa231383",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818165,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 4.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-aafa-7082-a760-0ba1aa231383/KsZUX8nedrjDI992bcVt4ivArFEcvJyyLHXMT7H4OWRkP1hd1j_3xaZ5ZnOg1Qg3LT8dp8u_38mLHWX-rYzq_yvWmjtO1VJDk8burt5tL-hNJNE9QjgEUB5ZxH15TieqS75SBtXmKINOgHYHCQdu0LCkzDmRZPDcaYDFvCmmxzRAysrF5Pbd6MW2lJccrGgMxV3E1shsbvlrJeVTXr9ouxXhSzJBzGJu3XccXt9XTCyHc7Kn2JIcRvqMXvCskDAlavzcJ9IxBa-kV8jPkVr6Cdrc8EKfyYZVuNsufRZoI6gXP2R7xxus5HRZE0uau3UWcjxjhM7adUp5dQfEvi1Zvc0i8cyPt41bkTe2c3cWH0em2w5_Bs5lkizF6cqrSYzotG_SCN6twN5Y_wb2ds5c1V4lxCzeTiAsmQXRF3SEM4vWBpWEAOsBEIgpkWqGpLMpOOWBHniZq9sJ5Fb61uU1qo5F0kCvbUHsUBThz3YXwtr02Z4nl_Fw20e3XU5S__UyUanf5RdHABm4MwVukIWX576oaymlkOcx_IEHaOaHrqr1ez3GMHmwEueQnIVdLBbanN0xpClKWuExEw2vwOaoFe7r7GJOA6iZctN75CcYCCgRxJU1SuLP"
+      }
+    ],
+    "id": "01a130ad-aafa-7082-a760-0ba1aa231383",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 350000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

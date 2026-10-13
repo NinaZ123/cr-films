@@ -1,0 +1,43 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Edit image 1. Keep the android seen from behind, pose and everything else exactly the same. Only change the headphones to match image 2 exactly: The headphone band is cream white all over, the same cream as the ear cups, with no black padding on top.",
+    "image": [
+      "<1998406 chars, omitted>",
+      "<1221558 chars, omitted>"
+    ],
+    "size": "1024x1536"
+  },
+  "submit": {
+    "created_at": 1791867645,
+    "id": "01a133a2-6d9b-7351-9b2f-0b6f334d4869",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133a2-6d9b-7351-9b2f-0b6f334d4869",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791867680,
+    "created_at": 1791867645,
+    "data": [
+      {
+        "b64_json": "<1788708 chars, omitted>"
+      }
+    ],
+    "id": "01a133a2-6d9b-7351-9b2f-0b6f334d4869",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 18576
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/fix/enf-b3-back-0.png",
+      "mime": "image/png",
+      "size": "1024x1536"
+    }
+  ]
+}

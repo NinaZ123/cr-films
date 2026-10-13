@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static close-up. The hand presses the headphone tighter against the mask, the head tilts into the music. Black-and-white overexposed film look, only the green mask is coloured, film grain. Restrained subtle motion, the mask shape and headphones stay exactly the same. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-g06.png"
+        }
+      }
+    ],
+    "duration": 3,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791877677,
+    "id": "01a1343b-832a-79b3-8fe7-5b242b162f4f",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a1343b-832a-79b3-8fe7-5b242b162f4f",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791877843,
+    "created_at": 1791877677,
+    "data": [
+      {
+        "duration": 3.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a1343b-832a-79b3-8fe7-5b242b162f4f/xh7JUAan-LJ7R0V0w8t6LS6OoUtM-uEfO_yy33W1Cp6OcQT_-_znajQGoP5rDY3PSEvkAcmxsDsJ-LvmcsHoH-usHeZmV2NgSu5qgXQpnL7XlpVGQ8LnhdhTPpWSA9sHGQfcROLKh8ysZTYDJnDRFAXRy1fs7LtriLJsyjaQ1a4bjWKFvJ82BsinIvOJW5rjhRBUaZcut4j4J8d6QPPOaTb4GnvrOvlbn3zI9Ji9w8bBtt80--n26wD2fxI6PZKi9CNkbOln1D1l2jQ4niBGVhiTFtn79ts-q_VqkxzgSQwXQONmD18Wof8N2WeT3S5AkbTutuY_Wfa223QYWfX4A2suQYsm2cODfgv6D4RLq1EKncaL5JRqRzAKh5_W49Z53XF4sfvBpoo186KUqxtcUddLpeEg91FEFZQlM2dyfTlQNcSHBp4aEISmfTfIhW_TxnzIlPRUVzWor9oiLl33PUcJOq42tWJD8PiNgm-TWISA1vNgsXWQ6MgW4XCHlTsdhsWmZQbfA2AYng3T_V9M4hjHLk1dkjHPF6HPat-LzuEku_ejbOn_6t-_r501okkVP9arsMw-cqpHdrkpDYGZxGKFlp_VvmHCRPllpaxnqp5UabNcoFWN"
+      }
+    ],
+    "id": "01a1343b-832a-79b3-8fe7-5b242b162f4f",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 262500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "3.041995"
+    }
+  }
+}

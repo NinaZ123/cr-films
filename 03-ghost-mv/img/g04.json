@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is the character reference sheet for the masked person. Black-and-white high-key 35mm film photograph, overexposed and airy, blown-out whites, heavy film grain, faint photocopy halftone texture, slight softness, editorial fashion photography. Everything is monochrome grey EXCEPT the green paper ghost mask, which stays saturated green — the only colour in the picture. Lots of empty white negative space. Compose for a 16:9 crop. No text, no letters, no logos, no watermark. High-angle shot looking down at rows of identical empty white office desks in a bright white room; at one desk the masked person exactly as in the reference image: a boxy green crumpled-paper pixel ghost mask covering the whole head, two black plus-sign eyes, pixel zigzag bottom edge; chunky off-white pixel-block headphones with a small black boom microphone; oversized beige hoodie, wide black jeans, white sneakers sits alone, head bowed slightly toward a cream punch card on the desk. Strong top light, everything else empty.",
+    "image": "<2886122 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791877171,
+    "id": "01a13433-ca01-7f10-ad3a-bc902acb4ae3",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13433-ca01-7f10-ad3a-bc902acb4ae3",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791877255,
+    "created_at": 1791877171,
+    "data": [
+      {
+        "b64_json": "<2962712 chars, omitted>"
+      }
+    ],
+    "id": "01a13433-ca01-7f10-ad3a-bc902acb4ae3",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11355
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/03-ghost-mv/img/g04-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

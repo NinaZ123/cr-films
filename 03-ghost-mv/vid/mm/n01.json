@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "minimax-h3-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Static close-up. The hand slides the punch card into the clock slot, the machine stamps it with a sharp mechanical jolt exactly on the beat, the hand pulls it back out. Precise, everyday. Black-and-white overexposed film look, only the green masks are coloured, film grain. Natural, relaxed, believable human body language, like a real person filmed on camera; subtle and cool, never exaggerated, no dance poses. Every mask is a rigid paper object fixed on the head and never changes shape; the mask face always points the same way as the body. No text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/ghost-n01-v3.png"
+        }
+      }
+    ],
+    "duration": 8
+  },
+  "submit": {
+    "created_at": 1791896433,
+    "id": "01a13559-b3cc-73c3-8264-8d8805310e9d",
+    "model": "minimax-h3-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a13559-b3cc-73c3-8264-8d8805310e9d",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791896671,
+    "created_at": 1791896433,
+    "data": [
+      {
+        "duration": 8,
+        "resolution": "768P",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a13559-b3cc-73c3-8264-8d8805310e9d/gkN6UDmUK9QCHtH-tVBRgSlJco4Z1fulTiD4ugDVWOMhS4KNyTaJ2a1mc3Lq2AKpOqTvBDTFrnMRw5Y84WLCPtK6Sb-lGUnxILR5pk34kOsioroI1WxIJgvoyld4gDMf7yMzcc4c9peJrgga5-b1NzJKY5qVa9Vet0xndHLq9DTexVuqC5wjAfkBtINFcGyWgSQ4sTZx8WMNnwby8AqUgKNIJr6bcOm3UkHgS6O7LW6pnMpo3pX4_a5uktoDXrazib0DfWT6fdNOWp6gcjvLbzV39uM-Tpt08gM9pVubcF6U7WYmlpoAvO5J-ULzOzkPNSj_P6_7zfACsLYufznxAv7E_WPsXyKHJZmY5DSUAxYEscuHSq0TJBlD6Ld7HsxkBWf7P9fZy2cZsqLhRCMruZ7Kiv6FkJOHgoRKaNSO8SRsNtiUC1tKVr5MhR3-hM4RNVsrN0Pr4KkXc1IL1Cn6f17rIDqzmP720tHHhQ3NFFcJUgY0-BSGTqwwkOQ3H-iOG1__biGganT8aXyOg83odpgSJ2RY7Lo-lgy9mvV7INc8Z-5HzpuBBJo_0ZCUijyrEJTuMUA_sGQUx0E5I9TqRnXBuLxy1DnQgtz7jDH5XNVMWP0teiTQ"
+      }
+    ],
+    "id": "01a13559-b3cc-73c3-8264-8d8805310e9d",
+    "model": "minimax-h3-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 400000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1344,
+        "height": 768,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "8.000000"
+    }
+  }
+}

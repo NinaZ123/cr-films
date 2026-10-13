@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Use the reference only for the art style; flat 2D cel-shaded 1980s OVA anime background art, clean ink linework, subtle halftone, film grain. No people, no readable text, no logos. Same location as the reference (same beige CRT monitors, olive cabinets, amber light), a huge wall made of hundreds of the same beige CRT monitors stacked in a grid, all screens glowing amber with abstract scan lines and no readable text, brass tubes above.",
+    "image": "<3923258 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791863696,
+    "id": "01a13366-2bd3-7a93-af45-b44e6cbe3a89",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13366-2bd3-7a93-af45-b44e6cbe3a89",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791863884,
+    "created_at": 1791863696,
+    "data": [
+      {
+        "b64_json": "<3835556 chars, omitted>"
+      }
+    ],
+    "id": "01a13366-2bd3-7a93-af45-b44e6cbe3a89",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 11005
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/hall-4-crt-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

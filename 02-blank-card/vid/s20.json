@@ -1,0 +1,78 @@
+{
+  "request": {
+    "model": "seedance-2.0-fast-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The android slowly and gracefully steps aside to the right, revealing the glowing particle door; the girl stands still in the foreground. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s20-v1-20261013.png"
+        }
+      },
+      {
+        "type": "image_url",
+        "role": "last_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s20e-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 4,
+    "resolution": "720p",
+    "provider_options": {
+      "generate_audio": false
+    }
+  },
+  "submit": {
+    "created_at": 1791869921,
+    "id": "01a133c5-27ed-74c2-90fc-c7bd26f0acb1",
+    "model": "seedance-2.0-fast-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c5-27ed-74c2-90fc-c7bd26f0acb1",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791870108,
+    "created_at": 1791869921,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 4.042,
+        "fps": 24,
+        "has_audio": false,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c5-27ed-74c2-90fc-c7bd26f0acb1/G_j5s4fc7uvgv0nmWHuTBrbvLX1M4tWYKq1jarQQPatk9pkoCM6OFObtvzprBQtrZsnBDX-fbeHXg8Rh0bhpLmviEp9rIBU36igUIOL5sUjOWjWduNA3-psbAXaghs8DW25J56-rZMUv1SsuVL9OgCMb-Kqlu8z5I54dzBjMiGpGeJEbfn4cozLLnPezgZf80QboCp2c95K2KeUToHnHYF0gF_3u9lVmzhXdQhTwJkQvuBkLIVekWvxODLAMjYBvD0pfhF8cXMpW_TelDsuzs0DCFg",
+        "width": 1280
+      }
+    ],
+    "id": "01a133c5-27ed-74c2-90fc-c7bd26f0acb1",
+    "model": "seedance-2.0-fast-image-to-video",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 4000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "4.041667"
+    }
+  }
+}

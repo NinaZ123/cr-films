@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The girl skates smoothly from left to right down the aisle, jacket flaring, camera tracks alongside her at the same speed, clerk robots keep working. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s04-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869613,
+    "id": "01a133c0-749f-7200-94c4-a4280b7f4425",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c0-749f-7200-94c4-a4280b7f4425",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869795,
+    "created_at": 1791869613,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c0-749f-7200-94c4-a4280b7f4425/QSxuDCONKyRAjhFoGWF2DWx0_zYOpOalIwK3UOkgShZnfAl4ZaVkZf_pnGKG8S3AOA8bRj6zP8eLl0YlnAZ3g-ZzLmRpMsSLYRjiV7FIr4JH3TPMXgD67to89DZpICKB55qxfFWhJ02zYGWjCLMwddnSoHGYVoMpDubTgVZdjO4uv11qwHL-Hx91EYCI_7nBEPErrdo1RSpIMQhsG0oenMAe9Zd6y9Cb-BtxMQWz9hw14IPLgvQKfs39Cvcr0fuxLkB7pVEuXKyEtL9k9bKFyBCNl0to7i_cpKtextbvpOW_hqTZHfRA0Mka6uFmFmhcirarWAQf_iOGc8kt5jVZAxWqcY_eNHX2XWohVw2B7jl1A5t0Fh51LImELBU-RaOqzR2D9_n-3ZY9bc5DwEnu82kMwRyws9ub_YwaErIcJHenx48yoMstBL9bRdgJ1Zk4LdM95ToSq1E7ZqRK89yhhlXCk-r9kukLiYKFTduoEJwiU-JPZ2iobCAM4GNcW0Z4mDnIhg-sKTnMT_x8n-M8u6YdSIsORhzTcaK3D3yIaEArKn7BBTMHnluTqSrBi6WKAtrwNNpy5KEeJr_K202DKQvUJ5mbP0ZPT8A3JIMS6-EoptTG78fP"
+      }
+    ],
+    "id": "01a133c0-749f-7200-94c4-a4280b7f4425",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

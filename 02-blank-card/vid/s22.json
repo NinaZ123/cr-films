@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Wind blows the girl's jacket and hair as she stands at the rooftop edge facing the rising sun; clouds drift slowly. Very slow push-in. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s22-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 6,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869950,
+    "id": "01a133c5-9a55-75e2-8fae-9243de6dd9e0",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c5-9a55-75e2-8fae-9243de6dd9e0",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791870113,
+    "created_at": 1791869950,
+    "data": [
+      {
+        "duration": 6.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c5-9a55-75e2-8fae-9243de6dd9e0/e4ZSQD_ffvglTULzQF3kmx_LF3kDxT6Utpz5TWvU39owZctbFN6UTvOuIGHHC667SstSiMnZrt0EOBtFS2lNJwT5rp4o_Ye7xScfJ7mn8Ber6pe8s4X5R5ENVj9m1XHe3LvFl93VopuDa3ArMClkI1sIwNOp6LyXgO5AxVJzZ-WOt-AG-4KmDGmUqzigU-IoxsDXgjqUNhoLLfd6MWH5OKhjbuwNJwVjnitiP0av6KPRS7qivn-RRyTutBBLK37QhN-dIlKF4KHrTHwYhAHuoIK513_zgoXRsp2LXOgW8u9WuKqNiSGJMdwgVPkIo2sX4y92UTxoCReWbB5KHll3mZ-fcEOYr7dXNQDvnG4leVxvd0LcCqgiBzmtzKf8L1lUu7ZgEX27t9jD476QHToZNtcrKh1rFqdDG7U5lBA566_-5cEo2Q_DnhfDFS604gKA15-QH-BjqKF5ne1DWP6fkJsLfhKEV-jNgIH_6-s9aT1jwdFC4QnRvLrcJCd29Zj09irQCnCU7LdPrSp9wnIvjejQWDYqCprCF1V94spio-vo4kgRp-BOoxS5Xas-NUoqypt9mztkwd_RQoK1_foeqL75PT0ebV5g0k0YMA7yHjaBiEiXVOF2"
+      }
+    ],
+    "id": "01a133c5-9a55-75e2-8fae-9243de6dd9e0",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 525000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "6.041667"
+    }
+  }
+}

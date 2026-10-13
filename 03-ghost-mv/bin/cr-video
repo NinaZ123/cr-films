@@ -1,0 +1,185 @@
+#!/usr/bin/env bash
+# cr-video：通过 creative-reasoning 网关生成一条视频，提交 → 轮询 → 下载 → ffprobe 核对。
+#
+# 用法:
+#   cr-video --model <模型> --prompt <提示词> [选项]
+#   cr-video --resume <task_id> [--out 目录] [--name 名字]      # 接着轮询一个已提交的任务
+#
+# 选项:
+#   --duration <整数秒>        顶层 duration
+#   --aspect-ratio <比例>      顶层 aspect_ratio，如 16:9
+#   --resolution <档位>        顶层 resolution，如 720p
+#   --audio on|off             provider_options.generate_audio
+#   --first-frame <URL 或本地路径>      首帧图（role=first_frame）
+#   --last-frame <URL 或本地路径>       尾帧图（role=last_frame）
+#   --reference-image <URL 或本地路径>  参考图（role=reference_image），可重复
+#                              本地文件会转成 data URI；多数视频模型只收 HTTP(S) URL，见 references/video-models.md
+#   --video <URL>              要编辑的视频（type=video_url，role=reference_video），给视频编辑模型用
+#   --extra '<json>'           合并进请求体顶层的额外字段，如 '{"seed":42}'
+#   --out <目录>               输出目录，默认 ./cr-output
+#   --name <名字>              输出文件名前缀，默认 <模型>-<时间戳>
+#   --interval <秒>            轮询间隔，默认 10
+#   --timeout <秒>             最长等待，默认 1200
+#   --dry-run                  只打印请求体（base64 缩写显示），不提交
+#
+# 输出:
+#   <out>/<name>.mp4   视频
+#   <out>/<name>.json  {request, submit, final, ffprobe}；base64 已替换成长度说明。失败时也会写
+#   标准输出最后一行是 JSON 摘要。退出码：0 成功，1 任务失败，2 用法或网络错误。
+#
+# Key: 环境变量 CR_API_KEY；没有就读仓库根目录 .env，再没有读 ~/.config/cr/env
+set -euo pipefail
+
+API="https://api.creative-reasoning.com"
+die() { echo "cr-video: $*" >&2; exit 2; }
+for t in curl jq ffprobe file base64; do command -v "$t" >/dev/null || die "缺少 ${t}"; done
+
+# 先读 cr-films 仓库根目录的 .env（gitignore 的），再退回 ~/.config/cr/env
+REPO_ENV="$(cd "$(dirname "$0")/../.." && pwd)/.env"
+for envf in "$REPO_ENV" "$HOME/.config/cr/env"; do
+  if [ -z "${CR_API_KEY:-}" ] && [ -f "$envf" ]; then
+    CR_API_KEY=$(sed -n 's/^CR_API_KEY=//p' "$envf" | head -1)
+  fi
+done
+[ -n "${CR_API_KEY:-}" ] || die "没有 CR_API_KEY：设环境变量，或写进 ~/.config/cr/env"
+
+model="" prompt="" duration="" ar="" res="" audio="" first="" last="" video="" extra='{}'
+refs=() out="./cr-output" name="" interval=10 timeout=1200 dry=0 resume=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --model) model="$2"; shift 2 ;;
+    --prompt) prompt="$2"; shift 2 ;;
+    --duration) duration="$2"; shift 2 ;;
+    --aspect-ratio) ar="$2"; shift 2 ;;
+    --resolution) res="$2"; shift 2 ;;
+    --audio) audio="$2"; shift 2 ;;
+    --first-frame) first="$2"; shift 2 ;;
+    --last-frame) last="$2"; shift 2 ;;
+    --reference-image) refs+=("$2"); shift 2 ;;
+    --video) video="$2"; shift 2 ;;
+    --extra) extra="$2"; shift 2 ;;
+    --out) out="$2"; shift 2 ;;
+    --name) name="$2"; shift 2 ;;
+    --interval) interval="$2"; shift 2 ;;
+    --timeout) timeout="$2"; shift 2 ;;
+    --dry-run) dry=1; shift ;;
+    --resume) resume="$2"; shift 2 ;;
+    -h|--help) sed -n '2,30p' "$0"; exit 0 ;;
+    *) die "未知参数 ${1}（--help 看用法）" ;;
+  esac
+done
+
+auth=(-H "Authorization: Bearer $CR_API_KEY")
+# 请求和响应都放文件里：带 base64 图片时会超过命令行参数的长度上限
+work=$(mktemp -d); trap 'rm -rf "$work"' EXIT
+
+# URL 原样用；本地文件转成 data URI
+to_input() {
+  case "$1" in
+    http://*|https://*|data:*) printf '%s' "$1" ;;
+    *) [ -f "$1" ] || die "找不到文件 ${1}"
+       printf 'data:%s;base64,' "$(file -b --mime-type "$1")"; base64 < "$1" | tr -d '\n' ;;
+  esac
+}
+# 把长 base64 换成长度说明，写进结果 json 用
+slim='walk(if type=="string" and length>2000 then "<\(length) chars, omitted>" else . end)'
+
+if [ -n "$resume" ]; then
+  [ -n "$name" ] || name="resume-$resume"
+  echo 'null' > "$work/request.json"; echo 'null' > "$work/submit.json"
+  poll_url="/unified/v1/tasks/$resume"
+else
+  [ -n "$model" ] || die "缺少 --model"
+  [ -n "$prompt" ] || die "缺少 --prompt"
+  [ -n "$name" ] || name="$model-$(date +%Y%m%d-%H%M%S)"
+  case "$audio" in ""|on|off) ;; *) die "--audio 只能是 on 或 off" ;; esac
+  echo "$extra" | jq -e 'type=="object"' >/dev/null 2>&1 || die "--extra 必须是 JSON 对象"
+
+  # content 里的图片项，每行一个 JSON，最后合成数组
+  : > "$work/images.jsonl"
+  add_img() {
+    to_input "$2" > "$work/url"
+    jq -n --arg role "$1" --rawfile u "$work/url" '{type:"image_url", role:$role, image_url:{url:$u}}' >> "$work/images.jsonl"
+  }
+  [ -z "$first" ] || add_img first_frame "$first"
+  [ -z "$last" ] || add_img last_frame "$last"
+  for r in "${refs[@]+"${refs[@]}"}"; do add_img reference_image "$r"; done
+  if [ -n "$video" ]; then
+    to_input "$video" > "$work/url"
+    jq -n --rawfile u "$work/url" '{type:"video_url", role:"reference_video", video_url:{url:$u}}' >> "$work/images.jsonl"
+  fi
+
+  jq -n --arg model "$model" --arg prompt "$prompt" --arg duration "$duration" \
+    --arg ar "$ar" --arg res "$res" --arg audio "$audio" \
+    --slurpfile imgs "$work/images.jsonl" --argjson extra "$extra" '
+    {model:$model, content: ([{type:"text", text:$prompt}] + $imgs)}
+    + (if $duration != "" then {duration: ($duration|tonumber)} else {} end)
+    + (if $ar  != "" then {aspect_ratio: $ar} else {} end)
+    + (if $res != "" then {resolution: $res} else {} end)
+    + (if $audio != "" then {provider_options: {generate_audio: ($audio=="on")}} else {} end)
+    | . * $extra' > "$work/request.json"
+
+  if [ "$dry" = 1 ]; then jq "$slim" "$work/request.json"; exit 0; fi
+  mkdir -p "$out"
+
+  # 幂等键：同一次调用里的重试都用它，服务端据此不会重复建任务
+  idem="cr-video-$name-$(od -An -N6 -tx1 /dev/urandom | tr -d ' \n')"
+  for attempt in 1 2 3 4 5; do
+    code=$(curl -sS --connect-timeout 20 --max-time 120 -X POST "$API/unified/v1/videos/tasks" "${auth[@]}" \
+      -H "Content-Type: application/json" -H "Idempotency-Key: $idem" \
+      --data @"$work/request.json" -o "$work/submit.json" -w '%{http_code}' || true)
+    case "$code" in
+      200|202) break ;;
+      429|500|502|503|504|000)
+        echo "cr-video: 提交返回 ${code}，第 ${attempt} 次，稍后用同一个幂等键重试" >&2
+        sleep $((attempt * 10)) ;;
+      *) jq -n --slurpfile req "$work/request.json" --arg code "$code" --rawfile body "$work/submit.json" \
+           "{request:(\$req[0] | $slim), submit:{http_status:(\$code|tonumber), body:(\$body|fromjson? // \$body)}}" > "$out/$name.json"
+         die "提交失败 HTTP ${code}：$(cat "$work/submit.json")" ;;
+    esac
+  done
+  case "$code" in 200|202) ;; *) die "提交重试 5 次仍失败，最后是 HTTP ${code}：$(cat "$work/submit.json" 2>/dev/null)" ;; esac
+  poll_url=$(jq -r .poll_url "$work/submit.json")
+  # 先落盘，脚本中途被打断时还能从这里拿到 task id 去 --resume
+  jq -n --slurpfile req "$work/request.json" --slurpfile sub "$work/submit.json" \
+    "{request:(\$req[0] | $slim), submit:\$sub[0]}" > "$out/$name.json"
+  echo "cr-video: 已提交 $(jq -r .id "$work/submit.json")（${model}），中断后用 --resume 接着等" >&2
+fi
+mkdir -p "$out"
+
+case "$poll_url" in http*) ;; *) poll_url="$API$poll_url" ;; esac
+start=$(date +%s)
+while :; do
+  curl -sS --connect-timeout 20 --max-time 60 "$poll_url" "${auth[@]}" -o "$work/final.json" || true
+  status=$(jq -r '.status // empty' "$work/final.json" 2>/dev/null || true)
+  case "$status" in completed|failed) break ;; esac
+  elapsed=$(( $(date +%s) - start ))
+  [ "$elapsed" -lt "$timeout" ] || die "等了 ${elapsed}s 还没到终态（最后状态 ${status:-未知}）。用 --resume $(echo "$poll_url" | sed 's#.*/##') 接着等"
+  echo "cr-video: ${status:-查询失败} +${elapsed}s" >&2
+  sleep "$interval"
+done
+
+echo 'null' > "$work/ffprobe.json"
+if [ "$status" = completed ]; then
+  url=$(jq -r '.data[0].url' "$work/final.json")
+  curl -sS -L --connect-timeout 20 --max-time 600 --retry 3 "$url" -o "$out/$name.mp4" || die "下载失败：$url"
+  ffprobe -v error -show_entries format=duration:stream=codec_type,codec_name,width,height,r_frame_rate \
+    -of json "$out/$name.mp4" > "$work/ffprobe.json" || die "下载的文件读不出来：$out/$name.mp4"
+fi
+
+jq -n --slurpfile req "$work/request.json" --slurpfile sub "$work/submit.json" \
+  --slurpfile fin "$work/final.json" --slurpfile probe "$work/ffprobe.json" \
+  "{request:(\$req[0] | $slim), submit:\$sub[0], final:\$fin[0], ffprobe:\$probe[0]}" > "$out/$name.json"
+
+if [ "$status" = completed ]; then
+  jq -c --arg file "$out/$name.mp4" '{
+      status: "completed", file: $file, task_id: .final.id, model: .final.model,
+      waited_s: (.final.completed_at - .final.created_at),
+      duration_s: (.ffprobe.format.duration | tonumber | . * 100 | round / 100),
+      size: (.ffprobe.streams[] | select(.codec_type=="video") | "\(.width)x\(.height)"),
+      fps: (.ffprobe.streams[] | select(.codec_type=="video") | .r_frame_rate),
+      audio: any(.ffprobe.streams[]; .codec_type=="audio")}' "$out/$name.json"
+else
+  jq -c --arg meta "$out/$name.json" '{status:"failed", task_id:.final.id, error:.final.error, meta:$meta}' "$out/$name.json"
+  exit 1
+fi

@@ -1,0 +1,61 @@
+{
+  "request": {
+    "model": "minimax-h3-text-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Audio focus: a lone male singer performs a slow, melancholic 1990s Chinese rock ballad in Mandarin, accompanied only by a clean reverb electric guitar arpeggio in E minor, slow tempo, simple memorable nostalgic melody, warm natural reverb of an old empty theater, emotional and intimate. No other sounds. Visual: dim empty theater stage, an old microphone on a stand under a single spotlight, dust in the air, no people visible, static camera."
+      }
+    ],
+    "duration": 15
+  },
+  "submit": {
+    "created_at": 1791819145,
+    "id": "01a130be-5f48-7b61-a1f5-b4ace52714f6",
+    "model": "minimax-h3-text-to-video",
+    "poll_url": "/unified/v1/tasks/01a130be-5f48-7b61-a1f5-b4ace52714f6",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791819436,
+    "created_at": 1791819145,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 15,
+        "resolution": "768P",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130be-5f48-7b61-a1f5-b4ace52714f6/15ZOlwS8V8Qt-HRgVpBi4siIwusVENLrVwwJG6eoon-UhnK_PRUlmTcO3FkB_v2ZNNsLz9jU1eoshFoODOfPH3g1QFX51iYqemFfx744_f4RUUpHg37T5327apwUes3mQ0Yae6n6AbP13gCSkuVGeHjPwugNmKpHsm8KKMKYZMYCdCW87QVs1tylL7kg-nonRMZaA6-aWHaoMGoA-hMQn13EN8ya9ECgeLbavITW1E7aM4A85p0nq3lvjdxFyU2kZOMARtxMj87Oxx9TXvI3umoKfiIV1sDbwgntXdRy5_2K1q-A-KONW0jlA6AQHnrfJ-S8xfqg1QaU3fQPrGa2kjX-8A3rkxyG8k9b6mWdCh3kfctrFu-gmUvCdNwjFKTsRUGn3Q983iqof9sLsqDxjpFydNG7DoIzmGfexFhG1R24RqZ7eaPQ9pzTKYzdYoxy4Oe7_yc3_s5hpBvy7hmuzQsMtoRZjX8BSo2DRexISglCoYPXOOu1k-Y2P_IMk-dm4BfdcgAJB540ty6mqOYPeiPTvCEWQ3PAgXu2chL7i8MO8tkGz25Zn0Hs0Wfav3iv9GWBsNsd0TEXnCtsM9Wh_lP9uWcYAwuhXENt7zjIYUMWytnpzOYH"
+      }
+    ],
+    "id": "01a130be-5f48-7b61-a1f5-b4ace52714f6",
+    "model": "minimax-h3-text-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 750000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1344,
+        "height": 768,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "15.083333"
+    }
+  }
+}

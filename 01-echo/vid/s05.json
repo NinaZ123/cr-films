@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Slow steady dolly forward down the center aisle of the empty abandoned theater, dust drifting in light shafts, rain dripping onto the stage. No people. Sound of dripping water echoing in a large empty hall. Photorealistic 35mm film, cinematic, natural motion, single continuous shot, no cuts, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://aigc-output-image-hk-1326893053.cos.ap-hongkong.myqcloud.com/1446253278/1446253278-WandImage-8daaed1cc03c4f7aa150a79f4bfdcfa3_0.jpg"
+        }
+      }
+    ],
+    "duration": 6,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791818050,
+    "id": "01a130ad-aaee-71a2-8bce-df5eefb0e1d9",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a130ad-aaee-71a2-8bce-df5eefb0e1d9",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791818187,
+    "created_at": 1791818050,
+    "data": [
+      {
+        "duration": 6.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a130ad-aaee-71a2-8bce-df5eefb0e1d9/mwclMN_HykfcKZqR2FL9j2gq73UJCEag3Kqyy790SBT7zlyxelG6D1DPG0gcZdo6Fzrx1LaOf3Q88SfK1ttpg7tHHMG46OuGRZVDUnDPVw628IKrIwtI2EbOydHO6vJJ0OtJVyNucJoPzP3RrVT9JnBi3Ql-OG-ljRcLuCISyB_Kf_bz8x1chI3qQIhTt6-UJwDKfHDk8ysPKNFG-nkacdarCVxGlBrI7cN3GrpqQ5Dxt_vB7csKUN6gmyw8X7FxSlM4hF2HP6oBAmfEvRaYgcf1PqG2z3ylEiprO7Hri9PxmQWDQe8T9s4ewk5vnJYzE0ZEtq9y_zMVFPjM-mdbJIwgJxY2U4y7Oo-SDgq8q5pWdnZmLbo8z_2Ac8JyQwh8WywLX-47f9nNgLJTUUTAkPnZI7zPgtxgpUktj_3FxXlZvLtuAVHGCdXf2UYb-88nhqYSIyAavH2ORMY9tygrQ7zjhRKCLSrHrcQ3cjAXkn3jH-hb_XsGSyT2iw4wiheit3yAJKn6r95FNges39Q4tXUDrGXDLLheqDN8_WXs3A-H8JwxLE6PJj5whOet6tI_OuI07FknDDjXugTTf8V9EfOvWsFI9HeLzc0Cxv10qPFsOtO7FRhP"
+      }
+    ],
+    "id": "01a130ad-aaee-71a2-8bce-df5eefb0e1d9",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 525000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 2208,
+        "height": 936,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "6.041667"
+    }
+  }
+}

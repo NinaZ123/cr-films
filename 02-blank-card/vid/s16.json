@@ -1,0 +1,67 @@
+{
+  "request": {
+    "model": "kling-v3-turbo-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "The girl rises from her landing crouch and looks toward the glowing particle door; particles drift softly. Flat 2D cel-shaded 1980s anime, stable character design, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "https://bmrlab-prod.s3.cn-north-1.amazonaws.com.cn/atypica/public/cr-film-refs/1b12b225-5d70-46ac-a0b1-86841b29128e/blank-card-kf-s16-v1-20261013.png"
+        }
+      }
+    ],
+    "duration": 5,
+    "resolution": "1080p"
+  },
+  "submit": {
+    "created_at": 1791869801,
+    "id": "01a133c3-5547-7452-a530-09e099509a02",
+    "model": "kling-v3-turbo-image-to-video",
+    "poll_url": "/unified/v1/tasks/01a133c3-5547-7452-a530-09e099509a02",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791869938,
+    "created_at": 1791869801,
+    "data": [
+      {
+        "duration": 5.041,
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a133c3-5547-7452-a530-09e099509a02/TU25fTPFPQ_mc5omXMmbNDcTkcRdnynkOIMlnuxB0WjmpvKQ-OOX5Rr0-psVsCMJnZ-xRrymXOhpDO6KMYbkWmpQ2Ks2TT66ZURs_52mKWc8_kBmg4POM-QSaCZ_p8SIIY4Di_ftys2Lwsx-oWYnr9jDe6kRY_2X4THSyT_PBGqCk9XtclJg_WCY14Wczc_x0ldZ8Q0MTbamFIYk3GauPLm83pK8C2tUwIdVQQdQ02ipAndELaxVzrupOG0qFfmV-VQBUqv45nl1eqkogTXJKgy1Y1IflYJCzLrmSwo7oHGmCFG8HryUIq8DA4-lzlw2mv0W7kziKbvj0yEiYzsQNeX4aYHpiLAuqVqstxDtMvN6YossZdIT3FGDI6djhu_hUo3E-KImjUHdtqTcRA2y7qEZe9M36jf7_h3_YpAYDk_OkoCBm9itN1sphenY8rerurlWfLI3lTFfdgNUatFcO9kz94pIpC3XzhN6NyCMneWw8mjwof62DO-Lla93kxJTkNlr89VLAsEhgUa484eLUt8pZFWMYCxfpv7bobCLIJlQDLCB_h0izyJNz405Mc4JN4aSGIK5J3SxHW-BxWmhWGq3PkQcihOO6Uq1yJMPeCTh9iv4No_j"
+      }
+    ],
+    "id": "01a133c3-5547-7452-a530-09e099509a02",
+    "model": "kling-v3-turbo-image-to-video",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 437500
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      },
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.041667"
+    }
+  }
+}

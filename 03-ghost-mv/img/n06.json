@@ -1,0 +1,45 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Images 1-4 are reference photos of the masked person; match the mask shape, colour and headphones exactly. Black-and-white high-key 35mm film photograph, overexposed and airy, blown-out whites, heavy film grain, faint photocopy halftone texture, slight softness, editorial fashion photography. Everything is monochrome grey EXCEPT the mask, which keeps exactly its soft light mint-green paper colour from the reference images (do not saturate or brighten it) — the only colour in the picture. Lots of empty white negative space. Compose for a 16:9 crop. No text, no letters, no logos, no watermark. Frontal shot down a long white corridor: a column of people wearing the same mint-green paper ghost masks, each mask exactly the same shape as the reference, with NO headphones, NO ear cups, NO ear muffs, nothing on the sides of the mask, in plain grey hoodies and black trousers, all facing the camera marches toward the camera in perfect lockstep, same leg forward, two by two, receding to a vanishing point. Symmetrical, overexposed.",
+    "image": [
+      "<550990 chars, omitted>",
+      "<153883 chars, omitted>",
+      "<202167 chars, omitted>",
+      "<381019 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791889973,
+    "id": "01a134f7-1fe0-75d2-9e97-856d2fc6b2b3",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a134f7-1fe0-75d2-9e97-856d2fc6b2b3",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791890015,
+    "created_at": 1791889973,
+    "data": [
+      {
+        "b64_json": "<2971284 chars, omitted>"
+      }
+    ],
+    "id": "01a134f7-1fe0-75d2-9e97-856d2fc6b2b3",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 20560
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/03-ghost-mv/img/n06-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

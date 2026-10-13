@@ -1,0 +1,40 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Edit this character sheet. Keep everything exactly the same (layout, girl, face, outfit, colors, style), only fix: The headphone cord is a SHORT black coiled cord, about the length of a hand, running from her left ear cup down and tucking into her jacket collar. Remove any long cord or braid hanging down her chest or to her waist. Apply to all three panels.",
+    "image": "<3078038 chars, omitted>",
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791867597,
+    "id": "01a133a1-b180-77f1-b082-430f37d0f89a",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a133a1-b180-77f1-b082-430f37d0f89a",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791867632,
+    "created_at": 1791867597,
+    "data": [
+      {
+        "b64_json": "<2855920 chars, omitted>"
+      }
+    ],
+    "id": "01a133a1-b180-77f1-b082-430f37d0f89a",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 10943
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "assets/fix/seven-sheet-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}

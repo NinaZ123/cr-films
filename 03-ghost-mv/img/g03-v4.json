@@ -1,0 +1,45 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Images 1-4 are reference photos of the masked person; match the mask shape, colour and headphones exactly. Black-and-white high-key 35mm film photograph, overexposed and airy, blown-out whites, heavy film grain, faint photocopy halftone texture, slight softness, editorial fashion photography. Everything is monochrome grey EXCEPT the mask, which keeps exactly its soft light mint-green paper colour from the reference images (do not saturate or brighten it) — the only colour in the picture. Lots of empty white negative space. Compose for a 16:9 crop. No text, no letters, no logos, no watermark. Wide frontal shot: a single straight line-up of seven figures standing shoulder to shoulder on a white floor, knee-up framing, arms at their sides: six of them are people wearing the same mint-green paper ghost masks, each mask exactly the same shape as the reference, with NO headphones, NO ear cups, NO ear muffs, nothing on the sides of the mask, in plain grey hoodies and black trousers, all facing the camera. The one in the exact centre (fourth from left) is the masked person EXACTLY as in the reference images — copy the mask shape faithfully: a soft light mint-green crumpled-paper Pac-Man ghost mask, its silhouette is a pixel ghost with a stepped rounded dome top, straight sides and a pixel zigzag bottom edge, with some thickness but NOT a cube or box or cylinder; two black plus-sign eyes on the front; chunky faceted off-white pixel-block headphones with a stepped pixel headband over the dome and a thin black boom microphone from the right ear cup; oversized beige hoodie, black trousers. The mask face and the body ALWAYS face the same direction, toward the camera — the ONLY person in the picture with headphones — and he tilts his head to one side, listening to music. Flat overexposed light.",
+    "image": [
+      "<550990 chars, omitted>",
+      "<153883 chars, omitted>",
+      "<202167 chars, omitted>",
+      "<381019 chars, omitted>"
+    ],
+    "size": "1536x1024"
+  },
+  "submit": {
+    "created_at": 1791880409,
+    "id": "01a13465-31c0-7931-9a64-7a2c6f310de6",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13465-31c0-7931-9a64-7a2c6f310de6",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1791880451,
+    "created_at": 1791880409,
+    "data": [
+      {
+        "b64_json": "<3014228 chars, omitted>"
+      }
+    ],
+    "id": "01a13465-31c0-7931-9a64-7a2c6f310de6",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 21060
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/03-ghost-mv/img/g03-v4-0.png",
+      "mime": "image/png",
+      "size": "1536x1024"
+    }
+  ]
+}
