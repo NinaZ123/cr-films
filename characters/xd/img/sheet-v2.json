@@ -1,0 +1,45 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is a pixel-art avatar. Image 4 shows the person behind it, holding the avatar in front of his face. Images 2-3 show what he wears now: the avatar made into a knitted head mask that covers his whole head. Create a character reference sheet of this person wearing the knitted mask. Character: an ordinary young man; orange knitted pixel-avatar mask with a grey knitted cap top and a small pom-pom, an X-shaped left eye, a square black right eye with a green pixel pupil, a pixel smile; black hoodie. The mask is loose and keeps its own rounded shape like images 2-3, not a tight balaclava: no nose or face shape shows through. The face pattern is crisp knitted pixels on the front only. Lay it out as a clean grid of equal-size panels on one plain light grey background, one view per panel, no text, no labels.",
+    "image": [
+      "<10570 chars, omitted>",
+      "<1074374 chars, omitted>",
+      "<1006235 chars, omitted>",
+      "<276139 chars, omitted>"
+    ],
+    "size": "3840x2160"
+  },
+  "submit": {
+    "created_at": 1792080290,
+    "id": "01a1404f-2469-77b0-844a-b7ee31d81757",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a1404f-2469-77b0-844a-b7ee31d81757",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1792080362,
+    "created_at": 1792080290,
+    "data": [
+      {
+        "b64_json": "<10333284 chars, omitted>"
+      }
+    ],
+    "id": "01a1404f-2469-77b0-844a-b7ee31d81757",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 29900
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/characters/xd/img/sheet-v2-0.png",
+      "mime": "image/png",
+      "size": "3840x2160"
+    }
+  ]
+}
