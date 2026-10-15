@@ -31,16 +31,19 @@ CHARACTERS = {
     },
     # XD 的橘色头套人：一个普通人，平时把自己的像素 avatar 贴在脸前，后来把它做成头套把自己整个遮住。
     # 头套不照 XD 给的针织头套（XD："包着头，就感觉我像个胖胖的中年男子"），改成和阿绿一样的皱纸板像素头套：
-    # 形状和五官照 avatar，材质照阿绿，身体照贴脸自拍
+    # 形状和五官照 avatar，材质和光照阿绿
     "xd": {
-        "refs": ["xd/ref/IMG_3016.PNG",                                   # avatar 原图：形状、配色、五官
+        "refs": ["xd/ref/avatar-clean.png",                               # avatar 干净版：白底、去掉地上的影子
                  "alv/ref/Screenshot 2025-12-31 at 15.28.15.png",         # 阿绿头套：材质
-                 "xd/ref/IMG_5399 Copy Copy Copy.JPG"],                   # 真人把 avatar 贴在脸前：身体、衣服
-        "prompt": "Image 1 is a pixel-art avatar. Image 3 shows the person behind it, holding the avatar in front "
-                  "of his face. Image 2 shows the kind of mask to make: a rigid crumpled-paper pixel head mask. "
-                  "Create a character reference sheet of the person in image 3 wearing image 1 made into a mask "
-                  "like image 2. Character: an ordinary young man in a black hoodie; the mask is shaped and coloured "
-                  "exactly like the avatar in image 1, in crumpled paper like image 2.",
+                 "alv/ref/img_v3_02te_18ebbde4-71be-4f1f-ba0e-ee6df33be5dg.JPG"],  # 阿绿全身：亮的棚拍质量
+        # paper1 用贴脸自拍当身体参考，整张跟着它变暗；换成阿绿的棚拍图，身体只写黑卫衣
+        "prompt": "Image 1 is a pixel-art avatar. Images 2-3 show the kind of mask and photo to make: a rigid "
+                  "crumpled-paper pixel head mask, shot bright and clean. Create a character reference sheet of an "
+                  "ordinary young man in a black hoodie wearing image 1 made into a mask like images 2-3. The mask "
+                  "has exactly the avatar's shape, a tall flat-sided block with a stepped top, and its colours. "
+                  # paper2 把 avatar 的黑描边当成了黑纸，侧面背面全黑；只针对这一点补一句
+                  "The black outline in image 1 is only the drawing's outline, not part of the mask: the mask's sides "
+                  "and back are orange paper with the grey top.",
     },
 }
 
