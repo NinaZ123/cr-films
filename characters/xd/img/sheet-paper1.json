@@ -1,0 +1,44 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is a pixel-art avatar. Image 3 shows the person behind it, holding the avatar in front of his face. Image 2 shows the kind of mask to make: a rigid crumpled-paper pixel head mask. Create a character reference sheet of the person in image 3 wearing image 1 made into a mask like image 2. Character: an ordinary young man in a black hoodie; the mask is shaped and coloured exactly like the avatar in image 1, in crumpled paper like image 2. Lay it out as a clean grid of equal-size panels on one plain light grey background, one view per panel, no text, no labels.",
+    "image": [
+      "<10570 chars, omitted>",
+      "<550990 chars, omitted>",
+      "<276139 chars, omitted>"
+    ],
+    "size": "3840x2160"
+  },
+  "submit": {
+    "created_at": 1792086368,
+    "id": "01a140ab-e1b6-7a81-ab83-90b1177e68a9",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a140ab-e1b6-7a81-ab83-90b1177e68a9",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1792086419,
+    "created_at": 1792086368,
+    "data": [
+      {
+        "b64_json": "<9124688 chars, omitted>"
+      }
+    ],
+    "id": "01a140ab-e1b6-7a81-ab83-90b1177e68a9",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 24320
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/characters/xd/img/sheet-paper1-0.png",
+      "mime": "image/png",
+      "size": "3840x2160"
+    }
+  ]
+}

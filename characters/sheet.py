@@ -17,32 +17,30 @@ SIZE = "3840x2160"
 LAYOUT = ("Lay it out as a clean grid of equal-size panels on one plain light grey background, one view per panel, "
           "no text, no labels.")
 
+# refs 是相对 characters/ 的路径，可以跨角色借图（比如借阿绿的头套看材质）
 CHARACTERS = {
     # 阿绿：03 绿幽灵 MV 主角。2026-10-15 定稿的是 alv/img/sheet-v3
     "alv": {
-        "refs": ["Screenshot 2025-12-31 at 15.28.15.png",          # 头套正面特写
-                 "img_v3_02te_18ebbde4-71be-4f1f-ba0e-ee6df33be5dg.JPG",  # 全身彩色
-                 "C4951934-40DF-4090-9B47-17D108D1F040_1_105_c.jpeg",     # 正面上半身
-                 "EF30BB59-56DE-4A94-ACD2-2CD33ACFAFAA_4_5005_c.jpeg"],   # 四分之三侧面坐姿
+        "refs": ["alv/ref/Screenshot 2025-12-31 at 15.28.15.png",          # 头套正面特写
+                 "alv/ref/img_v3_02te_18ebbde4-71be-4f1f-ba0e-ee6df33be5dg.JPG",  # 全身彩色
+                 "alv/ref/C4951934-40DF-4090-9B47-17D108D1F040_1_105_c.jpeg",     # 正面上半身
+                 "alv/ref/EF30BB59-56DE-4A94-ACD2-2CD33ACFAFAA_4_5005_c.jpeg"],   # 四分之三侧面坐姿
         "prompt": "Images 1-4 are reference photos of one character. Create a character reference sheet of this "
                   "character. Character: green crumpled-paper pixel-ghost mask with black plus-sign eyes, off-white "
                   "pixel headphones with a boom microphone, oversized beige hoodie, black trousers.",
     },
-    # XD 的橘色头套人：一个普通人，平时把自己的像素 avatar 贴在脸前，后来把它做成针织头套把自己整个遮住
+    # XD 的橘色头套人：一个普通人，平时把自己的像素 avatar 贴在脸前，后来把它做成头套把自己整个遮住。
+    # 头套不照 XD 给的针织头套（XD："包着头，就感觉我像个胖胖的中年男子"），改成和阿绿一样的皱纸板像素头套：
+    # 形状和五官照 avatar，材质照阿绿，身体照贴脸自拍
     "xd": {
-        "refs": ["IMG_3016.PNG",                                   # avatar 原图
-                 "frame-closeup.png",                              # 视频 9f2db… 3.4 秒的近景帧：针织头套的质感
-                 "glif-media-_R_95armelin5fiv5vknp37b_.jpg",       # 头套坐在餐厅里
-                 "IMG_5399 Copy Copy Copy.JPG"],                   # 原型：真人把 avatar 贴在脸前
-        "prompt": "Image 1 is a pixel-art avatar. Image 4 shows the person behind it, holding the avatar in front "
-                  "of his face. Images 2-3 show what he wears now: the avatar made into a knitted head mask that "
-                  "covers his whole head. Create a character reference sheet of this person wearing the knitted "
-                  "mask. Character: an ordinary young man; orange knitted pixel-avatar mask with a grey knitted cap "
-                  "top and a small pom-pom, an X-shaped left eye, a square black right eye with a green pixel pupil, "
-                  "a pixel smile; black hoodie. "
-                  # v1 出成了贴脸的紧身面罩、脸上图案糊掉、侧面也长出眼睛，只针对这三点补一句
-                  "The mask is loose and keeps its own rounded shape like images 2-3, not a tight balaclava: no nose "
-                  "or face shape shows through. The face pattern is crisp knitted pixels on the front only.",
+        "refs": ["xd/ref/IMG_3016.PNG",                                   # avatar 原图：形状、配色、五官
+                 "alv/ref/Screenshot 2025-12-31 at 15.28.15.png",         # 阿绿头套：材质
+                 "xd/ref/IMG_5399 Copy Copy Copy.JPG"],                   # 真人把 avatar 贴在脸前：身体、衣服
+        "prompt": "Image 1 is a pixel-art avatar. Image 3 shows the person behind it, holding the avatar in front "
+                  "of his face. Image 2 shows the kind of mask to make: a rigid crumpled-paper pixel head mask. "
+                  "Create a character reference sheet of the person in image 3 wearing image 1 made into a mask "
+                  "like image 2. Character: an ordinary young man in a black hoodie; the mask is shaped and coloured "
+                  "exactly like the avatar in image 1, in crumpled paper like image 2.",
     },
 }
 
@@ -52,7 +50,7 @@ def gen(name, suffix):
     out = f"sheet-{suffix}" if suffix else "sheet"
     cmd = [str(CR_IMAGE), "--model", "gpt-image-2.5-flare", "--size", SIZE,
            "--out", str(d / "img"), "--name", out, "--timeout", "900",
-           *[a for r in c["refs"] for a in ("--image", str(d / "ref" / r))],
+           *[a for r in c["refs"] for a in ("--image", str(HERE / r))],
            "--prompt", f"{c['prompt']} {LAYOUT}"]
     r = subprocess.run(cmd, capture_output=True, text=True)
     print((r.stdout.strip().splitlines() or [r.stderr[-300:]])[-1])
