@@ -1,0 +1,45 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Images 1-4 are reference photos of one character. Copy him EXACTLY: the green crumpled-paper pixel-ghost mask (same shape, same thickness, same green colour as image 1 — do not change the hue or saturation), the black plus-sign eyes, the off-white pixel-block headphones with the stepped pixel headband, the thin black boom microphone on the same ear cup as in image 1, the oversized beige hoodie with drawstrings and black trousers. Do not redesign anything. Keep the mask's proportions from the references: it is big, clearly larger than a human head, about as wide as the hood behind it, taller than it is wide, with real depth front to back. Character model sheet photo: realistic colour studio photograph, plain seamless light grey background, soft even frontal studio light, no harsh shadows, sharp focus, the mask texture and headphones crisp and detailed. Add white sneakers. The mask covers the whole head down to the hoodie collar: no chin, no jaw, no skin of the face visible. Only one person. No props, no text, no logos, no watermark. Full body head to toe, centred, with grey margin all round, standing relaxed, arms loose at his sides. Exact side profile facing frame right; the mask face points the same way as his toes. The side of the mask is plain green paper showing its thickness, no eyes on the side.",
+    "image": [
+      "<550990 chars, omitted>",
+      "<1462871 chars, omitted>",
+      "<381019 chars, omitted>",
+      "<74135 chars, omitted>"
+    ],
+    "size": "1024x1536"
+  },
+  "submit": {
+    "created_at": 1792038365,
+    "id": "01a13dcf-6940-7813-b308-7144dba2a57d",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13dcf-6940-7813-b308-7144dba2a57d",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1792038413,
+    "created_at": 1792038365,
+    "data": [
+      {
+        "b64_json": "<2549272 chars, omitted>"
+      }
+    ],
+    "id": "01a13dcf-6940-7813-b308-7144dba2a57d",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 22345
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/characters/alv/img/a05-0.png",
+      "mime": "image/png",
+      "size": "1024x1536"
+    }
+  ]
+}
