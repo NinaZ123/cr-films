@@ -29,7 +29,7 @@ CHARACTERS = {
                   "character. Character: green crumpled-paper pixel-ghost mask with black plus-sign eyes, off-white "
                   "pixel headphones with a boom microphone, oversized beige hoodie, black trousers.",
     },
-    # XD 的橘色头套人：一个普通人，平时把自己的像素 avatar 贴在脸前，后来把它做成头套把自己整个遮住。
+    # XD 本人（角色名就叫 XD）：一个普通人，平时把自己的像素 avatar 贴在脸前，后来把它做成头套把自己整个遮住。
     # 头套不照 XD 给的针织头套（XD："包着头，就感觉我像个胖胖的中年男子"），改成和阿绿一样的皱纸板像素头套：
     # 形状和五官照 avatar，材质和光照阿绿
     "xd": {
