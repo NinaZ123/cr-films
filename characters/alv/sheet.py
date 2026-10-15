@@ -35,21 +35,10 @@ CELLS = [
  ("a12", "waist up, facing the camera, one hand pressing the right ear cup, head tilted into the music"),
 ]
 
-PROMPT = (
- "Images 1-4 are reference photos of one character. Make a professional character model sheet of EXACTLY this "
- "character: one single image laid out as a clean grid of 12 equal panels, 6 columns by 2 rows, separated by thin "
- "white gutters. Every panel shows the same one person, the same costume, the same mask, as if photographed in one "
- "studio session: the green crumpled-paper pixel-ghost mask (same shape, thickness and green colour as image 1 — do "
- "not change hue or saturation; big, clearly larger than a human head, about as wide as the hood, taller than wide, "
- "with real depth), black plus-sign eyes, off-white pixel-block headphones with the stepped pixel headband, the thin "
- "black boom microphone on the same ear cup as image 1, oversized beige hoodie with drawstrings, black trousers, "
- "white sneakers. The mask covers the whole head down to the hoodie collar: no chin, no jaw, no skin visible. In "
- "every panel the mask face and the body face the same direction. Realistic colour studio photography, plain "
- "seamless light grey background, soft even light, sharp detail, identical lighting and scale across panels. "
- "Exactly one person per panel. No text, no labels, no numbers, no logos, no watermark. Panels, left to right, "
- "top row then bottom row: "
- + "; ".join(f"{i + 1}) {d}" for i, (_, d) in enumerate(CELLS)) + "."
-)
+# 只告诉模型参考人物的特点，版式、角度、光线都交给它：定妆照它本来就懂，写多了它会照我的描述画而不是照原图
+PROMPT = ("Images 1-4 are reference photos of one character. Create a character reference sheet of this character. "
+          "Character: green crumpled-paper pixel-ghost mask with black plus-sign eyes, off-white pixel headphones with a "
+          "boom microphone, oversized beige hoodie, black trousers.")
 
 
 def gen(suffix):

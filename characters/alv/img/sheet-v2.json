@@ -1,0 +1,45 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Images 1-4 are reference photos of one character. Create a character reference sheet of this character. Character: green crumpled-paper pixel-ghost mask with black plus-sign eyes, off-white pixel headphones with a boom microphone, oversized beige hoodie, black trousers.",
+    "image": [
+      "<550990 chars, omitted>",
+      "<1462871 chars, omitted>",
+      "<381019 chars, omitted>",
+      "<74135 chars, omitted>"
+    ],
+    "size": "3840x2160"
+  },
+  "submit": {
+    "created_at": 1792067332,
+    "id": "01a13f89-6af7-7073-8638-fbb4b3cb4616",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13f89-6af7-7073-8638-fbb4b3cb4616",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1792067536,
+    "created_at": 1792067332,
+    "data": [
+      {
+        "b64_json": "<8923628 chars, omitted>"
+      }
+    ],
+    "id": "01a13f89-6af7-7073-8638-fbb4b3cb4616",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 25614
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/characters/alv/img/sheet-v2-0.png",
+      "mime": "image/png",
+      "size": "3840x2160"
+    }
+  ]
+}
