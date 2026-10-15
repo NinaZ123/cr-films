@@ -1,0 +1,43 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is a photo to edit. Between the bottom of the green paper mask and the hoodie there is still a patch of skin (chin and neck). Make the green mask taller at the bottom: its pixel zigzag bottom edge must sit INSIDE the hoodie collar, overlapping it, so the collar directly touches the mask and there is zero skin anywhere. Do not change anything else: same framing, pose, mask colour and texture, headphones, microphone, hoodie, background.",
+    "image": [
+      "<2069450 chars, omitted>",
+      "<550990 chars, omitted>"
+    ],
+    "size": "1024x1536"
+  },
+  "submit": {
+    "created_at": 1792064932,
+    "id": "01a13f64-c9e0-7e62-ab40-c3aa7276c181",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13f64-c9e0-7e62-ab40-c3aa7276c181",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1792064972,
+    "created_at": 1792064932,
+    "data": [
+      {
+        "b64_json": "<2117888 chars, omitted>"
+      }
+    ],
+    "id": "01a13f64-c9e0-7e62-ab40-c3aa7276c181",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 15504
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "img/a09-fix2-0.png",
+      "mime": "image/png",
+      "size": "1024x1536"
+    }
+  ]
+}

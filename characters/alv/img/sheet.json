@@ -1,0 +1,45 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "<2022 chars, omitted>",
+    "image": [
+      "<550990 chars, omitted>",
+      "<1462871 chars, omitted>",
+      "<381019 chars, omitted>",
+      "<74135 chars, omitted>"
+    ],
+    "size": "3840x2160"
+  },
+  "submit": {
+    "created_at": 1792064523,
+    "id": "01a13f5e-8cf6-7e43-a438-7158aaaddc11",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13f5e-8cf6-7e43-a438-7158aaaddc11",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1792064590,
+    "created_at": 1792064523,
+    "data": [
+      {
+        "b64_json": "<9145816 chars, omitted>"
+      }
+    ],
+    "id": "01a13f5e-8cf6-7e43-a438-7158aaaddc11",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 26908
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "~/workspace/muse/cr-films/characters/alv/img/sheet-0.png",
+      "mime": "image/png",
+      "size": "3840x2160"
+    }
+  ]
+}

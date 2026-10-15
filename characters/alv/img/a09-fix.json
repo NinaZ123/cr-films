@@ -1,0 +1,43 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "gpt-image-2.5-flare",
+    "prompt": "Image 1 is a photo to edit; image 2 is the mask reference. Change ONE thing only: a sliver of chin and neck skin shows under the bottom edge of the green paper mask — remove it. Extend the mask's pixel zigzag bottom edge slightly down so it meets the hoodie collar, with only dark shadow inside the collar, no skin visible. Keep everything else exactly the same: same framing, same pose, same mask shape and colour, same headphones and microphone, same hoodie, same light grey background.",
+    "image": [
+      "<1253562 chars, omitted>",
+      "<550990 chars, omitted>"
+    ],
+    "size": "1024x1536"
+  },
+  "submit": {
+    "created_at": 1792064831,
+    "id": "01a13f63-4050-7061-964e-19212bf02890",
+    "model": "gpt-image-2.5-flare",
+    "poll_url": "/unified/v1/tasks/01a13f63-4050-7061-964e-19212bf02890",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1792064871,
+    "created_at": 1792064831,
+    "data": [
+      {
+        "b64_json": "<2069428 chars, omitted>"
+      }
+    ],
+    "id": "01a13f63-4050-7061-964e-19212bf02890",
+    "model": "gpt-image-2.5-flare",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 15535
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "img/a09-fix-0.png",
+      "mime": "image/png",
+      "size": "1024x1536"
+    }
+  ]
+}
