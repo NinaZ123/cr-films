@@ -1,0 +1,72 @@
+{
+  "model": "music_v2_5",
+  "compositionPlan": {
+    "chunks": [
+      {
+        "text": "[Intro]\nSoft glitchy 8-bit blips over a quiet pulse, curious, anticipation",
+        "durationMs": 3500,
+        "positiveStyles": [
+          "modern electronic",
+          "subtle chiptune textures",
+          "glitch",
+          "playful but premium",
+          "clean mix",
+          "instrumental",
+          "120 BPM"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      },
+      {
+        "text": "[Drop]\nBright impact and a bouncy confident groove, chiptune lead layered over modern drums",
+        "durationMs": 6500,
+        "positiveStyles": [
+          "punchy drums",
+          "chiptune lead",
+          "bouncy bass",
+          "confident"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      },
+      {
+        "text": "[Build]\nFull energy, catchy arpeggios, uplifting launch moment",
+        "durationMs": 10000,
+        "positiveStyles": [
+          "uplifting",
+          "catchy arpeggio",
+          "driving",
+          "bright"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      }
+    ]
+  },
+  "seconds": 4.01,
+  "file": "music-c.mp3"
+}

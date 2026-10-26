@@ -1,0 +1,72 @@
+{
+  "model": "music_v2_5",
+  "compositionPlan": {
+    "chunks": [
+      {
+        "text": "[Intro]\nDark ambient drone with heartbeat-like low thumps, tense, building suspense",
+        "durationMs": 3500,
+        "positiveStyles": [
+          "dark cinematic electronic",
+          "tension",
+          "sub bass",
+          "heartbeat pulse",
+          "trailer sound design",
+          "instrumental",
+          "120 BPM"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      },
+      {
+        "text": "[Drop]\nMassive cinematic boom on the downbeat, then a heavy half-time groove with gritty bass",
+        "durationMs": 6500,
+        "positiveStyles": [
+          "huge impact",
+          "gritty synth bass",
+          "half-time drums",
+          "powerful"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      },
+      {
+        "text": "[Build]\nDrums open up to full tempo, energetic, triumphant, futuristic",
+        "durationMs": 10000,
+        "positiveStyles": [
+          "energetic drums",
+          "futuristic synths",
+          "triumphant",
+          "rising"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      }
+    ]
+  },
+  "seconds": 4.445,
+  "file": "music-b.mp3"
+}

@@ -1,0 +1,72 @@
+{
+  "model": "music_v2_5",
+  "compositionPlan": {
+    "chunks": [
+      {
+        "text": "[Intro]\nQuiet low sub pulse and a soft ticking hi-hat, sparse, suspenseful, tension rising toward a drop",
+        "durationMs": 3500,
+        "positiveStyles": [
+          "minimal electronic",
+          "premium tech launch film",
+          "deep sub bass pulse",
+          "crisp clean synths",
+          "cinematic",
+          "instrumental",
+          "118 BPM"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      },
+      {
+        "text": "[Drop]\nBig impact hit on the downbeat, then a confident steady groove with wide warm pads",
+        "durationMs": 6500,
+        "positiveStyles": [
+          "punchy kick",
+          "wide analog pads",
+          "confident",
+          "spacious"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      },
+      {
+        "text": "[Build]\nDriving rhythm, plucky arpeggio, building energy, bright and modern",
+        "durationMs": 10000,
+        "positiveStyles": [
+          "driving beat",
+          "plucky synth arpeggio",
+          "uplifting",
+          "building"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      }
+    ]
+  },
+  "seconds": 7.966,
+  "file": "music-a.mp3"
+}

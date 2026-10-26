@@ -9,35 +9,35 @@ import path from "node:path";
 const OUT = path.resolve(import.meta.dirname, "../../audio");
 fs.mkdirSync(OUT, { recursive: true });
 
-// 时间轴对应样片脚本 v3：0–2.5s 冷开场，2.5–4s 信号靠拢，4s 是 PASSED 的 drop，
-// 5–11s 慢速大字和 logo，11–14s 三拍证明，14–20s 产品章节。
+// 时间轴对应脚本 v6 开场：0–3.5s 真实访谈下铺一层安静的脉冲，3.5s 起三拍重鼓砸主标，
+// 7s 小幽灵像素炸开出 logo，之后进入能力段，持续往上推。
 const BASE_NEG = ["vocals", "lyrics", "lo-fi", "acoustic guitar", "orchestral", "cheesy", "corporate ukulele"];
 const TAKES = {
   // A：极简科技脉冲，Apple 发布会式的克制
   a: [
-    { text: "[Intro]\nQuiet low sub pulse and a soft ticking hi-hat, sparse, suspenseful, tension rising toward a drop", duration_ms: 4000,
+    { text: "[Intro]\nQuiet low sub pulse and a soft ticking hi-hat, sparse, suspenseful, tension rising toward a drop", duration_ms: 3500,
       positive_styles: ["minimal electronic", "premium tech launch film", "deep sub bass pulse", "crisp clean synths", "cinematic", "instrumental", "118 BPM"] },
-    { text: "[Drop]\nBig impact hit on the downbeat, then a confident steady groove with wide warm pads", duration_ms: 7000,
+    { text: "[Drop]\nBig impact hit on the downbeat, then a confident steady groove with wide warm pads", duration_ms: 6500,
       positive_styles: ["punchy kick", "wide analog pads", "confident", "spacious"] },
-    { text: "[Build]\nDriving rhythm, plucky arpeggio, building energy, bright and modern", duration_ms: 9000,
+    { text: "[Build]\nDriving rhythm, plucky arpeggio, building energy, bright and modern", duration_ms: 10000,
       positive_styles: ["driving beat", "plucky synth arpeggio", "uplifting", "building"] },
   ],
   // B：更暗、更有压迫感，PASSED 处更狠
   b: [
-    { text: "[Intro]\nDark ambient drone with heartbeat-like low thumps, tense, building suspense", duration_ms: 4000,
+    { text: "[Intro]\nDark ambient drone with heartbeat-like low thumps, tense, building suspense", duration_ms: 3500,
       positive_styles: ["dark cinematic electronic", "tension", "sub bass", "heartbeat pulse", "trailer sound design", "instrumental", "120 BPM"] },
-    { text: "[Drop]\nMassive cinematic boom on the downbeat, then a heavy half-time groove with gritty bass", duration_ms: 7000,
+    { text: "[Drop]\nMassive cinematic boom on the downbeat, then a heavy half-time groove with gritty bass", duration_ms: 6500,
       positive_styles: ["huge impact", "gritty synth bass", "half-time drums", "powerful"] },
-    { text: "[Build]\nDrums open up to full tempo, energetic, triumphant, futuristic", duration_ms: 9000,
+    { text: "[Build]\nDrums open up to full tempo, energetic, triumphant, futuristic", duration_ms: 10000,
       positive_styles: ["energetic drums", "futuristic synths", "triumphant", "rising"] },
   ],
   // C：明亮、带点 8-bit 质感，呼应像素小幽灵
   c: [
-    { text: "[Intro]\nSoft glitchy 8-bit blips over a quiet pulse, curious, anticipation", duration_ms: 4000,
+    { text: "[Intro]\nSoft glitchy 8-bit blips over a quiet pulse, curious, anticipation", duration_ms: 3500,
       positive_styles: ["modern electronic", "subtle chiptune textures", "glitch", "playful but premium", "clean mix", "instrumental", "120 BPM"] },
-    { text: "[Drop]\nBright impact and a bouncy confident groove, chiptune lead layered over modern drums", duration_ms: 7000,
+    { text: "[Drop]\nBright impact and a bouncy confident groove, chiptune lead layered over modern drums", duration_ms: 6500,
       positive_styles: ["punchy drums", "chiptune lead", "bouncy bass", "confident"] },
-    { text: "[Build]\nFull energy, catchy arpeggios, uplifting launch moment", duration_ms: 9000,
+    { text: "[Build]\nFull energy, catchy arpeggios, uplifting launch moment", duration_ms: 10000,
       positive_styles: ["uplifting", "catchy arpeggio", "driving", "bright"] },
   ],
 };
@@ -49,7 +49,11 @@ if (!TAKES[take]) {
 }
 
 const compositionPlan = {
-  chunks: TAKES[take].map((c) => ({ ...c, negative_styles: BASE_NEG, context_adherence: "high" })),
+  // JS SDK 要驼峰写法（skill 里的 TypeScript 示例也是这样）
+  chunks: TAKES[take].map((c) => ({
+    text: c.text, durationMs: c.duration_ms, positiveStyles: c.positive_styles,
+    negativeStyles: BASE_NEG, contextAdherence: "high",
+  })),
 };
 
 const client = new ElevenLabsClient();
