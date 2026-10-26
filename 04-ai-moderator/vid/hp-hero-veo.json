@@ -1,0 +1,71 @@
+{
+  "request": {
+    "model": "veo3.1-fast",
+    "content": [
+      {
+        "type": "text",
+        "text": "Premium audio product commercial. Slow smooth cinematic camera orbit and gentle push-in around these vintage on-ear headphones on a seamless white studio surface. A crisp specular highlight sweeps along the brushed steel headband and chrome ear cups. One continuous shot, no cuts. Product design unchanged. No hands, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "<81547 chars, omitted>"
+        }
+      }
+    ]
+  },
+  "submit": {
+    "created_at": 1792755954,
+    "id": "01a16894-f330-7a22-a0ce-4538f06c85dd",
+    "model": "veo3.1-fast",
+    "poll_url": "/unified/v1/tasks/01a16894-f330-7a22-a0ce-4538f06c85dd",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1792756228,
+    "created_at": 1792755954,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 8,
+        "fps": 24,
+        "has_audio": true,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a16894-f330-7a22-a0ce-4538f06c85dd/jrEt5XvJ5a27uVytyksv-Z9wlNiQOAXM8s7V_VaG9nHgItYK17hTeZJoYpTsK-p4b2LVKsq2-MQFBbIZhLxxUTrkmLyECd_GcImQ8GpiGlXKyCgwa801KVDkbWeeH80eXrLMOJUAaqi46F0nzZ-UzawOYWruMbFRNVW8CifZgj_7JrGUwna4Jdm2yG4oBn8Y6RpY4qBHvs_2bZUtzsvRl67Pe-2YIn0_10Cx7AhLPw0Bbel0MvbfXOSh86tV4JoriXEgZg733WhqcnQMps-iHppl4A",
+        "width": 1280
+      }
+    ],
+    "id": "01a16894-f330-7a22-a0ce-4538f06c85dd",
+    "model": "veo3.1-fast",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 8000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "8.000000"
+    }
+  }
+}

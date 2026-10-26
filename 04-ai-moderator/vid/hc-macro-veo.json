@@ -1,0 +1,71 @@
+{
+  "request": {
+    "model": "veo3.1-fast",
+    "content": [
+      {
+        "type": "text",
+        "text": "Extreme macro skincare commercial. A silky ribbon of white hand cream slowly flows out of the tube nozzle and folds onto itself, glossy creamy texture, very slow motion, shallow depth of field, soft white studio light, slow push-in. One continuous shot, no cuts. No hands, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "<36803 chars, omitted>"
+        }
+      }
+    ]
+  },
+  "submit": {
+    "created_at": 1792756273,
+    "id": "01a16899-d033-77b3-b1a7-c6ca1522fac2",
+    "model": "veo3.1-fast",
+    "poll_url": "/unified/v1/tasks/01a16899-d033-77b3-b1a7-c6ca1522fac2",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1792756376,
+    "created_at": 1792756273,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 8,
+        "fps": 24,
+        "has_audio": true,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a16899-d033-77b3-b1a7-c6ca1522fac2/rXXCW2Ah-EgUHgV0o6ZFoZhB_EoHF90ZHsxKAXwe2e6l3sur4ObkzrijkV7d1J_nB4c6yh_sjOAct-B9itAZCX2bBZFl0BGxTWtLrTn0Z-9dDU4E96bkCFXRQTuUj2r8h2L89kqF0ecQZSSxaKoIMKRlPlO8vOaDAUe8BCTUFzyXz7WVnMfaC17RD6AUGZPSYZQYrNM2RgyTXf6LHDOnFu_dOnOyk6j3rLhghZVvsVDhx6maetzfd2S5KkcTSug4zXlkv0v_DWde5fLoBNbDK4s27A",
+        "width": 1280
+      }
+    ],
+    "id": "01a16899-d033-77b3-b1a7-c6ca1522fac2",
+    "model": "veo3.1-fast",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 8000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "8.000000"
+    }
+  }
+}

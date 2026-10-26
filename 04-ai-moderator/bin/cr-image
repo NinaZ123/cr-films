@@ -1,0 +1,181 @@
+#!/usr/bin/env bash
+# cr-image：通过 creative-reasoning 网关生成或编辑图片，提交 → 轮询 → 存图 → 核对尺寸和格式。
+#
+# 用法:
+#   cr-image --model <模型> --prompt <提示词> [选项]
+#   cr-image --resume <task_id> [--out 目录] [--name 名字]      # 接着轮询一个已提交的任务
+#
+# 选项:
+#   --size <值>               顶层 size。像素（1536x1024）、档位（2K）是两种写法，按模型选
+#   --aspect-ratio <比例>     顶层 aspect_ratio，如 16:9
+#   --quality <档位>          顶层 quality，如 low / high
+#   --n <数量>                顶层 n
+#   --format <格式>           顶层 output_format，如 jpeg / webp
+#   --image <URL 或本地路径>  输入图，给了就走编辑接口；可重复，多张时以数组提交。本地文件转成 data URI
+#   --mask <URL 或本地路径>   局部编辑蒙版
+#   --extra '<json>'          合并进请求体顶层的额外字段
+#   --out <目录>              输出目录，默认 ./cr-output
+#   --name <名字>             输出文件名前缀，默认 <模型>-<时间戳>
+#   --interval <秒>           轮询间隔，默认 5
+#   --timeout <秒>            最长等待，默认 600
+#   --dry-run                 只打印请求体（base64 缩写显示），不提交
+#
+# 输出:
+#   <out>/<name>-<i>.<png|jpg|webp>   每张图
+#   <out>/<name>.json  {endpoint, request, submit, final, files}；base64 已替换成长度说明
+#   标准输出最后一行是 JSON 摘要。退出码：0 成功，1 任务失败，2 用法或网络错误。
+#
+# Key: 环境变量 CR_API_KEY；没有就读仓库根目录 .env，再没有读 ~/.config/cr/env
+set -euo pipefail
+
+API="https://api.creative-reasoning.com"
+die() { echo "cr-image: $*" >&2; exit 2; }
+for t in curl jq file ffprobe base64; do command -v "$t" >/dev/null || die "缺少 ${t}"; done
+
+# 先读 cr-films 仓库根目录的 .env（gitignore 的），再退回 ~/.config/cr/env
+REPO_ENV="$(cd "$(dirname "$0")/../.." && pwd)/.env"
+for envf in "$REPO_ENV" "$HOME/.config/cr/env"; do
+  if [ -z "${CR_API_KEY:-}" ] && [ -f "$envf" ]; then
+    CR_API_KEY=$(sed -n 's/^CR_API_KEY=//p' "$envf" | head -1)
+  fi
+done
+[ -n "${CR_API_KEY:-}" ] || die "没有 CR_API_KEY：设环境变量，或写进 ~/.config/cr/env"
+
+model="" prompt="" size="" ar="" quality="" n="" format="" mask="" extra='{}'
+images=() out="./cr-output" name="" interval=5 timeout=600 dry=0 resume=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --model) model="$2"; shift 2 ;;
+    --prompt) prompt="$2"; shift 2 ;;
+    --size) size="$2"; shift 2 ;;
+    --aspect-ratio) ar="$2"; shift 2 ;;
+    --quality) quality="$2"; shift 2 ;;
+    --n) n="$2"; shift 2 ;;
+    --format) format="$2"; shift 2 ;;
+    --image) images+=("$2"); shift 2 ;;
+    --mask) mask="$2"; shift 2 ;;
+    --extra) extra="$2"; shift 2 ;;
+    --out) out="$2"; shift 2 ;;
+    --name) name="$2"; shift 2 ;;
+    --interval) interval="$2"; shift 2 ;;
+    --timeout) timeout="$2"; shift 2 ;;
+    --dry-run) dry=1; shift ;;
+    --resume) resume="$2"; shift 2 ;;
+    -h|--help) sed -n '2,31p' "$0"; exit 0 ;;
+    *) die "未知参数 ${1}（--help 看用法）" ;;
+  esac
+done
+
+auth=(-H "Authorization: Bearer $CR_API_KEY")
+work=$(mktemp -d); trap 'rm -rf "$work"' EXIT
+
+# URL 原样用；本地文件转成 data URI
+to_input() {
+  case "$1" in
+    http://*|https://*|data:*) printf '%s' "$1" ;;
+    *) [ -f "$1" ] || die "找不到文件 ${1}"
+       printf 'data:%s;base64,' "$(file -b --mime-type "$1")"; base64 < "$1" | tr -d '\n' ;;
+  esac
+}
+# 把请求或响应里的长 base64 换成长度说明，写进结果 json 用
+slim='walk(if type=="string" and length>2000 then "<\(length) chars, omitted>" else . end)'
+
+if [ -n "$resume" ]; then
+  [ -n "$name" ] || name="resume-$resume"
+  mkdir -p "$out"
+  endpoint="" ; echo 'null' > "$work/request.json"; echo 'null' > "$work/submit.json"
+  poll_url="/unified/v1/tasks/$resume"
+else
+  [ -n "$model" ] || die "缺少 --model"
+  [ -n "$prompt" ] || die "缺少 --prompt"
+  [ -n "$name" ] || name="$model-$(date +%Y%m%d-%H%M%S)"
+  echo "$extra" | jq -e 'type=="object"' >/dev/null 2>&1 || die "--extra 必须是 JSON 对象"
+
+  : > "$work/images.txt"
+  for img in "${images[@]+"${images[@]}"}"; do to_input "$img" >> "$work/images.txt"; echo >> "$work/images.txt"; done
+  [ -z "$mask" ] || to_input "$mask" > "$work/mask.txt"
+  endpoint=/unified/v1/images/tasks
+  [ ${#images[@]} -eq 0 ] || endpoint=/unified/v1/images/edit-tasks
+
+  jq -n --arg model "$model" --arg prompt "$prompt" --arg size "$size" --arg ar "$ar" \
+    --arg quality "$quality" --arg n "$n" --arg format "$format" --argjson extra "$extra" \
+    --rawfile imgs "$work/images.txt" --rawfile mask "$( [ -f "$work/mask.txt" ] && echo "$work/mask.txt" || echo /dev/null )" '
+    ($imgs | split("\n") | map(select(length>0))) as $im
+    | {model:$model, prompt:$prompt}
+    + (if ($im|length)==1 then {image:$im[0]} elif ($im|length)>1 then {image:$im} else {} end)
+    + (if $mask != "" then {mask:$mask} else {} end)
+    + (if $size != "" then {size:$size} else {} end)
+    + (if $ar != "" then {aspect_ratio:$ar} else {} end)
+    + (if $quality != "" then {quality:$quality} else {} end)
+    + (if $n != "" then {n:($n|tonumber)} else {} end)
+    + (if $format != "" then {output_format:$format} else {} end)
+    | . * $extra' > "$work/request.json"
+
+  if [ "$dry" = 1 ]; then echo "POST $endpoint"; jq "$slim" "$work/request.json"; exit 0; fi
+  mkdir -p "$out"
+
+  idem="cr-image-$name-$(od -An -N6 -tx1 /dev/urandom | tr -d ' \n')"
+  for attempt in 1 2 3 4 5; do
+    code=$(curl -sS --connect-timeout 20 --max-time 120 -X POST "$API$endpoint" "${auth[@]}" \
+      -H "Content-Type: application/json" -H "Idempotency-Key: $idem" \
+      --data @"$work/request.json" -o "$work/submit.json" -w '%{http_code}' || true)
+    case "$code" in
+      200|202) break ;;
+      429|500|502|503|504|000)
+        echo "cr-image: 提交返回 ${code}，第 ${attempt} 次，稍后用同一个幂等键重试" >&2
+        sleep $((attempt * 5)) ;;
+      *) jq -n --arg ep "$endpoint" --slurpfile req "$work/request.json" --arg code "$code" --rawfile body "$work/submit.json" \
+           "{endpoint:\$ep, request:(\$req[0] | $slim), submit:{http_status:(\$code|tonumber), body:(\$body|fromjson? // \$body)}}" > "$out/$name.json"
+         die "提交失败 HTTP ${code}：$(cat "$work/submit.json")" ;;
+    esac
+  done
+  case "$code" in 200|202) ;; *) die "提交重试 5 次仍失败，最后是 HTTP ${code}：$(cat "$work/submit.json" 2>/dev/null)" ;; esac
+  poll_url=$(jq -r .poll_url "$work/submit.json")
+  # 先落盘，脚本中途被打断时还能从这里拿到 task id 去 --resume
+  jq -n --arg ep "$endpoint" --slurpfile req "$work/request.json" --slurpfile sub "$work/submit.json" \
+    "{endpoint:\$ep, request:(\$req[0] | $slim), submit:\$sub[0]}" > "$out/$name.json"
+  echo "cr-image: 已提交 $(jq -r .id "$work/submit.json")（${model}），中断后用 --resume 接着等" >&2
+fi
+
+case "$poll_url" in http*) ;; *) poll_url="$API$poll_url" ;; esac
+start=$(date +%s)
+while :; do
+  curl -sS --connect-timeout 20 --max-time 60 "$poll_url" "${auth[@]}" -o "$work/final.json" || true
+  status=$(jq -r '.status // empty' "$work/final.json" 2>/dev/null || true)
+  case "$status" in completed|failed) break ;; esac
+  elapsed=$(( $(date +%s) - start ))
+  [ "$elapsed" -lt "$timeout" ] || die "等了 ${elapsed}s 还没到终态（最后状态 ${status:-未知}）。用 --resume $(echo "$poll_url" | sed 's#.*/##') 接着等"
+  echo "cr-image: ${status:-查询失败} +${elapsed}s" >&2
+  sleep "$interval"
+done
+
+echo '[]' > "$work/files.json"
+if [ "$status" = completed ]; then
+  count=$(jq '.data | length' "$work/final.json")
+  for i in $(seq 0 $((count-1))); do
+    tmp="$work/img-$i"
+    if jq -e ".data[$i].b64_json" "$work/final.json" >/dev/null; then
+      jq -r ".data[$i].b64_json" "$work/final.json" | base64 -d > "$tmp"
+    else
+      curl -sS -L --connect-timeout 20 --max-time 600 --retry 3 "$(jq -r ".data[$i].url" "$work/final.json")" -o "$tmp" || die "下载失败：第 ${i} 张"
+    fi
+    mime=$(file -b --mime-type "$tmp")
+    case "$mime" in image/png) ext=png ;; image/jpeg) ext=jpg ;; image/webp) ext=webp ;; *) ext=bin ;; esac
+    f="$out/$name-$i.$ext"; mv "$tmp" "$f"
+    wh=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0:s=x "$f" 2>/dev/null || true)
+    jq --arg f "$f" --arg mime "$mime" --arg wh "${wh:-unknown}" \
+      '. + [{file:$f, mime:$mime, size:$wh}]' "$work/files.json" > "$work/files.tmp" && mv "$work/files.tmp" "$work/files.json"
+  done
+fi
+
+jq -n --arg ep "$endpoint" --slurpfile req "$work/request.json" --slurpfile sub "$work/submit.json" \
+  --slurpfile fin "$work/final.json" --slurpfile files "$work/files.json" \
+  "{endpoint:\$ep, request:(\$req[0] | $slim), submit:\$sub[0], final:(\$fin[0] | $slim), files:\$files[0]}" > "$out/$name.json"
+
+if [ "$status" = completed ]; then
+  jq -c '{status:"completed", task_id:.final.id, model:.final.model,
+          waited_s:(.final.completed_at - .final.created_at), files}' "$out/$name.json"
+else
+  jq -c --arg meta "$out/$name.json" '{status:"failed", task_id:.final.id, error:.final.error, meta:$meta}' "$out/$name.json"
+  exit 1
+fi

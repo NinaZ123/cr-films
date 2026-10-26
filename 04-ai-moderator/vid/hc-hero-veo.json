@@ -1,0 +1,71 @@
+{
+  "request": {
+    "model": "veo3.1-fast",
+    "content": [
+      {
+        "type": "text",
+        "text": "Premium skincare commercial. Slow smooth cinematic camera orbit and gentle push-in around this white hand cream tube with mint-green cap on a seamless white studio surface. A soft light sweep glides across the pearl tube. Product unchanged. No hands, no text. Silent."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "<39575 chars, omitted>"
+        }
+      }
+    ]
+  },
+  "submit": {
+    "created_at": 1792755778,
+    "id": "01a16892-458d-77b1-b763-551a847a6bb8",
+    "model": "veo3.1-fast",
+    "poll_url": "/unified/v1/tasks/01a16892-458d-77b1-b763-551a847a6bb8",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1792755876,
+    "created_at": 1792755778,
+    "data": [
+      {
+        "aspect_ratio": "16:9",
+        "duration": 8,
+        "fps": 24,
+        "has_audio": true,
+        "height": 720,
+        "size": "1280x720",
+        "type": "video",
+        "url": "https://api.creative-reasoning.com/_cr/v1/media/video/01a16892-458d-77b1-b763-551a847a6bb8/U49hQAzPYSdUVToNfDvBiuxm0hZKPIxv37VYJ-817epSqG1wfOSvBK1LYTc5nTDgZ1R9oaAGL23dKG74XPl7dYeakxzF7RUuUcu_xRCQK3XbxyxdUwwEFwG4beNJnJA2GhMe2at70Lla62LhIgNVWdJptpxyyIHzr_BCgVm_ZoUT6F-vKOpMfHVdamgVqv7Vl6GvVeRRBM4URubk3qcoMJ601SZOGnVhilrnYjfpC5TWbMUJvQuSpsTupE3d0-XHd_YkTLRjc5NHBwR2PUjBmhfvHw",
+        "width": 1280
+      }
+    ],
+    "id": "01a16892-458d-77b1-b763-551a847a6bb8",
+    "model": "veo3.1-fast",
+    "status": "completed",
+    "usage": {
+      "output": {
+        "video_tokens": 8000
+      }
+    }
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "8.000000"
+    }
+  }
+}

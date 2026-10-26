@@ -1,0 +1,41 @@
+{
+  "endpoint": "/unified/v1/images/edit-tasks",
+  "request": {
+    "model": "nano-banana-beta",
+    "prompt": "Extreme macro close-up product shot: a glossy ribbon of rich white hand cream being squeezed out of this tube's nozzle, creamy silky texture visible, soft white studio background, shallow depth of field, premium skincare commercial look. Keep the tube's design.",
+    "image": "<50923 chars, omitted>",
+    "aspect_ratio": "16:9"
+  },
+  "submit": {
+    "created_at": 1792755404,
+    "id": "01a1688c-8f85-7b80-82fd-dde8d7bda889",
+    "model": "nano-banana-beta",
+    "poll_url": "/unified/v1/tasks/01a1688c-8f85-7b80-82fd-dde8d7bda889",
+    "status": "pending"
+  },
+  "final": {
+    "completed_at": 1792755431,
+    "created_at": 1792755404,
+    "data": [
+      {
+        "b64_json": "<1112384 chars, omitted>",
+        "mime_type": "image/png"
+      }
+    ],
+    "id": "01a1688c-8f85-7b80-82fd-dde8d7bda889",
+    "model": "nano-banana-beta",
+    "status": "completed",
+    "usage": {
+      "billing": {
+        "tokenhub_tokens": 24537
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "img/hc-macro-0.png",
+      "mime": "image/png",
+      "size": "1344x768"
+    }
+  ]
+}

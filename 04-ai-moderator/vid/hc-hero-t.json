@@ -1,0 +1,29 @@
+{
+  "request": {
+    "model": "minimax-h3-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Slow cinematic camera orbit around the hand cream tube on white studio surface."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "<39575 chars, omitted>"
+        }
+      }
+    ]
+  },
+  "submit": {
+    "http_status": 400,
+    "body": {
+      "error": {
+        "type": "invalid_request_error",
+        "code": "invalid_parameter",
+        "message": "Invalid video parameters for the selected model"
+      },
+      "request_id": "01a16891-bfb6-7813-9cbf-8d59fb271af1"
+    }
+  }
+}

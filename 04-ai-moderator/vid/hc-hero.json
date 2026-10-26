@@ -1,0 +1,30 @@
+{
+  "request": {
+    "model": "minimax-h3-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Premium product commercial. The white hand cream tube with mint-green cap lies on a seamless white studio surface. Slow, smooth cinematic camera orbit and gentle push-in around the tube. Soft diffused studio light, a subtle light sweep glides across the pearl-white tube. Product stays sharp, shape and label unchanged. No hands, no people, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "<50923 chars, omitted>"
+        }
+      }
+    ],
+    "duration": 6
+  },
+  "submit": {
+    "http_status": 400,
+    "body": {
+      "error": {
+        "type": "invalid_request_error",
+        "code": "invalid_parameter",
+        "message": "Invalid video parameters for the selected model"
+      },
+      "request_id": "01a1688c-8d62-7561-a0ae-3bc72d955009"
+    }
+  }
+}

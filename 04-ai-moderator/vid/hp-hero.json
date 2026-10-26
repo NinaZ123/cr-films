@@ -1,0 +1,30 @@
+{
+  "request": {
+    "model": "minimax-h3-image-to-video",
+    "content": [
+      {
+        "type": "text",
+        "text": "Premium product commercial. Vintage on-ear headphones with brushed steel headband on a seamless white studio surface. Slow, smooth cinematic camera orbit and gentle push-in. A crisp specular highlight sweeps along the steel headband and the chrome ear cups. Product stays sharp, design unchanged. No hands, no people, no text."
+      },
+      {
+        "type": "image_url",
+        "role": "first_frame",
+        "image_url": {
+          "url": "<108219 chars, omitted>"
+        }
+      }
+    ],
+    "duration": 6
+  },
+  "submit": {
+    "http_status": 400,
+    "body": {
+      "error": {
+        "type": "invalid_request_error",
+        "code": "invalid_parameter",
+        "message": "Invalid video parameters for the selected model"
+      },
+      "request_id": "01a1688c-8dc1-73e0-8622-810f57c055e0"
+    }
+  }
+}
