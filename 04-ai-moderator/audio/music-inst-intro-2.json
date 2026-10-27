@@ -1,0 +1,6 @@
+{
+  "model": "music_v2_5",
+  "forceInstrumental": true,
+  "prompt": "Instrumental cinematic trailer music. Starts almost silent: a very soft, low dark drone and faint heartbeat thumps for the first 5 seconds, quiet and tense. Then a sudden huge trailer impact boom with deep sub bass, followed by two more heavy impact hits, then a dark sustained synth chord that rings out and slowly fades. Dark, powerful, premium. No vocals, no voice, no speech.",
+  "musicLengthMs": 12000
+}

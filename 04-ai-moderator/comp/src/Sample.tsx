@@ -17,7 +17,7 @@ const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const ease = Easing.bezier(0.16, 1, 0.3, 1);
 const inOut = Easing.bezier(0.65, 0, 0.35, 1);
 
-// 时间轴（秒）。music-b-full 实测 drop 在 5.37s
+// 时间轴（秒）。主标三拍沿用之前对 B 版音乐卡的点；现在前半段只用音效，冲击音落在这三拍上
 const HIT = [5.37, 6.03, 6.69];
 const T_COLD = [0, 5.37];
 const T_TITLE = [5.37, 8.6];
@@ -285,16 +285,26 @@ const BoomLogo: React.FC<{ since: number }> = ({ since }) => {
 // ---------- 合成 ----------
 export const Sample: React.FC = () => (
   <AbsoluteFill style={{ background: "#000" }}>
-    {/* 前半段音乐：对白下面压低，主标推上去，包袱段几乎静音，给喜剧停顿 */}
-    <Audio src={staticFile("music-b-full.mp3")} volume={(fr) => {
-      const t = fr / FPS;
-      return interpolate(t, [0, 5.3, 5.37, 10.2, 10.6, 20, 22.4], [0.14, 0.16, 0.55, 0.5, 0.1, 0.08, 0], clamp);
-    }} />
-    {/* 炸：music-drop 实测 3.48s 第一拍，对齐到 DROP_AT。前面 3 秒是静音 + 反向镲，正好接在道歉之后 */}
-    <Sequence from={s(DROP_AT - 3.48)} layout="none">
-      <Audio src={staticFile("music-drop.mp3")} volume={(fr) => {
+    {/* 前半段：不用整段音乐（ElevenLabs 分段生成的音乐里混进了很轻的人声，听着像背景里有别的访谈），
+        改成音效：冷开场一层安静的暗底，主标三拍各一记重低音冲击，最后一拍后接长尾，logo 出现时一声 8-bit */}
+    <Sequence durationInFrames={s(T_COLD[1])} layout="none">
+      <Audio src={staticFile("sfx/bed.mp3")} loop volume={(fr) => interpolate(fr / FPS, [0, 0.8, T_COLD[1] - 0.4, T_COLD[1]], [0, 0.35, 0.35, 0], clamp)} />
+    </Sequence>
+    {HIT.map((h, i) => (
+      <Sequence key={h} from={s(h) - 10} layout="none">
+        {/* hit.mp3 的峰值在 0.33s，提前 10 帧放，让冲击正好落在拍点上 */}
+        <Audio src={staticFile("sfx/hit.mp3")} volume={i === 2 ? 0.95 : 0.8} />
+      </Sequence>
+    ))}
+    <Sequence from={s(HIT[2]) + 4} layout="none">
+      <Audio src={staticFile("sfx/tail.mp3")} volume={(fr) => interpolate(fr / FPS, [0, 2.6, 3.4], [0.55, 0.4, 0], clamp)} />
+    </Sequence>
+    <Sequence from={s(T_LOGO[0] + 0.95)} layout="none"><Audio src={staticFile("sfx/ghost.mp3")} volume={0.9} /></Sequence>
+    {/* 炸：纯器乐版（forceInstrumental），实测 4.53s 第一拍，对齐到 DROP_AT */}
+    <Sequence from={s(DROP_AT - 4.53)} layout="none">
+      <Audio src={staticFile("music-inst-drop.mp3")} volume={(fr) => {
         const t = fr / FPS;
-        return interpolate(t, [0, 3.3, 3.48, 10.5, 11.5], [0.5, 0.55, 0.85, 0.85, 0], clamp);
+        return interpolate(t, [0, 4.4, 4.53, 10.5, 11.8], [0.6, 0.6, 0.9, 0.9, 0], clamp);
       }} />
     </Sequence>
     {/* 对白（清理过的原声） */}

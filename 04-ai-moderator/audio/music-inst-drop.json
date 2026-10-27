@@ -1,0 +1,6 @@
+{
+  "model": "music_v2_5",
+  "forceInstrumental": true,
+  "prompt": "Instrumental high-energy electronic, 128 BPM. First 3 seconds: near silence with a single short reversed cymbal swell building up. At exactly 3 seconds: an explosive full-energy drop hitting hard on the first beat, massive kick and heavy sub bass, huge wide synth stabs, festival energy, bright and confident. Ends with one final massive hit and a short reverb tail. No vocals, no voice, no speech.",
+  "musicLengthMs": 12000
+}

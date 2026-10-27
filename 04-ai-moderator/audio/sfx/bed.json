@@ -1,0 +1,7 @@
+{
+  "model": "eleven_text_to_sound_v2",
+  "text": "Very quiet dark cinematic ambient drone with soft low heartbeat pulse, tense, sparse, no melody",
+  "duration_seconds": 6,
+  "prompt_influence": 0.5,
+  "loop": true
+}

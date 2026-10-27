@@ -11,7 +11,10 @@ fs.mkdirSync(OUT, { recursive: true });
 
 // 时间轴对应脚本 v6 开场：0–3.5s 真实访谈下铺一层安静的脉冲，3.5s 起三拍重鼓砸主标，
 // 7s 小幽灵像素炸开出 logo，之后进入能力段，持续往上推。
-const BASE_NEG = ["vocals", "lyrics", "lo-fi", "acoustic guitar", "orchestral", "cheesy", "corporate ukulele"];
+// 注意：段落 text 会被模型当成要念的内容。b-full 的 text 里写了 "under spoken dialogue"，
+// 生成出的音乐在 10–21s、36–42s 有人声很轻地把这句念了出来（whisper 能转写出来）。
+// 以后 text 里不要写"对白""说话"之类的词，negative 里也加上 speech。
+const BASE_NEG = ["vocals", "lyrics", "spoken word", "speech", "lo-fi", "acoustic guitar", "orchestral", "cheesy", "corporate ukulele"];
 const TAKES = {
   // A：极简科技脉冲，Apple 发布会式的克制
   a: [
