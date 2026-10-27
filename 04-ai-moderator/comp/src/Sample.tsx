@@ -5,6 +5,7 @@ import {
 } from "remotion";
 import { T } from "./theme";
 import { Ghost, GhostBurst, PixelGrid } from "./Ghost";
+import { PixelAssemble, LightSweep } from "./PixelAssemble";
 
 // 15 秒样片（方向：原生分辨率，不抠像、不放大）。
 // 真实访谈界面像产品一样浮在深色空间里，镜头在上面推、拉；AI 主持人用原生分辨率的清晰画面；
@@ -103,13 +104,23 @@ const Slogan: React.FC<{ text: React.ReactNode }> = ({ text }) => {
 // 冷开场：界面浮在空间里，慢慢推近到主持人；他在追问
 const Cold: React.FC = () => {
   const f = useCurrentFrame();
-  const cam = interpolate(f, [s(0.2), s(4.6)], [0, 1], { ...clamp, easing: inOut });
-  const tilt = interpolate(f, [0, s(4.6)], [8, 0], { ...clamp, easing: inOut });
+  // 0–1.3s 像素飞进来拼出界面 → 1.0–1.6s 翻成真实画面 → 1.5–2.1s 扫光通电 → 之后推近到主持人
+  const shown = interpolate(f, [s(0.95), s(1.45)], [0, 1], clamp);
+  const cam = interpolate(f, [s(1.8), s(5.2)], [0, 1], { ...clamp, easing: inOut });
+  const tilt = interpolate(f, [s(1.0), s(5.2)], [8, 0], { ...clamp, easing: inOut });
+  const glow = interpolate(f, [s(1.4), s(2.2), s(4.6)], [0, 1, 0.4], clamp);
+  const box = { x: 160, y: 85, w: 1600, h: Math.round(1600 * UI_H / UI_W) };
   return (
     <Stage>
       <PixelGrid opacity={0.5} />
-      <FloatingUI src="clips/ui-q1.mp4" cam={cam} tilt={tilt} />
-      <Sequence from={s(0.4)}>
+      {/* 界面亮起时在地面和四周的光 */}
+      <AbsoluteFill style={{ opacity: glow, background: `radial-gradient(ellipse 60% 30% at 50% 96%, ${T.accent}26, transparent 70%), radial-gradient(ellipse 55% 55% at 50% 50%, ${T.accent}12, transparent 70%)` }} />
+      <AbsoluteFill style={{ opacity: shown }}>
+        <FloatingUI src="clips/ui-q1.mp4" cam={cam} tilt={tilt} />
+      </AbsoluteFill>
+      <PixelAssemble box={box} gather={[0, s(1.1)]} reveal={[s(0.95), s(1.5)]} />
+      <LightSweep box={box} at={[s(1.45), s(2.1)]} />
+      <Sequence from={s(1.0)}>
         <Caption who="Moderator" words={words("When@0.00 you@0.18 mentioned@0.30 using@0.56 a@0.88 heavy@1.06 cream@1.26 to@1.72 reduce@1.88 the@2.18 pain,@2.36 what@3.10 did@3.34 that@3.46 feel@3.58 like@3.80 on@4.02 your@4.16 skin?@4.26")} keys={["heavy", "cream"]} />
       </Sequence>
     </Stage>
@@ -204,7 +215,7 @@ export const Sample: React.FC = () => (
       return interpolate(t, [0, 5.3, 5.37, 10.2, 10.6, 15.4, 16], [0.14, 0.16, 0.55, 0.5, 0.12, 0.12, 0], clamp);
     }} />
     {/* 对白（清理过的原声） */}
-    <Sequence from={s(0.4)} durationInFrames={s(4.6)} layout="none"><Audio src={staticFile("vo/q1.mp3")} /></Sequence>
+    <Sequence from={s(1.0)} durationInFrames={s(4.4)} layout="none"><Audio src={staticFile("vo/q1.mp3")} /></Sequence>
     <Sequence from={s(10.4)} durationInFrames={s(2.4)} layout="none"><Audio src={staticFile("vo/a8.mp3")} startFrom={s(1.9)} /></Sequence>
     <Sequence from={s(13.0)} durationInFrames={s(3.0)} layout="none"><Audio src={staticFile("vo/q8.mp3")} volume={(fr) => interpolate(fr, [s(2.5), s(3.0)], [1, 0], clamp)} /></Sequence>
 
