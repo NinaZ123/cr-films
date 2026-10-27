@@ -31,6 +31,19 @@ const TAKES = {
     { text: "[Build]\nDrums open up to full tempo, energetic, triumphant, futuristic", duration_ms: 10000,
       positive_styles: ["energetic drums", "futuristic synths", "triumphant", "rising"] },
   ],
+  // B-full：用户选定 B 的风格，按全片 51 秒的结构重写（对白多的段落压低能量，片尾推满）
+  "b-full": [
+    { text: "[Intro]\nDark ambient drone with heartbeat-like low thumps under dialogue, tense, sparse, leaving room for speech", duration_ms: 4600,
+      positive_styles: ["dark cinematic electronic", "tension", "sub bass", "heartbeat pulse", "trailer sound design", "instrumental", "120 BPM"] },
+    { text: "[Drop]\nMassive cinematic boom on the downbeat, three heavy hits, then a wide sustained chord", duration_ms: 5800,
+      positive_styles: ["huge impact", "gritty synth bass", "half-time drums", "powerful"] },
+    { text: "[Verse]\nLow, steady, minimal pulse under spoken dialogue, restrained, no lead melody, soft hi-hats", duration_ms: 14600,
+      positive_styles: ["minimal", "restrained", "under dialogue", "soft pulse"] },
+    { text: "[Verse 2]\nSame groove continues slightly fuller, gentle arpeggio enters, still quiet enough for dialogue", duration_ms: 20000,
+      positive_styles: ["subtle arpeggio", "building slowly", "restrained", "under dialogue"] },
+    { text: "[Finale]\nDrums open up to full tempo, triumphant, futuristic, big final hit and short tail", duration_ms: 6000,
+      positive_styles: ["energetic drums", "futuristic synths", "triumphant", "final hit"] },
+  ],
   // C：明亮、带点 8-bit 质感，呼应像素小幽灵
   c: [
     { text: "[Intro]\nSoft glitchy 8-bit blips over a quiet pulse, curious, anticipation", duration_ms: 3500,

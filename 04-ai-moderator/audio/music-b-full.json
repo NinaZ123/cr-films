@@ -1,0 +1,112 @@
+{
+  "model": "music_v2_5",
+  "compositionPlan": {
+    "chunks": [
+      {
+        "text": "[Intro]\nDark ambient drone with heartbeat-like low thumps under dialogue, tense, sparse, leaving room for speech",
+        "durationMs": 4600,
+        "positiveStyles": [
+          "dark cinematic electronic",
+          "tension",
+          "sub bass",
+          "heartbeat pulse",
+          "trailer sound design",
+          "instrumental",
+          "120 BPM"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      },
+      {
+        "text": "[Drop]\nMassive cinematic boom on the downbeat, three heavy hits, then a wide sustained chord",
+        "durationMs": 5800,
+        "positiveStyles": [
+          "huge impact",
+          "gritty synth bass",
+          "half-time drums",
+          "powerful"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      },
+      {
+        "text": "[Verse]\nLow, steady, minimal pulse under spoken dialogue, restrained, no lead melody, soft hi-hats",
+        "durationMs": 14600,
+        "positiveStyles": [
+          "minimal",
+          "restrained",
+          "under dialogue",
+          "soft pulse"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      },
+      {
+        "text": "[Verse 2]\nSame groove continues slightly fuller, gentle arpeggio enters, still quiet enough for dialogue",
+        "durationMs": 20000,
+        "positiveStyles": [
+          "subtle arpeggio",
+          "building slowly",
+          "restrained",
+          "under dialogue"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      },
+      {
+        "text": "[Finale]\nDrums open up to full tempo, triumphant, futuristic, big final hit and short tail",
+        "durationMs": 6000,
+        "positiveStyles": [
+          "energetic drums",
+          "futuristic synths",
+          "triumphant",
+          "final hit"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      }
+    ]
+  },
+  "seconds": 7.081,
+  "file": "music-b-full.mp3"
+}
