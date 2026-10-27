@@ -5,14 +5,13 @@ import {
 } from "remotion";
 import { T } from "./theme";
 import { Ghost, GhostBurst, PixelGrid } from "./Ghost";
-import { PixelAssemble, LightSweep } from "./PixelAssemble";
 
 // 15 秒样片（方向：原生分辨率，不抠像、不放大）。
 // 真实访谈界面像产品一样浮在深色空间里，镜头在上面推、拉；AI 主持人用原生分辨率的清晰画面；
 // 一屏只讲一件事。
 export const FPS = 30;
 const s = (sec: number) => Math.round(sec * FPS);
-export const SAMPLE_TOTAL = s(16);
+export const SAMPLE_TOTAL = s(33);
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const ease = Easing.bezier(0.16, 1, 0.3, 1);
@@ -23,7 +22,9 @@ const HIT = [5.37, 6.03, 6.69];
 const T_COLD = [0, 5.37];
 const T_TITLE = [5.37, 8.6];
 const T_LOGO = [8.6, 10.4];
-const T_QUAL = [10.4, 16];
+const T_QUAL = [10.4, 24.9];   // 包袱：AI 问 → 没听懂 → 道歉换个问法（对白 0–14.0s）
+const DROP_AT = 24.9;           // 炸：music-drop 的第一拍（道歉说到 "I just meant…" 后停 0.5 秒）
+const T_BOOM = [24.9, 33.0];
 
 // ---------- 背景空间 ----------
 const Stage: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
@@ -101,26 +102,22 @@ const Slogan: React.FC<{ text: React.ReactNode }> = ({ text }) => {
 
 // ---------- 段落 ----------
 
-// 冷开场：界面浮在空间里，慢慢推近到主持人；他在追问
+// 冷开场：真实访谈界面从暗处浮上来（由虚到实、带一点仰角），然后慢慢推近到主持人
 const Cold: React.FC = () => {
   const f = useCurrentFrame();
-  // 0–1.3s 像素飞进来拼出界面 → 1.0–1.6s 翻成真实画面 → 1.5–2.1s 扫光通电 → 之后推近到主持人
-  const shown = interpolate(f, [s(0.95), s(1.45)], [0, 1], clamp);
-  const cam = interpolate(f, [s(1.8), s(5.2)], [0, 1], { ...clamp, easing: inOut });
-  const tilt = interpolate(f, [s(1.0), s(5.2)], [8, 0], { ...clamp, easing: inOut });
-  const glow = interpolate(f, [s(1.4), s(2.2), s(4.6)], [0, 1, 0.4], clamp);
-  const box = { x: 160, y: 85, w: 1600, h: Math.round(1600 * UI_H / UI_W) };
+  const rise = interpolate(f, [0, s(1.4)], [0, 1], { ...clamp, easing: ease });
+  const cam = interpolate(f, [s(1.2), s(4.8)], [0, 1], { ...clamp, easing: inOut });
+  const tilt = interpolate(f, [0, s(4.8)], [10, 0], { ...clamp, easing: inOut });
   return (
     <Stage>
-      <PixelGrid opacity={0.5} />
-      {/* 界面亮起时在地面和四周的光 */}
-      <AbsoluteFill style={{ opacity: glow, background: `radial-gradient(ellipse 60% 30% at 50% 96%, ${T.accent}26, transparent 70%), radial-gradient(ellipse 55% 55% at 50% 50%, ${T.accent}12, transparent 70%)` }} />
-      <AbsoluteFill style={{ opacity: shown }}>
+      <PixelGrid opacity={0.4} />
+      <AbsoluteFill style={{
+        opacity: rise, filter: `blur(${(1 - rise) * 14}px)`,
+        transform: `translateY(${(1 - rise) * 60}px) scale(${0.94 + 0.06 * rise})`,
+      }}>
         <FloatingUI src="clips/ui-q1.mp4" cam={cam} tilt={tilt} />
       </AbsoluteFill>
-      <PixelAssemble box={box} gather={[0, s(1.1)]} reveal={[s(0.95), s(1.5)]} />
-      <LightSweep box={box} at={[s(1.45), s(2.1)]} />
-      <Sequence from={s(1.0)}>
+      <Sequence from={s(0.4)}>
         <Caption who="Moderator" words={words("When@0.00 you@0.18 mentioned@0.30 using@0.56 a@0.88 heavy@1.06 cream@1.26 to@1.72 reduce@1.88 the@2.18 pain,@2.36 what@3.10 did@3.34 that@3.46 feel@3.58 like@3.80 on@4.02 your@4.16 skin?@4.26")} keys={["heavy", "cream"]} />
       </Sequence>
     </Stage>
@@ -179,49 +176,139 @@ const Logo: React.FC = () => {
   );
 };
 
-// 定性深访：他说没听懂 → 主持人道歉，换个问法
+// 包袱：一段连续的真实对话（耳机那场，原片 147.3s 起）。
+// 时间是清理后音频 vo/qa.mp3 里的秒数（原片 147.3s 起）：
+// 0      AI："As you continue wearing them and listening, what, if anything, changes?"
+// 6.4    受访者："Can you repeat that? … I didn't really understand the question."
+// 12.2   AI："Sorry about that. I just meant…"
+const QA = 147.3;
 const Qual: React.FC = () => {
   const f = useCurrentFrame();
-  // 0–2.6s 全景界面（受访者在右上角小窗里说话），镜头稍微往小窗方向偏
-  const pan = interpolate(f, [0, s(2.6)], [0, 0.18], { ...clamp, easing: inOut });
-  const cut = s(2.6);
+  const t = f / FPS;
+  const r = (sec: number) => s(sec);                // 本段秒数 → 帧
+  const pan = interpolate(f, [r(6.1), r(10.6)], [0, 1], { ...clamp, easing: inOut });
   return (
     <AbsoluteFill>
-      <Sequence durationInFrames={cut}>
+      {/* AI 提问：主持人居中特写 */}
+      <Sequence durationInFrames={r(6.1)}>
+        <AbsoluteFill style={{ transform: `scale(${interpolate(f, [0, r(6.1)], [1.0, 1.04])})` }}>
+          <OffthreadVideo src={staticFile("clips/hd-qa.mp4")} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </AbsoluteFill>
+        <Caption who="AI Moderator" ai words={words("As@0.00 you@0.36 continue@0.88 wearing@1.14 them@1.50 and@1.80 listening,@2.00 what,@2.94 if@3.54 anything,@3.84 changes?@4.60")} keys={["changes?"]} />
+      </Sequence>
+      {/* 受访者没听懂：切到完整界面，镜头往右上角他的小窗推 */}
+      <Sequence from={r(6.1)} durationInFrames={r(11.9) - r(6.1)}>
         <Stage>
-          <PixelGrid opacity={0.5} />
-          <div style={{ position: "absolute", inset: 0, transform: `translate(${-pan * 380}px, ${pan * 140}px) scale(${1 + pan * 0.6})` }}>
-            <FloatingUI src="clips/ui-a8.mp4" startFrom={s(1.4)} cam={0} />
+          <PixelGrid opacity={0.4} />
+          <div style={{ position: "absolute", inset: 0, transform: `translate(${-pan * 520}px, ${pan * 230}px) scale(${1 + pan * 0.75})` }}>
+            <FloatingUI src="clips/ui-qa.mp4" startFrom={r(6.1)} cam={0} />
           </div>
-          <Caption who="Participant" words={words("I@0.04 didn't@0.20 really@0.52 understand@0.70 the@1.18 question.@1.44")} keys={["understand"]} />
+          <Caption who="Participant" words={words("Can@0.32 you@0.54 repeat@0.68 that?@0.90 I@1.66 didn't@1.66 really@3.00 understand@3.20 the@3.62 question.@3.94")} keys={["understand"]} />
         </Stage>
       </Sequence>
-      <Sequence from={cut}>
-        <AbsoluteFill style={{ transform: `scale(${interpolate(f - cut, [0, s(3.4)], [1.0, 1.05])})` }}>
-          <OffthreadVideo src={staticFile("clips/hd-q8.mp4")} muted startFrom={s(6.9)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      {/* AI 道歉、换个问法：主持人居中特写 */}
+      <Sequence from={r(11.9)}>
+        <AbsoluteFill style={{ transform: `scale(${interpolate(f - r(11.9), [0, s(3)], [1.0, 1.05])})` }}>
+          <OffthreadVideo src={staticFile("clips/hd-qa.mp4")} muted startFrom={r(11.9)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </AbsoluteFill>
-        <Sequence from={s(0.25)}><Slogan text={<>IT REPHRASES.<br /><span style={{ color: T.accent }}>NO SCRIPT.</span></>} /></Sequence>
-        <Caption who="AI Moderator" ai words={words("Sorry@0.00 about@0.60 that.@0.80 I@1.54 just@1.68 meant…@1.82")} keys={["Sorry"]} />
+        <Caption who="AI Moderator" ai words={words("Sorry@0.26 about@0.82 that.@1.02 I@1.80 just@1.90 meant…@2.04")} keys={["Sorry"]} />
       </Sequence>
     </AbsoluteFill>
+  );
+};
+
+// 炸：音乐 drop 进来，大字一句一句砸，介绍产品
+const BOOM_LINES: { at: number; lines: React.ReactNode[]; bg?: string; startFrom?: number }[] = [
+  { at: 0.0, lines: [<>NOT A SCRIPT.</>, <span style={{ color: T.accent }}>A CONVERSATION.</span>], bg: "clips/hd-qa.mp4", startFrom: 14.2 },
+  { at: 1.9, lines: [<>IT LISTENS.</>], bg: "clips/hd-listen.mp4" },
+  { at: 2.85, lines: [<>IT FOLLOWS UP.</>], bg: "clips/hd-q6.mp4", startFrom: 1.8 },
+  { at: 3.8, lines: [<>IT REPHRASES.</>], bg: "clips/hd-qa.mp4", startFrom: 12.2 },
+  { at: 4.75, lines: [<>QUAL DEPTH.</>, <span style={{ color: T.accent }}>QUANT SCALE.</span>] },
+  { at: 6.2, lines: [] },
+];
+const Boom: React.FC = () => {
+  const f = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = f / FPS;
+  const idx = BOOM_LINES.findIndex((b, i) => t >= b.at && (i === BOOM_LINES.length - 1 || t < BOOM_LINES[i + 1].at));
+  const cur = BOOM_LINES[idx];
+  const since = f - s(cur.at);
+  const flash = since < 3 ? interpolate(since, [0, 3], [0.6, 0]) : 0;
+  const shake = since < 6 ? (6 - since) * (since % 2 ? 1 : -1) * 3 : 0;
+  const isLogo = idx === BOOM_LINES.length - 1;
+  return (
+    <AbsoluteFill style={{ background: T.bg, transform: `translate(${shake}px, ${shake * 0.6}px)` }}>
+      {cur.bg && (
+        <AbsoluteFill style={{ opacity: 0.6, filter: "saturate(0.7) brightness(0.8)", transform: `scale(${1.04 + since * 0.0012})` }}>
+          <OffthreadVideo src={staticFile(cur.bg)} muted startFrom={s(cur.startFrom ?? 0)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </AbsoluteFill>
+      )}
+      {!cur.bg && !isLogo && <PixelGrid opacity={0.8} />}
+      <AbsoluteFill style={{ background: "radial-gradient(ellipse at center, rgba(0,0,0,0.15), rgba(0,0,0,0.8))" }} />
+      {!isLogo && (
+        <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", textAlign: "center" }}>
+          {cur.lines.map((l, i) => {
+            const sp = spring({ frame: since - i * 4, fps, config: { damping: 13, stiffness: 280, mass: 0.55 } });
+            return <div key={i} style={{ fontFamily: T.display, fontWeight: 800, fontSize: 168, lineHeight: 0.92, letterSpacing: "-0.05em", color: "#fff", opacity: sp > 0.01 ? 1 : 0, transform: `scale(${1.4 - 0.4 * sp})`, filter: `blur(${(1 - sp) * 12}px)` }}>{l}</div>;
+          })}
+        </AbsoluteFill>
+      )}
+      {isLogo && <BoomLogo since={since} />}
+      <AbsoluteFill style={{ background: "#fff", opacity: flash }} />
+    </AbsoluteFill>
+  );
+};
+const BoomLogo: React.FC<{ since: number }> = ({ since }) => {
+  const { fps } = useVideoConfig();
+  const a = spring({ frame: since, fps, config: { damping: 16, stiffness: 160 } });
+  const b = interpolate(since, [s(0.35), s(0.8)], [0, 1], { ...clamp, easing: ease });
+  const cell = 20;
+  return (
+    <Stage>
+      <PixelGrid opacity={0.7} />
+      <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", flexDirection: "column", gap: 44 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 54, opacity: a, transform: `scale(${0.9 + 0.1 * a})` }}>
+          <Ghost cell={cell} />
+          <div>
+            <div style={{ fontFamily: T.display, fontSize: 140, fontWeight: 600, letterSpacing: "-0.035em", color: T.text, lineHeight: 1 }}>atypica<span style={{ color: T.accent }}>.AI</span></div>
+            <div style={{ fontFamily: T.display, fontSize: 92, fontWeight: 300, letterSpacing: "-0.02em", color: T.text, marginTop: 6, lineHeight: 1 }}>Interview</div>
+          </div>
+        </div>
+        <div style={{ opacity: b, transform: `translateY(${(1 - b) * 16}px)`, fontFamily: T.display, fontSize: 46, fontWeight: 500, color: T.text, letterSpacing: "-0.01em" }}>
+          The first AI Moderator to pass the <span style={{ color: T.accent }}>Turing test.</span>
+        </div>
+      </AbsoluteFill>
+    </Stage>
   );
 };
 
 // ---------- 合成 ----------
 export const Sample: React.FC = () => (
   <AbsoluteFill style={{ background: "#000" }}>
+    {/* 前半段音乐：对白下面压低，主标推上去，包袱段几乎静音，给喜剧停顿 */}
     <Audio src={staticFile("music-b-full.mp3")} volume={(fr) => {
       const t = fr / FPS;
-      return interpolate(t, [0, 5.3, 5.37, 10.2, 10.6, 15.4, 16], [0.14, 0.16, 0.55, 0.5, 0.12, 0.12, 0], clamp);
+      return interpolate(t, [0, 5.3, 5.37, 10.2, 10.6, 20, 22.4], [0.14, 0.16, 0.55, 0.5, 0.1, 0.08, 0], clamp);
     }} />
+    {/* 炸：music-drop 实测 3.48s 第一拍，对齐到 DROP_AT。前面 3 秒是静音 + 反向镲，正好接在道歉之后 */}
+    <Sequence from={s(DROP_AT - 3.48)} layout="none">
+      <Audio src={staticFile("music-drop.mp3")} volume={(fr) => {
+        const t = fr / FPS;
+        return interpolate(t, [0, 3.3, 3.48, 10.5, 11.5], [0.5, 0.55, 0.85, 0.85, 0], clamp);
+      }} />
+    </Sequence>
     {/* 对白（清理过的原声） */}
-    <Sequence from={s(1.0)} durationInFrames={s(4.4)} layout="none"><Audio src={staticFile("vo/q1.mp3")} /></Sequence>
-    <Sequence from={s(10.4)} durationInFrames={s(2.4)} layout="none"><Audio src={staticFile("vo/a8.mp3")} startFrom={s(1.9)} /></Sequence>
-    <Sequence from={s(13.0)} durationInFrames={s(3.0)} layout="none"><Audio src={staticFile("vo/q8.mp3")} volume={(fr) => interpolate(fr, [s(2.5), s(3.0)], [1, 0], clamp)} /></Sequence>
+    <Sequence from={s(0.4)} durationInFrames={s(4.6)} layout="none"><Audio src={staticFile("vo/q1.mp3")} /></Sequence>
+    {/* 包袱：一整段连续原声，不剪断对话 */}
+    {/* 只播到 "I just meant…"（14.1s），后面留约 0.4 秒空白再接 drop */}
+    <Sequence from={s(T_QUAL[0])} durationInFrames={s(14.3)} layout="none">
+      <Audio src={staticFile("vo/qa.mp3")} volume={(fr) => interpolate(fr, [s(14.05), s(14.3)], [1, 0], clamp)} />
+    </Sequence>
 
     <Sequence from={s(T_COLD[0])} durationInFrames={s(T_COLD[1] - T_COLD[0])}><Cold /></Sequence>
     <Sequence from={s(T_TITLE[0])} durationInFrames={s(T_TITLE[1] - T_TITLE[0])}><Headline /></Sequence>
     <Sequence from={s(T_LOGO[0])} durationInFrames={s(T_LOGO[1] - T_LOGO[0])}><Logo /></Sequence>
     <Sequence from={s(T_QUAL[0])} durationInFrames={s(T_QUAL[1] - T_QUAL[0])}><Qual /></Sequence>
+    <Sequence from={s(T_BOOM[0])} durationInFrames={s(T_BOOM[1] - T_BOOM[0])}><Boom /></Sequence>
   </AbsoluteFill>
 );

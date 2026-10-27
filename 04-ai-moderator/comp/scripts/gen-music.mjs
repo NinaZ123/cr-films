@@ -44,6 +44,17 @@ const TAKES = {
     { text: "[Finale]\nDrums open up to full tempo, triumphant, futuristic, big final hit and short tail", duration_ms: 6000,
       positive_styles: ["energetic drums", "futuristic synths", "triumphant", "final hit"] },
   ],
+  // 包袱之后的"炸"：受访者说没听懂、AI 道歉以后，静一拍，然后整段音乐砸进来，配大字介绍产品。
+  // 第一段很短的停顿留给喜剧节奏，第二段一进来就是满能量的 drop。
+  "drop": [
+    { text: "[Break]\nComplete silence, then a single short reversed cymbal swell building into the drop", duration_ms: 3000,
+      positive_styles: ["silence", "reverse cymbal", "tension", "sparse", "modern electronic", "instrumental", "128 BPM"],
+      negative: ["drums", "bass", "melody"] },
+    { text: "[Drop]\nExplosive full-energy drop hitting hard on the first beat: massive kick and sub bass, huge wide synth stabs, festival energy, loud", duration_ms: 12000,
+      positive_styles: ["explosive drop", "massive kick", "heavy sub bass", "big synth stabs", "loud", "energetic", "confident"] },
+    { text: "[Outro]\nOne final massive hit and a short reverb tail", duration_ms: 3000,
+      positive_styles: ["final hit", "impact", "reverb tail"] },
+  ],
   // C：明亮、带点 8-bit 质感，呼应像素小幽灵
   c: [
     { text: "[Intro]\nSoft glitchy 8-bit blips over a quiet pulse, curious, anticipation", duration_ms: 3500,
@@ -65,7 +76,7 @@ const compositionPlan = {
   // JS SDK 要驼峰写法（skill 里的 TypeScript 示例也是这样）
   chunks: TAKES[take].map((c) => ({
     text: c.text, durationMs: c.duration_ms, positiveStyles: c.positive_styles,
-    negativeStyles: BASE_NEG, contextAdherence: "high",
+    negativeStyles: [...BASE_NEG, ...(c.negative ?? [])], contextAdherence: "high",
   })),
 };
 

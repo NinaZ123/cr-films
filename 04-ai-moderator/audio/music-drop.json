@@ -1,0 +1,77 @@
+{
+  "model": "music_v2_5",
+  "compositionPlan": {
+    "chunks": [
+      {
+        "text": "[Break]\nComplete silence, then a single short reversed cymbal swell building into the drop",
+        "durationMs": 3000,
+        "positiveStyles": [
+          "silence",
+          "reverse cymbal",
+          "tension",
+          "sparse",
+          "modern electronic",
+          "instrumental",
+          "128 BPM"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele",
+          "drums",
+          "bass",
+          "melody"
+        ],
+        "contextAdherence": "high"
+      },
+      {
+        "text": "[Drop]\nExplosive full-energy drop hitting hard on the first beat: massive kick and sub bass, huge wide synth stabs, festival energy, loud",
+        "durationMs": 12000,
+        "positiveStyles": [
+          "explosive drop",
+          "massive kick",
+          "heavy sub bass",
+          "big synth stabs",
+          "loud",
+          "energetic",
+          "confident"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      },
+      {
+        "text": "[Outro]\nOne final massive hit and a short reverb tail",
+        "durationMs": 3000,
+        "positiveStyles": [
+          "final hit",
+          "impact",
+          "reverb tail"
+        ],
+        "negativeStyles": [
+          "vocals",
+          "lyrics",
+          "lo-fi",
+          "acoustic guitar",
+          "orchestral",
+          "cheesy",
+          "corporate ukulele"
+        ],
+        "contextAdherence": "high"
+      }
+    ]
+  },
+  "seconds": 4.125,
+  "file": "music-drop.mp3"
+}
