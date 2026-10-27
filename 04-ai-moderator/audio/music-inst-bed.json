@@ -1,0 +1,6 @@
+{
+  "model": "music_v2_5",
+  "forceInstrumental": true,
+  "prompt": "Instrumental minimal modern electronic, 110 BPM, restrained and clean: soft muted pulse, gentle plucked synth arpeggio, light hi-hats, warm pads, no lead melody, sparse and quiet throughout, premium product film background. No vocals, no voice, no speech.",
+  "musicLengthMs": 30000
+}

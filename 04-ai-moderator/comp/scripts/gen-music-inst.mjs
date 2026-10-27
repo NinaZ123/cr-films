@@ -19,6 +19,16 @@ const TAKES = {
     ms: 12000,
     prompt: "Instrumental high-energy electronic, 128 BPM. First 3 seconds: near silence with a single short reversed cymbal swell building up. At exactly 3 seconds: an explosive full-energy drop hitting hard on the first beat, massive kick and heavy sub bass, huge wide synth stabs, festival energy, bright and confident. Ends with one final massive hit and a short reverb tail. No vocals, no voice, no speech.",
   },
+  // 产品章节底：克制、干净、有一点律动，不抢对白
+  bed: {
+    ms: 30000,
+    prompt: "Instrumental minimal modern electronic, 110 BPM, restrained and clean: soft muted pulse, gentle plucked synth arpeggio, light hi-hats, warm pads, no lead melody, sparse and quiet throughout, premium product film background. No vocals, no voice, no speech.",
+  },
+  // 收尾：从中等能量推到最后一记大冲击，再留一个短尾
+  finale: {
+    ms: 14000,
+    prompt: "Instrumental cinematic electronic finale, 124 BPM. Starts with confident driving drums and wide synths, builds quickly with a rising sweep, and at 9 seconds lands one huge final impact hit with deep sub bass, then a short reverb tail and silence. Triumphant, premium tech launch. No vocals, no voice, no speech.",
+  },
 };
 
 const take = process.argv[2];

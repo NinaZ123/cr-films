@@ -17,11 +17,15 @@ const CUES = {
   // 主标最后一拍后的长尾
   tail: { text: "Dark sustained synth drone swelling then slowly fading out, cinematic, ominous", duration_seconds: 3.5, prompt_influence: 0.5 },
   // 小幽灵 logo 出现
+  whoosh: { text: "Fast clean cinematic whoosh transition, airy, modern", duration_seconds: 0.8, prompt_influence: 0.6 },
+  tick: { text: "Soft digital UI click tick, subtle, clean", duration_seconds: 0.5,   // 接口最短 0.5 秒
+    prompt_influence: 0.7 },
   ghost: { text: "Short retro 8-bit digital chime, bright and clean, video game power up", duration_seconds: 1.0, prompt_influence: 0.6 },
 };
 
 const client = new ElevenLabsClient();
-await Promise.all(Object.entries(CUES).map(async ([name, c]) => {
+const only = process.argv.slice(2);
+await Promise.all(Object.entries(CUES).filter(([n]) => !only.length || only.includes(n)).map(async ([name, c]) => {
   const audio = await client.textToSoundEffects.convert({
     text: c.text, durationSeconds: c.duration_seconds, promptInfluence: c.prompt_influence, loop: c.loop,
   });

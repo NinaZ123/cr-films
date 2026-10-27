@@ -10,7 +10,7 @@ import { Ghost, GhostBurst, PixelGrid } from "./Ghost";
 // 真实访谈界面像产品一样浮在深色空间里，镜头在上面推、拉；AI 主持人用原生分辨率的清晰画面；
 // 一屏只讲一件事。
 export const FPS = 30;
-const s = (sec: number) => Math.round(sec * FPS);
+export const s = (sec: number) => Math.round(sec * FPS);
 export const SAMPLE_TOTAL = s(33);
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
@@ -18,16 +18,16 @@ const ease = Easing.bezier(0.16, 1, 0.3, 1);
 const inOut = Easing.bezier(0.65, 0, 0.35, 1);
 
 // 时间轴（秒）。主标三拍沿用之前对 B 版音乐卡的点；现在前半段只用音效，冲击音落在这三拍上
-const HIT = [5.37, 6.03, 6.69];
-const T_COLD = [0, 5.37];
-const T_TITLE = [5.37, 8.6];
-const T_LOGO = [8.6, 10.4];
-const T_QUAL = [10.4, 24.9];   // 包袱：AI 问 → 没听懂 → 道歉换个问法（对白 0–14.0s）
-const DROP_AT = 24.9;           // 炸：music-drop 的第一拍（道歉说到 "I just meant…" 后停 0.5 秒）
-const T_BOOM = [24.9, 33.0];
+export const HIT = [5.37, 6.03, 6.69];
+export const T_COLD = [0, 5.37];
+export const T_TITLE = [5.37, 8.6];
+export const T_LOGO = [8.6, 10.4];
+export const T_QUAL = [10.4, 24.9];   // 包袱：AI 问 → 没听懂 → 道歉换个问法（对白 0–14.0s）
+export const DROP_AT = 24.9;           // 炸：music-drop 的第一拍（道歉说到 "I just meant…" 后停 0.5 秒）
+export const T_BOOM = [24.9, 33.0];
 
 // ---------- 背景空间 ----------
-const Stage: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
+export const Stage: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
   <AbsoluteFill style={{ background: `radial-gradient(ellipse 70% 60% at 50% 45%, #18241c 0%, #0c0e0d 55%, #070707 100%)` }}>
     {children}
   </AbsoluteFill>
@@ -35,9 +35,9 @@ const Stage: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
 
 // ---------- 浮在空间里的产品界面（录屏原片 3024×1720） ----------
 // cam: 0 = 全景（界面整体浮着），1 = 推到主持人画面
-const UI_W = 3024, UI_H = 1720;
-const MOD_BOX = { x: 330, y: 378, w: 1960, h: 1102 }; // 主持人画面在界面里的位置（去掉上边 120 之后）
-const FloatingUI: React.FC<{ src: string; startFrom?: number; cam: number; tilt?: number }> = ({ src, startFrom = 0, cam, tilt = 0 }) => {
+export const UI_W = 3024, UI_H = 1720;
+export const MOD_BOX = { x: 330, y: 378, w: 1960, h: 1102 }; // 主持人画面在界面里的位置（去掉上边 120 之后）
+export const FloatingUI: React.FC<{ src: string; startFrom?: number; cam: number; tilt?: number }> = ({ src, startFrom = 0, cam, tilt = 0 }) => {
   // 全景：界面缩到 1600 宽居中；推近：主持人画面正好铺满 1920
   const wide = { scale: 1600 / UI_W, cx: UI_W / 2, cy: UI_H / 2 };
   const close = { scale: 1920 / MOD_BOX.w, cx: MOD_BOX.x + MOD_BOX.w / 2, cy: MOD_BOX.y + MOD_BOX.h / 2 };
@@ -61,7 +61,7 @@ const FloatingUI: React.FC<{ src: string; startFrom?: number; cam: number; tilt?
 
 // ---------- 大字幕：原话逐词出来，关键词品牌绿 ----------
 type W = [string, number];
-const Caption: React.FC<{ who: string; words: W[]; keys?: string[]; ai?: boolean; y?: number }> = ({ who, words, keys = [], ai = false, y = 860 }) => {
+export const Caption: React.FC<{ who: string; words: W[]; keys?: string[]; ai?: boolean; y?: number }> = ({ who, words, keys = [], ai = false, y = 860 }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const box = interpolate(f, [0, 8], [0, 1], { ...clamp, easing: ease });
@@ -84,10 +84,10 @@ const Caption: React.FC<{ who: string; words: W[]; keys?: string[]; ai?: boolean
     </div>
   );
 };
-const words = (str: string, shift = 0): W[] => str.split(" ").map((x) => { const [w, a] = x.split("@"); return [w, Math.max(0, Number(a) - shift)]; });
+export const words = (str: string, shift = 0): W[] => str.split(" ").map((x) => { const [w, a] = x.split("@"); return [w, Math.max(0, Number(a) - shift)]; });
 
 // ---------- 口号：大，左上，一次一句 ----------
-const Slogan: React.FC<{ text: React.ReactNode }> = ({ text }) => {
+export const Slogan: React.FC<{ text: React.ReactNode }> = ({ text }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = spring({ frame: f, fps, config: { damping: 15, stiffness: 220, mass: 0.6 } });
@@ -103,7 +103,7 @@ const Slogan: React.FC<{ text: React.ReactNode }> = ({ text }) => {
 // ---------- 段落 ----------
 
 // 冷开场：真实访谈界面从暗处浮上来（由虚到实、带一点仰角），然后慢慢推近到主持人
-const Cold: React.FC = () => {
+export const Cold: React.FC = () => {
   const f = useCurrentFrame();
   const rise = interpolate(f, [0, s(1.4)], [0, 1], { ...clamp, easing: ease });
   const cam = interpolate(f, [s(1.2), s(4.8)], [0, 1], { ...clamp, easing: inOut });
@@ -124,7 +124,7 @@ const Cold: React.FC = () => {
   );
 };
 
-const Headline: React.FC = () => {
+export const Headline: React.FC = () => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const k0 = (k: number) => s(HIT[k] - T_TITLE[0]);
@@ -154,7 +154,7 @@ const Headline: React.FC = () => {
   );
 };
 
-const Logo: React.FC = () => {
+export const Logo: React.FC = () => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const burst = interpolate(f, [0, s(0.4)], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
@@ -182,7 +182,7 @@ const Logo: React.FC = () => {
 // 6.4    受访者："Can you repeat that? … I didn't really understand the question."
 // 12.2   AI："Sorry about that. I just meant…"
 const QA = 147.3;
-const Qual: React.FC = () => {
+export const Qual: React.FC = () => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const r = (sec: number) => s(sec);                // 本段秒数 → 帧
@@ -226,7 +226,7 @@ const BOOM_LINES: { at: number; lines: React.ReactNode[]; bg?: string; startFrom
   { at: 4.75, lines: [<>QUAL DEPTH.</>, <span style={{ color: T.accent }}>QUANT SCALE.</span>] },
   { at: 6.2, lines: [] },
 ];
-const Boom: React.FC = () => {
+export const Boom: React.FC = () => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = f / FPS;
@@ -258,7 +258,7 @@ const Boom: React.FC = () => {
     </AbsoluteFill>
   );
 };
-const BoomLogo: React.FC<{ since: number }> = ({ since }) => {
+export const BoomLogo: React.FC<{ since: number }> = ({ since }) => {
   const { fps } = useVideoConfig();
   const a = spring({ frame: since, fps, config: { damping: 16, stiffness: 160 } });
   const b = interpolate(since, [s(0.35), s(0.8)], [0, 1], { ...clamp, easing: ease });
