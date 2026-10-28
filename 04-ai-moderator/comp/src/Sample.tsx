@@ -74,7 +74,7 @@ export const Caption: React.FC<{ who: string; words: W[]; keys?: string[]; ai?: 
         <span style={{ flexShrink: 0, display: "flex", alignItems: "center", gap: 10, fontFamily: T.mono, fontSize: 20, letterSpacing: "0.14em", textTransform: "uppercase", color: ai ? T.accent : T.dim }}>
           {ai && <Ghost cell={1.6} glow={false} />}{who}
         </span>
-        <span style={{ fontFamily: T.display, fontSize: 46, fontWeight: 600, letterSpacing: "-0.02em", color: T.text, lineHeight: 1.15 }}>
+        <span style={{ fontFamily: T.display, fontSize: 46, fontWeight: 500, letterSpacing: "-0.02em", color: T.text, lineHeight: 1.15 }}>
           {words.filter(([, a]) => a <= t).map(([w, a], i) => {
             const p = interpolate(t - a, [0, 0.12], [0, 1], clamp);
             return <span key={i} style={{ display: "inline-block", marginRight: "0.26em", opacity: p, transform: `translateY(${(1 - p) * 10}px)`, color: keys.includes(w) ? T.accent : undefined }}>{w}</span>;
@@ -93,8 +93,8 @@ export const Slogan: React.FC<{ text: React.ReactNode }> = ({ text }) => {
   const t = spring({ frame: f, fps, config: { damping: 15, stiffness: 220, mass: 0.6 } });
   return (
     <div style={{
-      position: "absolute", left: 90, top: 80, fontFamily: T.display, fontWeight: 800, fontSize: 120, lineHeight: 0.92,
-      letterSpacing: "-0.045em", color: "#fff", textShadow: "0 8px 50px rgba(0,0,0,0.75)",
+      position: "absolute", left: 90, top: 80, fontFamily: T.display, fontWeight: 500, fontSize: 120, lineHeight: 0.92,
+      letterSpacing: T.tight, color: "#fff", textShadow: "0 8px 50px rgba(0,0,0,0.75)",
       opacity: t > 0.01 ? 1 : 0, transform: `translateY(${(1 - t) * 40}px) scale(${1.12 - 0.12 * t})`, transformOrigin: "left top",
     }}>{text}</div>
   );
@@ -135,7 +135,7 @@ export const Headline: React.FC = () => {
   const shake = since < 6 ? (6 - since) * (since % 2 ? 1 : -1) * 2.4 : 0;
   const L = (k: number, children: React.ReactNode, size: number) => {
     const t = spr(k);
-    return <div style={{ fontFamily: T.display, fontWeight: 800, fontSize: size, lineHeight: 0.93, letterSpacing: "-0.045em", color: "#fff", opacity: t > 0.01 ? 1 : 0, transform: `scale(${1.35 - 0.35 * t})`, filter: `blur(${(1 - t) * 10}px)` }}>{children}</div>;
+    return <div style={{ fontFamily: T.display, fontWeight: 500, fontSize: size, lineHeight: 0.93, letterSpacing: T.tight, color: "#fff", opacity: t > 0.01 ? 1 : 0, transform: `scale(${1.35 - 0.35 * t})`, filter: `blur(${(1 - t) * 10}px)` }}>{children}</div>;
   };
   return (
     <AbsoluteFill style={{ background: T.bg, transform: `translate(${shake}px, ${shake * 0.6}px)` }}>
@@ -145,9 +145,9 @@ export const Headline: React.FC = () => {
       </AbsoluteFill>
       <AbsoluteFill style={{ background: "radial-gradient(ellipse at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85))" }} />
       <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", textAlign: "center", gap: 6 }}>
-        {L(0, "THE FIRST", 150)}
-        {L(1, "AI MODERATOR", 196)}
-        {L(2, <>TO PASS THE <span style={{ color: T.accent, textShadow: `0 0 60px ${T.accentSoft}` }}>TURING TEST.</span></>, 114)}
+        {L(0, "The first", 150)}
+        {L(1, "AI Moderator", 196)}
+        {L(2, <>to pass the <span style={{ color: T.accent, textShadow: `0 0 60px ${T.accentSoft}` }}>Turing test.</span></>, 114)}
       </AbsoluteFill>
       <AbsoluteFill style={{ background: "#fff", opacity: flash }} />
     </AbsoluteFill>
@@ -169,7 +169,7 @@ export const Logo: React.FC = () => {
       {f >= s(0.4) && !settled && <GhostBurst cell={cell} t={gather} cx={gx} cy={540} spread={1300} seed="gather" />}
       <div style={{ position: "absolute", left: gx - (13 * cell) / 2, top: 540 - (17 * cell) / 2, opacity: settled ? 1 : 0 }}><Ghost cell={cell} /></div>
       <div style={{ position: "absolute", left: gx + (13 * cell) / 2 + 56, top: 540 - 124, opacity: word, transform: `translateX(${(1 - word) * -30}px)` }}>
-        <div style={{ fontFamily: T.display, fontSize: 128, fontWeight: 600, letterSpacing: "-0.035em", color: T.text, lineHeight: 1 }}>atypica<span style={{ color: T.accent }}>.AI</span></div>
+        <div style={{ fontFamily: T.display, fontSize: 128, fontWeight: 500, letterSpacing: T.tight, color: T.text, lineHeight: 1 }}>atypica<span style={{ color: T.accent }}>.AI</span></div>
         <div style={{ fontFamily: T.display, fontSize: 84, fontWeight: 300, letterSpacing: "-0.02em", color: T.text, marginTop: 6, lineHeight: 1 }}>Interview</div>
       </div>
     </Stage>
@@ -219,11 +219,11 @@ export const Qual: React.FC = () => {
 
 // 炸：音乐 drop 进来，大字一句一句砸，介绍产品
 const BOOM_LINES: { at: number; lines: React.ReactNode[]; bg?: string; startFrom?: number }[] = [
-  { at: 0.0, lines: [<>NOT A SCRIPT.</>, <span style={{ color: T.accent }}>A CONVERSATION.</span>], bg: "clips/hd-qa.mp4", startFrom: 14.2 },
-  { at: 1.9, lines: [<>IT LISTENS.</>], bg: "clips/hd-listen.mp4" },
-  { at: 2.85, lines: [<>IT FOLLOWS UP.</>], bg: "clips/hd-q6.mp4", startFrom: 1.8 },
-  { at: 3.8, lines: [<>IT REPHRASES.</>], bg: "clips/hd-qa.mp4", startFrom: 12.2 },
-  { at: 4.75, lines: [<>QUAL DEPTH.</>, <span style={{ color: T.accent }}>QUANT SCALE.</span>] },
+  { at: 0.0, lines: [<>Not a script.</>, <span style={{ color: T.accent }}>A conversation.</span>], bg: "clips/hd-qa.mp4", startFrom: 14.2 },
+  { at: 1.9, lines: [<>It listens.</>], bg: "clips/hd-listen.mp4" },
+  { at: 2.85, lines: [<>It follows up.</>], bg: "clips/hd-q6.mp4", startFrom: 1.8 },
+  { at: 3.8, lines: [<>It rephrases.</>], bg: "clips/hd-qa.mp4", startFrom: 12.2 },
+  { at: 4.75, lines: [<>Qual depth.</>, <span style={{ color: T.accent }}>Quant scale.</span>] },
   { at: 6.2, lines: [] },
 ];
 export const Boom: React.FC = () => {
@@ -249,7 +249,7 @@ export const Boom: React.FC = () => {
         <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", textAlign: "center" }}>
           {cur.lines.map((l, i) => {
             const sp = spring({ frame: since - i * 4, fps, config: { damping: 13, stiffness: 280, mass: 0.55 } });
-            return <div key={i} style={{ fontFamily: T.display, fontWeight: 800, fontSize: 168, lineHeight: 0.92, letterSpacing: "-0.05em", color: "#fff", opacity: sp > 0.01 ? 1 : 0, transform: `scale(${1.4 - 0.4 * sp})`, filter: `blur(${(1 - sp) * 12}px)` }}>{l}</div>;
+            return <div key={i} style={{ fontFamily: T.display, fontWeight: 500, fontSize: 168, lineHeight: 0.92, letterSpacing: T.tight, color: "#fff", opacity: sp > 0.01 ? 1 : 0, transform: `scale(${1.4 - 0.4 * sp})`, filter: `blur(${(1 - sp) * 12}px)` }}>{l}</div>;
           })}
         </AbsoluteFill>
       )}
@@ -270,7 +270,7 @@ export const BoomLogo: React.FC<{ since: number }> = ({ since }) => {
         <div style={{ display: "flex", alignItems: "center", gap: 54, opacity: a, transform: `scale(${0.9 + 0.1 * a})` }}>
           <Ghost cell={cell} />
           <div>
-            <div style={{ fontFamily: T.display, fontSize: 140, fontWeight: 600, letterSpacing: "-0.035em", color: T.text, lineHeight: 1 }}>atypica<span style={{ color: T.accent }}>.AI</span></div>
+            <div style={{ fontFamily: T.display, fontSize: 140, fontWeight: 500, letterSpacing: T.tight, color: T.text, lineHeight: 1 }}>atypica<span style={{ color: T.accent }}>.AI</span></div>
             <div style={{ fontFamily: T.display, fontSize: 92, fontWeight: 300, letterSpacing: "-0.02em", color: T.text, marginTop: 6, lineHeight: 1 }}>Interview</div>
           </div>
         </div>

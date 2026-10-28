@@ -35,8 +35,8 @@ const ChapterCard: React.FC<{ n: string; title: string; sub: string }> = ({ n, t
     <Stage>
       <PixelGrid opacity={0.6} />
       <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", textAlign: "center" }}>
-        <div style={{ fontFamily: T.display, fontSize: 300, fontWeight: 800, letterSpacing: "-0.06em", color: T.accent, lineHeight: 0.85, opacity: a, transform: `scale(${1.25 - 0.25 * a})`, textShadow: `0 0 90px ${T.accentSoft}` }}>{n}</div>
-        <div style={{ fontFamily: T.display, fontSize: 128, fontWeight: 800, letterSpacing: "-0.045em", color: "#fff", lineHeight: 0.95, marginTop: 10, opacity: b, transform: `translateY(${(1 - b) * 30}px)` }}>{title}</div>
+        <div style={{ fontFamily: T.display, fontSize: 300, fontWeight: 500, letterSpacing: T.tight, color: T.accent, lineHeight: 0.85, opacity: a, transform: `scale(${1.25 - 0.25 * a})`, textShadow: `0 0 90px ${T.accentSoft}` }}>{n}</div>
+        <div style={{ fontFamily: T.display, fontSize: 128, fontWeight: 500, letterSpacing: T.tight, color: "#fff", lineHeight: 0.95, marginTop: 10, opacity: b, transform: `translateY(${(1 - b) * 30}px)` }}>{title}</div>
         <div style={{ fontFamily: T.mono, fontSize: 30, letterSpacing: "0.3em", color: T.dim, marginTop: 28, opacity: c }}>{sub}</div>
       </AbsoluteFill>
     </Stage>
@@ -50,8 +50,10 @@ const Corner: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const t = spring({ frame: f, fps, config: { damping: 15, stiffness: 220, mass: 0.6 } });
   return (
     <div style={{
-      position: "absolute", left: 90, top: 80, fontFamily: T.display, fontWeight: 800, fontSize: 112, lineHeight: 0.92,
-      letterSpacing: "-0.045em", color: "#fff", textShadow: "0 8px 50px rgba(0,0,0,0.8)",
+      position: "absolute", left: 60, top: 54, padding: "26px 34px 30px", borderRadius: 28,
+      background: "rgba(8,8,8,0.72)", backdropFilter: "blur(18px)",
+      fontFamily: T.display, fontWeight: 500, fontSize: 112, lineHeight: 0.92,
+      letterSpacing: T.tight, color: "#fff",
       opacity: t > 0.01 ? 1 : 0, transform: `translateY(${(1 - t) * 40}px) scale(${1.12 - 0.12 * t})`, transformOrigin: "left top",
     }}>{children}</div>
   );
@@ -65,7 +67,7 @@ const BigLeft: React.FC<{ lines: string[]; accent?: number }> = ({ lines, accent
     <div>
       {lines.map((l, i) => {
         const t = spring({ frame: f - 3 - i * 5, fps, config: { damping: 14, stiffness: 240, mass: 0.6 } });
-        return <div key={i} style={{ fontFamily: T.display, fontWeight: 800, fontSize: 180, lineHeight: 0.9, letterSpacing: "-0.05em", color: i === accent ? T.accent : "#fff", opacity: t > 0.01 ? 1 : 0, transform: `translateX(${(1 - t) * -50}px)`, filter: `blur(${(1 - t) * 8}px)` }}>{l}</div>;
+        return <div key={i} style={{ fontFamily: T.display, fontWeight: 500, fontSize: 180, lineHeight: 0.9, letterSpacing: T.tight, color: i === accent ? T.accent : "#fff", opacity: t > 0.01 ? 1 : 0, transform: `translateX(${(1 - t) * -50}px)`, filter: `blur(${(1 - t) * 8}px)` }}>{l}</div>;
       })}
     </div>
   );
@@ -82,7 +84,7 @@ const ProductShot: React.FC<{ src: string; startFrom?: number; label?: string }>
       {label && (
         <div style={{ position: "absolute", left: 110, top: 100, fontFamily: T.display, color: T.ink, opacity: t, transform: `translateX(${(1 - t) * -30}px)` }}>
           <div style={{ fontFamily: T.mono, fontSize: 24, letterSpacing: "0.24em", opacity: 0.6 }}>PRODUCT</div>
-          <div style={{ fontSize: 96, fontWeight: 300, letterSpacing: "-0.03em", marginTop: 6 }}>{label}</div>
+          <div style={{ fontSize: 96, fontWeight: 300, letterSpacing: T.tight, marginTop: 6 }}>{label}</div>
         </div>
       )}
       <AbsoluteFill style={{ background: "#fff", opacity: flash }} />
@@ -151,7 +153,7 @@ const Depth: React.FC = () => {
   const m0 = card + s(6.3);          // 主持人追问，音频 7.0s（"That's interesting"）
   return (
     <AbsoluteFill>
-      <Sequence durationInFrames={card}><ChapterCard n="01" title="DEPTH INTERVIEW" sub="IT DIGS DEEPER" /></Sequence>
+      <Sequence durationInFrames={card}><ChapterCard n="01" title="Depth interview" sub="IT DIGS DEEPER" /></Sequence>
       <Sequence from={p0} durationInFrames={m0 - p0}>
         <UIPan src="clips/ui-outfit.mp4" startFrom={s(0.6)} push={[0, s(3.4)]}>
           <Caption who="Participant" words={words("the@0.02 third@0.30 purpose@0.60 actually@1.06 is@1.60 part@2.24 of@2.52 the@2.74 outfit.@2.96")} keys={["outfit."]} />
@@ -160,7 +162,7 @@ const Depth: React.FC = () => {
       <Sequence from={m0}>
         <ModClose src="clips/hd-q6b.mp4" startFrom={0} dur={5.3}>
           <Caption who="AI Moderator" ai words={words("That's@0.14 interesting.@0.68 You@1.86 mentioned@2.02 them@2.28 being@2.50 part@2.68 of@2.96 the@3.08 outfit.@3.14 What@4.10 makes@4.24 you@4.42 say@4.54 that?@4.72")} keys={["outfit.", "What"]} />
-          <Sequence from={s(2.9)}><Corner>IT HEARS<br /><span style={{ color: T.accent }}>WHAT YOU MEANT.</span></Corner></Sequence>
+          <Sequence from={s(2.9)}><Corner>It hears<br /><span style={{ color: T.accent }}>what you meant.</span></Corner></Sequence>
         </ModClose>
       </Sequence>
     </AbsoluteFill>
@@ -177,7 +179,7 @@ const Test: React.FC = () => {
   const feel = side + s(2.4);
   return (
     <AbsoluteFill>
-      <Sequence durationInFrames={card}><ChapterCard n="02" title="LIVE PRODUCT TEST" sub="THEY TRY IT. IT ASKS." /></Sequence>
+      <Sequence durationInFrames={card}><ChapterCard n="02" title="Live product test" sub="THEY TRY IT. IT ASKS." /></Sequence>
       <Sequence from={hero} durationInFrames={macro - hero}><ProductShot src="clips/hc-hero.mp4" startFrom={12} label="Hand Cream" /></Sequence>
       <Sequence from={macro} durationInFrames={ask - macro}><ProductShot src="clips/hc-macro.mp4" startFrom={s(2.6)} /></Sequence>
       {/* 主持人："Let's try this one. Go ahead and put some of the cream on your hand." */}
@@ -189,7 +191,7 @@ const Test: React.FC = () => {
       <Sequence from={side} durationInFrames={feel - side}>
         <SideCard src="clips/tu-squeeze.mp4" startFrom={s(1.0)} label="PRODUCT CAM" />
         <AbsoluteFill style={{ justifyContent: "center", paddingLeft: 180 }}>
-          <BigLeft lines={["THEY", "TRY IT."]} accent={1} />
+          <BigLeft lines={["They", "try it."]} accent={1} />
         </AbsoluteFill>
       </Sequence>
       {/* 完整界面：主持人问感受，她边抹边答；镜头推到她的小窗 */}
@@ -201,7 +203,7 @@ const Test: React.FC = () => {
           <Sequence from={s(2.7)}>
             <Caption who="Participant" words={words("It@0.20 feels@0.24 very@0.96 wet@1.68 and@2.40 have@3.34 a@3.68 good@3.78 smell,@3.94 moisturizing@4.58 and@5.10 hydrating.@5.82")} keys={["wet", "smell,", "hydrating."]} />
           </Sequence>
-          <Sequence from={s(0.3)} durationInFrames={s(2.6)}><Corner><span style={{ color: T.accent }}>IT ASKS.</span></Corner></Sequence>
+          <Sequence from={s(0.3)} durationInFrames={s(2.6)}><Corner><span style={{ color: T.accent }}>It asks.</span></Corner></Sequence>
         </UIPan>
       </Sequence>
     </AbsoluteFill>
@@ -210,9 +212,9 @@ const Test: React.FC = () => {
 
 // ---------- 收尾 ----------
 const END_LINES = [
-  { at: 0.0, l1: "HOUR-LONG.", l2: "" },
-  { at: 0.75, l1: "HOUR-LONG.", l2: "LIVE." },
-  { at: 1.5, l1: "HOUR-LONG.", l2: "LIVE. ON CAMERA." },
+  { at: 0.0, l1: "Hour-long.", l2: "" },
+  { at: 0.75, l1: "Hour-long.", l2: "Live." },
+  { at: 1.5, l1: "Hour-long.", l2: "Live. On camera." },
 ];
 const End: React.FC = () => {
   const f = useCurrentFrame();
@@ -231,8 +233,8 @@ const End: React.FC = () => {
         </AbsoluteFill>
         <AbsoluteFill style={{ background: "radial-gradient(ellipse at center, rgba(0,0,0,0.15), rgba(0,0,0,0.82))" }} />
         <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", textAlign: "center" }}>
-          <div style={{ fontFamily: T.display, fontWeight: 800, fontSize: 168, lineHeight: 0.92, letterSpacing: "-0.05em", color: "#fff" }}>{cur.l1}</div>
-          {cur.l2 && <div style={{ fontFamily: T.display, fontWeight: 800, fontSize: 168, lineHeight: 0.92, letterSpacing: "-0.05em", color: T.accent, transform: `scale(${1.3 - 0.3 * sp})`, filter: `blur(${(1 - sp) * 10}px)` }}>{cur.l2}</div>}
+          <div style={{ fontFamily: T.display, fontWeight: 500, fontSize: 168, lineHeight: 0.92, letterSpacing: T.tight, color: "#fff" }}>{cur.l1}</div>
+          {cur.l2 && <div style={{ fontFamily: T.display, fontWeight: 500, fontSize: 168, lineHeight: 0.92, letterSpacing: T.tight, color: T.accent, transform: `scale(${1.3 - 0.3 * sp})`, filter: `blur(${(1 - sp) * 10}px)` }}>{cur.l2}</div>}
         </AbsoluteFill>
         <AbsoluteFill style={{ background: "#fff", opacity: flash }} />
       </AbsoluteFill>
@@ -249,7 +251,7 @@ const End: React.FC = () => {
         <div style={{ display: "flex", alignItems: "center", gap: 54, opacity: a, transform: `scale(${0.9 + 0.1 * a})` }}>
           <Ghost cell={20} />
           <div>
-            <div style={{ fontFamily: T.display, fontSize: 140, fontWeight: 600, letterSpacing: "-0.035em", color: T.text, lineHeight: 1 }}>atypica<span style={{ color: T.accent }}>.AI</span></div>
+            <div style={{ fontFamily: T.display, fontSize: 140, fontWeight: 500, letterSpacing: T.tight, color: T.text, lineHeight: 1 }}>atypica<span style={{ color: T.accent }}>.AI</span></div>
             <div style={{ fontFamily: T.display, fontSize: 92, fontWeight: 300, letterSpacing: "-0.02em", color: T.text, marginTop: 6, lineHeight: 1 }}>Interview</div>
           </div>
         </div>

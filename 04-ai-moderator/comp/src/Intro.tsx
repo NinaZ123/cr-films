@@ -39,7 +39,7 @@ export const Intro: React.FC = () => {
           }} />
         </div>
         <div style={{ marginTop: 46, opacity: word, transform: `translateY(${(1 - word) * 22}px)`, textAlign: "center" }}>
-          <div style={{ fontFamily: T.display, fontSize: 112, fontWeight: 600, letterSpacing: "-0.035em", color: T.text, lineHeight: 1 }}>
+          <div style={{ fontFamily: T.display, fontSize: 112, fontWeight: 500, letterSpacing: T.tight, color: T.text, lineHeight: 1 }}>
             atypica<span style={{ color: T.accent }}>.AI</span> <span style={{ fontWeight: 300 }}>Interview</span>
           </div>
         </div>
