@@ -173,13 +173,13 @@ const Depth: React.FC = () => {
       <Sequence from={card} durationInFrames={p0 - card}><ProductShot src="clips/hp-hero.mp4" startFrom={s(3.0)} label="Headphones" zh="耳机" /></Sequence>
       <Sequence from={p0} durationInFrames={m0 - p0}>
         <UIPan src="clips/ui-outfit.mp4" startFrom={s(0.6)} push={[0, s(3.4)]}>
-          <Caption who="Participant" words={words("the@0.02 third@0.30 purpose@0.60 actually@1.06 is@1.60 part@2.24 of@2.52 the@2.74 outfit.@2.96")} keys={["outfit."]} zh="第三个用途，其实它是穿搭的一部分。" />
+          <Caption who="Participant" words={words("the@0.02 third@0.30 purpose@0.60 actually@1.06 is@1.60 part@2.24 of@2.52 the@2.74 outfit.@2.96")} keys={["outfit."]} zh="第三个用途，@0.02 其实是@1.06 *穿搭的一部分@2.24" />
         </UIPan>
       </Sequence>
       <Sequence from={m0}>
         <ModClose src="clips/hd-q6b.mp4" startFrom={0} dur={D.m + D.tail}>
-          <Caption who="AI Moderator" ai words={words("That's@0.14 interesting.@0.68 You@1.86 mentioned@2.02 them@2.28 being@2.50 part@2.68 of@2.96 the@3.08 outfit.@3.14 What@4.10 makes@4.24 you@4.42 say@4.54 that?@4.72")} keys={["outfit.", "What"]} zh="很有意思。你说它是穿搭的一部分，为什么这么说？" />
-          <Sequence from={s(2.9)}><Corner zh={<>它听懂了<span style={{ color: T.accent }}>你的言外之意。</span></>}>It hears<br /><span style={{ color: T.accent }}>what you meant.</span></Corner></Sequence>
+          <Caption who="AI Moderator" ai words={words("That's@0.14 interesting.@0.68 You@1.86 mentioned@2.02 them@2.28 being@2.50 part@2.68 of@2.96 the@3.08 outfit.@3.14 What@4.10 makes@4.24 you@4.42 say@4.54 that?@4.72")} keys={["outfit.", "What"]} zh="很有意思，@0.14 你说它是@1.86 *穿搭的一部分，@2.68 *为什么这么说？@4.10" />
+          <Sequence from={s(2.9)}><Corner zh={<>它听懂了<span style={{ color: T.accent }}>你的言外之意</span></>}>It hears<br /><span style={{ color: T.accent }}>what you meant.</span></Corner></Sequence>
         </ModClose>
       </Sequence>
     </AbsoluteFill>
@@ -202,25 +202,25 @@ const Test: React.FC = () => {
       {/* 主持人："Let's try this one. Go ahead and put some of the cream on your hand." */}
       <Sequence from={ask} durationInFrames={feel - ask}>
         <ModClose src="clips/hd-q2.mp4" startFrom={s(1.1)} dur={P.ask}>
-          <Caption who="AI Moderator" ai words={words("Let's@0.10 try@0.42 this@0.52 one.@0.72 Go@1.22 ahead@1.34 and@1.50 put@1.60 some@1.72 of@1.88 the@1.96 cream@2.02 on@2.22 your@2.38 hand.@2.52")} keys={["cream"]} zh="我们来试试这款。挤一点抹在手上吧。" />
+          <Caption who="AI Moderator" ai words={words("Let's@0.10 try@0.42 this@0.52 one.@0.72 Go@1.22 ahead@1.34 and@1.50 put@1.60 some@1.72 of@1.88 the@1.96 cream@2.02 on@2.22 your@2.38 hand.@2.52")} keys={["cream"]} zh="我们来试试这款，@0.10 取一点@1.22 *抹在手上吧@2.02" />
         </ModClose>
       </Sequence>
       <Sequence from={side} durationInFrames={feel - side}>
         <SideCard src="clips/tu-squeeze.mp4" startFrom={s(1.0)} label="PRODUCT CAM" />
         <AbsoluteFill style={{ justifyContent: "center", paddingLeft: 180 }}>
-          <BigLeft lines={["They", "try it."]} accent={1} zh={<>受访者<span style={{ color: T.accent }}>亲手试用。</span></>} />
+          <BigLeft lines={["They", "try it."]} accent={1} zh={<>受访者<span style={{ color: T.accent }}>亲手试用</span></>} />
         </AbsoluteFill>
       </Sequence>
       {/* 完整界面：主持人问感受，她边抹边答；镜头推到她的小窗 */}
       <Sequence from={feel}>
         <UIPan src="clips/ui-q3.mp4" push={[s(2.4), s(6.0)]}>
           <Sequence durationInFrames={s(2.6)}>
-            <Caption who="AI Moderator" ai words={words("What@0.00 does@0.42 it@0.54 feel@0.66 like@0.84 on@1.10 your@1.26 skin@1.38 right@1.66 now?@1.90")} keys={["feel"]} zh="现在抹在皮肤上，是什么感觉？" />
+            <Caption who="AI Moderator" ai words={words("What@0.00 does@0.42 it@0.54 feel@0.66 like@0.84 on@1.10 your@1.26 skin@1.38 right@1.66 now?@1.90")} keys={["feel"]} zh="现在皮肤上@0.66 是什么@1.10 *感觉？@1.38" />
           </Sequence>
           <Sequence from={s(2.7)}>
-            <Caption who="Participant" words={words("It@0.20 feels@0.24 very@0.96 wet@1.68 and@2.40 have@3.34 a@3.68 good@3.78 smell,@3.94 moisturizing@4.58 and@5.10 hydrating.@5.82")} keys={["wet", "smell,", "hydrating."]} zh="感觉很水润，味道也很好闻。" />
+            <Caption who="Participant" words={words("It@0.20 feels@0.24 very@0.96 wet@1.68 and@2.40 have@3.34 a@3.68 good@3.78 smell,@3.94 moisturizing@4.58 and@5.10 hydrating.@5.82")} keys={["wet", "smell,", "hydrating."]} zh="感觉@0.24 *很水润，@1.68 味道也@3.34 *很好闻@3.78" />
           </Sequence>
-          <Sequence from={s(0.3)} durationInFrames={s(2.6)}><Corner zh={<span style={{ color: T.accent }}>它边看边问。</span>}><span style={{ color: T.accent }}>It asks.</span></Corner></Sequence>
+          <Sequence from={s(0.3)} durationInFrames={s(2.6)}><Corner zh={<span style={{ color: T.accent }}>它边看边问</span>}><span style={{ color: T.accent }}>It asks.</span></Corner></Sequence>
         </UIPan>
       </Sequence>
     </AbsoluteFill>
@@ -229,9 +229,9 @@ const Test: React.FC = () => {
 
 // ---------- 收尾 ----------
 const END_LINES = [
-  { at: 0.0, l1: "Hour-long.", l2: "", zh: "长达一小时。" },
-  { at: 0.6, l1: "Hour-long.", l2: "Live.", zh: "长达一小时。实时进行。" },
-  { at: 1.2, l1: "Hour-long.", l2: "Live. On camera.", zh: "长达一小时。实时进行。全程出镜。" },
+  { at: 0.0, l1: "Hour-long.", l2: "", zh: "可支持 1 小时" },
+  { at: 0.6, l1: "Hour-long.", l2: "Live.", zh: "可支持 1 小时　实时进行" },
+  { at: 1.2, l1: "Hour-long.", l2: "Live. On camera.", zh: "可支持 1 小时　实时进行　全程出镜" },
 ];
 const End: React.FC = () => {
   const f = useCurrentFrame();

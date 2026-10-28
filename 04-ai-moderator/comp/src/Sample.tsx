@@ -68,6 +68,8 @@ export const Zh: React.FC<{ text?: React.ReactNode; size?: number; color?: strin
 
 // ---------- 大字幕：原话逐词出来，关键词品牌绿 ----------
 type W = [string, number];
+// 中文字幕："短语@秒 短语@秒"，秒数对齐到对应英文词开口的时间
+const timed = (str: string): W[] => str.split(" ").map((x) => { const [w, a] = x.split("@"); return [w, Number(a)]; });
 export const Caption: React.FC<{ who: string; words: W[]; keys?: string[]; ai?: boolean; y?: number; zh?: string }> = ({ who, words, keys = [], ai = false, y = 860, zh }) => {
   const f = useCurrentFrame();
   const on = useContext(ZH) && !!zh;
@@ -89,7 +91,14 @@ export const Caption: React.FC<{ who: string; words: W[]; keys?: string[]; ai?: 
               return <span key={i} style={{ display: "inline-block", marginRight: "0.26em", opacity: p, transform: `translateY(${(1 - p) * 10}px)`, color: keys.includes(w) ? T.accent : undefined }}>{w}</span>;
             })}
           </span>
-          {on && <span style={{ fontFamily: ZH_FONT, fontSize: 36, fontWeight: 400, letterSpacing: "0.03em", color: "rgba(250,250,250,0.72)", lineHeight: 1.3, marginTop: 10, opacity: interpolate(f, [4, 12], [0, 1], clamp) }}>{zh}</span>}
+          {on && <span style={{ fontFamily: ZH_FONT, fontSize: 36, fontWeight: 400, letterSpacing: "0.03em", color: "rgba(250,250,250,0.72)", lineHeight: 1.3, marginTop: 10, minHeight: "1.3em" }}>
+            {/* 中文和英文一样，说到哪儿出到哪儿：每段对齐到对应英文词开口的时间；"*" 开头的段用品牌绿 */}
+            {timed(zh!).filter(([, a]) => a <= t).map(([w, a], i) => {
+              const p = interpolate(t - a, [0, 0.12], [0, 1], clamp);
+              const hi = w.startsWith("*");
+              return <span key={i} style={{ display: "inline-block", opacity: p, transform: `translateY(${(1 - p) * 8}px)`, color: hi ? T.accent : undefined }}>{hi ? w.slice(1) : w}</span>;
+            })}
+          </span>}
         </span>
       </div>
     </div>
@@ -129,7 +138,7 @@ export const Cold: React.FC = () => {
         <FloatingUI src="clips/ui-q1.mp4" cam={cam} tilt={tilt} />
       </AbsoluteFill>
       <Sequence from={s(0.4)}>
-        <Caption who="Moderator" words={words("When@0.00 you@0.18 mentioned@0.30 using@0.56 a@0.88 heavy@1.06 cream@1.26 to@1.72 reduce@1.88 the@2.18 pain,@2.36 what@3.10 did@3.34 that@3.46 feel@3.58 like@3.80 on@4.02 your@4.16 skin?@4.26")} keys={["heavy", "cream"]} zh="你提到用厚重的面霜来缓解疼痛，抹在皮肤上是什么感觉？" />
+        <Caption who="Moderator" words={words("When@0.00 you@0.18 mentioned@0.30 using@0.56 a@0.88 heavy@1.06 cream@1.26 to@1.72 reduce@1.88 the@2.18 pain,@2.36 what@3.10 did@3.34 that@3.46 feel@3.58 like@3.80 on@4.02 your@4.16 skin?@4.26")} keys={["heavy", "cream"]} zh="你刚才提到，@0.00 会用比较@0.56 *厚重的护手霜@1.06 来缓解疼痛，@1.72 那用的时候@3.10 皮肤感觉怎么样？@3.58" />
       </Sequence>
     </Stage>
   );
@@ -208,7 +217,7 @@ export const Qual: React.FC = () => {
         <AbsoluteFill style={{ transform: `scale(${interpolate(f, [0, r(QA)], [1.0, 1.04])})` }}>
           <OffthreadVideo src={staticFile("clips/hd-qa.mp4")} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </AbsoluteFill>
-        <Caption who="AI Moderator" ai words={words("As@0.00 you@0.36 continue@0.88 wearing@1.14 them@1.50 and@1.80 listening,@2.00 what,@2.94 if@3.54 anything,@3.84 changes?@4.60")} keys={["changes?"]} zh="继续戴着、听一会儿，感觉有什么变化吗？" />
+        <Caption who="AI Moderator" ai words={words("As@0.00 you@0.36 continue@0.88 wearing@1.14 them@1.50 and@1.80 listening,@2.00 what,@2.94 if@3.54 anything,@3.84 changes?@4.60")} keys={["changes?"]} zh="你继续戴着@0.36 再听一会儿，@1.80 感觉@2.94 *有什么变化吗？@3.84" />
       </Sequence>
       {/* 受访者没听懂：切到完整界面，镜头往右上角他的小窗推 */}
       <Sequence from={r(QA)} durationInFrames={r(QB) - r(QA)}>
@@ -217,7 +226,7 @@ export const Qual: React.FC = () => {
           <div style={{ position: "absolute", inset: 0, transform: `translate(${-pan * 520}px, ${pan * 230}px) scale(${1 + pan * 0.75})` }}>
             <FloatingUI src="clips/ui-qa.mp4" startFrom={r(6.1)} cam={0} />
           </div>
-          <Caption who="Participant" words={words("Can@0.32 you@0.54 repeat@0.68 that?@0.90 I@1.66 didn't@1.66 really@3.00 understand@3.20 the@3.62 question.@3.94")} keys={["understand"]} zh="能再说一遍吗？我没太听懂这个问题。" />
+          <Caption who="Participant" words={words("Can@0.32 you@0.54 repeat@0.68 that?@0.90 I@1.66 didn't@1.66 really@3.00 understand@3.20 the@3.62 question.@3.94")} keys={["understand"]} zh="能再说一遍吗？@0.32 我没太@1.66 *听懂@3.20 这个问题@3.62" />
         </Stage>
       </Sequence>
       {/* AI 道歉、换个问法：主持人居中特写 */}
@@ -225,7 +234,7 @@ export const Qual: React.FC = () => {
         <AbsoluteFill style={{ transform: `scale(${interpolate(f - r(QC), [0, s(3)], [1.0, 1.05])})` }}>
           <OffthreadVideo src={staticFile("clips/hd-qa.mp4")} muted startFrom={r(11.9)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </AbsoluteFill>
-        <Caption who="AI Moderator" ai words={words("Sorry@0.26 about@0.82 that.@1.02 I@1.80 just@1.90 meant…@2.04")} keys={["Sorry"]} zh="不好意思。我的意思是……" />
+        <Caption who="AI Moderator" ai words={words("Sorry@0.26 about@0.82 that.@1.02 I@1.80 just@1.90 meant…@2.04")} keys={["Sorry"]} zh="*不好意思，@0.26 我的意思是……@1.80" />
       </Sequence>
     </AbsoluteFill>
   );
@@ -233,13 +242,13 @@ export const Qual: React.FC = () => {
 
 // 炸：音乐 drop 进来，大字一句一句砸，介绍产品
 const BOOM_LINES: { at: number; lines: React.ReactNode[]; bg?: string; startFrom?: number; zh?: React.ReactNode }[] = [
-  { at: 0.0, lines: [<>Not a script.</>, <span style={{ color: T.accent }}>A conversation.</span>], bg: "clips/hd-qa.mp4", startFrom: 14.2, zh: <>不是照本宣科，<span style={{ color: T.accent }}>是一场真对话。</span></> },
-  { at: 1.2, lines: [<>It listens.</>], bg: "clips/hd-listen.mp4", zh: "它会倾听。" },
-  { at: 1.9, lines: [<>It follows up.</>], bg: "clips/hd-q6.mp4", startFrom: 1.8, zh: "它会追问。" },
-  { at: 2.6, lines: [<>It rephrases.</>], bg: "clips/hd-qa.mp4", startFrom: 12.2, zh: "它会换个问法。" },
-  { at: 3.3, lines: [<>Remember this day.</>], zh: "记住这一天。" },
-  { at: 4.1, lines: [<>User Research.</>], zh: "用户研究，" },
-  { at: 4.9, lines: [<span style={{ color: T.accent }}>Changed forever.</span>], zh: <span style={{ color: T.accent }}>从此改变。</span> },
+  { at: 0.0, lines: [<>Not a script.</>, <span style={{ color: T.accent }}>A conversation.</span>], bg: "clips/hd-qa.mp4", startFrom: 14.2, zh: <>不是照本宣科　<span style={{ color: T.accent }}>是一场真对话</span></> },
+  { at: 1.2, lines: [<>It listens.</>], bg: "clips/hd-listen.mp4", zh: "它会倾听" },
+  { at: 1.9, lines: [<>It follows up.</>], bg: "clips/hd-q6.mp4", startFrom: 1.8, zh: "它会追问" },
+  { at: 2.6, lines: [<>It rephrases.</>], bg: "clips/hd-qa.mp4", startFrom: 12.2, zh: "它会换个问法" },
+  { at: 3.3, lines: [<>Remember this day.</>], zh: "记住这一天" },
+  { at: 4.1, lines: [<>User Research.</>], zh: "用户研究" },
+  { at: 4.9, lines: [<span style={{ color: T.accent }}>Changed forever.</span>], zh: <span style={{ color: T.accent }}>从此改变</span> },
   { at: 6.0, lines: [] },
 ];
 export const Boom: React.FC = () => {
