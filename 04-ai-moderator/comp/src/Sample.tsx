@@ -284,15 +284,21 @@ export const BoomLogo: React.FC<{ since: number }> = ({ since }) => {
 
 // ---------- 合成 ----------
 // music="v6"（默认）：锁定样片的声音，一点不改。
-// music="film"：完整版用。冷开场 + 主标改用旧的 music-b-full（demucs 去掉人声的纯器乐版），
-// 和 tavas-0.0.mov 参考片一样从 0 秒起，第一拍正好落在主标；之后压低垫在对白下，进 drop 前淡出。
+// music="film"：完整版用。按 tavas-0.0.mov 参考片，用原版 music-b-full（带人声的炸裂版），
+// 主标一次、drop 再一次；drop 不再用 music-inst-drop。
 export const Sample: React.FC<{ music?: "v6" | "film" }> = ({ music = "v6" }) => (
   <AbsoluteFill style={{ background: "#000" }}>
-    {music === "film" ? (
-      <Audio src={staticFile("music-b-full-inst.mp3")} volume={(fr) => interpolate(fr / FPS,
-        [0, HIT[0] - 0.05, HIT[0], T_QUAL[0] - 0.2, T_QUAL[0] + 0.4, DROP_AT - 4.6, DROP_AT - 3.4],
-        [0.16, 0.18, 0.6, 0.55, 0.12, 0.12, 0], clamp)} />
-    ) : <>
+    {music === "film" ? <>
+      {/* 第一次：0 秒起，主标三拍落在它第一拍（5.37s）上，带人声的炸裂段一路到 logo；进包袱后压低垫着，
+          "I just meant…" 之后收掉，留一下空再炸 */}
+      <Audio src={staticFile("music-b-full.mp3")} volume={(fr) => interpolate(fr / FPS,
+        [0, HIT[0] - 0.05, HIT[0], T_QUAL[0] - 0.2, T_QUAL[0] + 0.4, DROP_AT - 0.7, DROP_AT - 0.35],
+        [0.16, 0.18, 0.7, 0.65, 0.16, 0.16, 0], clamp)} />
+      {/* 第二次：drop 处把同一首歌的炸裂段（5.37s 第一拍）再砸一次，接着往下放 */}
+      <Sequence from={s(DROP_AT - 0.3)} layout="none">
+        <Audio src={staticFile("music-b-full.mp3")} startFrom={s(HIT[0] - 0.3)} volume={(fr) => interpolate(fr / FPS, [0, 0.3], [0.5, 0.85], clamp)} />
+      </Sequence>
+    </> : <>
     {/* 前半段：不用整段音乐（ElevenLabs 分段生成的音乐里混进了很轻的人声，听着像背景里有别的访谈），
         改成音效：冷开场一层安静的暗底，主标三拍各一记重低音冲击，最后一拍后接长尾，logo 出现时一声 8-bit */}
     <Sequence durationInFrames={s(T_COLD[1])} layout="none">
@@ -310,12 +316,12 @@ export const Sample: React.FC<{ music?: "v6" | "film" }> = ({ music = "v6" }) =>
     </>}
     <Sequence from={s(T_LOGO[0] + 0.95)} layout="none"><Audio src={staticFile("sfx/ghost.mp3")} volume={0.9} /></Sequence>
     {/* 炸：纯器乐版（forceInstrumental），实测 4.53s 第一拍，对齐到 DROP_AT */}
-    <Sequence from={s(DROP_AT - 4.53)} layout="none">
+    {music === "v6" && <Sequence from={s(DROP_AT - 4.53)} layout="none">
       <Audio src={staticFile("music-inst-drop.mp3")} volume={(fr) => {
         const t = fr / FPS;
         return interpolate(t, [0, 4.4, 4.53, 10.5, 11.8], [0.6, 0.6, 0.9, 0.9, 0], clamp);
       }} />
-    </Sequence>
+    </Sequence>}
     {/* 对白（清理过的原声） */}
     <Sequence from={s(0.4)} durationInFrames={s(4.6)} layout="none"><Audio src={staticFile("vo/q1.mp3")} /></Sequence>
     {/* 包袱：一整段连续原声，不剪断对话 */}

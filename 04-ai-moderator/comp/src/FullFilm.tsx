@@ -7,7 +7,7 @@ import { T } from "./theme";
 import { Intro, INTRO_SEC } from "./Intro";
 import { Ghost, PixelGrid } from "./Ghost";
 import {
-  Sample, Stage, FloatingUI, Caption, words, s, FPS, DROP_AT,
+  Sample, Stage, FloatingUI, Caption, words, s, FPS, DROP_AT, HIT,
 } from "./Sample";
 
 // 完整版（脚本 v7）。0–31.1s 原样播放已确认的样片 v6（Sample 组件，一帧不改），
@@ -21,7 +21,6 @@ const HANDOFF = DROP_AT + 6.2;               // 31.1
 const T_DEPTH = [HANDOFF, HANDOFF + 11.6];   // 31.1–42.7  01 深访
 const T_TEST = [T_DEPTH[1], T_DEPTH[1] + 16.8]; // 42.7–59.5  02 产品测试
 const T_END = [T_TEST[1], T_TEST[1] + 6.2];  // 59.5–65.7  收尾
-const DRIVE_IN = HANDOFF - 3.2;               // drive 从 drop 尾巴下面开始浮出来
 export const FILM_TOTAL = s(INTRO_SEC + T_END[1]);
 
 // ---------- 章节卡：大号编号 + 标题，从左滑入，背景是像素网格 ----------
@@ -273,31 +272,26 @@ export const FullFilm: React.FC = () => (
 // 片头之后的正片（时间从 0 算，0–31.1s 是锁定的样片 v6）
 const Main: React.FC = () => (
   <AbsoluteFill style={{ background: "#000" }}>
-    {/* 0–31.1s：已确认的样片画面；声音换成 film 版（冷开场+主标用 music-b-full 纯器乐，drop 不变） */}
+    {/* 0–31.1s：已确认的样片画面；声音换成 film 版（music-b-full 带人声原版：主标一次、drop 再一次） */}
     <Sequence durationInFrames={s(HANDOFF)}><Sample music="film" /></Sequence>
 
-    {/* drop 之后音乐不断：同一首 drive 准备两轨（闷的低通版 + 原版），同时播放保持同步。
-        先让闷的那轨在 drop 尾巴下面慢慢浮出来，垫在 01 深访对白下当背景；
-        进 02 产品测试时原版轨开始渗进来（像滤波器慢慢打开）；到收尾三拍才真正推满。 */}
-    {(["lp", "full"] as const).map((k) => (
-      <Sequence key={k} from={s(DRIVE_IN)} durationInFrames={s(T_END[0] + 3.2 - DRIVE_IN)} layout="none">
-        <Audio src={staticFile(k === "lp" ? "music-inst-drive-long-lp.mp3" : "music-inst-drive-long.mp3")} volume={(fr) => {
-          const t = fr / FPS + DRIVE_IN;                    // 换算成正片时间
-          const talk = (a: number, b: number) => (t > a - 0.25 && t < b + 0.25 ? 1 : 0);
-          const dialogue = Math.max(
-            talk(T_DEPTH[0] + 1.6, T_DEPTH[0] + 11.6),        // 01 对白
-            talk(T_TEST[0] + 4.4, T_TEST[0] + 7.5),           // 02 主持人
-            talk(T_TEST[0] + 9.9, T_TEST[1]),                 // 02 问答
-          );
-          const duck = dialogue ? 0.5 : 1;
-          if (k === "lp") return duck * interpolate(t,
-            [DRIVE_IN, HANDOFF, T_END[0] - 0.4, T_END[0] + 0.2], [0, 0.6, 0.6, 0], clamp);
-          return interpolate(t,
-            [T_TEST[0] - 0.2, T_TEST[0] + 1.2, T_END[0] - 0.4, T_END[0], T_END[0] + 2.6, T_END[0] + 3.2],
-            [0, 0.4, 0.4, 0.85, 0.85, 0], clamp) * (t < T_END[0] - 0.4 ? duck * 0.8 : 1);
-        }} />
-      </Sequence>
-    ))}
+    {/* drop 之后：样片里第二次砸下来的 music-b-full 继续往下放，压低垫在 01 深访对白下；
+        进 02 产品测试时交叉换到 drive，收尾三拍推满 */}
+    <Sequence from={s(HANDOFF)} durationInFrames={s(T_TEST[0] + 1.5 - HANDOFF)} layout="none">
+      <Audio src={staticFile("music-b-full.mp3")} startFrom={s(HIT[0] + HANDOFF - DROP_AT)} volume={(fr) => {
+        const t = fr / FPS + HANDOFF;
+        return interpolate(t, [HANDOFF, T_DEPTH[0] + 1.2, T_TEST[0] - 0.3, T_TEST[0] + 1.5], [0.85, 0.2, 0.2, 0], clamp);
+      }} />
+    </Sequence>
+    <Sequence from={s(T_TEST[0] - 0.3)} durationInFrames={s(T_END[0] + 3.2 - T_TEST[0] + 0.3)} layout="none">
+      <Audio src={staticFile("music-inst-drive-long.mp3")} volume={(fr) => {
+        const t = fr / FPS + T_TEST[0] - 0.3;
+        const talk = (a: number, b: number) => (t > a - 0.25 && t < b + 0.25 ? 1 : 0);
+        const dialogue = Math.max(talk(T_TEST[0] + 4.4, T_TEST[0] + 7.5), talk(T_TEST[0] + 9.9, T_TEST[1]));
+        return interpolate(t, [T_TEST[0] - 0.3, T_TEST[0] + 1.2, T_END[0] - 0.4, T_END[0], T_END[0] + 2.6, T_END[0] + 3.2],
+          [0, 0.6, 0.6, 0.85, 0.85, 0], clamp) * (dialogue && t < T_END[0] - 0.4 ? 0.4 : 1);
+      }} />
+    </Sequence>
     {/* 收尾：drive 一路燃到三拍大字，logo 落定时音乐切断，只剩最后一记冲击 + 定音 */}
     {/* 章节转场 whoosh */}
     {[T_DEPTH[0], T_TEST[0]].map((t) => (
