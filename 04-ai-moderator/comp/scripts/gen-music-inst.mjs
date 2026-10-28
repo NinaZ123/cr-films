@@ -47,6 +47,15 @@ const TAKES = {
     ms: 30000,
     prompt: "Instrumental high-energy electronic, 128 BPM. Full energy from the very first second and stays loud and driving for the entire 30 seconds, never fading out: massive four-on-the-floor kick, heavy sub bass, huge wide synth stabs, dark gritty edge, festival energy. Continuous groove, no breakdown, no ending, no fade. No vocals, no voice, no speech.",
   },
+  // 30s 之后到片尾（v14）：漫威大片发布那种史诗预告片配乐，接在 drop 的结尾大鼓后面，一路往上推
+  "epic-a": {
+    ms: 36000,
+    prompt: "Instrumental epic orchestral superhero movie trailer music, like a Marvel blockbuster announcement, 120 BPM. 0-12s: heroic driving string ostinato with low brass swells and steady big drums, confident and restrained enough to sit under dialogue. 12-26s: builds bigger, soaring heroic brass theme enters, taiko and cinematic percussion, rising tension. 26-30s: three massive trailer impact hits. 30-34s: one final huge triumphant hit with full orchestra, then a short reverb tail. Powerful, triumphant, inspiring. No vocals, no choir, no voice, no speech.",
+  },
+  "epic-b": {
+    ms: 36000,
+    prompt: "Instrumental hybrid orchestral blockbuster trailer music, Marvel-style epic launch, 124 BPM: pulsing staccato strings, heavy hybrid drums, deep braams, heroic French horns and trumpets. Starts already moving with energy but leaves space, steadily escalates the whole way with risers, a big heroic theme from 14 seconds, three huge impact hits at 26, 27 and 28 seconds, final massive triumphant hit at 30 seconds and a ringing tail. No vocals, no choir, no voice, no speech.",
+  },
 };
 
 const take = process.argv[2];

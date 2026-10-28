@@ -294,8 +294,12 @@ export const Sample: React.FC<{ music?: "v6" | "film" }> = ({ music = "v6" }) =>
       {/* 第一次：0 秒起，主标三拍落在它第一拍（5.37s）上，带人声的炸裂段一路到 logo；进包袱后压低垫着，
           "I just meant…" 之后收掉，留一下空再炸 */}
       <Audio src={staticFile("music-b-full.mp3")} volume={(fr) => interpolate(fr / FPS,
-        [0, HIT[0] - 0.05, HIT[0], T_QUAL[0] - 0.2, T_QUAL[0] + 0.4, DROP_AT - 0.7, DROP_AT - 0.35],
-        [0.16, 0.18, 0.7, 0.65, 0.16, 0.16, 0], clamp)} />
+        [0, HIT[0] - 0.05, HIT[0], T_QUAL[0] - 0.2, T_QUAL[0] + 0.4],
+        [0.16, 0.18, 0.7, 0.65, 0], clamp)} />
+      {/* 包袱段（10.4s 起）换成同一首歌去掉人声的伴奏，两轨同步交叉，不让歌词抢对白 */}
+      <Audio src={staticFile("music-b-full-inst.mp3")} volume={(fr) => interpolate(fr / FPS,
+        [T_QUAL[0] - 0.2, T_QUAL[0] + 0.4, DROP_AT - 0.7, DROP_AT - 0.35],
+        [0, 0.16, 0.16, 0], clamp)} />
       {/* 第二次：drop 用同一首歌的后半段——46.0s 起的结尾大鼓段（前面 45.4–46.0s 本来就有一拍空，正好接包袱后的停顿），
           这段没有人唱，约 4.8 秒后自然收尾 */}
       <Sequence from={s(DROP_AT - 0.6)} layout="none">

@@ -21,7 +21,8 @@ const HANDOFF = DROP_AT + 6.2;               // 31.1
 const T_DEPTH = [HANDOFF, HANDOFF + 11.6];   // 31.1–42.7  01 深访
 const T_TEST = [T_DEPTH[1], T_DEPTH[1] + 16.8]; // 42.7–59.5  02 产品测试
 const T_END = [T_TEST[1], T_TEST[1] + 6.2];  // 59.5–65.7  收尾
-const BED_IN = DROP_AT + 3.6;                 // 结尾大鼓段开始收的时候接器乐垫底
+const BED_IN = DROP_AT + 3.6;                 // 结尾大鼓段开始收的时候接史诗配乐
+const EPIC_SHIFT = BED_IN - 30.4;             // 正片时间 - hype-b 时间：从它 26–30s 的停顿之后（30.4s 起往上冲）切入，不留空
 export const FILM_TOTAL = s(INTRO_SEC + T_END[1]);
 
 // ---------- 章节卡：大号编号 + 标题，从左滑入，背景是像素网格 ----------
@@ -278,22 +279,19 @@ const Main: React.FC = () => (
     {/* 0–31.1s：已确认的样片画面；声音换成 film 版（music-b-full 原版：主标用带人声的炸裂段，drop 用同一首的结尾大鼓段） */}
     <Sequence durationInFrames={s(HANDOFF)}><Sample music="film" /></Sequence>
 
-    {/* drop 之后：结尾大鼓段收尾时（约 29.3s）接同一首歌去掉人声的器乐（demucs 分离，10s 起的 Verse 段，只剩鼓和律动），
-        垫在 01 深访对白下，不出歌词；进 02 产品测试时交叉换到 drive，收尾三拍推满 */}
-    <Sequence from={s(BED_IN)} durationInFrames={s(T_TEST[0] + 1.5 - BED_IN)} layout="none">
-      <Audio src={staticFile("music-b-full-inst.mp3")} startFrom={s(10)} volume={(fr) => {
+    {/* drop 之后到片尾：一整首预告片式史诗配乐（music-inst-hype-b：braams、太鼓、弦乐推进），中间不换歌。
+        drop 结尾大鼓收掉时，从它停顿之后往上冲的地方接进来，一路往上推（它 61s 的大鼓落在收尾三拍上）。有对白时压低。 */}
+    <Sequence from={s(BED_IN)} durationInFrames={s(T_END[0] + 3.4 - BED_IN)} layout="none">
+      <Audio src={staticFile("music-inst-hype-b.mp3")} startFrom={s(BED_IN - EPIC_SHIFT)} volume={(fr) => {
         const t = fr / FPS + BED_IN;
-        return interpolate(t, [BED_IN, BED_IN + 0.8, HANDOFF + 0.4, T_DEPTH[0] + 1.4, T_TEST[0] - 0.3, T_TEST[0] + 1.5],
-          [0, 0.7, 0.7, 0.3, 0.3, 0], clamp);
-      }} />
-    </Sequence>
-    <Sequence from={s(T_TEST[0] - 0.3)} durationInFrames={s(T_END[0] + 3.2 - T_TEST[0] + 0.3)} layout="none">
-      <Audio src={staticFile("music-inst-drive-long.mp3")} volume={(fr) => {
-        const t = fr / FPS + T_TEST[0] - 0.3;
         const talk = (a: number, b: number) => (t > a - 0.25 && t < b + 0.25 ? 1 : 0);
-        const dialogue = Math.max(talk(T_TEST[0] + 4.4, T_TEST[0] + 7.5), talk(T_TEST[0] + 9.9, T_TEST[1]));
-        return interpolate(t, [T_TEST[0] - 0.3, T_TEST[0] + 1.2, T_END[0] - 0.4, T_END[0], T_END[0] + 2.6, T_END[0] + 3.2],
-          [0, 0.6, 0.6, 0.85, 0.85, 0], clamp) * (dialogue && t < T_END[0] - 0.4 ? 0.4 : 1);
+        const dialogue = Math.max(
+          talk(T_DEPTH[0] + 1.6, T_DEPTH[0] + 11.6),
+          talk(T_TEST[0] + 4.4, T_TEST[0] + 7.5),
+          talk(T_TEST[0] + 9.9, T_TEST[1]),
+        );
+        const base = interpolate(t, [BED_IN, BED_IN + 1.0, T_END[0] + 3.0, T_END[0] + 3.4], [0.5, 0.75, 0.85, 0], clamp);
+        return base * (dialogue ? 0.4 : 1);
       }} />
     </Sequence>
     {/* 收尾：drive 一路燃到三拍大字，logo 落定时音乐切断，只剩最后一记冲击 + 定音 */}
