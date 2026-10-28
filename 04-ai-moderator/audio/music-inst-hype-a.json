@@ -1,0 +1,6 @@
+{
+  "model": "music_v2_5",
+  "forceInstrumental": true,
+  "prompt": "Instrumental dark cinematic trailer electronic, 120 BPM, intense and hard-hitting. 0-5s: tense dark drone with heartbeat sub pulses. At 5s: massive impact boom, then three heavy hits, gritty distorted synth bass and pounding half-time drums. 10-24s: drops to a tense minimal ticking pulse, suspenseful. At 25s: explosive full drop, driving drums, huge aggressive synth stabs, relentless energy through 58s with rising risers. 58-62s: three big impact hits. 62-66s: one final massive boom and tail. No vocals, no voice, no speech.",
+  "musicLengthMs": 66000
+}

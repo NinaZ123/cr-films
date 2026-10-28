@@ -29,6 +29,24 @@ const TAKES = {
     ms: 14000,
     prompt: "Instrumental cinematic electronic finale, 124 BPM. Starts with confident driving drums and wide synths, builds quickly with a rising sweep, and at 9 seconds lands one huge final impact hit with deep sub bass, then a short reverb tail and silence. Triumphant, premium tech launch. No vocals, no voice, no speech.",
   },
+  // 全片整首（66 秒），燃、激烈，参考昨天 B 版的暗黑电影感。三个方向给用户挑
+  "hype-a": {
+    ms: 66000,
+    prompt: "Instrumental dark cinematic trailer electronic, 120 BPM, intense and hard-hitting. 0-5s: tense dark drone with heartbeat sub pulses. At 5s: massive impact boom, then three heavy hits, gritty distorted synth bass and pounding half-time drums. 10-24s: drops to a tense minimal ticking pulse, suspenseful. At 25s: explosive full drop, driving drums, huge aggressive synth stabs, relentless energy through 58s with rising risers. 58-62s: three big impact hits. 62-66s: one final massive boom and tail. No vocals, no voice, no speech.",
+  },
+  "hype-b": {
+    ms: 66000,
+    prompt: "Instrumental high-energy hybrid trailer music, 128 BPM, epic and aggressive: braams, taiko-style drums mixed with electronic kicks, distorted bass, pulsing synth ostinato. Starts dark and tense for 5 seconds, then a huge hit, builds with stuttering risers, a short tense break around 22 seconds, then an explosive drop at 25 seconds that keeps escalating to a massive final hit near 62 seconds. Powerful launch-film energy. No vocals, no voice, no speech.",
+  },
+  "hype-c": {
+    ms: 66000,
+    prompt: "Instrumental energetic electronic dance-rock for a bold tech launch, 126 BPM: punchy four-on-the-floor kick, driving distorted synth bass, gritty electric guitar riffs, bright synth stabs, claps. Dark tense intro for 5 seconds, big hit, groove builds, a short break with a riser around 22 seconds, then a huge drop at 25 seconds with full energy, extra lift around 45 seconds, final massive hit near 62 seconds. Fun, bold, confident. No vocals, no voice, no speech.",
+  },
+  // 续接样片 v6 的"炸"（music-inst-drop 同风格），一开始就是满能量，给 01/02 两段铺底
+  drive: {
+    ms: 30000,
+    prompt: "Instrumental high-energy electronic, 128 BPM. Full energy from the very first second and stays loud and driving for the entire 30 seconds, never fading out: massive four-on-the-floor kick, heavy sub bass, huge wide synth stabs, dark gritty edge, festival energy. Continuous groove, no breakdown, no ending, no fade. No vocals, no voice, no speech.",
+  },
 };
 
 const take = process.argv[2];

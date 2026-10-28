@@ -1,0 +1,6 @@
+{
+  "model": "music_v2_5",
+  "forceInstrumental": true,
+  "prompt": "Instrumental high-energy hybrid trailer music, 128 BPM, epic and aggressive: braams, taiko-style drums mixed with electronic kicks, distorted bass, pulsing synth ostinato. Starts dark and tense for 5 seconds, then a huge hit, builds with stuttering risers, a short tense break around 22 seconds, then an explosive drop at 25 seconds that keeps escalating to a massive final hit near 62 seconds. Powerful launch-film energy. No vocals, no voice, no speech.",
+  "musicLengthMs": 66000
+}

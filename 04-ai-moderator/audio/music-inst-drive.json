@@ -1,0 +1,6 @@
+{
+  "model": "music_v2_5",
+  "forceInstrumental": true,
+  "prompt": "Instrumental high-energy electronic, 128 BPM. Full energy from the very first second and stays loud and driving for the entire 30 seconds, never fading out: massive four-on-the-floor kick, heavy sub bass, huge wide synth stabs, dark gritty edge, festival energy. Continuous groove, no breakdown, no ending, no fade. No vocals, no voice, no speech.",
+  "musicLengthMs": 30000
+}

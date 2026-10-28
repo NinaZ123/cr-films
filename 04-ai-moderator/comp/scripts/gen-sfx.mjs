@@ -20,6 +20,9 @@ const CUES = {
   whoosh: { text: "Fast clean cinematic whoosh transition, airy, modern", duration_seconds: 0.8, prompt_influence: 0.6 },
   tick: { text: "Soft digital UI click tick, subtle, clean", duration_seconds: 0.5,   // 接口最短 0.5 秒
     prompt_influence: 0.7 },
+  // 片头：logo 翻转时的"唰"，落定时一声干净的低频定音
+  flip: { text: "Quick sleek swoosh of a logo flipping in 3D, modern tech brand intro, clean", duration_seconds: 0.8, prompt_influence: 0.6 },
+  sting: { text: "Clean modern tech brand logo sting: one deep warm sub impact with a bright shimmering digital chime on top, short tail", duration_seconds: 2.5, prompt_influence: 0.6 },
   ghost: { text: "Short retro 8-bit digital chime, bright and clean, video game power up", duration_seconds: 1.0, prompt_influence: 0.6 },
 };
 

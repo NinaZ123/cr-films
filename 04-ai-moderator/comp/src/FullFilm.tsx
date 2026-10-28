@@ -4,6 +4,7 @@ import {
   useCurrentFrame, useVideoConfig, Easing,
 } from "remotion";
 import { T } from "./theme";
+import { Intro, INTRO_SEC } from "./Intro";
 import { Ghost, PixelGrid } from "./Ghost";
 import {
   Sample, Stage, FloatingUI, Caption, words, s, FPS, DROP_AT,
@@ -20,7 +21,7 @@ const HANDOFF = DROP_AT + 6.2;               // 31.1
 const T_DEPTH = [HANDOFF, HANDOFF + 11.6];   // 31.1–42.7  01 深访
 const T_TEST = [T_DEPTH[1], T_DEPTH[1] + 16.8]; // 42.7–59.5  02 产品测试
 const T_END = [T_TEST[1], T_TEST[1] + 6.2];  // 59.5–65.7  收尾
-export const FILM_TOTAL = s(T_END[1]);
+export const FILM_TOTAL = s(INTRO_SEC + T_END[1]);
 
 // ---------- 章节卡：大号编号 + 标题，从左滑入，背景是像素网格 ----------
 const ChapterCard: React.FC<{ n: string; title: string; sub: string }> = ({ n, title, sub }) => {
@@ -263,21 +264,32 @@ const End: React.FC = () => {
 // ---------- 合成 ----------
 export const FullFilm: React.FC = () => (
   <AbsoluteFill style={{ background: "#000" }}>
+    <Sequence durationInFrames={s(INTRO_SEC)}><Intro /></Sequence>
+    <Sequence from={s(INTRO_SEC)}><Main /></Sequence>
+  </AbsoluteFill>
+);
+
+// 片头之后的正片（时间从 0 算，0–31.1s 是锁定的样片 v6）
+const Main: React.FC = () => (
+  <AbsoluteFill style={{ background: "#000" }}>
     {/* 0–31.1s：已确认的样片，画面和声音都原样 */}
     <Sequence durationInFrames={s(HANDOFF)}><Sample /></Sequence>
 
-    {/* 31.1s 起：样片的 drop 音乐在 Sample 里会继续响到它自己淡出（约 DROP_AT+7）；这里再铺产品段的纯器乐底 */}
-    <Sequence from={s(HANDOFF) - 10} durationInFrames={s(T_TEST[1] - HANDOFF) + 10} layout="none">
-      <Audio src={staticFile("music-inst-bed.mp3")} volume={(fr) => {
-        const t = fr / FPS;
-        const L = T_TEST[1] - HANDOFF;
-        return interpolate(t, [0, 1.2, L - 0.8, L], [0, 0.16, 0.16, 0], clamp);
+    {/* 31.1s 起：接样片"炸"的同风格满能量音乐（music-inst-drive），一路燃到收尾；有对白时压到能听清对白的程度 */}
+    <Sequence from={s(HANDOFF - 1.7)} durationInFrames={s(T_END[0] + 3.2 - HANDOFF + 1.7)} layout="none">
+      <Audio src={staticFile("music-inst-drive.mp3")} volume={(fr) => {
+        const t = fr / FPS + HANDOFF - 1.7;               // 换算成正片时间
+        const talk = (a: number, b: number) => (t > a - 0.25 && t < b + 0.25 ? 1 : 0);
+        const dialogue = Math.max(
+          talk(T_DEPTH[0] + 1.6, T_DEPTH[0] + 11.6),        // 01 对白
+          talk(T_TEST[0] + 4.4, T_TEST[0] + 7.5),           // 02 主持人
+          talk(T_TEST[0] + 9.9, T_TEST[1]),                 // 02 问答
+        );
+        const base = interpolate(t, [HANDOFF - 1.7, HANDOFF, T_END[0] + 2.6, T_END[0] + 3.2], [0.15, 0.75, 0.75, 0], clamp);
+        return base * (dialogue ? 0.32 : 1);
       }} />
     </Sequence>
-    {/* 收尾音乐：最后一击（文件里 12.26s 前后能量最高处之前的大冲击）对齐 logo */}
-    <Sequence from={s(T_END[0]) - s(0.6)} layout="none">
-      <Audio src={staticFile("music-inst-finale.mp3")} startFrom={s(6.0)} volume={(fr) => interpolate(fr / FPS, [0, 0.6, 5.6, 6.8], [0, 0.6, 0.6, 0], clamp)} />
-    </Sequence>
+    {/* 收尾：drive 一路燃到三拍大字，logo 落定时音乐切断，只剩最后一记冲击 + 定音 */}
     {/* 章节转场 whoosh */}
     {[T_DEPTH[0], T_TEST[0]].map((t) => (
       <Sequence key={t} from={s(t) - 6} layout="none"><Audio src={staticFile("sfx/whoosh.mp3")} volume={0.7} /></Sequence>
@@ -287,7 +299,7 @@ export const FullFilm: React.FC = () => (
       <Sequence key={d} from={s(T_END[0] + d) - 10} layout="none"><Audio src={staticFile("sfx/hit.mp3")} volume={0.7} /></Sequence>
     ))}
     <Sequence from={s(T_END[0] + 3.0) - 10} layout="none"><Audio src={staticFile("sfx/hit.mp3")} volume={0.95} /></Sequence>
-    <Sequence from={s(T_END[0] + 3.0) + 6} layout="none"><Audio src={staticFile("sfx/ghost.mp3")} volume={0.8} /></Sequence>
+    <Sequence from={s(T_END[0] + 3.0) - 3} layout="none"><Audio src={staticFile("sfx/sting.mp3")} volume={0.9} /></Sequence>
 
     {/* 对白 */}
     <Sequence from={s(T_DEPTH[0] + 1.6)} durationInFrames={s(10.0)} layout="none">
