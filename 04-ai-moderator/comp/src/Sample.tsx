@@ -283,8 +283,16 @@ export const BoomLogo: React.FC<{ since: number }> = ({ since }) => {
 };
 
 // ---------- 合成 ----------
-export const Sample: React.FC = () => (
+// music="v6"（默认）：锁定样片的声音，一点不改。
+// music="film"：完整版用。冷开场 + 主标改用旧的 music-b-full（demucs 去掉人声的纯器乐版），
+// 和 tavas-0.0.mov 参考片一样从 0 秒起，第一拍正好落在主标；之后压低垫在对白下，进 drop 前淡出。
+export const Sample: React.FC<{ music?: "v6" | "film" }> = ({ music = "v6" }) => (
   <AbsoluteFill style={{ background: "#000" }}>
+    {music === "film" ? (
+      <Audio src={staticFile("music-b-full-inst.mp3")} volume={(fr) => interpolate(fr / FPS,
+        [0, HIT[0] - 0.05, HIT[0], T_QUAL[0] - 0.2, T_QUAL[0] + 0.4, DROP_AT - 4.6, DROP_AT - 3.4],
+        [0.16, 0.18, 0.6, 0.55, 0.12, 0.12, 0], clamp)} />
+    ) : <>
     {/* 前半段：不用整段音乐（ElevenLabs 分段生成的音乐里混进了很轻的人声，听着像背景里有别的访谈），
         改成音效：冷开场一层安静的暗底，主标三拍各一记重低音冲击，最后一拍后接长尾，logo 出现时一声 8-bit */}
     <Sequence durationInFrames={s(T_COLD[1])} layout="none">
@@ -299,6 +307,7 @@ export const Sample: React.FC = () => (
     <Sequence from={s(HIT[2]) + 4} layout="none">
       <Audio src={staticFile("sfx/tail.mp3")} volume={(fr) => interpolate(fr / FPS, [0, 2.6, 3.4], [0.55, 0.4, 0], clamp)} />
     </Sequence>
+    </>}
     <Sequence from={s(T_LOGO[0] + 0.95)} layout="none"><Audio src={staticFile("sfx/ghost.mp3")} volume={0.9} /></Sequence>
     {/* 炸：纯器乐版（forceInstrumental），实测 4.53s 第一拍，对齐到 DROP_AT */}
     <Sequence from={s(DROP_AT - 4.53)} layout="none">
