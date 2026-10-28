@@ -11,7 +11,7 @@ import { Ghost, GhostBurst, PixelGrid } from "./Ghost";
 // 一屏只讲一件事。
 export const FPS = 30;
 export const s = (sec: number) => Math.round(sec * FPS);
-export const SAMPLE_TOTAL = s(33);
+export const SAMPLE_TOTAL = s(31);
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const ease = Easing.bezier(0.16, 1, 0.3, 1);
@@ -20,11 +20,11 @@ const inOut = Easing.bezier(0.65, 0, 0.35, 1);
 // 时间轴（秒）。主标三拍沿用之前对 B 版音乐卡的点；现在前半段只用音效，冲击音落在这三拍上
 export const HIT = [5.37, 6.03, 6.69];
 export const T_COLD = [0, 5.37];
-export const T_TITLE = [5.37, 8.6];
-export const T_LOGO = [8.6, 10.4];
-export const T_QUAL = [10.4, 24.9];   // 包袱：AI 问 → 没听懂 → 道歉换个问法（对白 0–14.0s）
-export const DROP_AT = 24.9;           // 炸：music-drop 的第一拍（道歉说到 "I just meant…" 后停 0.5 秒）
-export const T_BOOM = [24.9, 33.0];
+export const T_TITLE = [5.37, 8.1];
+export const T_LOGO = [8.1, 9.5];
+export const T_QUAL = [9.5, 22.7];    // 包袱：AI 问 → 没听懂 → 道歉换个问法（对白 0–14.0s）
+export const DROP_AT = 22.7;           // 炸：music-drop 的第一拍（道歉说到 "I just meant…" 后停 0.5 秒）
+export const T_BOOM = [22.7, 31.0];
 
 // ---------- 背景空间 ----------
 export const Stage: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
@@ -186,18 +186,20 @@ export const Qual: React.FC = () => {
   const f = useCurrentFrame();
   const t = f / FPS;
   const r = (sec: number) => s(sec);                // 本段秒数 → 帧
-  const pan = interpolate(f, [r(6.1), r(10.6)], [0, 1], { ...clamp, easing: inOut });
+  // 三段（v15 起压缩了说完话的空白）：A 提问 0–5.5 ｜ B 没听懂 5.5–9.95（原声 6.1 起）｜ C 道歉 10.65 起（原声 11.9 起）
+  const QA = 5.5, QB = 9.95, QC = 10.65;
+  const pan = interpolate(f, [r(QA), r(QB)], [0, 1], { ...clamp, easing: inOut });
   return (
     <AbsoluteFill>
       {/* AI 提问：主持人居中特写 */}
-      <Sequence durationInFrames={r(6.1)}>
-        <AbsoluteFill style={{ transform: `scale(${interpolate(f, [0, r(6.1)], [1.0, 1.04])})` }}>
+      <Sequence durationInFrames={r(QA)}>
+        <AbsoluteFill style={{ transform: `scale(${interpolate(f, [0, r(QA)], [1.0, 1.04])})` }}>
           <OffthreadVideo src={staticFile("clips/hd-qa.mp4")} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </AbsoluteFill>
         <Caption who="AI Moderator" ai words={words("As@0.00 you@0.36 continue@0.88 wearing@1.14 them@1.50 and@1.80 listening,@2.00 what,@2.94 if@3.54 anything,@3.84 changes?@4.60")} keys={["changes?"]} />
       </Sequence>
       {/* 受访者没听懂：切到完整界面，镜头往右上角他的小窗推 */}
-      <Sequence from={r(6.1)} durationInFrames={r(11.9) - r(6.1)}>
+      <Sequence from={r(QA)} durationInFrames={r(QB) - r(QA)}>
         <Stage>
           <PixelGrid opacity={0.4} />
           <div style={{ position: "absolute", inset: 0, transform: `translate(${-pan * 520}px, ${pan * 230}px) scale(${1 + pan * 0.75})` }}>
@@ -207,8 +209,8 @@ export const Qual: React.FC = () => {
         </Stage>
       </Sequence>
       {/* AI 道歉、换个问法：主持人居中特写 */}
-      <Sequence from={r(11.9)}>
-        <AbsoluteFill style={{ transform: `scale(${interpolate(f - r(11.9), [0, s(3)], [1.0, 1.05])})` }}>
+      <Sequence from={r(QC)}>
+        <AbsoluteFill style={{ transform: `scale(${interpolate(f - r(QC), [0, s(3)], [1.0, 1.05])})` }}>
           <OffthreadVideo src={staticFile("clips/hd-qa.mp4")} muted startFrom={r(11.9)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </AbsoluteFill>
         <Caption who="AI Moderator" ai words={words("Sorry@0.26 about@0.82 that.@1.02 I@1.80 just@1.90 meant…@2.04")} keys={["Sorry"]} />
@@ -220,11 +222,13 @@ export const Qual: React.FC = () => {
 // 炸：音乐 drop 进来，大字一句一句砸，介绍产品
 const BOOM_LINES: { at: number; lines: React.ReactNode[]; bg?: string; startFrom?: number }[] = [
   { at: 0.0, lines: [<>Not a script.</>, <span style={{ color: T.accent }}>A conversation.</span>], bg: "clips/hd-qa.mp4", startFrom: 14.2 },
-  { at: 1.9, lines: [<>It listens.</>], bg: "clips/hd-listen.mp4" },
-  { at: 2.85, lines: [<>It follows up.</>], bg: "clips/hd-q6.mp4", startFrom: 1.8 },
-  { at: 3.8, lines: [<>It rephrases.</>], bg: "clips/hd-qa.mp4", startFrom: 12.2 },
-  { at: 4.75, lines: [<>Qual depth.</>, <span style={{ color: T.accent }}>Quant scale.</span>] },
-  { at: 6.2, lines: [] },
+  { at: 1.2, lines: [<>It listens.</>], bg: "clips/hd-listen.mp4" },
+  { at: 1.9, lines: [<>It follows up.</>], bg: "clips/hd-q6.mp4", startFrom: 1.8 },
+  { at: 2.6, lines: [<>It rephrases.</>], bg: "clips/hd-qa.mp4", startFrom: 12.2 },
+  { at: 3.3, lines: [<>Remember this day.</>] },
+  { at: 4.1, lines: [<>User Research.</>] },
+  { at: 4.9, lines: [<span style={{ color: T.accent }}>Changed forever.</span>] },
+  { at: 6.0, lines: [] },
 ];
 export const Boom: React.FC = () => {
   const f = useCurrentFrame();
@@ -333,9 +337,12 @@ export const Sample: React.FC<{ music?: "v6" | "film" }> = ({ music = "v6" }) =>
     <Sequence from={s(0.4)} durationInFrames={s(4.6)} layout="none"><Audio src={staticFile("vo/q1.mp3")} /></Sequence>
     {/* 包袱：一整段连续原声，不剪断对话 */}
     {/* 只播到 "I just meant…"（14.1s），后面留约 0.4 秒空白再接 drop */}
-    <Sequence from={s(T_QUAL[0])} durationInFrames={s(14.3)} layout="none">
-      <Audio src={staticFile("vo/qa.mp3")} volume={(fr) => interpolate(fr, [s(14.05), s(14.3)], [1, 0], clamp)} />
-    </Sequence>
+    {/* v15：拆成三段，剪掉说完话的空白（画面在 Qual 里按同样的三段切）；只播到 "I just meant…" */}
+    {[[0, 0, 5.5], [5.5, 6.1, 4.45], [10.65, 11.9, 2.55]].map(([at, from, dur]) => (
+      <Sequence key={at} from={s(T_QUAL[0] + at)} durationInFrames={s(dur)} layout="none">
+        <Audio src={staticFile("vo/qa.mp3")} startFrom={s(from)} volume={(fr) => interpolate(fr, [0, 3, s(dur) - 5, s(dur)], [0, 1, 1, 0], clamp)} />
+      </Sequence>
+    ))}
 
     <Sequence from={s(T_COLD[0])} durationInFrames={s(T_COLD[1] - T_COLD[0])}><Cold /></Sequence>
     <Sequence from={s(T_TITLE[0])} durationInFrames={s(T_TITLE[1] - T_TITLE[0])}><Headline /></Sequence>

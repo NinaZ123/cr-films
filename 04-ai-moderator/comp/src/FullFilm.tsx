@@ -17,12 +17,24 @@ const ease = Easing.bezier(0.16, 1, 0.3, 1);
 const inOut = Easing.bezier(0.65, 0, 0.35, 1);
 
 // 样片里"炸"那段最后是 logo（DROP_AT + 6.2 起），完整版在这里接走
-const HANDOFF = DROP_AT + 6.2;               // 31.1
-const T_DEPTH = [HANDOFF, HANDOFF + 11.6];   // 31.1–42.7  01 深访
-const T_TEST = [T_DEPTH[1], T_DEPTH[1] + 16.8]; // 42.7–59.5  02 产品测试
-const T_END = [T_TEST[1], T_TEST[1] + 6.2];  // 59.5–65.7  收尾
+// v15：整片压到 60 秒内。各段内部的节点都写在这里，画面和对白共用，改一处就一起动。
+const HANDOFF = DROP_AT + 6.0;               // 28.7
+// 01 深访：章节卡 → 1 秒耳机空镜 → 他说 outfit → AI 追问
+const D = { card: 1.0, hero: 0.8, p: 3.55, gap: 0.4, m: 5.0, tail: 0.15 };
+const D_P = D.card + D.hero;                 // 他开口
+const D_M = D_P + D.p + D.gap;               // AI 开口（vo/outfit.mp3 6.9s 起）
+const D_LEN = D_M + D.m + D.tail;            // 10.9
+// 02 产品测试：章节卡 → 护手霜空镜 → 膏体 → AI 说试试 → 侧拍挤出来 → 完整界面问感受
+const P = { card: 1.0, hero: 0.8, macro: 0.5, ask: 2.9, side: 1.3, feel: 7.0 };
+const P_HERO = P.card, P_MACRO = P_HERO + P.hero, P_ASK = P_MACRO + P.macro, P_SIDE = P_ASK + P.ask, P_FEEL = P_SIDE + P.side;
+const P_LEN = P_FEEL + P.feel;               // 13.5
+const END_LOGO = 2.4;                        // 收尾三拍之后 logo 落定
+const END_LEN = 5.0;
+const T_DEPTH = [HANDOFF, HANDOFF + D_LEN];
+const T_TEST = [T_DEPTH[1], T_DEPTH[1] + P_LEN];
+const T_END = [T_TEST[1], T_TEST[1] + END_LEN];
 const BED_IN = DROP_AT + 3.6;                 // 结尾大鼓段开始收的时候接史诗配乐
-const EPIC_SHIFT = BED_IN - 30.4;             // 正片时间 - hype-b 时间：从它 26–30s 的停顿之后（30.4s 起往上冲）切入，不留空
+const EPIC_SHIFT = T_END[0] + END_LOGO - 61.0; // 正片时间 - hype-b 时间：它 61.0s 的最后一记大鼓落在收尾 logo 上（切入点约在它 31.8s，停顿之后往上冲的地方）
 export const FILM_TOTAL = s(INTRO_SEC + T_END[1]);
 
 // ---------- 章节卡：大号编号 + 标题，从左滑入，背景是像素网格 ----------
@@ -149,19 +161,20 @@ const UIPan: React.FC<{ src: string; startFrom?: number; push: [number, number];
 // vo/outfit.mp3（原片 35.0s 起）："Oh, and the third purpose actually is part of the outfit. So, that's it."
 //   "That's interesting. You mentioned them being part of the outfit. What makes you say that?"
 const Depth: React.FC = () => {
-  const card = s(1.6);
-  const p0 = card;                   // 他说话，从音频 0.6s（"and the third…"）开始
-  const m0 = card + s(6.3);          // 主持人追问，音频 7.0s（"That's interesting"）
+  const card = s(D.card);
+  const p0 = s(D_P);                 // 他说话，从音频 0.6s（"and the third…"）开始
+  const m0 = s(D_M);                 // 主持人追问，音频 6.9s 起（"That's interesting" 在 7.04s）
   return (
     <AbsoluteFill>
       <Sequence durationInFrames={card}><ChapterCard n="01" title="Depth interview" sub="IT DIGS DEEPER" /></Sequence>
+      <Sequence from={card} durationInFrames={p0 - card}><ProductShot src="clips/hp-hero.mp4" startFrom={s(3.0)} label="Headphones" /></Sequence>
       <Sequence from={p0} durationInFrames={m0 - p0}>
         <UIPan src="clips/ui-outfit.mp4" startFrom={s(0.6)} push={[0, s(3.4)]}>
           <Caption who="Participant" words={words("the@0.02 third@0.30 purpose@0.60 actually@1.06 is@1.60 part@2.24 of@2.52 the@2.74 outfit.@2.96")} keys={["outfit."]} />
         </UIPan>
       </Sequence>
       <Sequence from={m0}>
-        <ModClose src="clips/hd-q6b.mp4" startFrom={0} dur={5.3}>
+        <ModClose src="clips/hd-q6b.mp4" startFrom={0} dur={D.m + D.tail}>
           <Caption who="AI Moderator" ai words={words("That's@0.14 interesting.@0.68 You@1.86 mentioned@2.02 them@2.28 being@2.50 part@2.68 of@2.96 the@3.08 outfit.@3.14 What@4.10 makes@4.24 you@4.42 say@4.54 that?@4.72")} keys={["outfit.", "What"]} />
           <Sequence from={s(2.9)}><Corner>It hears<br /><span style={{ color: T.accent }}>what you meant.</span></Corner></Sequence>
         </ModClose>
@@ -174,10 +187,10 @@ const Depth: React.FC = () => {
 // vo/tryit.mp3（原片 82.0s 起）："I understand. Let's try this one. Go ahead and put some of the cream on your hand."
 // vo/feel.mp3（原片 96.5s 起）："What does it feel like on your skin right now?" / "It feels very wet and have a good smell, moisturizing and hydrating."
 const Test: React.FC = () => {
-  const card = s(1.6);
-  const hero = card, macro = hero + s(1.7), ask = macro + s(1.1);
-  const side = ask + s(3.1);         // 侧拍：她拿起护手霜、挤到手上
-  const feel = side + s(2.4);
+  const card = s(P.card);
+  const hero = s(P_HERO), macro = s(P_MACRO), ask = s(P_ASK);
+  const side = s(P_SIDE);            // 侧拍：她拿起护手霜、挤到手上
+  const feel = s(P_FEEL);
   return (
     <AbsoluteFill>
       <Sequence durationInFrames={card}><ChapterCard n="02" title="Live product test" sub="THEY TRY IT. IT ASKS." /></Sequence>
@@ -185,7 +198,7 @@ const Test: React.FC = () => {
       <Sequence from={macro} durationInFrames={ask - macro}><ProductShot src="clips/hc-macro.mp4" startFrom={s(2.6)} /></Sequence>
       {/* 主持人："Let's try this one. Go ahead and put some of the cream on your hand." */}
       <Sequence from={ask} durationInFrames={feel - ask}>
-        <ModClose src="clips/hd-q2.mp4" startFrom={s(1.1)} dur={3.1}>
+        <ModClose src="clips/hd-q2.mp4" startFrom={s(1.1)} dur={P.ask}>
           <Caption who="AI Moderator" ai words={words("Let's@0.10 try@0.42 this@0.52 one.@0.72 Go@1.22 ahead@1.34 and@1.50 put@1.60 some@1.72 of@1.88 the@1.96 cream@2.02 on@2.22 your@2.38 hand.@2.52")} keys={["cream"]} />
         </ModClose>
       </Sequence>
@@ -214,14 +227,14 @@ const Test: React.FC = () => {
 // ---------- 收尾 ----------
 const END_LINES = [
   { at: 0.0, l1: "Hour-long.", l2: "" },
-  { at: 0.75, l1: "Hour-long.", l2: "Live." },
-  { at: 1.5, l1: "Hour-long.", l2: "Live. On camera." },
+  { at: 0.6, l1: "Hour-long.", l2: "Live." },
+  { at: 1.2, l1: "Hour-long.", l2: "Live. On camera." },
 ];
 const End: React.FC = () => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = f / FPS;
-  const logoAt = s(3.0);
+  const logoAt = s(END_LOGO);
   if (f < logoAt) {
     const cur = [...END_LINES].reverse().find((e) => t >= e.at)!;
     const since = f - s(cur.at);
@@ -281,16 +294,16 @@ const Main: React.FC = () => (
 
     {/* drop 之后到片尾：一整首预告片式史诗配乐（music-inst-hype-b：braams、太鼓、弦乐推进），中间不换歌。
         drop 结尾大鼓收掉时，从它停顿之后往上冲的地方接进来，一路往上推（它 61s 的大鼓落在收尾三拍上）。有对白时压低。 */}
-    <Sequence from={s(BED_IN)} durationInFrames={s(T_END[0] + 3.4 - BED_IN)} layout="none">
+    <Sequence from={s(BED_IN)} durationInFrames={s(T_END[0] + END_LOGO + 0.4 - BED_IN)} layout="none">
       <Audio src={staticFile("music-inst-hype-b.mp3")} startFrom={s(BED_IN - EPIC_SHIFT)} volume={(fr) => {
         const t = fr / FPS + BED_IN;
         const talk = (a: number, b: number) => (t > a - 0.25 && t < b + 0.25 ? 1 : 0);
         const dialogue = Math.max(
-          talk(T_DEPTH[0] + 1.6, T_DEPTH[0] + 11.6),
-          talk(T_TEST[0] + 4.4, T_TEST[0] + 7.5),
-          talk(T_TEST[0] + 9.9, T_TEST[1]),
+          talk(T_DEPTH[0] + D_P, T_DEPTH[1]),
+          talk(T_TEST[0] + P_ASK, T_TEST[0] + P_SIDE),
+          talk(T_TEST[0] + P_FEEL, T_TEST[1]),
         );
-        const base = interpolate(t, [BED_IN, BED_IN + 1.0, T_END[0] + 3.0, T_END[0] + 3.4], [0.5, 0.75, 0.85, 0], clamp);
+        const base = interpolate(t, [BED_IN, BED_IN + 1.0, T_END[0] + END_LOGO, T_END[0] + END_LOGO + 0.4], [0.5, 0.75, 0.85, 0], clamp);
         return base * (dialogue ? 0.4 : 1);
       }} />
     </Sequence>
@@ -300,25 +313,26 @@ const Main: React.FC = () => (
       <Sequence key={t} from={s(t) - 6} layout="none"><Audio src={staticFile("sfx/whoosh.mp3")} volume={0.7} /></Sequence>
     ))}
     {/* 收尾三拍、logo */}
-    {[0, 0.75, 1.5].map((d) => (
+    {[0, 0.6, 1.2].map((d) => (
       <Sequence key={d} from={s(T_END[0] + d) - 10} layout="none"><Audio src={staticFile("sfx/hit.mp3")} volume={0.7} /></Sequence>
     ))}
-    <Sequence from={s(T_END[0] + 3.0) - 10} layout="none"><Audio src={staticFile("sfx/hit.mp3")} volume={0.95} /></Sequence>
-    <Sequence from={s(T_END[0] + 3.0) - 3} layout="none"><Audio src={staticFile("sfx/sting.mp3")} volume={0.9} /></Sequence>
+    <Sequence from={s(T_END[0] + END_LOGO) - 10} layout="none"><Audio src={staticFile("sfx/hit.mp3")} volume={0.95} /></Sequence>
+    <Sequence from={s(T_END[0] + END_LOGO) - 3} layout="none"><Audio src={staticFile("sfx/sting.mp3")} volume={0.9} /></Sequence>
 
     {/* 对白 */}
-    <Sequence from={s(T_DEPTH[0] + 1.6)} durationInFrames={s(10.0)} layout="none">
-      <Audio src={staticFile("vo/outfit.mp3")} startFrom={s(0.6)} volume={(fr) => {
-        // 跳过中间 "So, that's it."（音频 4.5–6.9s），只留他那句和主持人追问
-        const t = fr / FPS + 0.6;
-        return t > 4.2 && t < 6.9 ? 0 : 1;
-      }} />
+    {/* 01：他那句（音频 0.6–4.15）和 AI 追问（6.9–11.9）各一段，中间 "So, that's it." 和空白都剪掉 */}
+    <Sequence from={s(T_DEPTH[0] + D_P)} durationInFrames={s(D.p)} layout="none">
+      <Audio src={staticFile("vo/outfit.mp3")} startFrom={s(0.6)} volume={(fr) => interpolate(fr, [s(D.p) - 4, s(D.p)], [1, 0], clamp)} />
     </Sequence>
-    <Sequence from={s(T_TEST[0] + 1.6 + 1.7 + 1.1)} durationInFrames={s(3.1)} layout="none">
+    <Sequence from={s(T_DEPTH[0] + D_M)} durationInFrames={s(D.m)} layout="none">
+      <Audio src={staticFile("vo/outfit.mp3")} startFrom={s(6.9)} />
+    </Sequence>
+    {/* 02：只到 "…on your hand."（音频 3.84）；感受那句播到 "good smell,"（7.02）淡出 */}
+    <Sequence from={s(T_TEST[0] + P_ASK)} durationInFrames={s(P.ask)} layout="none">
       <Audio src={staticFile("vo/tryit.mp3")} startFrom={s(1.1)} />
     </Sequence>
-    <Sequence from={s(T_TEST[0] + 1.6 + 1.7 + 1.1 + 3.1 + 2.4)} durationInFrames={s(T_TEST[1] - (T_TEST[0] + 9.9))} layout="none">
-      <Audio src={staticFile("vo/feel.mp3")} volume={(fr) => interpolate(fr / FPS, [8.4, 8.9], [1, 0], clamp)} />
+    <Sequence from={s(T_TEST[0] + P_FEEL)} durationInFrames={s(P.feel)} layout="none">
+      <Audio src={staticFile("vo/feel.mp3")} volume={(fr) => interpolate(fr / FPS, [P.feel - 0.25, P.feel], [1, 0], clamp)} />
     </Sequence>
 
     <Sequence from={s(T_DEPTH[0])} durationInFrames={s(T_DEPTH[1] - T_DEPTH[0])}><Depth /></Sequence>
