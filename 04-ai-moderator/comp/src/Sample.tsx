@@ -286,6 +286,8 @@ export const BoomLogo: React.FC<{ since: number }> = ({ since }) => {
 // music="v6"（默认）：锁定样片的声音，一点不改。
 // music="film"：完整版用。按 tavas-0.0.mov 参考片，用原版 music-b-full（带人声的炸裂版），
 // 主标一次、drop 再一次；drop 不再用 music-inst-drop。
+// music-b-full 结尾大鼓段的第一拍（实测）
+export const B_FINALE = 46.0;
 export const Sample: React.FC<{ music?: "v6" | "film" }> = ({ music = "v6" }) => (
   <AbsoluteFill style={{ background: "#000" }}>
     {music === "film" ? <>
@@ -294,9 +296,10 @@ export const Sample: React.FC<{ music?: "v6" | "film" }> = ({ music = "v6" }) =>
       <Audio src={staticFile("music-b-full.mp3")} volume={(fr) => interpolate(fr / FPS,
         [0, HIT[0] - 0.05, HIT[0], T_QUAL[0] - 0.2, T_QUAL[0] + 0.4, DROP_AT - 0.7, DROP_AT - 0.35],
         [0.16, 0.18, 0.7, 0.65, 0.16, 0.16, 0], clamp)} />
-      {/* 第二次：drop 处把同一首歌的炸裂段（5.37s 第一拍）再砸一次，接着往下放 */}
-      <Sequence from={s(DROP_AT - 0.3)} layout="none">
-        <Audio src={staticFile("music-b-full.mp3")} startFrom={s(HIT[0] - 0.3)} volume={(fr) => interpolate(fr / FPS, [0, 0.3], [0.5, 0.85], clamp)} />
+      {/* 第二次：drop 用同一首歌的后半段——46.0s 起的结尾大鼓段（前面 45.4–46.0s 本来就有一拍空，正好接包袱后的停顿），
+          这段没有人唱，约 4.8 秒后自然收尾 */}
+      <Sequence from={s(DROP_AT - 0.6)} layout="none">
+        <Audio src={staticFile("music-b-full.mp3")} startFrom={s(B_FINALE - 0.6)} volume={0.9} />
       </Sequence>
     </> : <>
     {/* 前半段：不用整段音乐（ElevenLabs 分段生成的音乐里混进了很轻的人声，听着像背景里有别的访谈），

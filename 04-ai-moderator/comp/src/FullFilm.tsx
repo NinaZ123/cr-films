@@ -21,6 +21,7 @@ const HANDOFF = DROP_AT + 6.2;               // 31.1
 const T_DEPTH = [HANDOFF, HANDOFF + 11.6];   // 31.1–42.7  01 深访
 const T_TEST = [T_DEPTH[1], T_DEPTH[1] + 16.8]; // 42.7–59.5  02 产品测试
 const T_END = [T_TEST[1], T_TEST[1] + 6.2];  // 59.5–65.7  收尾
+const BED_IN = DROP_AT + 3.6;                 // 结尾大鼓段开始收的时候接器乐垫底
 export const FILM_TOTAL = s(INTRO_SEC + T_END[1]);
 
 // ---------- 章节卡：大号编号 + 标题，从左滑入，背景是像素网格 ----------
@@ -272,15 +273,16 @@ export const FullFilm: React.FC = () => (
 // 片头之后的正片（时间从 0 算，0–31.1s 是锁定的样片 v6）
 const Main: React.FC = () => (
   <AbsoluteFill style={{ background: "#000" }}>
-    {/* 0–31.1s：已确认的样片画面；声音换成 film 版（music-b-full 带人声原版：主标一次、drop 再一次） */}
+    {/* 0–31.1s：已确认的样片画面；声音换成 film 版（music-b-full 原版：主标用带人声的炸裂段，drop 用同一首的结尾大鼓段） */}
     <Sequence durationInFrames={s(HANDOFF)}><Sample music="film" /></Sequence>
 
-    {/* drop 之后：样片里第二次砸下来的 music-b-full 继续往下放，压低垫在 01 深访对白下；
-        进 02 产品测试时交叉换到 drive，收尾三拍推满 */}
-    <Sequence from={s(HANDOFF)} durationInFrames={s(T_TEST[0] + 1.5 - HANDOFF)} layout="none">
-      <Audio src={staticFile("music-b-full.mp3")} startFrom={s(HIT[0] + HANDOFF - DROP_AT)} volume={(fr) => {
-        const t = fr / FPS + HANDOFF;
-        return interpolate(t, [HANDOFF, T_DEPTH[0] + 1.2, T_TEST[0] - 0.3, T_TEST[0] + 1.5], [0.85, 0.2, 0.2, 0], clamp);
+    {/* drop 之后：结尾大鼓段收尾时（约 29.3s）接同一首歌去掉人声的器乐（demucs 分离，10s 起的 Verse 段，只剩鼓和律动），
+        垫在 01 深访对白下，不出歌词；进 02 产品测试时交叉换到 drive，收尾三拍推满 */}
+    <Sequence from={s(BED_IN)} durationInFrames={s(T_TEST[0] + 1.5 - BED_IN)} layout="none">
+      <Audio src={staticFile("music-b-full-inst.mp3")} startFrom={s(10)} volume={(fr) => {
+        const t = fr / FPS + BED_IN;
+        return interpolate(t, [BED_IN, BED_IN + 0.8, HANDOFF + 0.4, T_DEPTH[0] + 1.4, T_TEST[0] - 0.3, T_TEST[0] + 1.5],
+          [0, 0.7, 0.7, 0.3, 0.3, 0], clamp);
       }} />
     </Sequence>
     <Sequence from={s(T_TEST[0] - 0.3)} durationInFrames={s(T_END[0] + 3.2 - T_TEST[0] + 0.3)} layout="none">
