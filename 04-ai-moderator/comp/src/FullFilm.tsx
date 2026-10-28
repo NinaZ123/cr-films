@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  AbsoluteFill, Audio, OffthreadVideo, Sequence, interpolate, spring, staticFile,
+  AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, spring, staticFile,
   useCurrentFrame, useVideoConfig, Easing,
 } from "remotion";
 import { T } from "./theme";
@@ -35,7 +35,7 @@ const T_TEST = [T_DEPTH[1], T_DEPTH[1] + P_LEN];
 const T_END = [T_TEST[1], T_TEST[1] + END_LEN];
 const BED_IN = DROP_AT + 3.6;                 // 结尾大鼓段开始收的时候接史诗配乐
 const EPIC_SHIFT = T_END[0] + END_LOGO - 61.0; // 正片时间 - hype-b 时间：它 61.0s 的最后一记大鼓落在收尾 logo 上（切入点约在它 31.8s，停顿之后往上冲的地方）
-export const FILM_TOTAL = s(INTRO_SEC + T_END[1]);
+export const FILM_TOTAL = 2 + s(INTRO_SEC + T_END[1]);
 
 // ---------- 章节卡：大号编号 + 标题，从左滑入，背景是像素网格 ----------
 const ChapterCard: React.FC<{ n: string; title: string; sub: string }> = ({ n, title, sub }) => {
@@ -279,10 +279,15 @@ const End: React.FC = () => {
 };
 
 // ---------- 合成 ----------
+// 首帧：播放器没点开时显示的是第 0 帧，所以把片头落定那一帧的截图（public/poster.png，= 片头 1.1s）
+// 静态放在最前面 2 帧，不然封面是黑的。用截图而不是重放片头，是为了不带进片头的音效。之后片头从头正常播。
+const POSTER_FRAMES = 2;
+const Poster: React.FC = () => <Img src={staticFile("poster.png")} style={{ width: "100%", height: "100%" }} />;
 export const FullFilm: React.FC = () => (
   <AbsoluteFill style={{ background: "#000" }}>
-    <Sequence durationInFrames={s(INTRO_SEC)}><Intro /></Sequence>
-    <Sequence from={s(INTRO_SEC)}><Main /></Sequence>
+    <Sequence durationInFrames={POSTER_FRAMES}><Poster /></Sequence>
+    <Sequence from={POSTER_FRAMES} durationInFrames={s(INTRO_SEC)}><Intro /></Sequence>
+    <Sequence from={POSTER_FRAMES + s(INTRO_SEC)}><Main /></Sequence>
   </AbsoluteFill>
 );
 
