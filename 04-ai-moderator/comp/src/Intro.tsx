@@ -4,8 +4,8 @@ import { T } from "./theme";
 import { Ghost } from "./Ghost";
 
 // 标准片头：小幽灵 logo 从侧面翻转进来（3D Y 轴），落定后一道扫光，文字从下浮出，然后整体淡出。
-// 约 3.2 秒。声音：翻转一声"唰"，落定一声定音。
-export const INTRO_SEC = 3.2;
+// 约 1.6 秒（v9 起缩短一半）。声音：翻转一声"唰"，落定一声定音。
+export const INTRO_SEC = 1.6;
 const FPS = 30;
 const s = (sec: number) => Math.round(sec * FPS);
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
@@ -15,14 +15,14 @@ export const Intro: React.FC = () => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   // 翻转：从 -90°（侧面，看不见）转到 0°，带一点回弹
-  const flip = spring({ frame: f - 4, fps, config: { damping: 14, stiffness: 90, mass: 0.9 } });
+  const flip = spring({ frame: f - 1, fps, config: { damping: 15, stiffness: 190, mass: 0.7 } });
   const rotY = -90 + 90 * flip;
-  const land = s(0.75);                                  // 基本转正的时刻
-  const word = interpolate(f, [land, land + 14], [0, 1], { ...clamp, easing: ease });
-  const tag = interpolate(f, [land + 10, land + 24], [0, 1], { ...clamp, easing: ease });
-  const sweep = interpolate(f, [land + 4, land + 26], [-0.3, 1.3], clamp);
-  const glow = interpolate(f, [land - 4, land + 6, land + 40], [0, 1, 0.45], clamp);
-  const out = interpolate(f, [s(INTRO_SEC) - 10, s(INTRO_SEC)], [1, 0], clamp);
+  const land = s(0.4);                                   // 基本转正的时刻
+  const word = interpolate(f, [land, land + 8], [0, 1], { ...clamp, easing: ease });
+  const tag = interpolate(f, [land + 5, land + 12], [0, 1], { ...clamp, easing: ease });
+  const sweep = interpolate(f, [land + 2, land + 14], [-0.3, 1.3], clamp);
+  const glow = interpolate(f, [land - 3, land + 4, land + 22], [0, 1, 0.45], clamp);
+  const out = interpolate(f, [s(INTRO_SEC) - 6, s(INTRO_SEC)], [1, 0], clamp);
   const cell = 22;
   return (
     <AbsoluteFill style={{ background: "#050605", opacity: out }}>
@@ -47,7 +47,7 @@ export const Intro: React.FC = () => {
           INTRODUCING
         </div>
       </AbsoluteFill>
-      <Sequence from={2} layout="none"><Audio src={staticFile("sfx/flip.mp3")} volume={0.7} /></Sequence>
+      <Sequence from={0} layout="none"><Audio src={staticFile("sfx/flip.mp3")} volume={0.7} /></Sequence>
       <Sequence from={land - 5} layout="none"><Audio src={staticFile("sfx/sting.mp3")} volume={0.85} /></Sequence>
     </AbsoluteFill>
   );

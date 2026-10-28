@@ -275,17 +275,17 @@ const Main: React.FC = () => (
     {/* 0–31.1s：已确认的样片，画面和声音都原样 */}
     <Sequence durationInFrames={s(HANDOFF)}><Sample /></Sequence>
 
-    {/* 31.1s 起：接样片"炸"的同风格满能量音乐（music-inst-drive），一路燃到收尾；有对白时压到能听清对白的程度 */}
-    <Sequence from={s(HANDOFF - 1.7)} durationInFrames={s(T_END[0] + 3.2 - HANDOFF + 1.7)} layout="none">
+    {/* 31.1s 起（不提前叠，保证前 31.1s 声音和样片 v6 一模一样）：接样片"炸"的同风格满能量音乐（music-inst-drive），一路燃到收尾；有对白时压到能听清对白的程度 */}
+    <Sequence from={s(HANDOFF)} durationInFrames={s(T_END[0] + 3.2 - HANDOFF)} layout="none">
       <Audio src={staticFile("music-inst-drive.mp3")} volume={(fr) => {
-        const t = fr / FPS + HANDOFF - 1.7;               // 换算成正片时间
+        const t = fr / FPS + HANDOFF;                     // 换算成正片时间
         const talk = (a: number, b: number) => (t > a - 0.25 && t < b + 0.25 ? 1 : 0);
         const dialogue = Math.max(
           talk(T_DEPTH[0] + 1.6, T_DEPTH[0] + 11.6),        // 01 对白
           talk(T_TEST[0] + 4.4, T_TEST[0] + 7.5),           // 02 主持人
           talk(T_TEST[0] + 9.9, T_TEST[1]),                 // 02 问答
         );
-        const base = interpolate(t, [HANDOFF - 1.7, HANDOFF, T_END[0] + 2.6, T_END[0] + 3.2], [0.15, 0.75, 0.75, 0], clamp);
+        const base = interpolate(t, [HANDOFF, HANDOFF + 0.35, T_END[0] + 2.6, T_END[0] + 3.2], [0.3, 0.75, 0.75, 0], clamp);
         return base * (dialogue ? 0.32 : 1);
       }} />
     </Sequence>
