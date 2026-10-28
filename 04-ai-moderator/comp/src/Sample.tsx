@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   AbsoluteFill, Audio, OffthreadVideo, Sequence, interpolate, spring, staticFile,
   useCurrentFrame, useVideoConfig, Easing,
 } from "remotion";
-import { T } from "./theme";
+import { T, ZH, ZH_FONT } from "./theme";
 import { Ghost, GhostBurst, PixelGrid } from "./Ghost";
 
 // 15 秒样片（方向：原生分辨率，不抠像、不放大）。
@@ -59,14 +59,22 @@ export const FloatingUI: React.FC<{ src: string; startFrom?: number; cam: number
   );
 };
 
+// ---------- 双语：英文下面的中文行，只在 ZH 上下文里出现 ----------
+export const Zh: React.FC<{ text?: React.ReactNode; size?: number; color?: string; style?: React.CSSProperties }> = ({ text, size = 56, color = "rgba(250,250,250,0.82)", style }) => {
+  const on = useContext(ZH);
+  if (!on || !text) return null;
+  return <div style={{ fontFamily: ZH_FONT, fontWeight: 500, fontSize: size, lineHeight: 1.25, letterSpacing: "0.04em", color, marginTop: size * 0.32, ...style }}>{text}</div>;
+};
+
 // ---------- 大字幕：原话逐词出来，关键词品牌绿 ----------
 type W = [string, number];
-export const Caption: React.FC<{ who: string; words: W[]; keys?: string[]; ai?: boolean; y?: number }> = ({ who, words, keys = [], ai = false, y = 860 }) => {
+export const Caption: React.FC<{ who: string; words: W[]; keys?: string[]; ai?: boolean; y?: number; zh?: string }> = ({ who, words, keys = [], ai = false, y = 860, zh }) => {
   const f = useCurrentFrame();
+  const on = useContext(ZH) && !!zh;
   const t = f / FPS;
   const box = interpolate(f, [0, 8], [0, 1], { ...clamp, easing: ease });
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, top: y, display: "flex", justifyContent: "center", opacity: box }}>
+    <div style={{ position: "absolute", left: 0, right: 0, ...(on ? { bottom: 1080 - y - 150 } : { top: y }), display: "flex", justifyContent: "center", opacity: box }}>
       <div style={{
         maxWidth: 1500, padding: "22px 34px", borderRadius: 22, background: "rgba(10,10,10,0.72)", backdropFilter: "blur(18px)",
         border: `1px solid ${T.line}`, display: "flex", gap: 22, alignItems: "baseline",
@@ -74,11 +82,14 @@ export const Caption: React.FC<{ who: string; words: W[]; keys?: string[]; ai?: 
         <span style={{ flexShrink: 0, display: "flex", alignItems: "center", gap: 10, fontFamily: T.mono, fontSize: 20, letterSpacing: "0.14em", textTransform: "uppercase", color: ai ? T.accent : T.dim }}>
           {ai && <Ghost cell={1.6} glow={false} />}{who}
         </span>
-        <span style={{ fontFamily: T.display, fontSize: 46, fontWeight: 500, letterSpacing: "-0.02em", color: T.text, lineHeight: 1.15 }}>
-          {words.filter(([, a]) => a <= t).map(([w, a], i) => {
-            const p = interpolate(t - a, [0, 0.12], [0, 1], clamp);
-            return <span key={i} style={{ display: "inline-block", marginRight: "0.26em", opacity: p, transform: `translateY(${(1 - p) * 10}px)`, color: keys.includes(w) ? T.accent : undefined }}>{w}</span>;
-          })}
+        <span style={{ display: "flex", flexDirection: "column" }}>
+          <span style={{ fontFamily: T.display, fontSize: 46, fontWeight: 500, letterSpacing: "-0.02em", color: T.text, lineHeight: 1.15 }}>
+            {words.filter(([, a]) => a <= t).map(([w, a], i) => {
+              const p = interpolate(t - a, [0, 0.12], [0, 1], clamp);
+              return <span key={i} style={{ display: "inline-block", marginRight: "0.26em", opacity: p, transform: `translateY(${(1 - p) * 10}px)`, color: keys.includes(w) ? T.accent : undefined }}>{w}</span>;
+            })}
+          </span>
+          {on && <span style={{ fontFamily: ZH_FONT, fontSize: 36, fontWeight: 400, letterSpacing: "0.03em", color: "rgba(250,250,250,0.72)", lineHeight: 1.3, marginTop: 10, opacity: interpolate(f, [4, 12], [0, 1], clamp) }}>{zh}</span>}
         </span>
       </div>
     </div>
@@ -118,7 +129,7 @@ export const Cold: React.FC = () => {
         <FloatingUI src="clips/ui-q1.mp4" cam={cam} tilt={tilt} />
       </AbsoluteFill>
       <Sequence from={s(0.4)}>
-        <Caption who="Moderator" words={words("When@0.00 you@0.18 mentioned@0.30 using@0.56 a@0.88 heavy@1.06 cream@1.26 to@1.72 reduce@1.88 the@2.18 pain,@2.36 what@3.10 did@3.34 that@3.46 feel@3.58 like@3.80 on@4.02 your@4.16 skin?@4.26")} keys={["heavy", "cream"]} />
+        <Caption who="Moderator" words={words("When@0.00 you@0.18 mentioned@0.30 using@0.56 a@0.88 heavy@1.06 cream@1.26 to@1.72 reduce@1.88 the@2.18 pain,@2.36 what@3.10 did@3.34 that@3.46 feel@3.58 like@3.80 on@4.02 your@4.16 skin?@4.26")} keys={["heavy", "cream"]} zh="你提到用厚重的面霜来缓解疼痛，抹在皮肤上是什么感觉？" />
       </Sequence>
     </Stage>
   );
@@ -148,6 +159,7 @@ export const Headline: React.FC = () => {
         {L(0, "The first", 150)}
         {L(1, "AI Moderator", 196)}
         {L(2, <>to pass the <span style={{ color: T.accent, textShadow: `0 0 60px ${T.accentSoft}` }}>Turing test.</span></>, 114)}
+        {f >= k0(2) && <Zh size={60} text={<>首个通过<span style={{ color: T.accent }}>图灵测试</span>的 AI 主持人</>} style={{ marginTop: 34 }} />}
       </AbsoluteFill>
       <AbsoluteFill style={{ background: "#fff", opacity: flash }} />
     </AbsoluteFill>
@@ -196,7 +208,7 @@ export const Qual: React.FC = () => {
         <AbsoluteFill style={{ transform: `scale(${interpolate(f, [0, r(QA)], [1.0, 1.04])})` }}>
           <OffthreadVideo src={staticFile("clips/hd-qa.mp4")} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </AbsoluteFill>
-        <Caption who="AI Moderator" ai words={words("As@0.00 you@0.36 continue@0.88 wearing@1.14 them@1.50 and@1.80 listening,@2.00 what,@2.94 if@3.54 anything,@3.84 changes?@4.60")} keys={["changes?"]} />
+        <Caption who="AI Moderator" ai words={words("As@0.00 you@0.36 continue@0.88 wearing@1.14 them@1.50 and@1.80 listening,@2.00 what,@2.94 if@3.54 anything,@3.84 changes?@4.60")} keys={["changes?"]} zh="继续戴着、听一会儿，感觉有什么变化吗？" />
       </Sequence>
       {/* 受访者没听懂：切到完整界面，镜头往右上角他的小窗推 */}
       <Sequence from={r(QA)} durationInFrames={r(QB) - r(QA)}>
@@ -205,7 +217,7 @@ export const Qual: React.FC = () => {
           <div style={{ position: "absolute", inset: 0, transform: `translate(${-pan * 520}px, ${pan * 230}px) scale(${1 + pan * 0.75})` }}>
             <FloatingUI src="clips/ui-qa.mp4" startFrom={r(6.1)} cam={0} />
           </div>
-          <Caption who="Participant" words={words("Can@0.32 you@0.54 repeat@0.68 that?@0.90 I@1.66 didn't@1.66 really@3.00 understand@3.20 the@3.62 question.@3.94")} keys={["understand"]} />
+          <Caption who="Participant" words={words("Can@0.32 you@0.54 repeat@0.68 that?@0.90 I@1.66 didn't@1.66 really@3.00 understand@3.20 the@3.62 question.@3.94")} keys={["understand"]} zh="能再说一遍吗？我没太听懂这个问题。" />
         </Stage>
       </Sequence>
       {/* AI 道歉、换个问法：主持人居中特写 */}
@@ -213,21 +225,21 @@ export const Qual: React.FC = () => {
         <AbsoluteFill style={{ transform: `scale(${interpolate(f - r(QC), [0, s(3)], [1.0, 1.05])})` }}>
           <OffthreadVideo src={staticFile("clips/hd-qa.mp4")} muted startFrom={r(11.9)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </AbsoluteFill>
-        <Caption who="AI Moderator" ai words={words("Sorry@0.26 about@0.82 that.@1.02 I@1.80 just@1.90 meant…@2.04")} keys={["Sorry"]} />
+        <Caption who="AI Moderator" ai words={words("Sorry@0.26 about@0.82 that.@1.02 I@1.80 just@1.90 meant…@2.04")} keys={["Sorry"]} zh="不好意思。我的意思是……" />
       </Sequence>
     </AbsoluteFill>
   );
 };
 
 // 炸：音乐 drop 进来，大字一句一句砸，介绍产品
-const BOOM_LINES: { at: number; lines: React.ReactNode[]; bg?: string; startFrom?: number }[] = [
-  { at: 0.0, lines: [<>Not a script.</>, <span style={{ color: T.accent }}>A conversation.</span>], bg: "clips/hd-qa.mp4", startFrom: 14.2 },
-  { at: 1.2, lines: [<>It listens.</>], bg: "clips/hd-listen.mp4" },
-  { at: 1.9, lines: [<>It follows up.</>], bg: "clips/hd-q6.mp4", startFrom: 1.8 },
-  { at: 2.6, lines: [<>It rephrases.</>], bg: "clips/hd-qa.mp4", startFrom: 12.2 },
-  { at: 3.3, lines: [<>Remember this day.</>] },
-  { at: 4.1, lines: [<>User Research.</>] },
-  { at: 4.9, lines: [<span style={{ color: T.accent }}>Changed forever.</span>] },
+const BOOM_LINES: { at: number; lines: React.ReactNode[]; bg?: string; startFrom?: number; zh?: React.ReactNode }[] = [
+  { at: 0.0, lines: [<>Not a script.</>, <span style={{ color: T.accent }}>A conversation.</span>], bg: "clips/hd-qa.mp4", startFrom: 14.2, zh: <>不是照本宣科，<span style={{ color: T.accent }}>是一场真对话。</span></> },
+  { at: 1.2, lines: [<>It listens.</>], bg: "clips/hd-listen.mp4", zh: "它会倾听。" },
+  { at: 1.9, lines: [<>It follows up.</>], bg: "clips/hd-q6.mp4", startFrom: 1.8, zh: "它会追问。" },
+  { at: 2.6, lines: [<>It rephrases.</>], bg: "clips/hd-qa.mp4", startFrom: 12.2, zh: "它会换个问法。" },
+  { at: 3.3, lines: [<>Remember this day.</>], zh: "记住这一天。" },
+  { at: 4.1, lines: [<>User Research.</>], zh: "用户研究，" },
+  { at: 4.9, lines: [<span style={{ color: T.accent }}>Changed forever.</span>], zh: <span style={{ color: T.accent }}>从此改变。</span> },
   { at: 6.0, lines: [] },
 ];
 export const Boom: React.FC = () => {
@@ -255,6 +267,7 @@ export const Boom: React.FC = () => {
             const sp = spring({ frame: since - i * 4, fps, config: { damping: 13, stiffness: 280, mass: 0.55 } });
             return <div key={i} style={{ fontFamily: T.display, fontWeight: 500, fontSize: 168, lineHeight: 0.92, letterSpacing: T.tight, color: "#fff", opacity: sp > 0.01 ? 1 : 0, transform: `scale(${1.4 - 0.4 * sp})`, filter: `blur(${(1 - sp) * 12}px)` }}>{l}</div>;
           })}
+          <Zh size={64} text={cur.zh} style={{ marginTop: 36, opacity: interpolate(since, [3, 9], [0, 1], clamp) }} />
         </AbsoluteFill>
       )}
       {isLogo && <BoomLogo since={since} />}
@@ -280,6 +293,7 @@ export const BoomLogo: React.FC<{ since: number }> = ({ since }) => {
         </div>
         <div style={{ opacity: b, transform: `translateY(${(1 - b) * 16}px)`, fontFamily: T.display, fontSize: 46, fontWeight: 500, color: T.text, letterSpacing: "-0.01em" }}>
           The first AI Moderator to pass the <span style={{ color: T.accent }}>Turing test.</span>
+          <Zh size={38} text={<>首个通过<span style={{ color: T.accent }}>图灵测试</span>的 AI 主持人</>} style={{ textAlign: "center", marginTop: 14 }} />
         </div>
       </AbsoluteFill>
     </Stage>

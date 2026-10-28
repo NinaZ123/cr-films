@@ -32,3 +32,9 @@ export const T = {
   // 大字的字间距：原来 -0.045em 太挤，字粘在一起看不清
   tight: "-0.01em",
 };
+
+// 双语版（FullFilmZH）：英文下面加中文。用 ZH 上下文开关，英文版不受影响。
+// 中文字体用 macOS 自带的苹方，没有时退到思源黑体。
+import { createContext } from "react";
+export const ZH = createContext(false);
+export const ZH_FONT = '"PingFang SC", "Noto Sans SC", "Hiragino Sans GB", sans-serif';
