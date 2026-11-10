@@ -37,3 +37,14 @@ __pycache__/
 
 # Claude Code worktrees
 .claude/worktrees/
+
+# 06、07 的讲解词和配音记录照会议内容写（内部人名、内部数字），这个仓库公开，只留在本机。
+# 素材 src/ 是会议录屏和逐字稿，同样不进。脚本和说明照常进。
+06-gea-community-talk/scripts/script.py
+06-gea-community-talk/scripts/script_en.py
+06-gea-community-talk/src/
+06-gea-community-talk/audio*/
+07-population-prediction/scripts/script.py
+07-population-prediction/src/
+07-population-prediction/audio/
+work_en/
